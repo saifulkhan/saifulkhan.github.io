@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -d out -b main -f --dest docs"
   },
   "dependencies": {
     "@babel/runtime": "^7.27.0",
