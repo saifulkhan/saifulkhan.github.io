@@ -1,0 +1,30 @@
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+
+import { useMemo, useState } from 'react';
+import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import NavBar from '../components/NavBar';
+
+export default function App({ Component, pageProps }: AppProps) {
+  const [darkMode, setDarkMode] = useState(false);
+  const theme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: darkMode ? 'dark' : 'light',
+          primary: { main: '#7c3aed' },
+        },
+      }),
+    [darkMode],
+  );
+
+  const handleToggleTheme = () => setDarkMode((prev) => !prev);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <NavBar darkMode={darkMode} onToggleTheme={handleToggleTheme} />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
