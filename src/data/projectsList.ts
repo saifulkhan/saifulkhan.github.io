@@ -31,10 +31,10 @@ const projectsList: ProjectEntry[] = [
     title: 'Tokamak Fusion Data Management, Active Learning, and Visualization',
     description:
       'Infrastructure for tokamak fusion data management, active learning, and visualization.',
-    organisation: ['STFC', 'UK Atomic Energy Authority'],
+    organisation: ['STFC'],
     status: 'Ongoing',
     role: ['Co-I', 'Supervisor'],
-    funding: ['UKAEA', '£64k'],
+    funding: ['UK Atomic Energy Authority', '£64k'],
   },
   {
     title: 'Data & Analytics Facility for National Infrastructure (DAFNI)',
@@ -94,16 +94,16 @@ const projectsList: ProjectEntry[] = [
     title: 'Rapid Assistance in Modelling the Pandemic VIS (RAMPVIS)',
     description:
       'Visualisation and visual analytics infrastructure for supporting modeling scientists and epidemiologists during the COVID-19 pandemic.',
-    organisation: ['STFC'],
+    organisation: ['University of Oxford'],
     status: 'Completed',
-    role: ['Researcher', 'Software Architect', 'lead Software Engineer'],
+    role: ['Researcher', 'Software Architect'],
     funding: ['EPSRC'],
   },
   {
     title: 'Horus: Data, Workflow, and Provenance Management',
     description:
       'Development of a comprehensive infrastructure for data, workflow, and provenance management at Horus.',
-    organisation: ['STFC', 'Horus Security Consultancy Ltd.'],
+    organisation: ['University of Oxford', 'Horus Security Consultancy Ltd.'],
     status: 'Completed',
     role: ['Researcher', 'Lead Software Engineer'],
     funding: ['Innovate UK'],
@@ -112,7 +112,10 @@ const projectsList: ProjectEntry[] = [
     title: 'Visual Bulletin Analytics System (VBAS)',
     description:
       'Development of seismological data analytics and visualization infrastructure for International Seismological Centre, UK.',
-    organisation: ['STFC', 'International Seismological Centre'],
+    organisation: [
+      'University of Oxford',
+      'International Seismological Centre',
+    ],
     status: 'Completed',
     role: ['Researcher', 'Software Engineer'],
     funding: ['Innovate UK'],
@@ -121,7 +124,7 @@ const projectsList: ProjectEntry[] = [
     title: 'Visualisation Assisted Enterprise Search Engine',
     description:
       'Prototype enterprise search and visualization infrastructure developed as part of my DPhil research.',
-    organisation: ['STFC', "Laing O'Rourke"],
+    organisation: ['University of Oxford'],
     status: 'Completed',
     role: ['DPhil Student'],
     funding: ["Laing O'Rourke"],

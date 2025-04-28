@@ -6,7 +6,7 @@ const softwareList = [
       'A JavaScript/TypeScript library for building scalable interactive, animated data stories with the meta-storyboard (MSB) and feature-action design pattern.',
     npm: 'https://www.npmjs.com/package/meta-storyboard',
     github: 'https://github.com/saifulkhan/meta-storyboard',
-    funding: 'EPSRC',
+    funding: ['EPSRC', 'University of Oxford', 'STFC'],
   },
   {
     name: 'Rapid Assistance in Modelling the Pandemic (RAMP)',
@@ -30,7 +30,7 @@ const softwareList = [
       },
     ],
     external: 'https://sites.google.com/view/rampvis/',
-    funding: 'EPSRC',
+    funding: ['EPSRC', 'University of Oxford'],
   },
   {
     name: 'Visual Bulletin Analytics System (VBAS)',
@@ -43,7 +43,7 @@ const softwareList = [
       },
     ],
     github: 'https://github.com/saifulkhan/isc_vbas',
-    funding: 'Innovate UK',
+    funding: ['Innovate UK', 'University of Oxford', 'ISC'],
   },
   {
     name: 'Visualisation Assisted Enterprose Search Engine',
@@ -65,7 +65,7 @@ const softwareList = [
         label: 'UI',
       },
     ],
-    funding: "Laing O'Rourke",
+    funding: ["Laing O'Rourke", 'University of Oxford'],
   },
 ];
 

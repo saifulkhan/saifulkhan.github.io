@@ -23,9 +23,7 @@ const Projects = () => (
                 alignItems="center"
                 sx={{ mb: 0.1 }}
               >
-                <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-                  {proj.title}
-                </Typography>
+                <Typography variant="subtitle1">{proj.title}</Typography>
                 <Chip
                   label={proj.status}
                   color={proj.status === 'Ongoing' ? 'primary' : 'default'}

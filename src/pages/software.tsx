@@ -79,9 +79,10 @@ const Software = () => (
     </Head>
     <Box sx={{ maxWidth: 900, mx: 'auto', mt: 4, p: 1 }}>
       <Paper elevation={2} sx={{ p: 2 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           Software & Infrastructure
         </Typography>
+
         <Stack spacing={1.5}>
           {softwareList.map((sw, idx) => (
             <Card
@@ -109,7 +110,7 @@ const Software = () => (
                 <ZoomImage src={sw.image} alt={sw.name} />
               </Box>
               <CardContent sx={{ flex: 1 }}>
-                <Typography variant="h6">{sw.name}</Typography>
+                <Typography variant="subtitle1">{sw.name}</Typography>
                 {Array.isArray(sw.description) ? (
                   <Typography variant="body2" color="text.secondary">
                     {sw.description.map((desc, idx) =>
@@ -233,7 +234,7 @@ const Software = () => (
                       <OpenInNewIcon fontSize="small" />
                     </IconButton>
                   )}
-                  {sw.funding && (
+                  {sw.funding && sw.funding.length > 0 && (
                     <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
                       <Box
                         sx={{
@@ -243,19 +244,26 @@ const Software = () => (
                           ml: 0.5,
                         }}
                       />
-                      <Chip
-                        label={sw.funding}
-                        size="small"
-                        sx={{
-                          backgroundColor: '#e0f7fa',
-                          color: '#00695c',
-                          fontWeight: 500,
-                          fontSize: 13,
-                          letterSpacing: 0.2,
-                          px: 1.5,
-                          boxShadow: 'none',
-                        }}
-                      />
+                      <Stack direction="row" spacing={0.5}>
+                        {sw.funding.map((fund, i) => (
+                          <Chip
+                            key={String(fund) + i}
+                            label={fund}
+                            size="small"
+                            sx={{
+                              backgroundColor: '#E5E4E2',
+                              color: '#808080',
+                              fontWeight: 400,
+                              fontSize: 11,
+                              letterSpacing: 0.2,
+                              px: 0.5,
+                              boxShadow: 'none',
+                              height: 20,
+                              minHeight: 20,
+                            }}
+                          />
+                        ))}
+                      </Stack>
                     </Box>
                   )}
                 </Stack>
