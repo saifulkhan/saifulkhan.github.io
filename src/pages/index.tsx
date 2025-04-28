@@ -5,50 +5,70 @@ import {
   Typography,
   Avatar,
   Paper,
-  Chip,
   Divider,
-  Stack,
+  IconButton,
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
+
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
+import SchoolIcon from '@mui/icons-material/School';
 
 export default function About() {
   return (
     <>
       <Head>
-        <title>About | My Personal Site</title>
+        <title>About | Saiful Khan</title>
       </Head>
       <Box sx={{ maxWidth: 900, mx: 'auto', mt: 6, p: 3 }}>
         <Paper elevation={2} sx={{ p: 4 }}>
           <Grid container spacing={4} alignItems="center">
             <Grid size={{ xs: 12, md: 8 }}>
-              <Typography variant="h3" fontWeight="bold" gutterBottom>
-                Your Name
+              <Typography variant="h4" fontWeight="bold" gutterBottom>
+                Saiful Khan
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
-                Your Title or Position
+                {/* Your Title or Position */}
               </Typography>
-              <Typography variant="body1" sx={{ mb: 2 }}>
-                Brief introduction about yourself, your research interests, and
-                background. Write a few sentences similar to the screenshot
-                provided, emphasizing your expertise and current position.
+              <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
+                I work on the development of data-driven software and
+                infrastructure, utilising machine learning and information
+                visualisation techniques.
               </Typography>
+              <Box sx={{ mb: 2 }} />
               <Typography variant="body2" color="text.secondary">
-                Add additional background, education, and recent achievements
-                here.
+                I am a Senior Data Scientist at the STFC. I obtained my DPhil
+                (PhD) in Engineering Science from the University of Oxford,
+                where I also conducted post-doctoral research. My previous
+                experience includes working as a data scientist at Horus
+                Security Consultancy and the International Seismological Centre
+                in the UK, as well as a software engineer at Oracle and ABB in
+                India.
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
               <Avatar
                 src="/profile.jpeg"
                 alt="Profile"
-                sx={{ width: 150, height: 150, mx: 'auto', boxShadow: 2 }}
+                sx={{ width: 200, height: 200, mx: 'auto', boxShadow: 2 }}
+                slotProps={{
+                  img: {
+                    style: {
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                      transform: 'scale(1.1)',
+                    },
+                  },
+                }}
               />
             </Grid>
           </Grid>
           <Divider sx={{ my: 4 }} />
+
           <Grid container spacing={4}>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Typography variant="h5" gutterBottom>
+            {/* <Grid size={{ xs: 12, md: 6 }}>
+              <Typography variant="h6" gutterBottom>
                 News
               </Typography>
               <ul style={{ paddingLeft: 20 }}>
@@ -58,10 +78,10 @@ export default function About() {
                 <li>
                   <b>Jan 2024:</b> Published a paper in ABC Journal.
                 </li>
-              </ul>
+              </ul> 
             </Grid>
             <Grid size={{ xs: 12, md: 6 }}>
-              <Typography variant="h5" gutterBottom>
+              <Typography variant="h6" gutterBottom>
                 Selected Publications
               </Typography>
               <Stack spacing={2}>
@@ -80,8 +100,57 @@ export default function About() {
                     Journal Name, 2024
                   </Typography>
                 </Paper>
+
               </Stack>
-            </Grid>
+            </Grid> */}
+          </Grid>
+
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-end',
+                gap: 0.1,
+                mt: 4,
+              }}
+            >
+              <IconButton
+                component="a"
+                href="https://www.linkedin.com/in/khansaiful/"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon fontSize="medium" />
+              </IconButton>
+              <IconButton
+                component="a"
+                href="https://github.com/saifulkhan"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+              >
+                <GitHubIcon fontSize="medium" />
+              </IconButton>
+              {/* <IconButton
+                component="a"
+                href="https://bsky.app/profile/your-bluesky"
+                target="_blank"
+                rel="noopener"
+                aria-label="Bluesky"
+              >
+                <PublicIcon fontSize="medium" />
+              </IconButton> */}
+              <IconButton
+                component="a"
+                href="https://scholar.google.com/citations?hl=en&user=lZLfsJwAAAAJ&view_op=list_works&sortby=pubdate"
+                target="_blank"
+                rel="noopener"
+                aria-label="Google Scholar"
+              >
+                <SchoolIcon fontSize="medium" />
+              </IconButton>
+            </Box>
           </Grid>
         </Paper>
       </Box>

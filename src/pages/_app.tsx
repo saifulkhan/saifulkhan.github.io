@@ -1,12 +1,22 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import NavBar from '../components/NavBar';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+    const root = document.documentElement;
+    if (darkMode) {
+      root.style.setProperty('--background', '#0a0a0a');
+      root.style.setProperty('--foreground', '#ededed');
+    } else {
+      root.style.setProperty('--background', '#ffffff');
+      root.style.setProperty('--foreground', '#171717');
+    }
+  }, [darkMode]);
   const theme = useMemo(
     () =>
       createTheme({
