@@ -32,19 +32,19 @@ export default function About() {
                 {/* Your Title or Position */}
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
-                I work on the development of data-driven software and
-                infrastructure, utilising machine learning and information
-                visualisation techniques.
+                I specialise in developing data-driven software and
+                infrastructure, with research interests in machine learning and
+                information visualisation.
               </Typography>
               <Box sx={{ mb: 2 }} />
               <Typography variant="body2" color="text.secondary">
-                I am a Senior Data Scientist at the STFC. I obtained my DPhil
-                (PhD) in Engineering Science from the University of Oxford,
-                where I also conducted post-doctoral research. My previous
-                experience includes working as a data scientist at Horus
-                Security Consultancy and the International Seismological Centre
-                in the UK, as well as a software engineer at Oracle and ABB in
-                India.
+                I am a Senior Data Scientist at STFC. Previously, I earned my
+                DPhil (PhD) in Engineering Science from the University of
+                Oxford, where I also conducted postdoctoral research. My
+                experience includes roles as a data scientist at Horus Security
+                Consultancy and the International Seismological Centre in the
+                UK, as well as software engineering positions at Oracle and ABB
+                in India.
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>

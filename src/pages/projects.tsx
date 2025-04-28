@@ -47,7 +47,7 @@ const Projects = () => (
                     <span
                       key={role + i}
                       style={{
-                        color: role === 'Co-I' ? 'tomato' : 'grey',
+                        color: role === 'Co-I' ? 'grey' : 'grey',
                         background: 'white',
                         borderRadius: 4,
                         padding: '1px 6px',

@@ -15,12 +15,7 @@ const projectsList: ProjectEntry[] = [
       'Building comprehensive infrastructure to support machine learning with human-centred decision-making.',
     organisation: ['STFC', 'University of Oxford'],
     status: 'Ongoing',
-    role: [
-      'Co-I',
-      'Researcher',
-      'Software Architect',
-      'Lead Software Engineer',
-    ],
+    role: ['Co-I', 'Researcher'],
     funding: ['EPSRC', '£0.5m'],
   },
   {

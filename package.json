@@ -5,10 +5,10 @@
   "scripts": {
     "format": "prettier --write .",
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf out && next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out -b main -f --dest docs"
+    "deploy": "gh-pages -d out -b main -f --dest ."
   },
   "dependencies": {
     "@babel/runtime": "^7.27.0",
