@@ -12,8 +12,6 @@ import {
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Paper from '@mui/material/Paper';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
-
 import Image from 'next/image';
 
 const ZoomImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
@@ -48,27 +46,7 @@ const ZoomImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
   );
 };
 
-/**
- * NpmIcon: renders a custom SVG for the npm logo.
- */
-const NpmIcon: React.FC<SvgIconProps> = (props) => {
-  return (
-    <SvgIcon {...props} viewBox="0 0 50 50">
-      <rect width="50" height="48" rx="4" fill="#CB3837" />
-      <text
-        x="24"
-        y="30"
-        textAnchor="middle"
-        fontFamily="Arial, Helvetica, sans-serif"
-        fontWeight="bold"
-        fontSize="20"
-        fill="#FFF"
-      >
-        NPM
-      </text>
-    </SvgIcon>
-  );
-};
+import NpmIcon from '../components/NpmIcon';
 
 import softwareList from '../data/softwareList';
 
@@ -111,129 +89,86 @@ const Software = () => (
               </Box>
               <CardContent sx={{ flex: 1 }}>
                 <Typography variant="subtitle1">{sw.name}</Typography>
-                {Array.isArray(sw.description) ? (
-                  <Typography variant="body2" color="text.secondary">
-                    {sw.description.map((desc, idx) =>
-                      typeof desc === 'string' ? (
-                        desc
-                      ) : (
-                        <a
-                          key={idx}
-                          href={desc.link}
-                          target="_blank"
-                          rel="noopener"
-                          style={{
-                            color: '#1976d2',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          {desc.text}
-                        </a>
-                      ),
-                    )}
-                  </Typography>
-                ) : (
-                  <Typography variant="body2" color="text.secondary">
-                    {sw.description}
-                  </Typography>
+                {Array.isArray(sw.description) && sw.description.length > 0 && (
+                  <Stack spacing={0.5} mb={1}>
+                    {sw.description.map((desc, idx) => (
+                      <Typography
+                        key={idx}
+                        variant="body2"
+                        sx={{
+                          color:
+                            desc.color === 'blue'
+                              ? '#1976d2'
+                              : desc.color === 'grey'
+                                ? 'grey'
+                                : 'text.secondary',
+                          fontSize: desc.color !== 'default' ? 12 : 14,
+                        }}
+                      >
+                        {desc.value}
+                      </Typography>
+                    ))}
+                  </Stack>
                 )}
-
-                {sw.descriptionBlue && (
-                  <Typography
-                    variant="body2"
-                    sx={{ color: '#1976d2', fontSize: 10 }}
-                  >
-                    {sw.descriptionBlue}
-                  </Typography>
-                )}
-
-                {sw.descriptionGrey &&
-                  (Array.isArray(sw.descriptionGrey) ? (
-                    <Typography
-                      variant="body2"
-                      sx={{ color: 'grey', fontSize: 10 }}
-                    >
-                      {sw.descriptionGrey.map((desc, idx) =>
-                        typeof desc === 'string' ? (
-                          desc
-                        ) : (
-                          <a
-                            key={idx}
-                            href={desc.link}
-                            target="_blank"
-                            rel="noopener"
-                            style={{
-                              color: '#1976d2',
-                              textDecoration: 'none',
-                            }}
-                          >
-                            {desc.text}
-                          </a>
-                        ),
-                      )}
-                    </Typography>
-                  ) : (
-                    <Typography
-                      variant="body2"
-                      sx={{ color: 'grey', fontSize: 10 }}
-                    >
-                      {sw.descriptionGrey}
-                    </Typography>
-                  ))}
 
                 <Stack direction="row" spacing={0.1} mt={2} alignItems="center">
-                  {Array.isArray(sw.github)
-                    ? sw.github.map((repo) => (
-                        <IconButton
-                          key={repo.url}
-                          href={repo.url}
-                          target="_blank"
-                          rel="noopener"
-                          aria-label={
-                            repo.label ? `GitHub: ${repo.label}` : 'GitHub'
-                          }
-                          color="inherit"
-                          size="small"
-                        >
-                          <GitHubIcon fontSize="small" />
-                        </IconButton>
-                      ))
-                    : sw.github && (
-                        <IconButton
-                          href={sw.github}
-                          target="_blank"
-                          rel="noopener"
-                          aria-label="GitHub"
-                          color="inherit"
-                          size="small"
-                        >
-                          <GitHubIcon fontSize="small" />
-                        </IconButton>
-                      )}
-                  {sw.npm && (
-                    <IconButton
-                      href={sw.npm}
-                      target="_blank"
-                      rel="noopener"
-                      aria-label="npm"
-                      color="inherit"
-                      size="small"
-                    >
-                      <NpmIcon fontSize="small" />
-                    </IconButton>
-                  )}
-                  {sw.external && (
-                    <IconButton
-                      href={sw.external}
-                      target="_blank"
-                      rel="noopener"
-                      aria-label="External Link"
-                      color="primary"
-                      size="small"
-                    >
-                      <OpenInNewIcon fontSize="small" />
-                    </IconButton>
-                  )}
+                  {sw.links &&
+                    sw.links.map((link) => {
+                      if (link.type === 'github') {
+                        return (
+                          <IconButton
+                            key={link.url + (link.label || '')}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener"
+                            aria-label={
+                              link.label ? `GitHub: ${link.label}` : 'GitHub'
+                            }
+                            color="inherit"
+                            size="small"
+                            sx={{ fontSize: 16 }}
+                          >
+                            <GitHubIcon
+                              fontSize="inherit"
+                              sx={{ color: '#1976d2' }}
+                            />
+                          </IconButton>
+                        );
+                      }
+                      if (link.type === 'npm') {
+                        return (
+                          <IconButton
+                            key={link.url}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="npm"
+                            color="inherit"
+                            size="small"
+                            sx={{ fontSize: 16 }}
+                          >
+                            <NpmIcon fontSize="inherit" />
+                          </IconButton>
+                        );
+                      }
+                      if (link.type === 'external') {
+                        return (
+                          <IconButton
+                            key={link.url}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener"
+                            aria-label="External Link"
+                            color="primary"
+                            size="small"
+                            sx={{ fontSize: 16 }}
+                          >
+                            <OpenInNewIcon fontSize="inherit" />
+                          </IconButton>
+                        );
+                      }
+                      return null;
+                    })}
                   {sw.funding && sw.funding.length > 0 && (
                     <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
                       <Box

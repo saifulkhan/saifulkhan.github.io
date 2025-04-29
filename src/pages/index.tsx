@@ -32,9 +32,10 @@ export default function About() {
                 {/* Your Title or Position */}
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
-                I specialise in developing data-driven software and
-                infrastructure, with research interests in machine learning and
-                information visualisation.
+                I specialise in developing data-driven <strong>software</strong>{' '}
+                systems and <strong>infrastructure</strong>, with research
+                interests in <strong>machine learning</strong> and{' '}
+                <strong>information visualisation</strong>.
               </Typography>
               <Box sx={{ mb: 2 }} />
               <Typography variant="body2" color="text.secondary">
@@ -64,7 +65,6 @@ export default function About() {
               />
             </Grid>
           </Grid>
-          <Divider sx={{ my: 4 }} />
 
           <Grid container spacing={4}>
             {/* <Grid size={{ xs: 12, md: 6 }}>
@@ -105,15 +105,38 @@ export default function About() {
             </Grid> */}
           </Grid>
 
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                gap: 0.1,
-                mt: 4,
-              }}
+          <Divider sx={{ my: 2 }} />
+
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              width: '100%',
+              mt: 2,
+            }}
+          >
+            <Typography
+              variant="body2"
+              color="text.secondary"
+              sx={{ userSelect: 'none', ml: 1 }}
             >
+              Contact:{' '}
+              <span style={{ userSelect: 'auto' }}>
+                <span>s</span>
+                <span style={{ display: 'none' }}>[at]</span>
+                <span>aiful.</span>
+                <span style={{ display: 'none' }}>[dot]</span>
+                <span>etc</span>
+                <span style={{ display: 'none' }}>[dot]</span>
+                <span>@</span>
+                <span>gmail</span>
+                <span>.</span>
+                <span>com</span>
+              </span>
+              {/* Email is visually correct but split in DOM to hinder bots */}
+            </Typography>
+            <Box sx={{ display: 'flex', gap: 0.1, mr: 1 }}>
               <IconButton
                 component="a"
                 href="https://www.linkedin.com/in/khansaiful/"
@@ -151,7 +174,9 @@ export default function About() {
                 <SchoolIcon fontSize="medium" />
               </IconButton>
             </Box>
-          </Grid>
+          </Box>
+
+          {/* <Divider sx={{ my: 2 }} /> */}
         </Paper>
       </Box>
     </>

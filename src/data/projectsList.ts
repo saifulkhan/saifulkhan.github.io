@@ -5,6 +5,7 @@ export interface ProjectEntry {
   status: 'Ongoing' | 'Completed';
   role: string[];
   funding: string[];
+  tags: string[];
 }
 
 const projectsList: ProjectEntry[] = [
@@ -17,6 +18,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['Co-I', 'Researcher'],
     funding: ['EPSRC', '£0.5m'],
+    tags: ['Visualization', 'Machine Learning', 'Software Infrastructure'],
   },
   {
     title:
@@ -26,15 +28,17 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['Co-I'],
     funding: ['UKRI', '£1.3m'],
+    tags: ['Machine Learning'],
   },
   {
     title: 'Tokamak Fusion Data Management, Active Learning, and Visualization',
     description:
-      'Infrastructure for tokamak fusion data management, active learning, and visualization.',
+      'Infrastructure for tokamak fusion data management, active learning, and visualization in collaboration with the UK Atomic Energy Authority (UKAEA).',
     organisation: ['STFC'],
     status: 'Ongoing',
     role: ['Co-I', 'Supervisor'],
-    funding: ['UK Atomic Energy Authority', '£64k'],
+    funding: ['UKAEA', '£64k'],
+    tags: ['Visualization', 'Machine Learning', 'Software Infrastructure'],
   },
   {
     title: 'Data & Analytics Facility for National Infrastructure (DAFNI)',
@@ -44,6 +48,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['User Liaison'],
     funding: [],
+    tags: ['Software Infrastructure'],
   },
   {
     title: 'Climate Resilience Decision Optimiser (CReDO)',
@@ -53,6 +58,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['Researcher', 'Software Engineer'],
     funding: [],
+    tags: ['Visualization', 'Digital Twin', 'Software Infrastructure'],
   },
   {
     title: 'HyperCrop',
@@ -62,6 +68,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher'],
     funding: [],
+    tags: ['Machine Learning'],
   },
   {
     title: 'LLM for Grant Proposal Search',
@@ -71,6 +78,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Lead Software Engineer'],
     funding: [],
+    tags: ['Machine Learning', 'LLM'],
   },
   {
     title: 'LLM for DataGateway',
@@ -80,6 +88,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Lead Software Engineer'],
     funding: [],
+    tags: ['Machine Learning', 'LLM'],
   },
   {
     title: 'Square Kilometre Array Streaming and Visualization',
@@ -89,6 +98,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Lead Software Engineer'],
     funding: ['STFC'],
+    tags: ['Visualization', 'Software Infrastructure'],
   },
   {
     title: 'Rapid Assistance in Modelling the Pandemic VIS (RAMPVIS)',
@@ -98,27 +108,27 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Software Architect'],
     funding: ['EPSRC'],
+    tags: ['Visualization', 'Machine Learning', 'Software Infrastructure'],
   },
   {
-    title: 'Horus: Data, Workflow, and Provenance Management',
+    title: 'Data, Workflow, and Provenance Management',
     description:
-      'Development of a comprehensive infrastructure for data, workflow, and provenance management at Horus.',
-    organisation: ['University of Oxford', 'Horus Security Consultancy Ltd.'],
+      'Development of a comprehensive infrastructure for data, workflow, and provenance management and search for Horus Security Consultancy Ltd. UK',
+    organisation: ['University of Oxford', 'Horus'],
     status: 'Completed',
     role: ['Researcher', 'Lead Software Engineer'],
     funding: ['Innovate UK'],
+    tags: ['Software Infrastructure', 'Machine Learning'],
   },
   {
     title: 'Visual Bulletin Analytics System (VBAS)',
     description:
-      'Development of seismological data analytics and visualization infrastructure for International Seismological Centre, UK.',
-    organisation: [
-      'University of Oxford',
-      'International Seismological Centre',
-    ],
+      'Development of seismological data analytics and visualization infrastructure for International Seismological Centre (ISC), UK.',
+    organisation: ['University of Oxford', 'ISC'],
     status: 'Completed',
     role: ['Researcher', 'Software Engineer'],
     funding: ['Innovate UK'],
+    tags: ['Visualization', 'Software Infrastructure'],
   },
   {
     title: 'Visualisation Assisted Enterprise Search Engine',
@@ -128,6 +138,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['DPhil Student'],
     funding: ["Laing O'Rourke"],
+    tags: ['Visualization', 'Machine Learning', 'Software Infrastructure'],
   },
   {
     title: 'Oracle Database Development',
@@ -136,6 +147,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Software Engineer'],
     funding: [],
+    tags: ['Software Infrastructure'],
   },
   {
     title: 'AC800 Web',
@@ -145,6 +157,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Software Engineer'],
     funding: [],
+    tags: ['Software Infrastructure'],
   },
 ];
 

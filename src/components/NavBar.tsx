@@ -25,9 +25,9 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => (
         <Link href="/projects" passHref legacyBehavior>
           <a>Projects</a>
         </Link>
-        {/* <Link href="/publications" passHref legacyBehavior>
+        <Link href="/publications" passHref legacyBehavior>
           <a>Publications</a>
-        </Link> */}
+        </Link>
         <IconButton sx={{ ml: 1 }} onClick={onToggleTheme} color="inherit">
           {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
