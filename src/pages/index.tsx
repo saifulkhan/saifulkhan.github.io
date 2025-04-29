@@ -9,11 +9,10 @@ import {
   IconButton,
 } from '@mui/material';
 import Grid from '@mui/material/Grid';
-
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
 import SchoolIcon from '@mui/icons-material/School';
+import EmailIcon from '@mui/icons-material/Email';
 
 export default function About() {
   return (
@@ -116,26 +115,42 @@ export default function About() {
               mt: 2,
             }}
           >
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{ userSelect: 'none', ml: 1 }}
-            >
-              Contact:{' '}
-              <span style={{ userSelect: 'auto' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
+              <IconButton
+                component="a"
+                aria-label="Email"
+                sx={{ mr: 1 }}
+                disabled
+              >
+                <EmailIcon fontSize="medium" />
+              </IconButton>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ userSelect: 'auto', cursor: 'pointer' }}
+                onClick={() => {
+                  const e = [
+                    'saiful',
+                    '.',
+                    'etc',
+                    '@',
+                    'gmail',
+                    '.',
+                    'com',
+                  ].join('');
+                  window.location.href = `mailto:${e}`;
+                }}
+              >
                 <span>s</span>
-                <span style={{ display: 'none' }}>[at]</span>
-                <span>aiful.</span>
-                <span style={{ display: 'none' }}>[dot]</span>
+                <span>aiful</span>
+                <span>.</span>
                 <span>etc</span>
-                <span style={{ display: 'none' }}>[dot]</span>
                 <span>@</span>
                 <span>gmail</span>
                 <span>.</span>
                 <span>com</span>
-              </span>
-              {/* Email is visually correct but split in DOM to hinder bots */}
-            </Typography>
+              </Typography>
+            </Box>
             <Box sx={{ display: 'flex', gap: 0.1, mr: 1 }}>
               <IconButton
                 component="a"

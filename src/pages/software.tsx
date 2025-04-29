@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import {
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  Stack,
-  IconButton,
-  Chip,
-} from '@mui/material';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Box, Card, CardContent, Typography, Stack, Chip } from '@mui/material';
 import Paper from '@mui/material/Paper';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import Image from 'next/image';
+import LinkIcons from '../components/LinkIcons';
 
 const ZoomImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
   const [hovered, setHovered] = useState(false);
@@ -46,8 +37,6 @@ const ZoomImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
   );
 };
 
-import NpmIcon from '../components/NpmIcon';
-
 import softwareList from '../data/softwareList';
 
 const Software = () => (
@@ -77,11 +66,11 @@ const Software = () => (
                   width: 120,
                   height: 120,
                   mr: 1.5,
-                  overflow: 'visible', // Ensure image can overflow this box
+                  overflow: 'visible',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  position: 'relative', // Needed for stacking context
+                  position: 'relative',
                   zIndex: 10,
                 }}
               >
@@ -102,7 +91,7 @@ const Software = () => (
                               : desc.color === 'grey'
                                 ? 'grey'
                                 : 'text.secondary',
-                          fontSize: desc.color !== 'default' ? 12 : 14,
+                          fontSize: desc.color !== 'default' ? 11 : 13,
                         }}
                       >
                         {desc.value}
@@ -110,75 +99,15 @@ const Software = () => (
                     ))}
                   </Stack>
                 )}
-
-                <Stack direction="row" spacing={0.1} mt={2} alignItems="center">
-                  {sw.links &&
-                    sw.links.map((link) => {
-                      if (link.type === 'github') {
-                        return (
-                          <IconButton
-                            key={link.url + (link.label || '')}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener"
-                            aria-label={
-                              link.label ? `GitHub: ${link.label}` : 'GitHub'
-                            }
-                            color="inherit"
-                            size="small"
-                            sx={{ fontSize: 16 }}
-                          >
-                            <GitHubIcon
-                              fontSize="inherit"
-                              sx={{ color: '#1976d2' }}
-                            />
-                          </IconButton>
-                        );
-                      }
-                      if (link.type === 'npm') {
-                        return (
-                          <IconButton
-                            key={link.url}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="npm"
-                            color="inherit"
-                            size="small"
-                            sx={{ fontSize: 16 }}
-                          >
-                            <NpmIcon fontSize="inherit" />
-                          </IconButton>
-                        );
-                      }
-                      if (link.type === 'external') {
-                        return (
-                          <IconButton
-                            key={link.url}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener"
-                            aria-label="External Link"
-                            color="primary"
-                            size="small"
-                            sx={{ fontSize: 16 }}
-                          >
-                            <OpenInNewIcon fontSize="inherit" />
-                          </IconButton>
-                        );
-                      }
-                      return null;
-                    })}
-                  {sw.funding && sw.funding.length > 0 && (
-                    <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
-                      <Box
-                        sx={{
-                          borderLeft: '1px solid grey',
-                          height: 22,
-                          mr: 1,
-                          ml: 0.5,
-                        }}
-                      />
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="space-between"
+                  sx={{ mt: 1 }}
+                >
+                  {/* Left: Funding chips */}
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    {sw.funding && sw.funding.length > 0 && (
                       <Stack direction="row" spacing={0.5}>
                         {sw.funding.map((fund, i) => (
                           <Chip
@@ -186,8 +115,8 @@ const Software = () => (
                             label={fund}
                             size="small"
                             sx={{
-                              backgroundColor: '#E5E4E2',
-                              color: '#808080',
+                              backgroundColor: '#f5f5f5',
+                              color: '#757575',
                               fontWeight: 400,
                               fontSize: 11,
                               letterSpacing: 0.2,
@@ -199,8 +128,19 @@ const Software = () => (
                           />
                         ))}
                       </Stack>
-                    </Box>
-                  )}
+                    )}
+                  </Box>
+                  {/* Right: Icons */}
+                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    {sw.links && (
+                      <LinkIcons
+                        links={sw.links as any}
+                        iconSize={16}
+                        spacing={0.5}
+                        inline={false}
+                      />
+                    )}
+                  </Box>
                 </Stack>
               </CardContent>
             </Card>

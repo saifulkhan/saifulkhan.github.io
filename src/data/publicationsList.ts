@@ -17,6 +17,7 @@ export const publicationsList: Publication[] = [
     title:
       'QCPINN: Quantum-Classical Physics-Informed Neural Networks for Solving PDEs',
     authors: 'A Farea, S Khan, MS Celebi',
+    venue: { name: 'ArXiv', type: 'arxiv' },
     year: 2025,
     tags: ['Machine Learning'],
     links: [
@@ -29,6 +30,7 @@ export const publicationsList: Publication[] = [
       'Feature-Action Design Patterns for Storytelling Visualizations with Time Series Data',
     authors:
       'S Khan, S Jones, B Bach, J Cha, M Chen, J Meikle, JC Roberts, ...',
+    venue: { name: 'ArXiv', type: 'arxiv' },
     year: 2024,
     tags: ['Visualization'],
     links: [
