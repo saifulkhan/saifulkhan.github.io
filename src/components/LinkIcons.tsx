@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Link as MuiLink } from '@mui/material';
+import { IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import NpmIcon from './NpmIcon';
@@ -20,9 +20,16 @@ interface LinkIconsProps {
   inline?: boolean;
 }
 
-const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0.5, inline = true }) => {
+const LinkIcons: React.FC<LinkIconsProps> = ({
+  links,
+  iconSize = 16,
+  spacing = 0.5,
+  inline = true,
+}) => {
   return (
-    <span style={{ display: inline ? 'inline-flex' : 'flex', alignItems: 'center' }}>
+    <span
+      style={{ display: inline ? 'inline-flex' : 'flex', alignItems: 'center' }}
+    >
       {links.map((link, i) => {
         if (link.type === 'github') {
           return (

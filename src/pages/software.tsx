@@ -134,7 +134,7 @@ const Software = () => (
                   <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     {sw.links && (
                       <LinkIcons
-                        links={sw.links as any}
+                        links={sw.links as import('../components/LinkIcons').LinkIcon[]}
                         iconSize={16}
                         spacing={0.5}
                         inline={false}
