@@ -6,7 +6,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'A JavaScript/TypeScript library for building scalable interactive, animated data stories with the meta-storyboard (MSB) and feature-action design pattern.',
+          'Meta-storyboard is a JavaScript/TypeScript library for building interactive visualizations of dynamic data using the feature-action design pattern. It is designed to be scalable and supports a large-scale timeseries data from various data sources.',
         color: 'default',
       },
     ],
@@ -17,13 +17,13 @@ const softwareList = [
     funding: ['EPSRC', 'University of Oxford', 'STFC'],
   },
   {
-    name: 'Rapid Assistance in Modelling the Pandemic (RAMP)',
+    name: 'Rapid Assistance in Modelling the Pandemic Visualisation (RAMPVIS)',
     image: '/rampvis.png',
     description: [
       {
         type: 'main',
         value:
-          'Software infrastructure for Visualization and Visual Analytics in Support of Rapid Assistance in Modelling the Pandemic (RAMPVIS).',
+          'A visualization and visual analytics infrastructure developed for supporting the modeling scientists and epedemiologists of the Scotish COVID Response Consortium (SCRC) during the COVID-19 pandemic.',
         color: 'default',
       },
       {
@@ -60,12 +60,16 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'Software infrastructure for seiesmological data analysis. Developed in collaboration with University of Oxford and International Seismological Centre, UK.',
+          'A software infrastructure for seismological data analysis and quality assurance that was developed and deployed at the International Seismological Centre (ISC), UK.',
         color: 'default',
       },
     ],
     links: [{ type: 'github', url: 'https://github.com/saifulkhan/isc_vbas' }],
-    funding: ['Innovate UK', 'University of Oxford', 'ISC'],
+    funding: [
+      'Innovate UK',
+      'University of Oxford',
+      'International Seismological Centre',
+    ],
   },
   {
     name: 'Visualisation Assisted Enterprose Search Engine',
@@ -74,7 +78,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'A prototype enterprise search infrastructure developed as part of my DPhil research',
+          "A prototype enterprise search infrastructure for Laing O'Rourke that combines information retrieval and visual analytics techniques to support search and exploration of large collections of documents and data.",
         color: 'default',
       },
       {

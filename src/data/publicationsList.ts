@@ -28,8 +28,7 @@ export const publicationsList: Publication[] = [
   {
     title:
       'Feature-Action Design Patterns for Storytelling Visualizations with Time Series Data',
-    authors:
-      'S Khan, S Jones, B Bach, J Cha, M Chen, J Meikle, JC Roberts, ...',
+    authors: 'S Khan, et al.',
     venue: { name: 'ArXiv', type: 'arxiv' },
     year: 2024,
     tags: ['Visualization'],
@@ -41,7 +40,7 @@ export const publicationsList: Publication[] = [
   },
   {
     title: 'FAIR-MAST: A fusion device data management system',
-    authors: 'S Jackson, S Khan, N Cummings, et al.',
+    authors: 'S Jackson, S Khan, et al.',
     venue: { name: 'SoftwareX', type: 'journal' },
     year: 2024,
     tags: ['Software Infrastructure'],
@@ -53,14 +52,14 @@ export const publicationsList: Publication[] = [
     authors: 'S Jackson, N Cummings, S Khan',
     venue: { name: 'IEEE Access', type: 'journal' },
     year: 2024,
-    tags: ['Software Infrastructure'],
+    tags: ['System'],
     links: [],
   },
   {
     title:
       'Creating storytelling visualizations for the Covid-19 pandemic using Feature-Action Design Patterns',
     authors:
-      'PD Ritsos, S Khan, S Jones, B Bach, J Meikle, JC Roberts, J Wood, ...',
+      'PD Ritsos, S Khan, S Jones, B Bach, J Meikle, JC Roberts, J Wood, M Chen',
     venue: {
       name: 'IEEE VIS: Visualization & Visual Analytics Workshop',
       type: 'conference',
@@ -93,8 +92,7 @@ export const publicationsList: Publication[] = [
   {
     title:
       'Visualization for epidemiological modelling: challenges, solutions, reflections and recommendations',
-    authors:
-      'J Dykes, A Abdul-Rahman, D Archambault, B Bach, R Borgo, M Chen, ...',
+    authors: 'J Dykes, et al.',
     venue: {
       name: 'Philosophical Transactions of the Royal Society A',
       type: 'journal',
@@ -118,7 +116,7 @@ export const publicationsList: Publication[] = [
   {
     title:
       'RAMPVIS: Answering the Challenges of Building Visualisation Capabilities for Large-scale Emergency Responses',
-    authors: 'M Chen, A Abdul-Rahman, D Archambault, J Dykes, A Slingsby, ...',
+    authors: 'M Chen, et al.',
     venue: { name: 'Epidemics', type: 'journal' },
     year: 2022,
     tags: ['Software Infrastructure', 'Visualization'],
@@ -139,7 +137,7 @@ export const publicationsList: Publication[] = [
   {
     title: 'Propagating Visual Designs to Numerous Plots and Dashboards',
     authors:
-      'S Khan, PH Nguyen, A Abdul-Rahman, B Bach, M Chen, E Freeman, ...',
+      'S Khan, PH Nguyen, A Abdul-Rahman, B Bach, M Chen, E Freeman, C Turkay',
     venue: {
       name: 'IEEE Transactions on Visualization and Computer Graphics 28 (1), 86-95',
       type: 'journal',
@@ -163,7 +161,7 @@ export const publicationsList: Publication[] = [
     authors:
       'S Khan, U Kanturska, T Waters, J Eaton, R Bañares-Alcántara, M Chen',
     venue: {
-      name: 'Advanced Engineering Informatics 30 (2), 244-257',
+      name: 'Advanced Engineering Informatics',
       type: 'journal',
     },
     year: 2016,
@@ -186,7 +184,10 @@ export const publicationsList: Publication[] = [
   {
     title: 'A Study on Glyph-based Visualisation with Dense Visual Context.',
     authors: 'S Khan, KJ Proctor, SJ Walton, R Bañares-Alcántara, M Chen',
-    venue: { name: 'TPCG', type: 'conference' },
+    venue: {
+      name: 'Computer Graphics & Visual Computing (CGVC)',
+      type: 'conference',
+    },
     year: 2014,
     tags: ['Visualization'],
     links: [],

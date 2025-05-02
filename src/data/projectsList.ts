@@ -58,7 +58,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['Researcher', 'Software Engineer'],
     funding: [],
-    tags: ['Visualization', 'Digital Twin', 'Software Infrastructure'],
+    tags: ['System'],
   },
   {
     title: 'HyperCrop',
@@ -101,14 +101,14 @@ const projectsList: ProjectEntry[] = [
     tags: ['Visualization', 'Software Infrastructure'],
   },
   {
-    title: 'Rapid Assistance in Modelling the Pandemic VIS (RAMPVIS)',
+    title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMPVIS)',
     description:
       'Visualisation and visual analytics infrastructure for supporting modeling scientists and epidemiologists during the COVID-19 pandemic.',
     organisation: ['University of Oxford'],
     status: 'Completed',
     role: ['Researcher', 'Software Architect'],
     funding: ['EPSRC'],
-    tags: ['Visualization', 'Machine Learning', 'Software Infrastructure'],
+    tags: ['Visualization', 'Software Infrastructure'],
   },
   {
     title: 'Data, Workflow, and Provenance Management',
@@ -118,7 +118,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Lead Software Engineer'],
     funding: ['Innovate UK'],
-    tags: ['Software Infrastructure', 'Machine Learning'],
+    tags: ['Software Infrastructure'],
   },
   {
     title: 'Visual Bulletin Analytics System (VBAS)',

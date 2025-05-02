@@ -23,9 +23,9 @@ const Publications = () => {
         <Paper elevation={2} sx={{ p: 4, borderRadius: 4 }}>
           <Typography variant="h5" gutterBottom>
             Selected Publications
-            <Typography variant="body2" color="text.secondary">
+            {/* <Typography variant="body2" color="text.secondary">
               Under construction...
-            </Typography>
+            </Typography> */}
           </Typography>
           <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
           <Stack spacing={0.5} divider={<Divider flexItem />}>
