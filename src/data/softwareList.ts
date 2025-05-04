@@ -6,7 +6,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'Meta-storyboard is a JavaScript/TypeScript library for building interactive visualizations of dynamic data using the feature-action design pattern. It is designed to be scalable and supports a large-scale timeseries data from various data sources.',
+          'Meta-storyboard is a JavaScript and TypeScript library designed for creating storytelling visualisations using the feature-action design pattern. It is scalable, supports large-scale dynamic timeseries data, and can be applied across various domains.',
         color: 'default',
       },
     ],
@@ -23,7 +23,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'A visualization and visual analytics infrastructure developed for supporting the modeling scientists and epedemiologists of the Scotish COVID Response Consortium (SCRC) during the COVID-19 pandemic.',
+          'A visualisation and visual analytics infrastructure developed for supporting the modeling scientists and epedemiologists of the Scotish COVID Response Consortium (SCRC) during the COVID-19 pandemic.',
         color: 'default',
       },
       {
@@ -60,7 +60,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'A software infrastructure for seismological data analysis and quality assurance that was developed and deployed at the International Seismological Centre (ISC), UK.',
+          'A software infrastructure for analysing and ensuring quality assurance of seismological data. This infrastructure was developed and deployed at the International Seismological Centre (www.isc.ac.uk) in the UK.',
         color: 'default',
       },
     ],
@@ -78,13 +78,13 @@ const softwareList = [
       {
         type: 'main',
         value:
-          "A prototype enterprise search infrastructure for Laing O'Rourke that combines information retrieval and visual analytics techniques to support search and exploration of large collections of documents and data.",
+          "A prototype search infrastructure was developed for Laing O'Rourke, integrating information retrieval with visual analytics to enhance the search and reuse of extensive amount of building construction document and data.",
         color: 'default',
       },
       {
         type: 'main',
         value:
-          "DPhil (PhD) project at University of Oxford was funded by Laing O'Rourke (https://www.laingorourke.com/)",
+          "I received funding for my DPhil (PhD) project at the University of Oxford from Laing O'Rourke (www.laingorourke.com).",
         color: 'grey',
       },
     ],

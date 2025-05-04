@@ -32,19 +32,23 @@ export default function About() {
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
                 I specialise in developing data-driven <strong>software</strong>{' '}
-                systems and <strong>infrastructure</strong>, with research
-                interests in <strong>machine learning</strong> and{' '}
+                <strong>systems</strong> & <strong>infrastructure</strong> that
+                involve <strong>machine learning</strong> &{' '}
                 <strong>information visualisation</strong>.
               </Typography>
               <Box sx={{ mb: 2 }} />
               <Typography variant="body2" color="text.secondary">
-                I am a Senior Data Scientist at STFC. Previously, I earned my
-                DPhil (PhD) in Engineering Science from the University of
-                Oxford, where I also conducted postdoctoral research. My
-                experience includes roles as a data scientist at Horus Security
-                Consultancy and the International Seismological Centre in the
-                UK, as well as software engineering positions at Oracle and ABB
-                in India.
+                I am a Computer Scientist at STFC. Previously, I earned my DPhil
+                (PhD) in Engineering Science from the University of Oxford,
+                where I also conducted postdoctoral researchunder the
+                supervision of{' '}
+                <a href="https://eng.ox.ac.uk/people/min-chen/" target="_blank">
+                  Prof. Min Chen
+                </a>
+                . My industrial experience includes working as a data scientist
+                at Horus Security Consultancy and the International
+                Seismological Centre in the UK. Additionally, I have held
+                software engineering positions at Oracle and ABB in India.
               </Typography>
             </Grid>
             <Grid size={{ xs: 12, md: 4 }}>
