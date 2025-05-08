@@ -22,7 +22,11 @@ const Projects = () => {
         <Paper elevation={2} sx={{ p: 4 }}>
           <Typography variant="h5" gutterBottom>
             Projects
+            <Typography variant="body2" color="text.secondary">
+              Under construction...
+            </Typography>
           </Typography>
+
           <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
           <Stack spacing={0.5}>
             {filteredList.map((proj, idx) => (

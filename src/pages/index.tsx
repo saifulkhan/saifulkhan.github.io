@@ -40,7 +40,7 @@ export default function About() {
               <Typography variant="body2" color="text.secondary">
                 I am a Computer Scientist at STFC. Previously, I earned my DPhil
                 (PhD) in Engineering Science from the University of Oxford,
-                where I also conducted postdoctoral researchunder the
+                where I also conducted postdoctoral research under the
                 supervision of{' '}
                 <a href="https://eng.ox.ac.uk/people/min-chen/" target="_blank">
                   Prof. Min Chen

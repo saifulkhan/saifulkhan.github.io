@@ -20,9 +20,24 @@ const TagFilter: React.FC<TagFilterProps> = ({
   sx,
 }) => {
   // Unique sorted tag options
+  const preferredOrder = [
+    'Infrastructure',
+    'System',
+    'visualisation',
+    'machine learning',
+    'llm',
+    // Add more preferred tags here in order if needed
+  ];
   const tagOptions = Array.from(new Set(tags))
     .filter((tag) => tag !== 'DPhil Thesis')
-    .sort((a, b) => b.localeCompare(a));
+    .sort((a, b) => {
+      const indexA = preferredOrder.indexOf(a);
+      const indexB = preferredOrder.indexOf(b);
+      if (indexA === -1 && indexB === -1) return 0; // both not found, preserve order
+      if (indexA === -1) return 1; // a is not preferred, b is
+      if (indexB === -1) return -1; // b is not preferred, a is
+      return indexA - indexB;
+    });
   const handleFilter = (
     _: React.MouseEvent<HTMLElement>,
     newFilter: string | null,

@@ -18,7 +18,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['Co-I', 'Researcher'],
     funding: ['EPSRC', '£0.5m'],
-    tags: ['Visualization', 'Machine Learning', 'Software Infrastructure'],
+    tags: ['Visualization', 'Machine Learning', 'Infrastructure'],
   },
   {
     title:
@@ -38,7 +38,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['Co-I', 'Supervisor'],
     funding: ['UKAEA', '£64k'],
-    tags: ['Visualization', 'Machine Learning', 'Software Infrastructure'],
+    tags: ['Visualization', 'Machine Learning', 'Infrastructure'],
   },
   {
     title: 'Data & Analytics Facility for National Infrastructure (DAFNI)',
@@ -48,7 +48,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['User Liaison'],
     funding: [],
-    tags: ['Software Infrastructure'],
+    tags: ['Infrastructure'],
   },
   {
     title: 'Climate Resilience Decision Optimiser (CReDO)',
@@ -98,7 +98,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Lead Software Engineer'],
     funding: ['STFC'],
-    tags: ['Visualization', 'Software Infrastructure'],
+    tags: ['Visualization', 'Infrastructure'],
   },
   {
     title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMPVIS)',
@@ -108,7 +108,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Software Architect'],
     funding: ['EPSRC'],
-    tags: ['Visualization', 'Software Infrastructure'],
+    tags: ['Visualization', 'Infrastructure'],
   },
   {
     title: 'Data, Workflow, and Provenance Management',
@@ -118,7 +118,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Lead Software Engineer'],
     funding: ['Innovate UK'],
-    tags: ['Software Infrastructure'],
+    tags: ['Infrastructure'],
   },
   {
     title: 'Visual Bulletin Analytics System (VBAS)',
@@ -128,7 +128,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Researcher', 'Software Engineer'],
     funding: ['Innovate UK'],
-    tags: ['Visualization', 'Software Infrastructure'],
+    tags: ['Visualization', 'Infrastructure'],
   },
   {
     title: 'Visualisation Assisted Enterprise Search Engine',
@@ -138,7 +138,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['DPhil Student'],
     funding: ["Laing O'Rourke"],
-    tags: ['Visualization', 'Machine Learning', 'Software Infrastructure'],
+    tags: ['Visualization', 'Machine Learning', 'Infrastructure'],
   },
   {
     title: 'Oracle Database Development',
@@ -147,7 +147,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Software Engineer'],
     funding: [],
-    tags: ['Software Infrastructure'],
+    tags: ['Infrastructure'],
   },
   {
     title: 'AC800 Web',
@@ -157,7 +157,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Software Engineer'],
     funding: [],
-    tags: ['Software Infrastructure'],
+    tags: ['Infrastructure'],
   },
 ];
 

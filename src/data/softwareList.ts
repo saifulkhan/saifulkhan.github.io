@@ -60,7 +60,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'A software infrastructure for analysing and ensuring quality assurance of seismological data. This infrastructure was developed and deployed at the International Seismological Centre (www.isc.ac.uk) in the UK.',
+          'A software infrastructure for analysing and providing quality assurance of seismological data. This is an operational software infrastructure at the International Seismological Centre (www.isc.ac.uk) in the UK.',
         color: 'default',
       },
     ],

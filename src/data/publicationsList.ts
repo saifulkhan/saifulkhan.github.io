@@ -43,7 +43,7 @@ export const publicationsList: Publication[] = [
     authors: 'S Jackson, S Khan, et al.',
     venue: { name: 'SoftwareX', type: 'journal' },
     year: 2024,
-    tags: ['Software Infrastructure'],
+    tags: ['Infrastructure'],
     links: [],
   },
   {
@@ -74,7 +74,7 @@ export const publicationsList: Publication[] = [
     authors: 'S Khan, E Rydow, S Etemaditajbakhsh, K Adamek, W Armour',
     venue: { name: 'IEEE Access', type: 'journal' },
     year: 2023,
-    tags: ['Software Infrastructure', 'Visualization'],
+    tags: ['Infrastructure', 'Visualization'],
     links: [],
   },
   {
@@ -110,7 +110,7 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2022,
-    tags: ['Software Infrastructure'],
+    tags: ['Infrastructure'],
     links: [],
   },
   {
@@ -119,7 +119,7 @@ export const publicationsList: Publication[] = [
     authors: 'M Chen, et al.',
     venue: { name: 'Epidemics', type: 'journal' },
     year: 2022,
-    tags: ['Software Infrastructure', 'Visualization'],
+    tags: ['Infrastructure', 'Visualization'],
     links: [],
   },
   {
@@ -131,7 +131,7 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2022,
-    tags: ['Visualization', 'Software Infrastructure'],
+    tags: ['Visualization', 'Infrastructure'],
     links: [],
   },
   {
@@ -143,7 +143,7 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2021,
-    tags: ['Visualization', 'Software Infrastructure'],
+    tags: ['Visualization', 'Infrastructure'],
     links: [],
   },
   {
@@ -152,7 +152,7 @@ export const publicationsList: Publication[] = [
     authors: 'M Chen, A Abdul-Rahman, D Archambault, J Dykes, A Slingsby, ...',
     venue: { name: 'arXiv', type: 'arxiv' },
     year: 2020,
-    tags: ['Visualization', 'Software Infrastructure'],
+    tags: ['Visualization', 'Infrastructure'],
     links: [{ type: 'arxiv', url: 'https://arxiv.org/abs/2012.04757' }],
   },
   {
@@ -165,7 +165,7 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2016,
-    tags: ['Visualization', 'Software Infrastructure'],
+    tags: ['Visualization', 'Infrastructure'],
     links: [],
   },
   {
@@ -173,7 +173,7 @@ export const publicationsList: Publication[] = [
     authors: 'S Khan',
     venue: { name: 'University of Oxford', type: 'book' },
     year: 2015,
-    tags: ['DPhil Thesis', 'Visualization', 'Software Infrastructure'],
+    tags: ['DPhil Thesis', 'Visualization', 'Infrastructure'],
     links: [
       {
         type: 'external',
