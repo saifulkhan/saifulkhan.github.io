@@ -9,7 +9,10 @@ export interface Publication {
   venue?: Venue;
   year: number;
   tags: string[];
-  links?: { type: 'github' | 'npm' | 'external' | 'arxiv'; url: string }[];
+  links?: {
+    type: 'github' | 'npm' | 'external' | 'arxiv' | 'pdf';
+    url: string;
+  }[];
 }
 
 export const publicationsList: Publication[] = [
@@ -21,30 +24,41 @@ export const publicationsList: Publication[] = [
     year: 2025,
     tags: ['Machine Learning'],
     links: [
-      { type: 'arxiv', url: 'https://arxiv.org/abs/2503.16678' },
+      { type: 'pdf', url: 'https://arxiv.org/abs/2503.16678' },
       { type: 'github', url: 'https://github.com/afrah/QCPINN' },
     ],
   },
   {
     title:
       'Feature-Action Design Patterns for Storytelling Visualizations with Time Series Data',
-    authors: 'S Khan, et al.',
+    authors:
+      'S Khan, S Jones, B Bach, J Cha, M Chen, J Meikle, J C Roberts, J Thiyagalingam, J Wood, P D Ritsos',
     venue: { name: 'ArXiv', type: 'arxiv' },
     year: 2024,
-    tags: ['Visualization'],
+    tags: ['Visualization', 'Software'],
     links: [
-      { type: 'arxiv', url: 'https://arxiv.org/abs/2402.03116' },
+      { type: 'pdf', url: 'https://arxiv.org/abs/2402.03116' },
       { type: 'npm', url: 'https://www.npmjs.com/package/meta-storyboard' },
       { type: 'github', url: 'https://github.com/saifulkhan/meta-storyboard' },
     ],
   },
   {
-    title: 'FAIR-MAST: A fusion device data management system',
-    authors: 'S Jackson, S Khan, et al.',
+    title: 'FAIR-MAST: A Fusion Device Data Management System',
+    authors:
+      'S Jackson, S Khan, N Cummings, J Hodson, S de Witt, S Pamela, R Akers, J Thiyagalingam, MAST Team',
     venue: { name: 'SoftwareX', type: 'journal' },
     year: 2024,
-    tags: ['Infrastructure'],
-    links: [],
+    tags: ['System'],
+    links: [
+      {
+        type: 'github',
+        url: 'https://github.com/ukaea/fair-mast',
+      },
+      {
+        type: 'pdf',
+        url: 'https://www.sciencedirect.com/science/article/pii/S2352711024002395',
+      },
+    ],
   },
   {
     title:
@@ -53,11 +67,16 @@ export const publicationsList: Publication[] = [
     venue: { name: 'IEEE Access', type: 'journal' },
     year: 2024,
     tags: ['System'],
-    links: [],
+    links: [
+      {
+        type: 'pdf',
+        url: 'https://ieeexplore.ieee.org/document/10734127',
+      },
+    ],
   },
   {
     title:
-      'Creating storytelling visualizations for the Covid-19 pandemic using Feature-Action Design Patterns',
+      'Creating Storytelling Visualizations for the COVID-19 Pandemic Using Feature-Action Design Patterns',
     authors:
       'PD Ritsos, S Khan, S Jones, B Bach, J Meikle, JC Roberts, J Wood, M Chen',
     venue: {
@@ -74,86 +93,126 @@ export const publicationsList: Publication[] = [
     authors: 'S Khan, E Rydow, S Etemaditajbakhsh, K Adamek, W Armour',
     venue: { name: 'IEEE Access', type: 'journal' },
     year: 2023,
-    tags: ['Infrastructure', 'Visualization'],
-    links: [],
+    tags: ['System', 'Visualization'],
+    links: [
+      {
+        type: 'github',
+        url: 'https://github.com/saifulkhan/streaming-vis-perf',
+      },
+      {
+        type: 'pdf',
+        url: 'https://ieeexplore.ieee.org/document/10044667',
+      },
+    ],
   },
   {
     title: 'Dashboard Design Patterns',
     authors:
       'B Bach, E Freeman, A Abdul-Rahman, C Turkay, S Khan, Y Fan, M Chen',
     venue: {
-      name: 'IEEE Transactions on Visualization and Computer Graphics 29 (1), 342-352',
+      name: 'IEEE Transactions on Visualization and Computer Graphics',
       type: 'journal',
     },
     year: 2023,
     tags: ['Visualization'],
-    links: [],
+    links: [
+      {
+        type: 'external',
+        url: 'https://dashboarddesignpatterns.github.io/',
+      },
+      {
+        type: 'pdf',
+        url: 'https://ieeexplore.ieee.org/document/9903550',
+      },
+    ],
   },
   {
     title:
-      'Visualization for epidemiological modelling: challenges, solutions, reflections and recommendations',
-    authors: 'J Dykes, et al.',
+      'Visualization for Epidemiological Modelling: Challenges, Solutions, Reflections and Recommendations',
+    authors:
+      'J Dykes, A Abdul-Rahman, D Archambault, B Bach, R Borgo, M Chen, J Enright, H Fang, EE Firat, E Freeman, T Gönen, C Harris, R Jianu, NW John, S Khan, A Lahiff, RS Laramee, L Matthews, S Mohr, PH Nguyen, AAM Rahat, R Reeve, PD Ritsos, JC Roberts, AS Slingsby, B Swallow, TT Torsney-Weir, C Turkay, R Turner, FP Vidal, Q Wang',
     venue: {
       name: 'Philosophical Transactions of the Royal Society A',
       type: 'journal',
     },
     year: 2022,
     tags: ['Visualization'],
-    links: [],
+    links: [
+      {
+        type: 'pdf',
+        url: 'https://royalsocietypublishing.org/doi/10.1098/rsta.2021.0299',
+      },
+    ],
   },
   {
     title:
-      'A system for organizing, collecting, and presenting open-source intelligence',
+      'A System for Organizing, Collecting, and Presenting Open-Source Intelligence',
     authors: 'S Khan, D Wallom',
     venue: {
       name: 'Journal of Data, Information and Management',
       type: 'journal',
     },
     year: 2022,
-    tags: ['Infrastructure'],
-    links: [],
+    tags: ['System'],
+    links: [
+      {
+        type: 'pdf',
+        url: 'https://link.springer.com/article/10.1007/s42488-022-00068-4',
+      },
+    ],
   },
   {
     title:
       'RAMPVIS: Answering the Challenges of Building Visualisation Capabilities for Large-scale Emergency Responses',
-    authors: 'M Chen, et al.',
+    authors:
+      'M Chen, A Abdul-Rahman, D Archambault, J Dykes, PD Ritsos, A Slingsby, TT Torsney-Weir, C Turkay, B Bach, R Borgo, A Brett, H Fang, R Jianu, S Khan, RS Laramee, L Matthews, PH Nguyen, R Reeve, JC Roberts, FP Vidal, Q Wang, J Wood, K Xu',
     venue: { name: 'Epidemics', type: 'journal' },
     year: 2022,
-    tags: ['Infrastructure', 'Visualization'],
-    links: [],
+    tags: ['System', 'Visualization'],
+    links: [
+      {
+        type: 'pdf',
+        url: 'https://www.sciencedirect.com/science/article/pii/S1755436522000226',
+      },
+    ],
   },
   {
     title:
-      'Rapid development of a data visualization service in an emergency response',
+      'Rapid Development of a Data Visualization Service in an Emergency Response',
     authors: 'S Khan, PH Nguyen, A Abdul-Rahman, E Freeman, C Turkay, M Chen',
     venue: {
-      name: 'IEEE Transactions on Services Computing 15 (3), 1251-1264',
+      name: 'IEEE Transactions on Services Computing',
       type: 'journal',
     },
     year: 2022,
-    tags: ['Visualization', 'Infrastructure'],
-    links: [],
+    tags: ['Visualization', 'System'],
+    links: [
+      {
+        type: 'pdf',
+        url: 'https://ieeexplore.ieee.org/document/9747990',
+      },
+    ],
   },
   {
     title: 'Propagating Visual Designs to Numerous Plots and Dashboards',
     authors:
       'S Khan, PH Nguyen, A Abdul-Rahman, B Bach, M Chen, E Freeman, C Turkay',
     venue: {
-      name: 'IEEE Transactions on Visualization and Computer Graphics 28 (1), 86-95',
+      name: 'IEEE Transactions on Visualization and Computer Graphics',
       type: 'journal',
     },
     year: 2021,
-    tags: ['Visualization', 'Infrastructure'],
-    links: [],
-  },
-  {
-    title:
-      'RAMPVIS: Towards a new methodology for developing visualisation capabilities for large-scale emergency responses',
-    authors: 'M Chen, A Abdul-Rahman, D Archambault, J Dykes, A Slingsby, ...',
-    venue: { name: 'arXiv', type: 'arxiv' },
-    year: 2020,
-    tags: ['Visualization', 'Infrastructure'],
-    links: [{ type: 'arxiv', url: 'https://arxiv.org/abs/2012.04757' }],
+    tags: ['Visualization', 'System'],
+    links: [
+      {
+        type: 'pdf',
+        url: 'https://ieeexplore.ieee.org/document/9552200',
+      },
+      {
+        type: 'github',
+        url: 'https://github.com/saifulkhan/rampvis-ontology-management-ui',
+      },
+    ],
   },
   {
     title:
@@ -165,31 +224,53 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2016,
-    tags: ['Visualization', 'Infrastructure'],
-    links: [],
+    tags: ['Visualization', 'System'],
+    links: [
+      {
+        type: 'pdf',
+        url: 'https://www.sciencedirect.com/science/article/abs/pii/S1474034616300520',
+      },
+      {
+        type: 'github',
+        url: 'https://github.com/saifulkhan/dphil_project_search_interface',
+      },
+      {
+        type: 'github',
+        url: 'https://github.com/saifulkhan/dphil_project_search_index',
+      },
+    ],
   },
   {
     title: 'Visualization Assisted Enterprise Search Engine',
     authors: 'S Khan',
     venue: { name: 'University of Oxford', type: 'book' },
     year: 2015,
-    tags: ['DPhil Thesis', 'Visualization', 'Infrastructure'],
+    tags: ['DPhil Thesis', 'Visualization', 'System'],
     links: [
       {
-        type: 'external',
+        type: 'pdf',
         url: 'https://ora.ox.ac.uk/objects/uuid:d1790b99-c30e-487b-b87e-98d4e3a8b2bb',
       },
     ],
   },
   {
-    title: 'A Study on Glyph-based Visualisation with Dense Visual Context.',
+    title: 'A Study on Glyph-based Visualisation with Dense Visual Context',
     authors: 'S Khan, KJ Proctor, SJ Walton, R Bañares-Alcántara, M Chen',
     venue: {
-      name: 'Computer Graphics & Visual Computing (CGVC)',
+      name: 'Computer Graphics & Visual Computing',
       type: 'conference',
     },
     year: 2014,
     tags: ['Visualization'],
-    links: [],
+    links: [
+      {
+        type: 'pdf',
+        url: 'https://diglib.eg.org/server/api/core/bitstreams/17a466b0-3358-44e2-a93d-c394445dfbb7/content',
+      },
+      {
+        type: 'github',
+        url: 'https://github.com/saifulkhan/dphil_project_search_interface',
+      },
+    ],
   },
 ];

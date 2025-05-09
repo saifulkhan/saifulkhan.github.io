@@ -23,9 +23,9 @@ const Publications = () => {
         <Paper elevation={2} sx={{ p: 4, borderRadius: 4 }}>
           <Typography variant="h5" gutterBottom>
             Selected Publications
-            <Typography variant="body2" color="text.secondary">
+            {/* <Typography variant="body2" color="text.secondary">
               Under construction...
-            </Typography>
+            </Typography> */}
           </Typography>
           <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
           <Stack spacing={0.5} divider={<Divider flexItem />}>
@@ -51,18 +51,26 @@ const Publications = () => {
                     {pub.year}
                   </Typography>
                 </Stack>
+                {/* render authors: blue and bold for 'S Khan', gray for others */}
                 <Typography
                   variant="body2"
-                  color="text.secondary"
                   sx={{ fontSize: 13, ml: 0.5, mb: 0.1 }}
                 >
                   {pub.authors.split(/(,\s*)/).map((part, i) =>
                     part.includes('S Khan') ? (
-                      <span key={i} style={{ textDecoration: 'underline' }}>
+                      <span
+                        key={i}
+                        style={{
+                          textDecoration: 'underline',
+                          color: '#555',
+                        }}
+                      >
                         S Khan
                       </span>
                     ) : (
-                      <span key={i}>{part}</span>
+                      <span key={i} style={{ color: '#555' }}>
+                        {part}
+                      </span>
                     ),
                   )}
                 </Typography>
@@ -72,22 +80,27 @@ const Publications = () => {
                   justifyContent="space-between"
                   sx={{ ml: 0.5, mt: 0.3, mb: 0.5 }}
                 >
+                  {/* render venue: italic and custom color */}
                   <Typography
                     variant="body2"
-                    color="text.secondary"
-                    sx={{ fontSize: 13 }}
+                    sx={{
+                      fontSize: 13,
+                      fontStyle: 'normal',
+                      color: '#1976d2',
+                    }}
                   >
                     {pub.venue && pub.venue.name}
                   </Typography>
                   <Box>
-                    {pub.links && (
-                      <LinkIcons
-                        links={pub.links}
-                        iconSize={16}
-                        spacing={0.5}
-                        inline={true}
-                      />
-                    )}
+                    {pub.links?.sort((a, b) => a.type.localeCompare(b.type)) &&
+                      pub.links.length > 0 && (
+                        <LinkIcons
+                          links={pub.links}
+                          iconSize={16}
+                          spacing={0.5}
+                          inline={true}
+                        />
+                      )}
                   </Box>
                 </Stack>
               </Box>

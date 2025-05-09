@@ -7,7 +7,13 @@ import projectsList from '../data/projectsList';
 const Projects = () => {
   const [filter, setFilter] = React.useState<string | null>(null);
   // Get all tags for TagFilter
+  // flatten all tags from projects list
   const allTags = projectsList.flatMap((p) => p.tags || []);
+  // count each tag occurrence
+  const tagCounts = allTags.reduce<Record<string, number>>((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {});
   const filteredList = filter
     ? projectsList.filter((proj) => proj.tags && proj.tags.includes(filter))
     : projectsList;
@@ -22,12 +28,18 @@ const Projects = () => {
         <Paper elevation={2} sx={{ p: 4 }}>
           <Typography variant="h5" gutterBottom>
             Projects
-            <Typography variant="body2" color="text.secondary">
+            {/* <Typography variant="body2" color="text.secondary">
               Under construction...
-            </Typography>
+            </Typography> */}
           </Typography>
 
-          <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
+          {/* tag filter with tag counts */}
+          <TagFilter
+            tags={allTags}
+            filter={filter}
+            setFilter={setFilter}
+            tagCounts={tagCounts}
+          />
           <Stack spacing={0.5}>
             {filteredList.map((proj, idx) => (
               <React.Fragment key={idx}>
@@ -44,20 +56,6 @@ const Projects = () => {
                     >
                       {proj.title}
                     </Typography>
-                    {proj.status === 'Ongoing' && (
-                      <Chip
-                        label={proj.status}
-                        size="small"
-                        sx={{
-                          height: 20,
-                          fontSize: 12,
-                          backgroundColor: '#f5f5f5',
-                          color: '#00695c',
-                          fontWeight: 500,
-                          ml: 0.5,
-                        }}
-                      />
-                    )}
                   </Box>
                 </Stack>
                 <Typography
@@ -80,7 +78,7 @@ const Projects = () => {
                         <span
                           key={role + i}
                           style={{
-                            color: role === 'Co-I' ? '#333' : '#333',
+                            color: '#1976d2',
                             background: 'white',
                             borderRadius: 4,
                             padding: '0',
@@ -94,6 +92,21 @@ const Projects = () => {
                       ))}
                   </span>
                   <Box>
+                    {/* show ongoing chip before organisation chips */}
+                    {proj.status === 'Ongoing' && (
+                      <Chip
+                        label="Ongoing"
+                        size="small"
+                        sx={{
+                          height: 20,
+                          fontSize: 12,
+                          backgroundColor: '#f5f5f5',
+                          color: '#00695c',
+                          fontWeight: 500,
+                          mr: 0.5,
+                        }}
+                      />
+                    )}
                     {proj.organisation.map((org, i) => (
                       <Chip
                         key={org + i}

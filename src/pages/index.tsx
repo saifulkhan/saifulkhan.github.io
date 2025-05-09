@@ -32,16 +32,20 @@ export default function About() {
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
                 I specialise in developing data-driven <strong>software</strong>{' '}
-                <strong>systems</strong> & <strong>infrastructure</strong> that
-                involve <strong>machine learning</strong> &{' '}
-                <strong>information visualisation</strong>.
+                and <strong>systems</strong> involving{' '}
+                <strong>machine learning</strong> and{' '}
+                <strong>information visualization</strong>.
               </Typography>
               <Box sx={{ mb: 2 }} />
               <Typography variant="body2" color="text.secondary">
-                I am a Computer Scientist at STFC. Previously, I earned my DPhil
-                (PhD) in Engineering Science from the University of Oxford,
-                where I also conducted postdoctoral research under the
-                supervision of{' '}
+                I am a Senior Computer Scientist at Rutherford Appleton
+                Laboratory, Science and Technology Facilities Council (STFC),
+                UK.
+                <br />
+                <br />
+                Previously, I earned my DPhil (PhD) in Engineering Science from
+                the University of Oxford, where I also conducted postdoctoral
+                research under the supervision of{' '}
                 <a href="https://eng.ox.ac.uk/people/min-chen/" target="_blank">
                   Prof. Min Chen
                 </a>

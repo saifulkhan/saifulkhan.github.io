@@ -13,12 +13,12 @@ const projectsList: ProjectEntry[] = [
     title:
       'Visualisation for Machine Learning Supporting Human-Centred Decision-Making',
     description:
-      'Building comprehensive infrastructure to support machine learning with human-centred decision-making.',
+      'Building comprehensive software infrastructure to support machine learning with human-centred decision-making.',
     organisation: ['STFC', 'University of Oxford'],
     status: 'Ongoing',
     role: ['Co-I', 'Researcher'],
-    funding: ['EPSRC', '£0.5m'],
-    tags: ['Visualization', 'Machine Learning', 'Infrastructure'],
+    funding: ['EPSRC', '£0.m'],
+    tags: ['Visualization', 'Machine Learning', 'System'],
   },
   {
     title:
@@ -33,12 +33,12 @@ const projectsList: ProjectEntry[] = [
   {
     title: 'Tokamak Fusion Data Management, Active Learning, and Visualization',
     description:
-      'Infrastructure for tokamak fusion data management, active learning, and visualization in collaboration with the UK Atomic Energy Authority (UKAEA).',
+      'Software infrastructure for tokamak fusion data management, active learning, and visualization in collaboration with the UK Atomic Energy Authority (UKAEA).',
     organisation: ['STFC'],
     status: 'Ongoing',
-    role: ['Co-I', 'Supervisor'],
+    role: ['Co-I', 'Researcher'],
     funding: ['UKAEA', '£64k'],
-    tags: ['Visualization', 'Machine Learning', 'Infrastructure'],
+    tags: ['Visualization', 'Machine Learning', 'System'],
   },
   {
     title: 'Data & Analytics Facility for National Infrastructure (DAFNI)',
@@ -48,7 +48,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['User Liaison'],
     funding: [],
-    tags: ['Infrastructure'],
+    tags: ['System'],
   },
   {
     title: 'Climate Resilience Decision Optimiser (CReDO)',
@@ -56,7 +56,7 @@ const projectsList: ProjectEntry[] = [
       'Development of a digital elicitation tool for climate resilience decision optimiser.',
     organisation: ['STFC'],
     status: 'Ongoing',
-    role: ['Researcher', 'Software Engineer'],
+    role: ['Research Software Engineer'],
     funding: [],
     tags: ['System'],
   },
@@ -76,9 +76,9 @@ const projectsList: ProjectEntry[] = [
       'Short project demonstrating the use of large language models (LLMs) for grant proposal search.',
     organisation: ['STFC', 'UKRI'],
     status: 'Completed',
-    role: ['Researcher', 'Lead Software Engineer'],
+    role: ['Research Software Engineer'],
     funding: [],
-    tags: ['Machine Learning', 'LLM'],
+    tags: ['Machine Learning', 'Large Language Model'],
   },
   {
     title: 'LLM for DataGateway',
@@ -86,19 +86,19 @@ const projectsList: ProjectEntry[] = [
       'Development of a large language model (LLM) for semantic search, clustering, and topic modeling of scientific data.',
     organisation: ['STFC'],
     status: 'Completed',
-    role: ['Researcher', 'Lead Software Engineer'],
+    role: ['Research Software Engineer'],
     funding: [],
-    tags: ['Machine Learning', 'LLM'],
+    tags: ['Machine Learning', 'Large Language Model'],
   },
   {
-    title: 'Square Kilometre Array Streaming and Visualization',
+    title: 'Square Kilometre Array (SKA): Streaming and Visualization',
     description:
       'Development of a comprehensive streaming and visualization infrastructure for SKA.',
     organisation: ['University of Oxford', 'SKA'],
     status: 'Completed',
-    role: ['Researcher', 'Lead Software Engineer'],
+    role: ['Architect', 'Postdoctoral Researcher'],
     funding: ['STFC'],
-    tags: ['Visualization', 'Infrastructure'],
+    tags: ['Visualization', 'System'],
   },
   {
     title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMPVIS)',
@@ -106,9 +106,9 @@ const projectsList: ProjectEntry[] = [
       'Visualisation and visual analytics infrastructure for supporting modeling scientists and epidemiologists during the COVID-19 pandemic.',
     organisation: ['University of Oxford'],
     status: 'Completed',
-    role: ['Researcher', 'Software Architect'],
+    role: ['Architect', 'Postdoctoral Researcher'],
     funding: ['EPSRC'],
-    tags: ['Visualization', 'Infrastructure'],
+    tags: ['Visualization', 'System'],
   },
   {
     title: 'Data, Workflow, and Provenance Management',
@@ -116,9 +116,9 @@ const projectsList: ProjectEntry[] = [
       'Development of a comprehensive infrastructure for data, workflow, and provenance management and search for Horus Security Consultancy Ltd. UK',
     organisation: ['University of Oxford', 'Horus'],
     status: 'Completed',
-    role: ['Researcher', 'Lead Software Engineer'],
+    role: ['Architect', 'Postdoctoral Researcher'],
     funding: ['Innovate UK'],
-    tags: ['Infrastructure'],
+    tags: ['System'],
   },
   {
     title: 'Visual Bulletin Analytics System (VBAS)',
@@ -126,9 +126,9 @@ const projectsList: ProjectEntry[] = [
       'Development of seismological data analytics and visualization infrastructure for International Seismological Centre (ISC), UK.',
     organisation: ['University of Oxford', 'ISC'],
     status: 'Completed',
-    role: ['Researcher', 'Software Engineer'],
+    role: ['Postdoctoral Researcher', 'Research Software Engineer'],
     funding: ['Innovate UK'],
-    tags: ['Visualization', 'Infrastructure'],
+    tags: ['Visualization', 'System'],
   },
   {
     title: 'Visualisation Assisted Enterprise Search Engine',
@@ -136,9 +136,9 @@ const projectsList: ProjectEntry[] = [
       'Prototype enterprise search and visualization infrastructure developed as part of my DPhil research.',
     organisation: ['University of Oxford'],
     status: 'Completed',
-    role: ['DPhil Student'],
+    role: ['DPhil/PhD Student'],
     funding: ["Laing O'Rourke"],
-    tags: ['Visualization', 'Machine Learning', 'Infrastructure'],
+    tags: ['Visualization', 'Machine Learning', 'System'],
   },
   {
     title: 'Oracle Database Development',
@@ -147,7 +147,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Software Engineer'],
     funding: [],
-    tags: ['Infrastructure'],
+    tags: ['System'],
   },
   {
     title: 'AC800 Web',
@@ -157,7 +157,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Software Engineer'],
     funding: [],
-    tags: ['Infrastructure'],
+    tags: ['System'],
   },
 ];
 

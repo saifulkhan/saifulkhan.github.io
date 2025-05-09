@@ -6,26 +6,30 @@ import Tooltip from '@mui/material/Tooltip';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import Box from '@mui/material/Box';
 
+// props for tag filter component
 export interface TagFilterProps {
   tags: string[];
   filter: string | null;
   setFilter: (filter: string | null) => void;
+  tagCounts?: Record<string, number>; // tag to count mapping
   sx?: object;
 }
 
+// tag filter component with tag count badges and improved design
 const TagFilter: React.FC<TagFilterProps> = ({
   tags,
   filter,
   setFilter,
+  tagCounts = {},
   sx,
 }) => {
   // Unique sorted tag options
   const preferredOrder = [
-    'Infrastructure',
     'System',
-    'visualisation',
-    'machine learning',
-    'llm',
+    'Software',
+    'Visualization',
+    'Machine Learning',
+    'LLM',
     // Add more preferred tags here in order if needed
   ];
   const tagOptions = Array.from(new Set(tags))
@@ -54,8 +58,53 @@ const TagFilter: React.FC<TagFilterProps> = ({
         size="small"
       >
         {tagOptions.map((tag) => (
-          <ToggleButton key={tag} value={tag} sx={{ fontSize: 13 }}>
-            {tag}
+          <ToggleButton
+            key={tag}
+            value={tag}
+            sx={{
+              fontSize: 13,
+              px: 2,
+              py: 0.5,
+              borderRadius: 8,
+              textTransform: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 0.5,
+              background: filter === tag ? '#f5f5f5' : '#fff',
+              border:
+                filter === tag ? '1px solid #e0e0e0' : '1px solid #e0e0e0',
+              boxShadow:
+                filter === tag ? '0 1px 8px rgba(124,58,237,0.07)' : 'none',
+              color: filter === tag ? '#222' : '#222',
+              fontWeight: filter === tag ? 600 : 400,
+              transition: 'all 0.15s',
+              '&:hover': {
+                borderColor: '#f3e8ff',
+                background: '#f3e8ff',
+              },
+            }}
+          >
+            <span>{tag}</span>
+            {typeof tagCounts[tag] === 'number' && (
+              <span
+                style={{
+                  marginLeft: 6,
+                  background: '#ede9fe',
+                  color: '#222',
+                  fontWeight: 'normal',
+                  fontSize: 11,
+                  borderRadius: 8,
+                  padding: '0 7px',
+                  minWidth: 22,
+                  display: 'inline-block',
+                  textAlign: 'center',
+                  lineHeight: '20px',
+                }}
+                aria-label={`count for ${tag}`}
+              >
+                {tagCounts[tag]}
+              </span>
+            )}
           </ToggleButton>
         ))}
       </ToggleButtonGroup>
