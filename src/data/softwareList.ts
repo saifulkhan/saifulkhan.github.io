@@ -1,6 +1,6 @@
 const softwareList = [
   {
-    name: 'Meta-storyboard (MSB)',
+    name: 'Meta-StoryBoard (MSB)',
     image: '/msb.png',
     description: [
       {

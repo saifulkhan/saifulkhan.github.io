@@ -216,7 +216,7 @@ export const publicationsList: Publication[] = [
   },
   {
     title:
-      'Ontology-assisted provenance visualization for supporting enterprise search of engineering and business files',
+      'Ontology-assisted Provenance Visualization for Supporting Enterprise Search of Engineering and Business Files',
     authors:
       'S Khan, U Kanturska, T Waters, J Eaton, R Bañares-Alcántara, M Chen',
     venue: {
