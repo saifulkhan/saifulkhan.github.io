@@ -52,10 +52,7 @@ const Publications = () => {
                   </Typography>
                 </Stack>
                 {/* render authors: blue and bold for 'S Khan', gray for others */}
-                <Typography
-                  variant="body2"
-                  sx={{ fontSize: 13, ml: 0.5, mb: 0.1 }}
-                >
+                <Typography variant="body2" sx={{ fontSize: 13, mb: 0.1 }}>
                   {pub.authors.split(/(,\s*)/).map((part, i) =>
                     part.includes('S Khan') ? (
                       <span
@@ -78,7 +75,7 @@ const Publications = () => {
                   direction="row"
                   alignItems="center"
                   justifyContent="space-between"
-                  sx={{ ml: 0.5, mt: 0.3, mb: 0.5 }}
+                  sx={{ mb: 0.5 }}
                 >
                   {/* render venue: italic and custom color */}
                   <Typography
