@@ -47,7 +47,7 @@ const Software = () => (
     <Box sx={{ maxWidth: 900, mx: 'auto', mt: 4, p: 1 }}>
       <Paper elevation={2} sx={{ p: 2 }}>
         <Typography variant="h5" gutterBottom>
-          Software
+          Software & Systems
         </Typography>
 
         <Stack spacing={1.5}>

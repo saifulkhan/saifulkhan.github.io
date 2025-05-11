@@ -31,7 +31,7 @@ export default function About() {
                 {/* Your Title or Position */}
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
-                I specialise in developing data-driven <strong>software</strong>{' '}
+                I specialise in developing <strong>data-driven software</strong>{' '}
                 and <strong>systems</strong> involving{' '}
                 <strong>machine learning</strong> and{' '}
                 <strong>information visualization</strong>.
@@ -65,7 +65,7 @@ export default function About() {
                     style: {
                       objectFit: 'cover',
                       objectPosition: 'center',
-                      transform: 'scale(1.1)',
+                      transform: 'scale(1.0)',
                     },
                   },
                 }}

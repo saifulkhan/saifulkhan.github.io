@@ -17,7 +17,7 @@ const projectsList: ProjectEntry[] = [
     organisation: ['STFC', 'University of Oxford'],
     status: 'Ongoing',
     role: ['Co-I', 'Researcher'],
-    funding: ['EPSRC', '£0.m'],
+    funding: ['EPSRC', '£575k'],
     tags: ['Visualization', 'Machine Learning', 'System'],
   },
   {
