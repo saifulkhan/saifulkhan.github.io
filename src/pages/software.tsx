@@ -3,7 +3,6 @@ import Head from 'next/head';
 import {
   Box,
   Card,
-  CardContent,
   Typography,
   Stack,
   Chip,
@@ -252,8 +251,8 @@ const Software = () => {
                       gap: 1,
                       mt: 2,
                       pt: 1,
-                      borderTop: '1px solid',
-                      borderColor: 'divider',
+                      // borderTop: '1px solid',
+                      // borderColor: 'divider',
                     }}
                   >
                     <Box sx={{ flex: 1, minWidth: 0 }}>

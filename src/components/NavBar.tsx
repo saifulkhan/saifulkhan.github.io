@@ -101,10 +101,10 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
                     fontWeight: isActive(item.path) ? 'bold' : 'normal',
                     textDecoration: 'none',
                     color: 'inherit',
-                    '&:hover': {
-                      textDecoration: 'underline',
-                    },
+                    transition: 'text-decoration 0.2s',
                   }}
+                  onMouseOver={(e) => (e.currentTarget.style.textDecoration = 'underline')}
+                  onMouseOut={(e) => (e.currentTarget.style.textDecoration = 'none')}
                 >
                   {item.name}
                 </a>

@@ -1,23 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
-import {
-  Box,
-  Typography,
-  Stack,
-  Paper,
-  useTheme,
-  useMediaQuery,
-  Divider,
-  styled,
-} from '@mui/material';
+import { Box, Typography, Stack, Paper, Divider } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import TagFilter from '../components/TagFilter';
 import projectsList from '../data/projectsList';
 
 const Projects = () => {
   const [filter, setFilter] = React.useState<string | null>(null);
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   // Get all tags for TagFilter
   const allTags = projectsList.flatMap((p) => p.tags || []);
@@ -125,7 +114,6 @@ const Projects = () => {
                           color: 'text.secondary',
                           mr: 0.5,
                           fontSize: '0.875rem',
-                          fontWeight: 'bold',
                         }}
                       >
                         Role{proj.role.length > 1 ? 's' : ''}:
@@ -155,7 +143,6 @@ const Projects = () => {
                           color: 'text.secondary',
                           mr: 0.5,
                           fontSize: '0.875rem',
-                          fontWeight: 'bold',
                         }}
                       >
                         Org{proj.organisation.length > 1 ? 's' : ''}:
@@ -185,12 +172,18 @@ const Projects = () => {
                           color: 'text.secondary',
                           mr: 0.5,
                           fontSize: '0.875rem',
-                          fontWeight: 'bold',
                         }}
                       >
                         Funding:
                       </Box>
-                      <Box component="span" sx={{ color: 'text.secondary' }}>
+                      <Box
+                        component="span"
+                        sx={{
+                          color: 'text.secondary',
+                          mr: 0.5,
+                          fontSize: '0.875rem',
+                        }}
+                      >
                         {proj.funding.join(', ')}
                       </Box>
                     </Box>

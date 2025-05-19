@@ -49,7 +49,7 @@ const TagFilter: React.FC<TagFilterProps> = ({
         if (indexB === -1) return -1; // b is not preferred, a is
         return indexA - indexB;
       });
-  }, [tags]);
+  }, [tags, preferredOrder]);
   
   const handleFilter = (
     _: React.MouseEvent<HTMLElement>,
