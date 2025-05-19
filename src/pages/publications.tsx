@@ -14,92 +14,149 @@ const Publications = () => {
     ? publicationsList.filter((pub) => pub.tags.includes(filter))
     : publicationsList;
 
+  // Helper function to safely get and sort links
+  const getSortedLinks = (links: NonNullable<Publication['links']>) => {
+    return [...links].sort((a, b) => a.type.localeCompare(b.type));
+  };
+
   return (
     <>
       <Head>
         <title>Publications | Saiful Khan</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <Box sx={{ mt: 4, maxWidth: 900, mx: 'auto', p: 1 }}>
-        <Paper elevation={2} sx={{ p: 4, borderRadius: 4 }}>
-          <Typography variant="h5" gutterBottom>
+      <Box
+        sx={{
+          mt: { xs: 2, sm: 3, md: 4 },
+          maxWidth: 900,
+          mx: 'auto',
+          p: { xs: 1, sm: 2 },
+          pb: 4,
+        }}
+      >
+        <Paper
+          elevation={2}
+          sx={{
+            p: { xs: 2, sm: 3, md: 4 },
+            borderRadius: { xs: 2, md: 4 },
+          }}
+        >
+          <Typography variant="h5" gutterBottom sx={{ mb: 3 }}>
             Selected Publications
-            {/* <Typography variant="body2" color="text.secondary">
-              Under construction...
-            </Typography> */}
           </Typography>
           <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
-          <Stack spacing={0.5} divider={<Divider flexItem />}>
+          <Stack spacing={0.5}>
             {filteredList.map((pub: Publication, idx: number) => (
               <Box key={idx}>
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  justifyContent="space-between"
-                  sx={{ mb: 0.2 }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    sx={{ fontWeight: 500, fontSize: 16 }}
+                <Box sx={{ mb: 1 }}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: { xs: 'column-reverse', sm: 'row' },
+                      justifyContent: 'space-between',
+                      alignItems: { xs: 'flex-start', sm: 'center' },
+                      mb: 0.5,
+                      gap: { xs: 0.5, sm: 2 },
+                    }}
                   >
-                    {pub.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ fontSize: 13, minWidth: 40, textAlign: 'right' }}
-                  >
-                    {pub.year}
-                  </Typography>
-                </Stack>
-                {/* render authors: blue and bold for 'S Khan', gray for others */}
-                <Typography variant="body2" sx={{ fontSize: 13, mb: 0.1 }}>
-                  {pub.authors.split(/(,\s*)/).map((part, i) =>
-                    part.includes('S Khan') ? (
-                      <span
-                        key={i}
-                        style={{
-                          textDecoration: 'underline',
-                          color: '#555',
-                        }}
-                      >
-                        S Khan
-                      </span>
-                    ) : (
-                      <span key={i} style={{ color: '#555' }}>
-                        {part}
-                      </span>
-                    ),
-                  )}
-                </Typography>
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  justifyContent="space-between"
-                  sx={{ mb: 0.5 }}
-                >
-                  {/* render venue: italic and custom color */}
+                    <Typography
+                      variant="subtitle1"
+                      sx={{
+                        fontWeight: 500,
+                        fontSize: { xs: 15, sm: 16 },
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {pub.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{
+                        fontSize: 13,
+                        minWidth: 40,
+                        textAlign: { xs: 'left', sm: 'right' },
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {pub.year}
+                    </Typography>
+                  </Box>
+
+                  {/* Authors */}
                   <Typography
                     variant="body2"
                     sx={{
                       fontSize: 13,
-                      fontStyle: 'normal',
-                      color: '#1976d2',
+                      mb: 1,
+                      color: 'text.secondary',
                     }}
                   >
-                    {pub.venue && pub.venue.name}
+                    {pub.authors.split(/(,\s*)/).map((part, i) =>
+                      part.includes('S Khan') ? (
+                        <span
+                          key={i}
+                          style={{
+                            textDecoration: 'underline',
+                            color: '#1976d2',
+                            fontWeight: 500,
+                          }}
+                        >
+                          S Khan
+                        </span>
+                      ) : (
+                        <span key={i} style={{ color: 'inherit' }}>
+                          {part}
+                        </span>
+                      ),
+                    )}
                   </Typography>
-                  <Box>
-                    {pub.links?.sort((a, b) => a.type.localeCompare(b.type)) &&
-                      pub.links.length > 0 && (
+
+                  {/* Venue and Links */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      flexDirection: { xs: 'column', sm: 'row' },
+                      alignItems: { xs: 'flex-start', sm: 'center' },
+                      justifyContent: 'space-between',
+                      gap: 1,
+                      mt: 1,
+                    }}
+                  >
+                    {/* Venue */}
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        fontSize: 13,
+                        color: 'text.secondary',
+                        fontStyle: 'normal',
+                      }}
+                    >
+                      {pub.venue && pub.venue.name}
+                    </Typography>
+
+                    {/* Links */}
+                    {pub.links && pub.links.length > 0 && (
+                      <Box>
                         <LinkIcons
-                          links={pub.links}
+                          links={getSortedLinks(
+                            pub.links as NonNullable<typeof pub.links>,
+                          )}
                           iconSize={16}
-                          spacing={0.5}
-                          inline={true}
+                          spacing={0.8}
+                          inline
                         />
-                      )}
+                      </Box>
+                    )}
                   </Box>
-                </Stack>
+                </Box>
+
+                {/* Divider */}
+                {idx < filteredList.length - 1 && (
+                  <Box sx={{ mt: 2, mb: 1 }}>
+                    <Divider />
+                  </Box>
+                )}
               </Box>
             ))}
           </Stack>

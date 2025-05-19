@@ -1,19 +1,33 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, Typography, Chip, Stack, Paper } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Stack,
+  Paper,
+  useTheme,
+  useMediaQuery,
+  Divider,
+  styled,
+} from '@mui/material';
+import CircleIcon from '@mui/icons-material/Circle';
 import TagFilter from '../components/TagFilter';
 import projectsList from '../data/projectsList';
 
 const Projects = () => {
   const [filter, setFilter] = React.useState<string | null>(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   // Get all tags for TagFilter
-  // flatten all tags from projects list
   const allTags = projectsList.flatMap((p) => p.tags || []);
-  // count each tag occurrence
+
+  // Count each tag occurrence
   const tagCounts = allTags.reduce<Record<string, number>>((acc, tag) => {
     acc[tag] = (acc[tag] || 0) + 1;
     return acc;
   }, {});
+
   const filteredList = filter
     ? projectsList.filter((proj) => proj.tags && proj.tags.includes(filter))
     : projectsList;
@@ -22,143 +36,174 @@ const Projects = () => {
     <>
       <Head>
         <title>Projects | Saiful Khan</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      <Box sx={{ mt: 4, maxWidth: 900, mx: 'auto', p: 1 }}>
-        <Paper elevation={2} sx={{ p: 4 }}>
-          <Typography variant="h5" gutterBottom>
+      <Box
+        sx={{
+          mt: { xs: 2, sm: 3, md: 4 },
+          maxWidth: 900,
+          mx: 'auto',
+          p: { xs: 1, sm: 2 },
+          pb: 4,
+        }}
+      >
+        <Paper
+          elevation={2}
+          sx={{
+            p: { xs: 2, sm: 3, md: 4 },
+            borderRadius: { xs: 2, md: 4 },
+          }}
+        >
+          <Typography variant="h5" gutterBottom sx={{ mb: 3 }}>
             Projects
-            {/* <Typography variant="body2" color="text.secondary">
-              Under construction...
-            </Typography> */}
           </Typography>
 
-          {/* tag filter with tag counts */}
+          {/* Tag filter with tag counts */}
           <TagFilter
             tags={allTags}
             filter={filter}
             setFilter={setFilter}
             tagCounts={tagCounts}
           />
-          <Stack spacing={0.5}>
+
+          <Stack spacing={3}>
             {filteredList.map((proj, idx) => (
-              <React.Fragment key={idx}>
-                <Stack
-                  direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
-                  sx={{ mb: 0.1 }}
+              <Box key={idx}>
+                {/* Project Title and Status */}
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    mb: 1,
+                    gap: 1,
+                  }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography
-                      variant="subtitle1"
-                      sx={{ mr: proj.status === 'Ongoing' ? 1 : 0 }}
-                    >
-                      {proj.title}
-                    </Typography>
-                  </Box>
-                </Stack>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>
+                    {proj.title}
+                  </Typography>
+                  {proj.status === 'Ongoing' && (
+                    <CircleIcon
+                      sx={{
+                        fontSize: 10,
+                        color: '#81c784',
+                        filter: 'drop-shadow(0 0 4px rgba(129, 199, 132, 0.5))',
+                      }}
+                      aria-label="Ongoing"
+                    />
+                  )}
+                </Box>
+
+                {/* Project Description */}
                 <Typography
                   variant="body2"
                   color="text.secondary"
-                  sx={{ fontSize: 13, mt: 0.1 }}
+                  sx={{ mb: 1.5 }}
                 >
                   {proj.description}
                 </Typography>
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  justifyContent="space-between"
-                  sx={{ mt: 0.1 }}
+
+                {/* Project Metadata - Horizontal Layout */}
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: 1.5,
+                    mt: 1,
+                    alignItems: 'center',
+                  }}
                 >
-                  <span style={{ fontSize: 13, marginBottom: 0, flex: 1 }}>
-                    {proj.role
-                      .filter((r) => r && r.trim())
-                      .map((role, i, arr) => (
-                        <span
-                          key={role + i}
-                          style={{
-                            color: '#1976d2',
-                            background: 'white',
-                            borderRadius: 4,
-                            padding: '0',
-                            marginRight: i < arr.length - 1 ? 4 : 0,
-                            fontWeight: 'normal',
-                          }}
-                        >
-                          {role}
-                          {i < arr.length - 1 ? ',' : ''}
-                        </span>
-                      ))}
-                  </span>
-                  <Box>
-                    {/* show ongoing chip before organisation chips */}
-                    {proj.status === 'Ongoing' && (
-                      <Chip
-                        label="Ongoing"
-                        size="small"
+                  {/* Roles */}
+                  {proj.role && proj.role.length > 0 && (
+                    <Box
+                      component="span"
+                      sx={{ display: 'inline-flex', alignItems: 'center' }}
+                    >
+                      <Box
+                        component="span"
                         sx={{
-                          height: 20,
-                          fontSize: 12,
-                          backgroundColor: '#f5f5f5',
-                          color: '#00695c',
-                          fontWeight: 500,
+                          color: 'text.secondary',
                           mr: 0.5,
+                          fontSize: '0.875rem',
+                          fontWeight: 'bold',
                         }}
-                      />
-                    )}
-                    {proj.organisation.map((org, i) => (
-                      <Chip
-                        key={org + i}
-                        label={org}
-                        size="small"
+                      >
+                        Role{proj.role.length > 1 ? 's' : ''}:
+                      </Box>
+                      <Box
+                        component="span"
                         sx={{
-                          backgroundColor: '#f5f5f5',
-                          color: '#757575',
-                          fontWeight: 500,
-                          fontSize: 11,
-                          height: 20,
+                          color: 'text.secondary',
                           mr: 0.5,
+                          fontSize: '0.875rem',
                         }}
-                      />
-                    ))}
-                    {proj.funding &&
-                      proj.funding.length > 0 &&
-                      proj.funding.map((fund, i) => {
-                        const hasCurrency = /£|\$|€/.test(fund);
-                        return (
-                          <Chip
-                            key={fund + i}
-                            label={fund}
-                            size="small"
-                            sx={{
-                              backgroundColor: hasCurrency
-                                ? '#e8f5e9'
-                                : '#f5f5f5',
-                              color: hasCurrency ? '#388e3c' : '#757575',
-                              fontWeight: 500,
-                              fontSize: 10,
-                              height: 18,
-                              mr: 0.3,
-                              p: 0,
-                            }}
-                          />
-                        );
-                      })}
-                  </Box>
-                </Stack>
-                {idx < projectsList.length - 1 && (
-                  <Box sx={{ my: 0.5 }}>
-                    <hr
-                      style={{
-                        border: 'none',
-                        borderTop: '1px solid #e0e0e0',
-                        margin: 0,
-                      }}
-                    />
+                      >
+                        {proj.role.filter((r) => r && r.trim()).join(', ')}
+                      </Box>
+                    </Box>
+                  )}
+
+                  {/* Organization */}
+                  {proj.organisation && proj.organisation.length > 0 && (
+                    <Box
+                      component="span"
+                      sx={{ display: 'inline-flex', alignItems: 'center' }}
+                    >
+                      <Box
+                        component="span"
+                        sx={{
+                          color: 'text.secondary',
+                          mr: 0.5,
+                          fontSize: '0.875rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        Org{proj.organisation.length > 1 ? 's' : ''}:
+                      </Box>
+                      <Box
+                        component="span"
+                        sx={{
+                          color: 'text.secondary',
+                          mr: 0.5,
+                          fontSize: '0.875rem',
+                        }}
+                      >
+                        {proj.organisation.join(', ')}
+                      </Box>
+                    </Box>
+                  )}
+
+                  {/* Funding */}
+                  {proj.funding && proj.funding.length > 0 && (
+                    <Box
+                      component="span"
+                      sx={{ display: 'inline-flex', alignItems: 'center' }}
+                    >
+                      <Box
+                        component="span"
+                        sx={{
+                          color: 'text.secondary',
+                          mr: 0.5,
+                          fontSize: '0.875rem',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        Funding:
+                      </Box>
+                      <Box component="span" sx={{ color: 'text.secondary' }}>
+                        {proj.funding.join(', ')}
+                      </Box>
+                    </Box>
+                  )}
+                </Box>
+
+                {/* Divider */}
+                {idx < filteredList.length - 1 && (
+                  <Box sx={{ mt: 2, mb: 1 }}>
+                    <Divider />
                   </Box>
                 )}
-              </React.Fragment>
+              </Box>
             ))}
           </Stack>
         </Paper>

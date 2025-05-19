@@ -19,11 +19,31 @@ export default function About() {
     <>
       <Head>
         <title>About | Saiful Khan</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <Box sx={{ maxWidth: 900, mx: 'auto', mt: 6, p: 3 }}>
-        <Paper elevation={2} sx={{ p: 4 }}>
-          <Grid container spacing={4} alignItems="center">
-            <Grid size={{ xs: 12, md: 8 }}>
+      <Box
+        sx={{
+          maxWidth: 900,
+          mx: 'auto',
+          mt: { xs: 2, sm: 4, md: 6 },
+          p: { xs: 1, sm: 2, md: 3 },
+        }}
+      >
+        <Paper
+          elevation={2}
+          sx={{
+            p: { xs: 2, sm: 3, md: 4 },
+            borderRadius: { xs: 2, md: 4 },
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              gap: 4,
+            }}
+          >
+            <Box sx={{ flex: 1 }}>
               <Typography variant="h4" fontWeight="bold" gutterBottom>
                 Saiful Khan
               </Typography>
@@ -46,7 +66,12 @@ export default function About() {
                 Previously, I earned my DPhil (PhD) in Engineering Science from
                 the University of Oxford, where I also conducted postdoctoral
                 research under the supervision of{' '}
-                <a href="https://eng.ox.ac.uk/people/min-chen/" target="_blank">
+                <a
+                  href="https://eng.ox.ac.uk/people/min-chen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#1976d2', textDecoration: 'none' }}
+                >
                   Prof. Min Chen
                 </a>
                 . My industrial experience includes working as a data scientist
@@ -54,24 +79,29 @@ export default function About() {
                 Seismological Centre in the UK. Additionally, I have held
                 software engineering positions at Oracle and ABB in India.
               </Typography>
-            </Grid>
-            <Grid size={{ xs: 12, md: 4 }}>
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexShrink: 0,
+                mt: { xs: 2, md: 0 },
+                mb: { xs: 3, md: 0 },
+                width: { xs: '100%', md: 'auto' },
+              }}
+            >
               <Avatar
                 src="/profile.jpeg"
                 alt="Profile"
-                sx={{ width: 200, height: 200, mx: 'auto', boxShadow: 2 }}
-                slotProps={{
-                  img: {
-                    style: {
-                      objectFit: 'cover',
-                      objectPosition: 'center',
-                      transform: 'scale(1.0)',
-                    },
-                  },
+                sx={{
+                  width: { xs: 150, sm: 180, md: 200 },
+                  height: { xs: 150, sm: 180, md: 200 },
+                  boxShadow: 3,
+                  border: '3px solid #fff',
                 }}
               />
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
 
           <Grid container spacing={4}>
             {/* <Grid size={{ xs: 12, md: 6 }}>
@@ -159,7 +189,16 @@ export default function About() {
                 <span>com</span>
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', gap: 0.1, mr: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                gap: { xs: 0, sm: 0.5 },
+                mr: { xs: 0, sm: 1 },
+                flexWrap: 'wrap',
+                justifyContent: { xs: 'flex-start', sm: 'flex-end' },
+                width: { xs: '100%', sm: 'auto' },
+              }}
+            >
               <IconButton
                 component="a"
                 href="https://www.linkedin.com/in/khansaiful/"
