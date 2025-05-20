@@ -30,7 +30,7 @@ const softwareList = [
         type: 'main',
         value:
           'Received a RAMP Early Career Investigator Award from the Royal Society for my contributions to the RAMP programme.',
-        color: 'blue',
+        color: '#1976d2',
       },
     ],
     links: [

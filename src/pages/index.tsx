@@ -72,7 +72,7 @@ export default function About() {
                   rel="noopener noreferrer"
                   style={{ color: '#1976d2', textDecoration: 'none' }}
                 >
-                  Prof. Min Chen
+                  Prof Min Chen
                 </a>
                 . My industrial experience includes working as a data scientist
                 at Horus Security Consultancy and the International

@@ -68,7 +68,14 @@ const Projects = () => {
                     gap: 1,
                   }}
                 >
-                  <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>
+                  <Typography
+                    variant="subtitle1"
+                    sx={{
+                      fontWeight: 500,
+                      fontSize: { xs: 15, sm: 16 },
+                      lineHeight: 1.3,
+                    }}
+                  >
                     {proj.title}
                   </Typography>
                   {proj.status === 'Ongoing' && (
@@ -87,7 +94,11 @@ const Projects = () => {
                 <Typography
                   variant="body2"
                   color="text.secondary"
-                  sx={{ mb: 1.5 }}
+                  sx={{
+                    fontSize: 14,
+                    mb: 1,
+                    color: 'text.secondary',
+                  }}
                 >
                   {proj.description}
                 </Typography>
@@ -111,9 +122,10 @@ const Projects = () => {
                       <Box
                         component="span"
                         sx={{
-                          color: 'text.secondary',
+                          fontSize: 13,
+                          mb: 1,
                           mr: 0.5,
-                          fontSize: '0.875rem',
+                          color: 'text.secondary',
                         }}
                       >
                         Role{proj.role.length > 1 ? 's' : ''}:
@@ -121,9 +133,9 @@ const Projects = () => {
                       <Box
                         component="span"
                         sx={{
+                          fontSize: 13,
+                          mb: 1,
                           color: 'text.secondary',
-                          mr: 0.5,
-                          fontSize: '0.875rem',
                         }}
                       >
                         {proj.role.filter((r) => r && r.trim()).join(', ')}
@@ -140,9 +152,10 @@ const Projects = () => {
                       <Box
                         component="span"
                         sx={{
-                          color: 'text.secondary',
+                          fontSize: 13,
+                          mb: 1,
                           mr: 0.5,
-                          fontSize: '0.875rem',
+                          color: 'text.secondary',
                         }}
                       >
                         Org{proj.organisation.length > 1 ? 's' : ''}:
@@ -150,9 +163,9 @@ const Projects = () => {
                       <Box
                         component="span"
                         sx={{
+                          fontSize: 13,
+                          mb: 1,
                           color: 'text.secondary',
-                          mr: 0.5,
-                          fontSize: '0.875rem',
                         }}
                       >
                         {proj.organisation.join(', ')}
@@ -169,9 +182,10 @@ const Projects = () => {
                       <Box
                         component="span"
                         sx={{
-                          color: 'text.secondary',
+                          fontSize: 13,
+                          mb: 1,
                           mr: 0.5,
-                          fontSize: '0.875rem',
+                          color: 'text.secondary',
                         }}
                       >
                         Funding:
@@ -179,9 +193,9 @@ const Projects = () => {
                       <Box
                         component="span"
                         sx={{
+                          fontSize: 13,
+                          mb: 1,
                           color: 'text.secondary',
-                          mr: 0.5,
-                          fontSize: '0.875rem',
                         }}
                       >
                         {proj.funding.join(', ')}

@@ -97,7 +97,6 @@ const Publications = () => {
                         <span
                           key={i}
                           style={{
-                            textDecoration: 'underline',
                             color: '#1976d2',
                             fontWeight: 500,
                           }}

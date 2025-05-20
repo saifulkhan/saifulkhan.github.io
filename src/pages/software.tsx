@@ -12,11 +12,12 @@ import {
 } from '@mui/material';
 import Image from 'next/image';
 import LinkIcons, { type LinkIcon } from '../components/LinkIcons';
-// Define types for software list items
+import softwareList from '../data/softwareList';
+
 type DescriptionItem = {
   type: string;
   value: string;
-  color?: string; // Allow any string value for color
+  color?: string;
 };
 
 type SoftwareItem = {
@@ -85,8 +86,6 @@ const ZoomImage: React.FC<ZoomImageProps> = React.memo(
 
 ZoomImage.displayName = 'ZoomImage';
 
-import softwareList from '../data/softwareList';
-
 const Software = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -108,12 +107,7 @@ const Software = () => {
             key={idx}
             variant="body2"
             sx={{
-              color:
-                desc.color === 'blue'
-                  ? 'primary.main'
-                  : desc.color === 'grey'
-                    ? 'text.secondary'
-                    : 'text.secondary',
+              color: desc.color,
               fontSize: desc.color !== 'default' ? 11 : 13,
               lineHeight: 1.4,
             }}
