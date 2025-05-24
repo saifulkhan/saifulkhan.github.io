@@ -70,7 +70,7 @@ export default function About() {
                   href="https://eng.ox.ac.uk/people/min-chen/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: '#1976d2', textDecoration: 'none' }}
+                  style={{ textDecoration: 'none' }}
                 >
                   Prof Min Chen
                 </a>

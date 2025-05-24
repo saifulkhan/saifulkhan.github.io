@@ -17,6 +17,27 @@ const softwareList = [
     funding: ['EPSRC', 'University of Oxford', 'STFC'],
   },
   {
+    name: 'Propagation',
+    image: '/propagation.mp4',
+    description: [
+      {
+        type: 'main',
+        value:
+          'Propagation is an novel approach for efficiently propagating visual designs across multiple plots and dashboards, enabling the reuse of visual designs for new datasets.',
+        color: 'default',
+      },
+    ],
+    links: [
+      {
+        type: 'github',
+        url: 'https://github.com/saifulkhan/rampvis-ontology-management-ui',
+        label: 'UI',
+      },
+      { type: 'external', url: 'https://sites.google.com/view/rampvis/' },
+    ],
+    funding: ['EPSRC', 'University of Oxford'],
+  },
+  {
     name: 'Rapid Assistance in Modelling the Pandemic Visualisation (RAMPVIS)',
     image: '/rampvis.png',
     description: [
