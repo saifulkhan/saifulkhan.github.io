@@ -65,11 +65,6 @@ const softwareList = [
         url: 'https://github.com/ScottishCovidResponse/rampvis-api',
         label: 'Server',
       },
-      {
-        type: 'github',
-        url: 'https://github.com/saifulkhan/rampvis-ontology-management-ui',
-        label: 'UI',
-      },
       { type: 'external', url: 'https://sites.google.com/view/rampvis/' },
     ],
     funding: ['EPSRC', 'University of Oxford'],
