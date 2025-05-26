@@ -11,7 +11,7 @@ export interface ProjectEntry {
 const projectsList: ProjectEntry[] = [
   {
     title:
-      'Visualisation for Machine Learning Supporting Human-Centred Decision-Making',
+      'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
     description:
       'Building comprehensive software infrastructure to support machine learning with human-centred decision-making.',
     organisation: ['STFC', 'University of Oxford'],

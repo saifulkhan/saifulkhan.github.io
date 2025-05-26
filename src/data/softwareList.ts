@@ -1,4 +1,5 @@
 const softwareList = [
+
   {
     name: 'Meta-StoryBoard (MSB)',
     image: '/msb.png',
@@ -17,13 +18,30 @@ const softwareList = [
     funding: ['EPSRC', 'University of Oxford', 'STFC'],
   },
   {
+    name: 'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
+    image: '/vis4ml4hd.png',
+    description: [
+      {
+        type: 'main',
+        value:
+          'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD) is a software infrastructure for supporting machine learning with human-centred decision-making (under development).',
+        color: 'default',
+      },
+    ],
+    links: [
+      { type: 'github', url: 'https://github.com/saifulkhan/synthetic-shape-data-generator', label: 'API' },
+      { type: 'github', url: 'https://github.com/saifulkhan/vis4ml4hd', label: 'System' },
+    ],
+    funding: ['EPSRC', 'University of Oxford', 'STFC'],
+  },
+  {
     name: 'Propagation',
     image: '/propagation.mp4',
     description: [
       {
         type: 'main',
         value:
-          'Propagation is an novel approach for efficiently propagating visual designs across multiple plots and dashboards, enabling the reuse of visual designs for new datasets.',
+          'Propagation is a novel approach for efficiently propagating visual designs across multiple plots and dashboards, enabling the reuse of visual designs for new datasets. It was developed during the RAMPVIS project (below).',
         color: 'default',
       },
     ],
@@ -33,7 +51,6 @@ const softwareList = [
         url: 'https://github.com/saifulkhan/rampvis-ontology-management-ui',
         label: 'UI',
       },
-      { type: 'external', url: 'https://sites.google.com/view/rampvis/' },
     ],
     funding: ['EPSRC', 'University of Oxford'],
   },
