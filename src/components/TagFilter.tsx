@@ -27,7 +27,7 @@ const TagFilter: React.FC<TagFilterProps> = ({
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  
+
   // Unique sorted tag options
   const preferredOrder = [
     'System',
@@ -37,7 +37,7 @@ const TagFilter: React.FC<TagFilterProps> = ({
     'LLM',
     // Add more preferred tags here in order if needed
   ];
-  
+
   const tagOptions = useMemo(() => {
     return Array.from(new Set(tags))
       .filter((tag) => tag !== 'DPhil Thesis')
@@ -50,7 +50,7 @@ const TagFilter: React.FC<TagFilterProps> = ({
         return indexA - indexB;
       });
   }, [tags, preferredOrder]);
-  
+
   const handleFilter = (
     _: React.MouseEvent<HTMLElement>,
     newFilter: string | null,
@@ -60,13 +60,16 @@ const TagFilter: React.FC<TagFilterProps> = ({
   // Mobile view - show simple list of tags with horizontal scroll
   if (isMobile) {
     return (
-      <Box 
-        sx={[{
-          display: 'flex',
-          flexDirection: 'column',
-          mb: 2,
-          width: '100%',
-        }, ...(Array.isArray(sx) ? sx : [sx])]}
+      <Box
+        sx={[
+          {
+            display: 'flex',
+            flexDirection: 'column',
+            mb: 2,
+            width: '100%',
+          },
+          ...(Array.isArray(sx) ? sx : [sx]),
+        ]}
         role="group"
         aria-label="Filter by tag"
       >
@@ -90,12 +93,12 @@ const TagFilter: React.FC<TagFilterProps> = ({
                 onClick={() => setFilter(null)}
                 disabled={filter === null}
                 size="small"
-                sx={{ 
-                  border: '1px solid #ccc', 
+                sx={{
+                  border: '1px solid #ccc',
                   background: '#fff',
                   '&:hover': {
                     backgroundColor: theme.palette.action.hover,
-                  }
+                  },
                 }}
               >
                 <RestartAltIcon fontSize="small" />
@@ -109,13 +112,16 @@ const TagFilter: React.FC<TagFilterProps> = ({
 
   // Desktop view - original toggle button group
   return (
-    <Box 
-      sx={[{
-        display: 'flex',
-        alignItems: 'center',
-        mb: 2,
-        width: '100%',
-      }, ...(Array.isArray(sx) ? sx : [sx])]}
+    <Box
+      sx={[
+        {
+          display: 'flex',
+          alignItems: 'center',
+          mb: 2,
+          width: '100%',
+        },
+        ...(Array.isArray(sx) ? sx : [sx]),
+      ]}
       role="group"
       aria-label="Filter by tag"
     >
@@ -178,7 +184,7 @@ const TagFilter: React.FC<TagFilterProps> = ({
           </ToggleButton>
         ))}
       </ToggleButtonGroup>
-      
+
       <Box sx={{ ml: 2 }}>
         <Tooltip title="Reset filter">
           <span>

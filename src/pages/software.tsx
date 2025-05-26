@@ -1,4 +1,5 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import {
   Box,
@@ -9,14 +10,18 @@ import {
   Paper,
   useTheme,
   useMediaQuery,
-  Dialog,
-  DialogContent,
-  IconButton,
 } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import Image from 'next/image';
 import LinkIcons, { type LinkIcon } from '../components/LinkIcons';
 import softwareList from '../data/softwareList';
+
+// Dynamically import the ZoomImage component with no SSR to prevent hydration issues with videos
+const ZoomImage = dynamic<{ src: string; alt: string; size: number }>(
+  () => import('../components/ZoomImage'),
+  {
+    ssr: false,
+    loading: () => <Box sx={{ width: 120, height: 120 }} />, // Show a placeholder while loading
+  },
+);
 
 type DescriptionItem = {
   type: string;
@@ -31,221 +36,6 @@ type SoftwareItem = {
   links: Array<{ type: string; url: string }>;
   funding?: string[];
 };
-
-interface ZoomImageProps {
-  src: string;
-  alt: string;
-  size?: number;
-}
-
-const isVideo = (src: string) => {
-  const videoExtensions = ['.mp4', '.webm', '.ogg'];
-  return videoExtensions.some((ext) => src.toLowerCase().endsWith(ext));
-};
-
-const ZoomImage: React.FC<ZoomImageProps> = React.memo(
-  ({ src, alt, size = 120 }) => {
-    const [open, setOpen] = useState(false);
-    const videoRef = React.useRef<HTMLVideoElement>(null);
-    const isVideoFile = isVideo(src);
-    const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
-    const handleClickOpen = () => {
-      setOpen(true);
-    };
-
-    const handleClose = () => {
-      setOpen(false);
-      if (isVideoFile && videoRef.current) {
-        videoRef.current.pause();
-        videoRef.current.currentTime = 0;
-      }
-    };
-
-    const handleMouseEnter = useCallback(() => {
-      if (isVideoFile && videoRef.current) {
-        videoRef.current
-          .play()
-          .catch((e) => console.error('Video play failed:', e));
-      }
-    }, [isVideoFile]);
-
-    const handleMouseLeave = useCallback(() => {
-      if (isVideoFile && videoRef.current) {
-        videoRef.current.pause();
-        videoRef.current.currentTime = 0;
-      }
-    }, [isVideoFile]);
-
-    const containerStyle = {
-      display: 'inline-block',
-      width: size,
-      height: size,
-      minWidth: size,
-      minHeight: size,
-      borderRadius: 2,
-      overflow: 'hidden',
-      cursor: 'pointer',
-      zIndex: 1,
-      position: 'relative',
-      '&:hover': {
-        '&::after': {
-          opacity: 0.5,
-        },
-      },
-      '&::after': {
-        content: '""',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        opacity: 0,
-        transition: 'opacity 0.2s ease-in-out',
-        pointerEvents: 'none',
-        borderRadius: 8,
-      },
-      backgroundColor: isVideoFile ? '#000' : 'transparent',
-      '& video': {
-        objectFit: 'contain',
-        width: '100%',
-        height: '100%',
-        borderRadius: 8,
-      },
-    };
-
-    return (
-      <>
-        <Box
-          component="span"
-          sx={containerStyle}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onClick={handleClickOpen}
-          aria-label={`View larger ${isVideoFile ? 'video' : 'image'} of ${alt}`}
-        >
-          {isVideoFile ? (
-            <video
-              ref={videoRef}
-              src={src}
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              style={{
-                objectFit: 'contain',
-                width: '100%',
-                height: '100%',
-                borderRadius: 8,
-              }}
-              aria-label={alt}
-            />
-          ) : (
-            <Image
-              src={src}
-              alt={alt}
-              width={size}
-              height={size}
-              style={{
-                objectFit: 'contain',
-                width: '100%',
-                height: '100%',
-                borderRadius: 8,
-              }}
-              priority={false}
-              loading="lazy"
-            />
-          )}
-        </Box>
-
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          fullScreen={fullScreen}
-          maxWidth="md"
-          fullWidth
-          PaperProps={{
-            sx: {
-              bgcolor: 'transparent',
-              boxShadow: 'none',
-              maxWidth: '90vw',
-              maxHeight: '90vh',
-              m: 0,
-              overflow: 'hidden',
-            },
-          }}
-        >
-          <IconButton
-            aria-label="close"
-            onClick={handleClose}
-            sx={{
-              position: 'fixed',
-              right: 16,
-              top: 16,
-              color: 'white',
-              bgcolor: 'rgba(0, 0, 0, 0.5)',
-              '&:hover': {
-                bgcolor: 'rgba(0, 0, 0, 0.7)',
-              },
-              zIndex: 1400,
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-          <DialogContent
-            sx={{
-              p: 0,
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              bgcolor: 'rgba(0, 0, 0, 0.8)',
-              '&:hover': {
-                cursor: 'pointer',
-              },
-            }}
-            onClick={handleClose}
-          >
-            {isVideoFile ? (
-              <video
-                src={src}
-                autoPlay
-                controls
-                loop
-                muted={false}
-                playsInline
-                style={{
-                  maxWidth: '100%',
-                  maxHeight: '90vh',
-                  objectFit: 'contain',
-                }}
-                onClick={(e) => e.stopPropagation()}
-                aria-label={`Video: ${alt}`}
-              />
-            ) : (
-              <Image
-                src={src}
-                alt={alt}
-                width={1200}
-                height={800}
-                style={{
-                  maxWidth: '100%',
-                  maxHeight: '90vh',
-                  objectFit: 'contain',
-                }}
-                onClick={(e) => e.stopPropagation()}
-                priority={false}
-              />
-            )}
-          </DialogContent>
-        </Dialog>
-      </>
-    );
-  },
-);
-
-ZoomImage.displayName = 'ZoomImage';
 
 const Software = () => {
   const theme = useTheme();
@@ -362,24 +152,26 @@ const Software = () => {
                 }}
                 variant="outlined"
               >
-                <Box
-                  sx={{
-                    width: getImageSize(),
-                    height: getImageSize(),
-                    mr: { xs: 0, sm: 2 },
-                    mb: { xs: 1.5, sm: 0 },
-                    flexShrink: 0,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <ZoomImage
-                    src={sw.image}
-                    alt={`${sw.name} logo`}
-                    size={getImageSize()}
-                  />
-                </Box>
+                {sw.image && (
+                  <Box
+                    sx={{
+                      width: getImageSize(),
+                      height: getImageSize(),
+                      mr: { xs: 0, sm: 2 },
+                      mb: { xs: 1.5, sm: 0 },
+                      flexShrink: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <ZoomImage
+                      src={sw.image}
+                      alt={`${sw.name} logo`}
+                      size={getImageSize()}
+                    />
+                  </Box>
+                )}
 
                 <Box sx={{ flex: 1, minWidth: 0 }}>
                   <Typography

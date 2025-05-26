@@ -1,8 +1,7 @@
 const softwareList = [
-
   {
     name: 'Meta-StoryBoard (MSB)',
-    image: '/msb.png',
+    image: '/ml-story.png',
     description: [
       {
         type: 'main',
@@ -24,13 +23,27 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD) is a software infrastructure for supporting machine learning with human-centred decision-making (under development).',
+          'Visualisation for Machine Learning for Human-centred Decision-making is a software infrastructure for supporting machine learning with human-centred decision-making.',
         color: 'default',
+      },
+      {
+        type: 'main',
+        value:
+          'This project is currently under development. The synthetic image data generator tool with controllable entropy to study embedding is available on GitHub.',
+        color: 'tomato',
       },
     ],
     links: [
-      { type: 'github', url: 'https://github.com/saifulkhan/synthetic-shape-data-generator', label: 'API' },
-      { type: 'github', url: 'https://github.com/saifulkhan/vis4ml4hd', label: 'System' },
+      {
+        type: 'github',
+        url: 'https://github.com/saifulkhan/synthetic-shape-data-generator',
+        label: 'API',
+      },
+      {
+        type: 'github',
+        url: 'https://github.com/saifulkhan/vis4ml4hd',
+        label: 'System',
+      },
     ],
     funding: ['EPSRC', 'University of Oxford', 'STFC'],
   },
