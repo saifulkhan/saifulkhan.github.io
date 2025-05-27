@@ -18,7 +18,7 @@ export interface Publication {
 export const publicationsList: Publication[] = [
   {
     title:
-      'QCPINN: Quantum-Classical Physics-Informed Neural Networks for Solving PDEs',
+      'Learning Fluid-Structure Interaction Dynamics with Physics-Informed Neural Networks and Immersed Boundary Methods',
     authors: 'A Farea, S Khan, R Daryani, EC Ersan, MS Celebi',
     venue: { name: 'ArXiv', type: 'arxiv' },
     year: 2025,
