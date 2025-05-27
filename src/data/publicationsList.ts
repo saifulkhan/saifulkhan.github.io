@@ -19,6 +19,17 @@ export const publicationsList: Publication[] = [
   {
     title:
       'QCPINN: Quantum-Classical Physics-Informed Neural Networks for Solving PDEs',
+    authors: 'A Farea, S Khan, R Daryani, EC Ersan, MS Celebi',
+    venue: { name: 'ArXiv', type: 'arxiv' },
+    year: 2025,
+    tags: ['Machine Learning'],
+    links: [
+      { type: 'pdf', url: 'https://www.arxiv.org/abs/2505.18565'},
+    ],
+  },
+  {
+    title:
+      'QCPINN: Quantum-Classical Physics-Informed Neural Networks for Solving PDEs',
     authors: 'A Farea, S Khan, MS Celebi',
     venue: { name: 'ArXiv', type: 'arxiv' },
     year: 2025,
