@@ -29,7 +29,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'This project is currently under development. The synthetic image data generator tool with controllable entropy to study embedding is available on GitHub.',
+          'This project is currently under development. The tool for generating synthetic image data with controllable entropy to study embedding is available on GitHub. The other repositories will be made available gradually',
         color: 'tomato',
       },
     ],

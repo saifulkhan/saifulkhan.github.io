@@ -35,7 +35,7 @@ const projectsList: ProjectEntry[] = [
     description:
       'Software infrastructure for tokamak fusion data management, active learning, and visualization in collaboration with the UK Atomic Energy Authority (UKAEA).',
     organisation: ['STFC'],
-    status: 'Ongoing',
+    status: 'Completed',
     role: ['Co-I'],
     funding: ['UKAEA', '£64k'],
     tags: ['Visualization', 'Machine Learning', 'System'],
