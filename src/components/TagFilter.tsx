@@ -30,12 +30,10 @@ const TagFilter: React.FC<TagFilterProps> = ({
 
   // Unique sorted tag options
   const preferredOrder = [
-    'System',
-    'Software',
-    'Visualization',
+    'Software Engineering',
     'Machine Learning',
+    'Visualization',
     'LLM',
-    // Add more preferred tags here in order if needed
   ];
 
   const tagOptions = useMemo(() => {

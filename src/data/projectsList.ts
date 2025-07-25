@@ -18,7 +18,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['Co-I', 'Researcher'],
     funding: ['EPSRC', '£575k'],
-    tags: ['Visualization', 'Machine Learning', 'System'],
+    tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
   },
   {
     title:
@@ -31,16 +31,6 @@ const projectsList: ProjectEntry[] = [
     tags: ['Machine Learning'],
   },
   {
-    title: 'Tokamak Fusion Data Management, Active Learning, and Visualization',
-    description:
-      'Software infrastructure for tokamak fusion data management, active learning, and visualization in collaboration with the UK Atomic Energy Authority (UKAEA).',
-    organisation: ['STFC'],
-    status: 'Completed',
-    role: ['Co-I'],
-    funding: ['UKAEA', '£64k'],
-    tags: ['Visualization', 'Machine Learning', 'System'],
-  },
-  {
     title: 'Data & Analytics Facility for National Infrastructure (DAFNI)',
     description:
       'User liaison and support for national infrastructure analytics and data management.',
@@ -48,17 +38,27 @@ const projectsList: ProjectEntry[] = [
     status: 'Ongoing',
     role: ['User Liaison'],
     funding: [],
-    tags: ['System'],
+    tags: ['Software Engineering'],
+  },
+  {
+    title: 'Tokamak Fusion Data Management, Active Learning, and Visualization',
+    description:
+      'Software infrastructure for tokamak fusion data management, active learning, and visualization in collaboration with the UK Atomic Energy Authority (UKAEA).',
+    organisation: ['STFC'],
+    status: 'Completed',
+    role: ['Co-I'],
+    funding: ['UKAEA', '£64k'],
+    tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
   },
   {
     title: 'Climate Resilience Decision Optimiser (CReDO)',
     description:
       'Development of a digital elicitation tool for climate resilience decision optimiser.',
     organisation: ['STFC'],
-    status: 'Ongoing',
+    status: 'Completed',
     role: ['Research Software Engineer'],
     funding: [],
-    tags: ['System'],
+    tags: ['Software Engineering'],
   },
   {
     title: 'HyperCrop',
@@ -98,7 +98,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Postdoctoral Researcher'],
     funding: ['STFC'],
-    tags: ['Visualization', 'System'],
+    tags: ['Visualization', 'Software Engineering'],
   },
   {
     title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMPVIS)',
@@ -108,7 +108,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Postdoctoral Researcher'],
     funding: ['EPSRC'],
-    tags: ['Visualization', 'System'],
+    tags: ['Visualization', 'Software Engineering'],
   },
   {
     title: 'Data, Workflow, and Provenance Management',
@@ -118,7 +118,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Postdoctoral Researcher'],
     funding: ['Innovate UK'],
-    tags: ['System'],
+    tags: ['Software Engineering'],
   },
   {
     title: 'Visual Bulletin Analytics System (VBAS)',
@@ -128,7 +128,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Postdoctoral Researcher'],
     funding: ['Innovate UK'],
-    tags: ['Visualization', 'System'],
+    tags: ['Visualization', 'Software Engineering'],
   },
   {
     title: 'Visualisation Assisted Enterprise Search Engine',
@@ -138,7 +138,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['DPhil/PhD Student'],
     funding: ["Laing O'Rourke"],
-    tags: ['Visualization', 'Machine Learning', 'System'],
+    tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
   },
   {
     title: 'Oracle Database Development',
@@ -147,7 +147,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Software Engineer'],
     funding: [],
-    tags: ['System'],
+    tags: ['Software Engineering'],
   },
   {
     title: 'AC800 Web',
@@ -157,7 +157,7 @@ const projectsList: ProjectEntry[] = [
     status: 'Completed',
     role: ['Software Engineer'],
     funding: [],
-    tags: ['System'],
+    tags: ['Software Engineering'],
   },
 ];
 

@@ -23,14 +23,13 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'Visualisation for Machine Learning for Human-centred Decision-making is a software infrastructure for supporting machine learning with human-centred decision-making.',
+          'VIS4ML4HD is a software infrastructure for supporting machine learning with human-centred decision-making.',
         color: 'default',
       },
       {
         type: 'main',
-        value:
-          'This project is currently under development. The tool for generating synthetic image data with controllable entropy to study embedding is available on GitHub. The other repositories will be made available gradually',
-        color: 'tomato',
+        value: 'Under development.',
+        color: '#1976d2',
       },
     ],
     links: [

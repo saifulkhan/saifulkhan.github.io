@@ -16,6 +16,17 @@ export interface Publication {
 }
 
 export const publicationsList: Publication[] = [
+    {
+    title:
+      'Data Virtualization for Machine Learning',
+    authors: 'S Khan, J Chakraborty, P Beaucamp, N Bhujel, M Chen',
+    venue: { name: 'International Conference on Services Computing (SCC 2025), Hong Kong', type: 'arxiv' },
+    year: 2025,
+    tags: ['Machine Learning', 'Software Engineering'],
+    links: [
+      { type: 'pdf', url: 'https://www.arxiv.org/abs/2507.17293'},
+    ],
+  },
   {
     title:
       'Learning Fluid-Structure Interaction Dynamics with Physics-Informed Neural Networks and Immersed Boundary Methods',
@@ -40,13 +51,24 @@ export const publicationsList: Publication[] = [
     ],
   },
   {
+    title: 'An Open Data Service for Supporting Research in Machine Learning on Tokamak Data ',
+    authors: 'S Jackson, S Khan, N Cummings, J Hodson, S Witt, S Pamela, R Akers, J Thiyagalingam, MAST Team',
+    venue: { name: 'IEEE Transactions on Plasma Science', type: 'journal' },
+    year: 2025,
+    tags: ['Machine Learning', 'Software Engineering'],
+    links: [
+      { type: 'pdf', url: 'https://doi.org/10.1109/TPS.2025.3583419' },
+      { type: 'github', url: 'https://github.com/ukaea/fair-mast' },
+    ],
+  },
+  {
     title:
       'Feature-Action Design Patterns for Storytelling Visualizations with Time Series Data',
     authors:
       'S Khan, S Jones, B Bach, J Cha, M Chen, J Meikle, J C Roberts, J Thiyagalingam, J Wood, P D Ritsos',
     venue: { name: 'ArXiv', type: 'arxiv' },
     year: 2024,
-    tags: ['Visualization', 'Software'],
+    tags: ['Visualization', 'Software Engineering'],
     links: [
       { type: 'pdf', url: 'https://arxiv.org/abs/2402.03116' },
       { type: 'npm', url: 'https://www.npmjs.com/package/meta-storyboard' },
@@ -59,7 +81,7 @@ export const publicationsList: Publication[] = [
       'S Jackson, S Khan, N Cummings, J Hodson, S de Witt, S Pamela, R Akers, J Thiyagalingam, MAST Team',
     venue: { name: 'SoftwareX', type: 'journal' },
     year: 2024,
-    tags: ['System'],
+    tags: ['Software Engineering'],
     links: [
       {
         type: 'github',
@@ -77,7 +99,7 @@ export const publicationsList: Publication[] = [
     authors: 'S Jackson, N Cummings, S Khan',
     venue: { name: 'IEEE Access', type: 'journal' },
     year: 2024,
-    tags: ['System'],
+    tags: ['Software Engineering'],
     links: [
       {
         type: 'pdf',
@@ -104,7 +126,7 @@ export const publicationsList: Publication[] = [
     authors: 'S Khan, E Rydow, S Etemaditajbakhsh, K Adamek, W Armour',
     venue: { name: 'IEEE Access', type: 'journal' },
     year: 2023,
-    tags: ['System', 'Visualization'],
+    tags: ['Software Engineering', 'Visualization'],
     links: [
       {
         type: 'github',
@@ -164,7 +186,7 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2022,
-    tags: ['System'],
+    tags: ['Software Engineering'],
     links: [
       {
         type: 'pdf',
@@ -179,7 +201,7 @@ export const publicationsList: Publication[] = [
       'M Chen, A Abdul-Rahman, D Archambault, J Dykes, PD Ritsos, A Slingsby, TT Torsney-Weir, C Turkay, B Bach, R Borgo, A Brett, H Fang, R Jianu, S Khan, RS Laramee, L Matthews, PH Nguyen, R Reeve, JC Roberts, FP Vidal, Q Wang, J Wood, K Xu',
     venue: { name: 'Epidemics', type: 'journal' },
     year: 2022,
-    tags: ['System', 'Visualization'],
+    tags: ['Software Engineering', 'Visualization'],
     links: [
       {
         type: 'pdf',
@@ -196,7 +218,7 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2022,
-    tags: ['Visualization', 'System'],
+    tags: ['Visualization', 'Software Engineering'],
     links: [
       {
         type: 'pdf',
@@ -213,7 +235,7 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2021,
-    tags: ['Visualization', 'System'],
+    tags: ['Visualization', 'Software Engineering'],
     links: [
       {
         type: 'pdf',
@@ -235,7 +257,7 @@ export const publicationsList: Publication[] = [
       type: 'journal',
     },
     year: 2016,
-    tags: ['Visualization', 'System'],
+    tags: ['Visualization', 'Software Engineering'],
     links: [
       {
         type: 'pdf',
@@ -256,7 +278,7 @@ export const publicationsList: Publication[] = [
     authors: 'S Khan',
     venue: { name: 'University of Oxford', type: 'book' },
     year: 2015,
-    tags: ['DPhil Thesis', 'Visualization', 'System'],
+    tags: ['DPhil Thesis', 'Visualization', 'Software Engineering'],
     links: [
       {
         type: 'pdf',

@@ -51,10 +51,10 @@ export default function About() {
                 {/* Your Title or Position */}
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
-                I specialise in developing <strong>data-driven software</strong>{' '}
-                and <strong>systems</strong> involving{' '}
-                <strong>machine learning</strong> and{' '}
-                <strong>information visualization</strong>.
+                I specialise in developing data-driven software{' '} 
+                and systems involving{' '}
+                machine learning  and{' '}
+                information visualization.
               </Typography>
               <Box sx={{ mb: 2 }} />
               <Typography variant="body2" color="text.secondary">
