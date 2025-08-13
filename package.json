@@ -5,10 +5,11 @@
   "scripts": {
     "format": "prettier --write .",
     "dev": "next dev",
-    "build": "rm -rf out && next build && mkdir -p out && cp -r .next/static out/.next/ && touch out/.nojekyll",
+    "build": "next build",
+    "export": "rm -rf out && next build && mkdir -p out && cp -r .next/static out/.next/ && touch out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "yarn build && gh-pages -d out -b gh-pages --dotfiles"
+    "deploy": "yarn export && gh-pages -d out -b gh-pages --dotfiles"
   },
   "dependencies": {
     "@babel/runtime": "^7.27.0",
