@@ -5,10 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* Google Analytics: G-KPWP9BPQKL is Measurement ID */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=G-KPWP9BPQKL`}
-        />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=G-KPWP9BPQKL`} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

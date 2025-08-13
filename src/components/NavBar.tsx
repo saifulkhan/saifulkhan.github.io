@@ -73,22 +73,12 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
     <AppBar position="static" color="default" elevation={0}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {isMobile && (
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2 }}
-          >
+          <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2 }}>
             <MenuIcon />
           </IconButton>
         )}
 
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{ flexGrow: isMobile ? 1 : 0 }}
-        >
+        <Typography variant="h6" component="div" sx={{ flexGrow: isMobile ? 1 : 0 }}>
           {/* Optional: Add your name or logo here */}
         </Typography>
 

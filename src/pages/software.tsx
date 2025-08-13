@@ -1,27 +1,15 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import {
-  Box,
-  Card,
-  Typography,
-  Stack,
-  Chip,
-  Paper,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
+import { Box, Card, Typography, Stack, Chip, Paper, useTheme, useMediaQuery } from '@mui/material';
 import LinkIcons, { type LinkIcon } from '../components/LinkIcons';
 import softwareList from '../data/softwareList';
 
 // Dynamically import the ZoomImage component with no SSR to prevent hydration issues with videos
-const ZoomImage = dynamic<{ src: string; alt: string; size: number }>(
-  () => import('../components/ZoomImage'),
-  {
-    ssr: false,
-    loading: () => <Box sx={{ width: 120, height: 120 }} />, // Show a placeholder while loading
-  },
-);
+const ZoomImage = dynamic<{ src: string; alt: string; size: number }>(() => import('../components/ZoomImage'), {
+  ssr: false,
+  loading: () => <Box sx={{ width: 120, height: 120 }} />, // Show a placeholder while loading
+});
 
 type DescriptionItem = {
   type: string;
@@ -104,10 +92,7 @@ const Software = () => {
     <>
       <Head>
         <title>Software | Saiful Khan</title>
-        <meta
-          name="description"
-          content="List of software and systems developed by Saiful Khan"
-        />
+        <meta name="description" content="List of software and systems developed by Saiful Khan" />
       </Head>
       <Box
         sx={{
@@ -139,12 +124,9 @@ const Software = () => {
                   alignItems: { xs: 'center', sm: 'flex-start' },
                   p: { xs: 1.5, sm: 2 },
                   borderRadius: 2,
-                  transition: theme.transitions.create(
-                    ['box-shadow', 'transform'],
-                    {
-                      duration: theme.transitions.duration.shorter,
-                    },
-                  ),
+                  transition: theme.transitions.create(['box-shadow', 'transform'], {
+                    duration: theme.transitions.duration.shorter,
+                  }),
                   '&:hover': {
                     boxShadow: theme.shadows[8],
                     transform: 'translateY(-2px)',
@@ -165,11 +147,7 @@ const Software = () => {
                       justifyContent: 'center',
                     }}
                   >
-                    <ZoomImage
-                      src={sw.image}
-                      alt={`${sw.name} logo`}
-                      size={getImageSize()}
-                    />
+                    <ZoomImage src={sw.image} alt={`${sw.name} logo`} size={getImageSize()} />
                   </Box>
                 )}
 
@@ -202,9 +180,7 @@ const Software = () => {
                       // borderColor: 'divider',
                     }}
                   >
-                    <Box sx={{ flex: 1, minWidth: 0 }}>
-                      {renderFundingChips(sw.funding)}
-                    </Box>
+                    <Box sx={{ flex: 1, minWidth: 0 }}>{renderFundingChips(sw.funding)}</Box>
 
                     {sw.links && sw.links.length > 0 && (
                       <Box
@@ -214,12 +190,7 @@ const Software = () => {
                           flexShrink: 0,
                         }}
                       >
-                        <LinkIcons
-                          links={sw.links as LinkIcon[]}
-                          iconSize={18}
-                          spacing={0.75}
-                          inline
-                        />
+                        <LinkIcons links={sw.links as LinkIcon[]} iconSize={18} spacing={0.75} inline />
                       </Box>
                     )}
                   </Box>

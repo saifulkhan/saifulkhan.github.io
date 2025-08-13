@@ -10,9 +10,7 @@ const Publications = () => {
   const [filter, setFilter] = useState<string | null>(null);
   // Get all tags for TagFilter
   const allTags = publicationsList.flatMap((p) => p.tags || []);
-  const filteredList = filter
-    ? publicationsList.filter((pub) => pub.tags.includes(filter))
-    : publicationsList;
+  const filteredList = filter ? publicationsList.filter((pub) => pub.tags.includes(filter)) : publicationsList;
 
   // Helper function to safely get and sort links
   const getSortedLinks = (links: NonNullable<Publication['links']>) => {
@@ -55,7 +53,7 @@ const Publications = () => {
                       flexDirection: { xs: 'column-reverse', sm: 'row' },
                       justifyContent: 'space-between',
                       alignItems: { xs: 'flex-start', sm: 'center' },
-                      mb: 0.0,
+                      mb: 1.0,
                       gap: { xs: 0.5, sm: 2 },
                     }}
                   >
@@ -91,7 +89,7 @@ const Publications = () => {
                     sx={{
                       fontSize: 14,
                       mb: 0.0,
-                      color: 'text.primary',
+                      color: 'text.secondary',
                     }}
                   >
                     {pub.authors.split(/(,\s*)/).map((part, i) =>
@@ -140,9 +138,7 @@ const Publications = () => {
                     {pub.links && pub.links.length > 0 && (
                       <Box>
                         <LinkIcons
-                          links={getSortedLinks(
-                            pub.links as NonNullable<typeof pub.links>,
-                          )}
+                          links={getSortedLinks(pub.links as NonNullable<typeof pub.links>)}
                           iconSize={14}
                           spacing={0.8}
                           inline

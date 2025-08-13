@@ -10,8 +10,7 @@ export interface ProjectEntry {
 
 const projectsList: ProjectEntry[] = [
   {
-    title:
-      'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
+    title: 'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
     description:
       'Building comprehensive software infrastructure to support machine learning with human-centred decision-making.',
     organisation: ['STFC', 'University of Oxford'],
@@ -32,8 +31,7 @@ const projectsList: ProjectEntry[] = [
   },
   {
     title: 'Data & Analytics Facility for National Infrastructure (DAFNI)',
-    description:
-      'User liaison and support for national infrastructure analytics and data management.',
+    description: 'User liaison and support for national infrastructure analytics and data management.',
     organisation: ['STFC'],
     status: 'Ongoing',
     role: ['User Liaison'],
@@ -52,8 +50,7 @@ const projectsList: ProjectEntry[] = [
   },
   {
     title: 'Climate Resilience Decision Optimiser (CReDO)',
-    description:
-      'Development of a digital elicitation tool for climate resilience decision optimiser.',
+    description: 'Development of a digital elicitation tool for climate resilience decision optimiser.',
     organisation: ['STFC'],
     status: 'Completed',
     role: ['Research Software Engineer'],
@@ -72,8 +69,7 @@ const projectsList: ProjectEntry[] = [
   },
   {
     title: 'LLM for Grant Proposal Search',
-    description:
-      'Short project demonstrating the use of large language models (LLMs) for grant proposal search.',
+    description: 'Short project demonstrating the use of large language models (LLMs) for grant proposal search.',
     organisation: ['STFC', 'UKRI'],
     status: 'Completed',
     role: ['Data Scientist'],
@@ -92,8 +88,7 @@ const projectsList: ProjectEntry[] = [
   },
   {
     title: 'Square Kilometre Array (SKA): Streaming and Visualization',
-    description:
-      'Development of a comprehensive streaming and visualization infrastructure for SKA.',
+    description: 'Development of a comprehensive streaming and visualization infrastructure for SKA.',
     organisation: ['University of Oxford', 'SKA'],
     status: 'Completed',
     role: ['Postdoctoral Researcher'],
@@ -132,8 +127,7 @@ const projectsList: ProjectEntry[] = [
   },
   {
     title: 'Visualisation Assisted Enterprise Search Engine',
-    description:
-      'Prototype enterprise search and visualization infrastructure developed as part of my DPhil research.',
+    description: 'Prototype enterprise search and visualization infrastructure developed as part of my DPhil research.',
     organisation: ['University of Oxford'],
     status: 'Completed',
     role: ['DPhil/PhD Student'],
@@ -151,8 +145,7 @@ const projectsList: ProjectEntry[] = [
   },
   {
     title: 'AC800 Web',
-    description:
-      "Development of software for ABB's industrial automation controller.",
+    description: "Development of software for ABB's industrial automation controller.",
     organisation: ['ABB'],
     status: 'Completed',
     role: ['Software Engineer'],

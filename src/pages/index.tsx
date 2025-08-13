@@ -1,13 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import {
-  Box,
-  Typography,
-  Avatar,
-  Paper,
-  Divider,
-  IconButton,
-} from '@mui/material';
+import { Box, Typography, Avatar, Paper, Divider, IconButton } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -51,17 +44,16 @@ export default function About() {
                 {/* Your Title or Position */}
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
-                I specialise in developing data-driven software and systems involving machine learning and information visualization.
+                I specialise in developing data-driven software and systems involving machine learning and information
+                visualization.
               </Typography>
               <Typography variant="body2" color="text.primary" sx={{ mb: 1 }}>
-                I am a Senior Computer Scientist at Rutherford Appleton
-                Laboratory, Science and Technology Facilities Council (STFC),
-                UK.
+                I am a Senior Computer Scientist at Rutherford Appleton Laboratory, Science and Technology Facilities
+                Council (STFC), UK.
               </Typography>
               <Typography variant="body2" color="text.primary" sx={{ mb: 2 }}>
-                Previously, I earned my DPhil (PhD) in Engineering Science from
-                the University of Oxford where I also conducted postdoctoral
-                research under the supervision of{' '}
+                Previously, I earned my DPhil (PhD) in Engineering Science from the University of Oxford where I also
+                conducted postdoctoral research under the supervision of{' '}
                 <a
                   href="https://eng.ox.ac.uk/people/min-chen/"
                   target="_blank"
@@ -70,10 +62,9 @@ export default function About() {
                 >
                   Prof Min Chen
                 </a>
-                . My industrial experience includes working as a data scientist
-                at Horus Security Consultancy and the International
-                Seismological Centre in the UK. Additionally, I have held
-                software engineering positions at Oracle and ABB in India.
+                . My industrial experience includes working as a data scientist at Horus Security Consultancy and the
+                International Seismological Centre in the UK. Additionally, I have held software engineering positions
+                at Oracle and ABB in India.
               </Typography>
             </Box>
             <Box
@@ -150,12 +141,7 @@ export default function About() {
             }}
           >
             <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
-              <IconButton
-                component="a"
-                aria-label="Email"
-                sx={{ mr: 1 }}
-                disabled
-              >
+              <IconButton component="a" aria-label="Email" sx={{ mr: 1 }} disabled>
                 <EmailIcon fontSize="medium" />
               </IconButton>
               <Typography
@@ -163,15 +149,7 @@ export default function About() {
                 color="text.secondary"
                 sx={{ userSelect: 'auto', cursor: 'pointer' }}
                 onClick={() => {
-                  const e = [
-                    'saiful',
-                    '.',
-                    'etc',
-                    '@',
-                    'gmail',
-                    '.',
-                    'com',
-                  ].join('');
+                  const e = ['saiful', '.', 'etc', '@', 'gmail', '.', 'com'].join('');
                   window.location.href = `mailto:${e}`;
                 }}
               >

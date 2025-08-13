@@ -1,12 +1,5 @@
 import React, { useCallback, useState, useRef } from 'react';
-import {
-  Box,
-  Dialog,
-  DialogContent,
-  IconButton,
-  useTheme,
-  useMediaQuery,
-} from '@mui/material';
+import { Box, Dialog, DialogContent, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import Image from 'next/image';
 
@@ -48,9 +41,7 @@ const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, size = 120 }) => {
 
   const handleMouseEnter = useCallback(() => {
     if (isVideoFile && videoRef.current) {
-      videoRef.current
-        .play()
-        .catch((e) => console.error('Video play failed:', e));
+      videoRef.current.play().catch((e) => console.error('Video play failed:', e));
     }
   }, [isVideoFile]);
 

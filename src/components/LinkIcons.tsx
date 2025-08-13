@@ -25,16 +25,9 @@ interface LinkIconsProps {
  * linkicons: renders a row of icon buttons for each link in the links array
  * supports github, npm, external, arxiv, and pdf link types
  */
-const LinkIcons: React.FC<LinkIconsProps> = ({
-  links,
-  iconSize = 16,
-  spacing = 0.5,
-  inline = true,
-}) => {
+const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0.5, inline = true }) => {
   return (
-    <span
-      style={{ display: inline ? 'inline-flex' : 'flex', alignItems: 'center' }}
-    >
+    <span style={{ display: inline ? 'inline-flex' : 'flex', alignItems: 'center' }}>
       {links.map((link, i) => {
         if (link.type === 'github') {
           return (

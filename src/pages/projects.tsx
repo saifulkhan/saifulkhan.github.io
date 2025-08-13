@@ -27,16 +27,14 @@ const Projects = () => {
   };
 
   // Categorize projects into grants and other projects
-  const grants = projectsList.filter((proj) => 
-    proj.funding && proj.funding.length > 1 
-  // && 
-   // proj.funding.some(f => f.includes('£') || f.includes('$') || 
+  const grants = projectsList.filter(
+    (proj) => proj.funding && proj.funding.length > 1,
+    // &&
+    // proj.funding.some(f => f.includes('£') || f.includes('$') ||
     // ['EPSRC', 'UKRI', 'UKAEA', 'STFC', 'Innovate UK'].includes(f))
   );
-  
-  const projects = projectsList.filter((proj) => 
-    !grants.includes(proj)
-  );
+
+  const projects = projectsList.filter((proj) => !grants.includes(proj));
 
   // Get all tags for TagFilter
   const allTags = projectsList.flatMap((p) => p.tags || []);
@@ -47,13 +45,9 @@ const Projects = () => {
     return acc;
   }, {});
 
-  const filteredGrants = filter
-    ? grants.filter((proj) => proj.tags && proj.tags.includes(filter))
-    : grants;
-    
-  const filteredProjects = filter
-    ? projects.filter((proj) => proj.tags && proj.tags.includes(filter))
-    : projects;
+  const filteredGrants = filter ? grants.filter((proj) => proj.tags && proj.tags.includes(filter)) : grants;
+
+  const filteredProjects = filter ? projects.filter((proj) => proj.tags && proj.tags.includes(filter)) : projects;
 
   return (
     <>
@@ -83,12 +77,7 @@ const Projects = () => {
           </Typography>
 
           {/* Tag filter with tag counts */}
-          <TagFilter
-            tags={allTags}
-            filter={filter}
-            setFilter={setFilter}
-            tagCounts={tagCounts}
-          />
+          <TagFilter tags={allTags} filter={filter} setFilter={setFilter} tagCounts={tagCounts} />
 
           {/* Grants Section */}
           {filteredGrants.length > 0 && (
@@ -114,6 +103,7 @@ const Projects = () => {
                           fontWeight: 500,
                           fontSize: { xs: 15, sm: 16 },
                           lineHeight: 1.3,
+                          color: 'text.primary',
                         }}
                       >
                         {proj.title}
@@ -160,7 +150,7 @@ const Projects = () => {
                             variant="body2"
                             sx={{
                               fontSize: 13,
-                              color: 'text.primary',
+                              color: 'text.secondary',
                             }}
                           >
                             {proj.role.filter((r) => r && r.trim()).join(', ')}
@@ -176,7 +166,7 @@ const Projects = () => {
                             variant="body2"
                             sx={{
                               fontSize: 13,
-                              color: 'text.primary',
+                              color: 'text.secondary',
                             }}
                           >
                             {proj.organisation.join(', ')}
@@ -193,7 +183,7 @@ const Projects = () => {
                             component="div"
                             sx={{
                               fontSize: 13,
-                              color: 'text.primary',
+                              color: 'text.secondary',
                               display: 'flex',
                               alignItems: 'center',
                               gap: 0.5,
@@ -201,9 +191,7 @@ const Projects = () => {
                             }}
                           >
                             {proj.funding.map((fund, i) => (
-                              <React.Fragment key={i}>
-                                {formatFundingItem(fund)}
-                              </React.Fragment>
+                              <React.Fragment key={i}>{formatFundingItem(fund)}</React.Fragment>
                             ))}
                           </Typography>
                         </Box>
@@ -305,7 +293,7 @@ const Projects = () => {
                             variant="body2"
                             sx={{
                               fontSize: 13,
-                              color: 'text.primary',
+                              color: 'text.secondary',
                             }}
                           >
                             {proj.role.filter((r) => r && r.trim()).join(', ')}
@@ -321,7 +309,7 @@ const Projects = () => {
                             variant="body2"
                             sx={{
                               fontSize: 13,
-                              color: 'text.primary',
+                              color: 'text.secondary',
                             }}
                           >
                             {proj.organisation.join(', ')}
@@ -338,7 +326,7 @@ const Projects = () => {
                             component="div"
                             sx={{
                               fontSize: 13,
-                              color: 'text.primary',
+                              color: 'text.secondary',
                               display: 'flex',
                               alignItems: 'center',
                               gap: 0.5,
@@ -346,9 +334,7 @@ const Projects = () => {
                             }}
                           >
                             {proj.funding.map((fund, i) => (
-                              <React.Fragment key={i}>
-                                {formatFundingItem(fund)}
-                              </React.Fragment>
+                              <React.Fragment key={i}>{formatFundingItem(fund)}</React.Fragment>
                             ))}
                           </Typography>
                         </Box>

@@ -18,23 +18,12 @@ export interface TagFilterProps {
 }
 
 // tag filter component with tag count badges and improved design
-const TagFilter: React.FC<TagFilterProps> = ({
-  tags,
-  filter,
-  setFilter,
-  tagCounts = {},
-  sx,
-}) => {
+const TagFilter: React.FC<TagFilterProps> = ({ tags, filter, setFilter, tagCounts = {}, sx }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   // Unique sorted tag options
-  const preferredOrder = [
-    'Software Engineering',
-    'Machine Learning',
-    'Visualization',
-    'LLM',
-  ];
+  const preferredOrder = ['Software Engineering', 'Machine Learning', 'Visualization', 'LLM'];
 
   const tagOptions = useMemo(() => {
     return Array.from(new Set(tags))
@@ -49,10 +38,7 @@ const TagFilter: React.FC<TagFilterProps> = ({
       });
   }, [tags, preferredOrder]);
 
-  const handleFilter = (
-    _: React.MouseEvent<HTMLElement>,
-    newFilter: string | null,
-  ) => {
+  const handleFilter = (_: React.MouseEvent<HTMLElement>, newFilter: string | null) => {
     setFilter(newFilter);
   };
   // Mobile view - show simple list of tags with horizontal scroll
