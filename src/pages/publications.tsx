@@ -41,21 +41,21 @@ const Publications = () => {
             borderRadius: { xs: 2, md: 4 },
           }}
         >
-          <Typography variant="h5" gutterBottom sx={{ mb: 3 }}>
+          <Typography variant="h5" gutterBottom sx={{ mb: 3, fontWeight: 600 }}>
             Selected Publications
           </Typography>
           <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
-          <Stack spacing={0.5}>
+          <Stack spacing={3}>
             {filteredList.map((pub: Publication, idx: number) => (
               <Box key={idx}>
-                <Box sx={{ mb: 1 }}>
+                <Box sx={{ mb: 0.5 }}>
                   <Box
                     sx={{
                       display: 'flex',
                       flexDirection: { xs: 'column-reverse', sm: 'row' },
                       justifyContent: 'space-between',
                       alignItems: { xs: 'flex-start', sm: 'center' },
-                      mb: 0.5,
+                      mb: 0.0,
                       gap: { xs: 0.5, sm: 2 },
                     }}
                   >
@@ -65,18 +65,20 @@ const Publications = () => {
                         fontWeight: 500,
                         fontSize: { xs: 15, sm: 16 },
                         lineHeight: 1.3,
+                        color: 'text.primary',
                       }}
                     >
                       {pub.title}
                     </Typography>
                     <Typography
                       variant="body2"
-                      color="text.secondary"
                       sx={{
-                        fontSize: 13,
+                        fontSize: 14,
                         minWidth: 40,
                         textAlign: { xs: 'left', sm: 'right' },
                         whiteSpace: 'nowrap',
+                        color: 'text.primary',
+                        fontWeight: 500,
                       }}
                     >
                       {pub.year}
@@ -87,9 +89,9 @@ const Publications = () => {
                   <Typography
                     variant="body2"
                     sx={{
-                      fontSize: 13,
-                      mb: 1,
-                      color: 'text.secondary',
+                      fontSize: 14,
+                      mb: 0.0,
+                      color: 'text.primary',
                     }}
                   >
                     {pub.authors.split(/(,\s*)/).map((part, i) =>
@@ -97,8 +99,8 @@ const Publications = () => {
                         <span
                           key={i}
                           style={{
-                            color: '#1976d2',
-                            fontWeight: 500,
+                            color: 'inherit',
+                            textDecoration: 'underline',
                           }}
                         >
                           S Khan
@@ -118,17 +120,17 @@ const Publications = () => {
                       flexDirection: { xs: 'column', sm: 'row' },
                       alignItems: { xs: 'flex-start', sm: 'center' },
                       justifyContent: 'space-between',
-                      gap: 1,
-                      mt: 1,
+                      // gap: 1,
+                      // mt: 1,
                     }}
                   >
                     {/* Venue */}
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: 13,
-                        color: 'text.secondary',
-                        fontStyle: 'normal',
+                        fontSize: 14,
+                        color: 'text.primary',
+                        fontWeight: 500,
                       }}
                     >
                       {pub.venue && pub.venue.name}
@@ -141,7 +143,7 @@ const Publications = () => {
                           links={getSortedLinks(
                             pub.links as NonNullable<typeof pub.links>,
                           )}
-                          iconSize={16}
+                          iconSize={14}
                           spacing={0.8}
                           inline
                         />
@@ -152,7 +154,7 @@ const Publications = () => {
 
                 {/* Divider */}
                 {idx < filteredList.length - 1 && (
-                  <Box sx={{ mt: 2, mb: 1 }}>
+                  <Box sx={{ mt: 1, mb: 0.0 }}>
                     <Divider />
                   </Box>
                 )}

@@ -1,4 +1,4 @@
-const repoName = 'saifulkhan.github.io'; // repo nameyarn build
+const repoName = 'saifulkhan.github.io'; // repo name
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {

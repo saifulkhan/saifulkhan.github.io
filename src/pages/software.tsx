@@ -111,25 +111,25 @@ const Software = () => {
       </Head>
       <Box
         sx={{
+          mt: { xs: 2, sm: 3, md: 4 },
           maxWidth: 900,
           mx: 'auto',
-          mt: { xs: 2, sm: 3, md: 4 },
-          px: { xs: 1, sm: 2 },
+          p: { xs: 1, sm: 2 },
           pb: 4,
         }}
       >
         <Paper
           elevation={2}
           sx={{
-            p: { xs: 1.5, sm: 2, md: 3 },
-            borderRadius: 2,
+            p: { xs: 2, sm: 3, md: 4 },
+            borderRadius: { xs: 2, md: 4 },
           }}
         >
-          <Typography variant="h5" gutterBottom sx={{ mb: 3 }}>
+          <Typography variant="h5" gutterBottom sx={{ mb: 3, fontWeight: 600 }}>
             Software & Systems
           </Typography>
 
-          <Stack spacing={2}>
+          <Stack spacing={3}>
             {softwareList.map((sw, idx) => (
               <Card
                 key={`${sw.name}-${idx}`}

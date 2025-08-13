@@ -16,36 +16,36 @@ const softwareList = [
     ],
     funding: ['EPSRC', 'University of Oxford', 'STFC'],
   },
-  {
-    name: 'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
-    image: '/vis4ml4hd.png',
-    description: [
-      {
-        type: 'main',
-        value:
-          'VIS4ML4HD is a software infrastructure for supporting machine learning with human-centred decision-making.',
-        color: 'default',
-      },
-      {
-        type: 'main',
-        value: 'Under development.',
-        color: '#1976d2',
-      },
-    ],
-    links: [
-      {
-        type: 'github',
-        url: 'https://github.com/saifulkhan/synthetic-shape-data-generator',
-        label: 'API',
-      },
-      {
-        type: 'github',
-        url: 'https://github.com/saifulkhan/vis4ml4hd',
-        label: 'System',
-      },
-    ],
-    funding: ['EPSRC', 'University of Oxford', 'STFC'],
-  },
+  // {
+  //   name: 'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
+  //   image: '/vis4ml4hd.png',
+  //   description: [
+  //     {
+  //       type: 'main',
+  //       value:
+  //         'VIS4ML4HD is a software infrastructure for supporting machine learning with human-centred decision-making.',
+  //       color: 'default',
+  //     },
+  //     {
+  //       type: 'main',
+  //       value: 'Under development.',
+  //       color: '#1976d2',
+  //     },
+  //   ],
+  //   links: [
+  //     {
+  //       type: 'github',
+  //       url: 'https://github.com/saifulkhan/synthetic-shape-data-generator',
+  //       label: 'API',
+  //     },
+  //     {
+  //       type: 'github',
+  //       url: 'https://github.com/saifulkhan/vis4ml4hd',
+  //       label: 'System',
+  //     },
+  //   ],
+  //   funding: ['EPSRC', 'University of Oxford', 'STFC'],
+  // },
   {
     name: 'Propagation',
     image: '/propagation.mp4',
@@ -110,11 +110,7 @@ const softwareList = [
       },
     ],
     links: [{ type: 'github', url: 'https://github.com/saifulkhan/isc_vbas' }],
-    funding: [
-      'Innovate UK',
-      'University of Oxford',
-      'International Seismological Centre',
-    ],
+    funding: ['Innovate UK', 'University of Oxford', 'International Seismological Centre'],
   },
   {
     name: 'Visualisation Assisted Enterprose Search Engine',

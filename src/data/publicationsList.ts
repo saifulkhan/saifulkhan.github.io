@@ -16,33 +16,27 @@ export interface Publication {
 }
 
 export const publicationsList: Publication[] = [
-    {
-    title:
-      'Data Virtualization for Machine Learning',
+  {
+    title: 'Data Virtualization for Machine Learning',
     authors: 'S Khan, J Chakraborty, P Beaucamp, N Bhujel, M Chen',
     venue: { name: 'International Conference on Services Computing (SCC 2025), Hong Kong', type: 'arxiv' },
     year: 2025,
     tags: ['Machine Learning', 'Software Engineering'],
-    links: [
-      { type: 'pdf', url: 'https://www.arxiv.org/abs/2507.17293'},
-    ],
+    links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2507.17293' }],
   },
   {
     title:
       'Learning Fluid-Structure Interaction Dynamics with Physics-Informed Neural Networks and Immersed Boundary Methods',
     authors: 'A Farea, S Khan, R Daryani, EC Ersan, MS Celebi',
-    venue: { name: 'ArXiv', type: 'arxiv' },
+    venue: { name: '(under review)', type: 'arxiv' },
     year: 2025,
     tags: ['Machine Learning'],
-    links: [
-      { type: 'pdf', url: 'https://www.arxiv.org/abs/2505.18565'},
-    ],
+    links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2505.18565' }],
   },
   {
-    title:
-      'QCPINN: Quantum-Classical Physics-Informed Neural Networks for Solving PDEs',
+    title: 'QCPINN: Quantum-Classical Physics-Informed Neural Networks for Solving PDEs',
     authors: 'A Farea, S Khan, MS Celebi',
-    venue: { name: 'ArXiv', type: 'arxiv' },
+    venue: { name: '(under review)', type: 'arxiv' },
     year: 2025,
     tags: ['Machine Learning'],
     links: [
@@ -62,10 +56,8 @@ export const publicationsList: Publication[] = [
     ],
   },
   {
-    title:
-      'Feature-Action Design Patterns for Storytelling Visualizations with Time Series Data',
-    authors:
-      'S Khan, S Jones, B Bach, J Cha, M Chen, J Meikle, J C Roberts, J Thiyagalingam, J Wood, P D Ritsos',
+    title: 'Feature-Action Design Patterns for Storytelling Visualizations with Time Series Data',
+    authors: 'S Khan, S Jones, B Bach, J Cha, M Chen, J Meikle, J C Roberts, J Thiyagalingam, J Wood, P D Ritsos',
     venue: { name: 'ArXiv', type: 'arxiv' },
     year: 2024,
     tags: ['Visualization', 'Software Engineering'],
@@ -77,8 +69,7 @@ export const publicationsList: Publication[] = [
   },
   {
     title: 'FAIR-MAST: A Fusion Device Data Management System',
-    authors:
-      'S Jackson, S Khan, N Cummings, J Hodson, S de Witt, S Pamela, R Akers, J Thiyagalingam, MAST Team',
+    authors: 'S Jackson, S Khan, N Cummings, J Hodson, S de Witt, S Pamela, R Akers, J Thiyagalingam, MAST Team',
     venue: { name: 'SoftwareX', type: 'journal' },
     year: 2024,
     tags: ['Software Engineering'],
@@ -94,8 +85,7 @@ export const publicationsList: Publication[] = [
     ],
   },
   {
-    title:
-      'Streaming Technologies and Serialization Protocols: Empirical Performance Analysis',
+    title: 'Streaming Technologies and Serialization Protocols: Empirical Performance Analysis',
     authors: 'S Jackson, N Cummings, S Khan',
     venue: { name: 'IEEE Access', type: 'journal' },
     year: 2024,
@@ -108,12 +98,10 @@ export const publicationsList: Publication[] = [
     ],
   },
   {
-    title:
-      'Creating Storytelling Visualizations for the COVID-19 Pandemic Using Feature-Action Design Patterns',
-    authors:
-      'PD Ritsos, S Khan, S Jones, B Bach, J Meikle, JC Roberts, J Wood, M Chen',
+    title: 'Creating Storytelling Visualizations for the COVID-19 Pandemic Using Feature-Action Design Patterns',
+    authors: 'PD Ritsos, S Khan, S Jones, B Bach, J Meikle, JC Roberts, J Wood, M Chen',
     venue: {
-      name: 'IEEE VIS: Visualization & Visual Analytics Workshop',
+      name: 'IEEE VIS: Visualization and Visual Analytics Workshop',
       type: 'conference',
     },
     year: 2023,
@@ -121,8 +109,7 @@ export const publicationsList: Publication[] = [
     links: [],
   },
   {
-    title:
-      'Web Performance Evaluation of High Volume Streaming Data Visualization',
+    title: 'Web Performance Evaluation of High Volume Streaming Data Visualization',
     authors: 'S Khan, E Rydow, S Etemaditajbakhsh, K Adamek, W Armour',
     venue: { name: 'IEEE Access', type: 'journal' },
     year: 2023,
@@ -140,8 +127,7 @@ export const publicationsList: Publication[] = [
   },
   {
     title: 'Dashboard Design Patterns',
-    authors:
-      'B Bach, E Freeman, A Abdul-Rahman, C Turkay, S Khan, Y Fan, M Chen',
+    authors: 'B Bach, E Freeman, A Abdul-Rahman, C Turkay, S Khan, Y Fan, M Chen',
     venue: {
       name: 'IEEE Transactions on Visualization and Computer Graphics',
       type: 'journal',
@@ -160,8 +146,7 @@ export const publicationsList: Publication[] = [
     ],
   },
   {
-    title:
-      'Visualization for Epidemiological Modelling: Challenges, Solutions, Reflections and Recommendations',
+    title: 'Visualization for Epidemiological Modelling: Challenges, Solutions, Reflections and Recommendations',
     authors:
       'J Dykes, A Abdul-Rahman, D Archambault, B Bach, R Borgo, M Chen, J Enright, H Fang, EE Firat, E Freeman, T Gönen, C Harris, R Jianu, NW John, S Khan, A Lahiff, RS Laramee, L Matthews, S Mohr, PH Nguyen, AAM Rahat, R Reeve, PD Ritsos, JC Roberts, AS Slingsby, B Swallow, TT Torsney-Weir, C Turkay, R Turner, FP Vidal, Q Wang',
     venue: {
@@ -178,8 +163,7 @@ export const publicationsList: Publication[] = [
     ],
   },
   {
-    title:
-      'A System for Organizing, Collecting, and Presenting Open-Source Intelligence',
+    title: 'A System for Organizing, Collecting, and Presenting Open-Source Intelligence',
     authors: 'S Khan, D Wallom',
     venue: {
       name: 'Journal of Data, Information and Management',
@@ -210,8 +194,7 @@ export const publicationsList: Publication[] = [
     ],
   },
   {
-    title:
-      'Rapid Development of a Data Visualization Service in an Emergency Response',
+    title: 'Rapid Development of a Data Visualization Service in an Emergency Response',
     authors: 'S Khan, PH Nguyen, A Abdul-Rahman, E Freeman, C Turkay, M Chen',
     venue: {
       name: 'IEEE Transactions on Services Computing',
@@ -228,8 +211,7 @@ export const publicationsList: Publication[] = [
   },
   {
     title: 'Propagating Visual Designs to Numerous Plots and Dashboards',
-    authors:
-      'S Khan, PH Nguyen, A Abdul-Rahman, B Bach, M Chen, E Freeman, C Turkay',
+    authors: 'S Khan, PH Nguyen, A Abdul-Rahman, B Bach, M Chen, E Freeman, C Turkay',
     venue: {
       name: 'IEEE Transactions on Visualization and Computer Graphics',
       type: 'journal',
@@ -250,8 +232,7 @@ export const publicationsList: Publication[] = [
   {
     title:
       'Ontology-assisted Provenance Visualization for Supporting Enterprise Search of Engineering and Business Files',
-    authors:
-      'S Khan, U Kanturska, T Waters, J Eaton, R Bañares-Alcántara, M Chen',
+    authors: 'S Khan, U Kanturska, T Waters, J Eaton, R Bañares-Alcántara, M Chen',
     venue: {
       name: 'Advanced Engineering Informatics',
       type: 'journal',

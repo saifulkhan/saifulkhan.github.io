@@ -51,20 +51,16 @@ export default function About() {
                 {/* Your Title or Position */}
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
-                I specialise in developing data-driven software{' '} 
-                and systems involving{' '}
-                machine learning  and{' '}
-                information visualization.
+                I specialise in developing data-driven software and systems involving machine learning and information visualization.
               </Typography>
-              <Box sx={{ mb: 2 }} />
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="text.primary" sx={{ mb: 1 }}>
                 I am a Senior Computer Scientist at Rutherford Appleton
                 Laboratory, Science and Technology Facilities Council (STFC),
                 UK.
-                <br />
-                <br />
+              </Typography>
+              <Typography variant="body2" color="text.primary" sx={{ mb: 2 }}>
                 Previously, I earned my DPhil (PhD) in Engineering Science from
-                the University of Oxford, where I also conducted postdoctoral
+                the University of Oxford where I also conducted postdoctoral
                 research under the supervision of{' '}
                 <a
                   href="https://eng.ox.ac.uk/people/min-chen/"
