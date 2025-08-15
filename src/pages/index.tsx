@@ -37,21 +37,59 @@ export default function About() {
             }}
           >
             <Box sx={{ flex: 1 }}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
+              <Typography
+                variant="h4"
+                gutterBottom
+                sx={{
+                  fontFamily: 'Roboto, Arial',
+                  fontWeight: 'bold',
+                  color: 'text.primary',
+                }}
+              >
                 Saiful Khan
               </Typography>
               <Typography variant="subtitle1" gutterBottom>
                 {/* Your Title or Position */}
               </Typography>
-              <Typography variant="body1" sx={{ mb: 2, textAlign: 'justify' }}>
+              <Typography
+                variant="body1"
+                sx={{
+                  mb: 1,
+                  textAlign: 'justify',
+                  fontFamily: 'Roboto Condensed, Arial Narrow',
+                  fontWeight: 'normal',
+                  lineHeight: 1.3,
+                  color: 'text.primary',
+                }}
+              >
                 I specialise in developing data-driven software and systems involving machine learning and information
                 visualization.
               </Typography>
-              <Typography variant="body2" color="text.primary" sx={{ mb: 1 }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  mb: 1,
+                  textAlign: 'justify',
+                  fontFamily: 'Roboto Condensed, Arial Narrow',
+                  fontWeight: 'normal',
+                  lineHeight: 1.3,
+                  color: 'text.primary',
+                }}
+              >
                 I am a Senior Computer Scientist at Rutherford Appleton Laboratory, Science and Technology Facilities
                 Council (STFC), UK.
               </Typography>
-              <Typography variant="body2" color="text.primary" sx={{ mb: 2 }}>
+              <Typography
+                variant="body2"
+                sx={{
+                  mb: 1,
+                  textAlign: 'justify',
+                  fontFamily: 'Roboto Condensed, Arial Narrow',
+                  fontWeight: 'normal',
+                  lineHeight: 1.3,
+                  color: 'text.primary',
+                }}
+              >
                 Previously, I earned my DPhil (PhD) in Engineering Science from the University of Oxford where I also
                 conducted postdoctoral research under the supervision of{' '}
                 <a
@@ -147,7 +185,7 @@ export default function About() {
               <Typography
                 variant="body2"
                 color="text.secondary"
-                sx={{ userSelect: 'auto', cursor: 'pointer' }}
+                sx={{ userSelect: 'auto', cursor: 'pointer', fontFamily: 'Roboto Condensed, Arial Narrow' }}
                 onClick={() => {
                   const e = ['saiful', '.', 'etc', '@', 'gmail', '.', 'com'].join('');
                   window.location.href = `mailto:${e}`;

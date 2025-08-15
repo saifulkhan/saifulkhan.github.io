@@ -88,6 +88,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
               <Link key={item.path} href={item.path} passHref legacyBehavior>
                 <a
                   style={{
+                    fontFamily: 'Roboto, Arial',
                     fontWeight: isActive(item.path) ? 'bold' : 'normal',
                     textDecoration: 'none',
                     color: 'inherit',

@@ -39,7 +39,15 @@ const Publications = () => {
             borderRadius: { xs: 2, md: 4 },
           }}
         >
-          <Typography variant="h5" gutterBottom sx={{ mb: 3, fontWeight: 600 }}>
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{
+              fontFamily: 'Roboto, Arial',
+              mb: 3,
+              fontWeight: 600,
+            }}
+          >
             Selected Publications
           </Typography>
           <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
@@ -60,8 +68,9 @@ const Publications = () => {
                     <Typography
                       variant="subtitle1"
                       sx={{
-                        fontWeight: 500,
-                        fontSize: { xs: 15, sm: 16 },
+                        fontFamily: 'Roboto Condensed, Arial Narrow',
+                        fontWeight: 'bold',
+                        fontSize: { xs: 14 },
                         lineHeight: 1.3,
                         color: 'text.primary',
                       }}
@@ -71,7 +80,8 @@ const Publications = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: 14,
+                        fontFamily: 'Roboto Condensed, Arial Narrow',
+                        fontSize: { xs: 14 },
                         minWidth: 40,
                         textAlign: { xs: 'left', sm: 'right' },
                         whiteSpace: 'nowrap',
@@ -87,7 +97,8 @@ const Publications = () => {
                   <Typography
                     variant="body2"
                     sx={{
-                      fontSize: 14,
+                      fontFamily: 'Roboto Condensed, Arial Narrow',
+                      fontSize: { xs: 14 },
                       mb: 0.0,
                       color: 'text.secondary',
                     }}
@@ -126,7 +137,8 @@ const Publications = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: 14,
+                        fontFamily: 'Roboto Condensed, Arial Narrow',
+                        fontSize: { xs: 14 },
                         color: 'text.primary',
                         fontWeight: 500,
                       }}

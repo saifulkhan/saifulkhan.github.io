@@ -2,10 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import { Box, Typography, Stack, Paper, Divider } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
-import PersonIcon from '@mui/icons-material/Person';
-import BusinessIcon from '@mui/icons-material/Business';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import EngineeringTwoToneIcon from '@mui/icons-material/EngineeringTwoTone';
+import AccountBalanceTwoToneIcon from '@mui/icons-material/AccountBalanceTwoTone';
+import SellTwoToneIcon from '@mui/icons-material/SellTwoTone';
+import BusinessTwoToneIcon from '@mui/icons-material/BusinessTwoTone';
 import TagFilter from '../components/TagFilter';
 import projectsList from '../data/projectsList';
 
@@ -18,7 +18,7 @@ const Projects = () => {
     if (hasCurrency) {
       return (
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.3 }}>
-          <MonetizationOnIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+          <SellTwoToneIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
           <span>{funding}</span>
         </Box>
       );
@@ -72,7 +72,15 @@ const Projects = () => {
             borderRadius: { xs: 2, md: 4 },
           }}
         >
-          <Typography variant="h5" gutterBottom sx={{ mb: 3 }}>
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{
+              fontFamily: 'Roboto, Arial',
+              mb: 3,
+              fontWeight: 600,
+            }}
+          >
             Grants & Projects
           </Typography>
 
@@ -82,7 +90,7 @@ const Projects = () => {
           {/* Grants Section */}
           {filteredGrants.length > 0 && (
             <Box sx={{ mb: 4 }}>
-              <Typography variant="h6" gutterBottom sx={{ mb: 2, fontWeight: 600 }}>
+              <Typography variant="h6" gutterBottom sx={{ mb: 2, fontWeight: 500, fontFamily: 'Arial' }}>
                 Grants
               </Typography>
               <Stack spacing={3}>
@@ -100,8 +108,9 @@ const Projects = () => {
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          fontWeight: 500,
-                          fontSize: { xs: 15, sm: 16 },
+                          fontFamily: 'Roboto Condensed, Arial Narrow',
+                          fontWeight: 'bold',
+                          fontSize: { xs: 14 },
                           lineHeight: 1.3,
                           color: 'text.primary',
                         }}
@@ -124,9 +133,11 @@ const Projects = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: 14,
-                        mb: 1,
-                        color: 'text.primary',
+                        fontFamily: 'Roboto Condensed, Arial Narrow',
+                        fontWeight: 'normal',
+                        fontSize: { xs: 14 },
+                        lineHeight: 1.3,
+                        color: 'text.secondary',
                       }}
                     >
                       {proj.description}
@@ -145,11 +156,14 @@ const Projects = () => {
                       {/* Roles */}
                       {proj.role && proj.role.length > 0 && (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                          <PersonIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                          <EngineeringTwoToneIcon sx={{ fontSize: 13, color: 'text.secondary' }} />
                           <Typography
                             variant="body2"
                             sx={{
-                              fontSize: 13,
+                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontWeight: 'normal',
+                              fontSize: { xs: 13 },
+                              lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
                           >
@@ -161,11 +175,14 @@ const Projects = () => {
                       {/* Organization */}
                       {proj.organisation && proj.organisation.length > 0 && (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                          <BusinessIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                          <BusinessTwoToneIcon sx={{ fontSize: 13, color: 'text.secondary' }} />
                           <Typography
                             variant="body2"
                             sx={{
-                              fontSize: 13,
+                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontWeight: 'normal',
+                              fontSize: { xs: 13 },
+                              lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
                           >
@@ -177,17 +194,19 @@ const Projects = () => {
                       {/* Funding */}
                       {proj.funding && proj.funding.length > 0 && (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                          <AccountBalanceIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                          <AccountBalanceTwoToneIcon sx={{ fontSize: 13, color: 'text.secondary' }} />
                           <Typography
                             variant="body2"
                             component="div"
                             sx={{
-                              fontSize: 13,
-                              color: 'text.secondary',
+                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontWeight: 'normal',
+                              fontSize: { xs: 13 },
                               display: 'flex',
                               alignItems: 'center',
                               gap: 0.5,
                               flexWrap: 'wrap',
+                              color: 'text.secondary',
                             }}
                           >
                             {proj.funding.map((fund, i) => (
@@ -226,7 +245,7 @@ const Projects = () => {
           {/* Projects Section */}
           {filteredProjects.length > 0 && (
             <Box>
-              <Typography variant="h6" gutterBottom sx={{ mb: 2, fontWeight: 600 }}>
+              <Typography variant="h6" gutterBottom sx={{ mb: 2, fontWeight: 500, fontFamily: 'Arial' }}>
                 Projects
               </Typography>
               <Stack spacing={3}>
@@ -244,9 +263,11 @@ const Projects = () => {
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          fontWeight: 500,
-                          fontSize: { xs: 15, sm: 16 },
+                          fontFamily: 'Roboto Condensed, Arial Narrow',
+                          fontWeight: 'bold',
+                          fontSize: { xs: 14 },
                           lineHeight: 1.3,
+                          color: 'text.primary',
                         }}
                       >
                         {proj.title}
@@ -267,9 +288,11 @@ const Projects = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontSize: 14,
-                        mb: 0.5,
-                        color: 'text.primary',
+                        fontFamily: 'Roboto Condensed, Arial Narrow',
+                        fontWeight: 'normal',
+                        fontSize: { xs: 14 },
+                        lineHeight: 1.3,
+                        color: 'text.secondary',
                       }}
                     >
                       {proj.description}
@@ -288,11 +311,14 @@ const Projects = () => {
                       {/* Roles */}
                       {proj.role && proj.role.length > 0 && (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                          <PersonIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                          <EngineeringTwoToneIcon sx={{ fontSize: 13, color: 'text.secondary' }} />
                           <Typography
                             variant="body2"
                             sx={{
-                              fontSize: 13,
+                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontWeight: 'normal',
+                              fontSize: { xs: 13 },
+                              lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
                           >
@@ -304,11 +330,14 @@ const Projects = () => {
                       {/* Organization */}
                       {proj.organisation && proj.organisation.length > 0 && (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                          <BusinessIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                          <BusinessTwoToneIcon sx={{ fontSize: 13, color: 'text.secondary' }} />
                           <Typography
                             variant="body2"
                             sx={{
-                              fontSize: 13,
+                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontWeight: 'normal',
+                              fontSize: { xs: 13 },
+                              lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
                           >
@@ -320,17 +349,16 @@ const Projects = () => {
                       {/* Funding */}
                       {proj.funding && proj.funding.length > 0 && (
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                          <AccountBalanceIcon sx={{ fontSize: 14, color: 'text.secondary' }} />
+                          <AccountBalanceTwoToneIcon sx={{ fontSize: 13, color: 'text.secondary' }} />
                           <Typography
                             variant="body2"
                             component="div"
                             sx={{
-                              fontSize: 13,
+                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontWeight: 'normal',
+                              fontSize: { xs: 13 },
+                              lineHeight: 1.3,
                               color: 'text.secondary',
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: 0.5,
-                              flexWrap: 'wrap',
                             }}
                           >
                             {proj.funding.map((fund, i) => (

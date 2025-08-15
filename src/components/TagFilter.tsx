@@ -138,6 +138,7 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, filter, setFilter, tagCount
               px: 2,
               py: 0.5,
               fontSize: 13,
+              fontFamily: 'Roboto Condensed, Arial Narrow',
               textTransform: 'none',
               '&.Mui-selected': {
                 backgroundColor: theme.palette.action.selected,

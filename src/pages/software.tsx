@@ -46,9 +46,10 @@ const Software = () => {
             key={idx}
             variant="body2"
             sx={{
+              fontFamily: 'Roboto Condensed, Arial Narrow',
+              fontSize: { xs: 14 },
+              lineHeight: 1.3,
               color: desc.color,
-              fontSize: desc.color !== 'default' ? 11 : 13,
-              lineHeight: 1.4,
             }}
           >
             {desc.value}
@@ -71,8 +72,8 @@ const Software = () => {
             sx={{
               backgroundColor: 'action.hover',
               color: 'text.secondary',
-              fontWeight: 400,
-              fontSize: 11,
+              fontFamily: 'Roboto Condensed, Arial Narrow',
+              fontSize: 13,
               letterSpacing: 0.2,
               px: 0.5,
               height: 20,
@@ -110,7 +111,7 @@ const Software = () => {
             borderRadius: { xs: 2, md: 4 },
           }}
         >
-          <Typography variant="h5" gutterBottom sx={{ mb: 3, fontWeight: 600 }}>
+          <Typography variant="h5" gutterBottom sx={{ fontFamily: 'Roboto, Arial', mb: 3, fontWeight: 600 }}>
             Software & Systems
           </Typography>
 
@@ -156,10 +157,11 @@ const Software = () => {
                     variant="h6"
                     component="h2"
                     sx={{
-                      fontSize: { xs: '1.1rem', sm: '1.25rem' },
-                      // fontWeight: 600,
+                      fontSize: { xs: 16 },
+                      fontWeight: 'bold',
                       mb: 1,
                       textAlign: { xs: 'center', sm: 'left' },
+                      fontFamily: 'Roboto Condensed, Arial Narrow',
                     }}
                   >
                     {sw.name}
@@ -176,8 +178,6 @@ const Software = () => {
                       gap: 1,
                       mt: 2,
                       pt: 1,
-                      // borderTop: '1px solid',
-                      // borderColor: 'divider',
                     }}
                   >
                     <Box sx={{ flex: 1, minWidth: 0 }}>{renderFundingChips(sw.funding)}</Box>
@@ -190,7 +190,7 @@ const Software = () => {
                           flexShrink: 0,
                         }}
                       >
-                        <LinkIcons links={sw.links as LinkIcon[]} iconSize={18} spacing={0.75} inline />
+                        <LinkIcons links={sw.links as LinkIcon[]} iconSize={14} spacing={0.75} inline />
                       </Box>
                     )}
                   </Box>
