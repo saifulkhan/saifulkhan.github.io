@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { Box, Paper, Typography, Stack, Divider } from '@mui/material';
-import { publicationsList } from '../data/publicationsList';
-import type { Publication } from '../data/publicationsList';
+import { publicationsList } from '../data/publications';
+import type { Publication } from '../data/publications';
 import LinkIcons from '../components/LinkIcons';
 import TagFilter from '../components/TagFilter';
 

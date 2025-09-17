@@ -19,7 +19,7 @@ export const publicationsList: Publication[] = [
   {
     title: 'Data Virtualization for Machine Learning',
     authors: 'S Khan, J Chakraborty, P Beaucamp, N Bhujel, M Chen',
-    venue: { name: 'Int. Conf. on Services Computing (SCC 2025), Hong Kong', type: 'conference' },
+    venue: { name: 'International Conference on Services Computing (SCC 2025), Hong Kong', type: 'conference' },
     year: 2025,
     tags: ['Machine Learning', 'Software Engineering'],
     links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2507.17293' }],
@@ -27,12 +27,26 @@ export const publicationsList: Publication[] = [
   {
     title: 'Multi-Objective Loss Balancing in Physics-Informed Neural Networks for Fluid Flow Applications',
     authors: 'A Farea, S Khan, MS Celebi',
-    venue: { name: '32nd IEEE Int. Conf. on High Performance Computing, Data, & Analytics (HiPC 2025), India', type: 'conference' },
+    venue: {
+      name: '32nd IEEE International Conference on High Performance Computing, Data & Analytics (HiPC 2025), India',
+      type: 'conference',
+    },
     year: 2025,
     tags: ['Machine Learning'],
     links: [
       // { type: 'pdf', url: '' },
       { type: 'github', url: 'https://github.com/afrah/pinn_adaptive_weighting' },
+    ],
+  },
+  {
+    title: 'An Open Data Service for Supporting Research in Machine Learning on Tokamak Data ',
+    authors: 'S Jackson, S Khan, N Cummings, J Hodson, S Witt, S Pamela, R Akers, J Thiyagalingam, MAST Team',
+    venue: { name: 'IEEE Transactions on Plasma Science', type: 'journal' },
+    year: 2025,
+    tags: ['Machine Learning', 'Software Engineering'],
+    links: [
+      { type: 'pdf', url: 'https://doi.org/10.1109/TPS.2025.3583419' },
+      { type: 'github', url: 'https://github.com/ukaea/fair-mast' },
     ],
   },
   {
@@ -53,17 +67,6 @@ export const publicationsList: Publication[] = [
     links: [
       { type: 'pdf', url: 'https://arxiv.org/abs/2503.16678' },
       { type: 'github', url: 'https://github.com/afrah/QCPINN' },
-    ],
-  },
-  {
-    title: 'An Open Data Service for Supporting Research in Machine Learning on Tokamak Data ',
-    authors: 'S Jackson, S Khan, N Cummings, J Hodson, S Witt, S Pamela, R Akers, J Thiyagalingam, MAST Team',
-    venue: { name: 'IEEE Transactions on Plasma Science', type: 'journal' },
-    year: 2025,
-    tags: ['Machine Learning', 'Software Engineering'],
-    links: [
-      { type: 'pdf', url: 'https://doi.org/10.1109/TPS.2025.3583419' },
-      { type: 'github', url: 'https://github.com/ukaea/fair-mast' },
     ],
   },
   {
