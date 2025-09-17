@@ -19,10 +19,21 @@ export const publicationsList: Publication[] = [
   {
     title: 'Data Virtualization for Machine Learning',
     authors: 'S Khan, J Chakraborty, P Beaucamp, N Bhujel, M Chen',
-    venue: { name: 'International Conference on Services Computing (SCC 2025), Hong Kong', type: 'arxiv' },
+    venue: { name: 'Int. Conf. on Services Computing (SCC 2025), Hong Kong', type: 'conference' },
     year: 2025,
     tags: ['Machine Learning', 'Software Engineering'],
     links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2507.17293' }],
+  },
+  {
+    title: 'Multi-Objective Loss Balancing in Physics-Informed Neural Networks for Fluid Flow Applications',
+    authors: 'A Farea, S Khan, MS Celebi',
+    venue: { name: '32nd IEEE Int. Conf. on High Performance Computing, Data, & Analytics (HiPC 2025), India', type: 'conference' },
+    year: 2025,
+    tags: ['Machine Learning'],
+    links: [
+      // { type: 'pdf', url: '' },
+      { type: 'github', url: 'https://github.com/afrah/pinn_adaptive_weighting' },
+    ],
   },
   {
     title:
