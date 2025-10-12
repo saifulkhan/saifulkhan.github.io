@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { Box, Card, Typography, Stack, Chip, Paper, useTheme, useMediaQuery } from '@mui/material';
 import LinkIcons, { type LinkIcon } from '../components/LinkIcons';
-import softwareList from '../data/softwareList';
+import softwareList from '../data/software';
 
 // Dynamically import the ZoomImage component with no SSR to prevent hydration issues with videos
 const ZoomImage = dynamic<{ src: string; alt: string; size: number }>(() => import('../components/ZoomImage'), {

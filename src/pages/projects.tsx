@@ -7,12 +7,12 @@ import AccountBalanceTwoToneIcon from '@mui/icons-material/AccountBalanceTwoTone
 import SellTwoToneIcon from '@mui/icons-material/SellTwoTone';
 import BusinessTwoToneIcon from '@mui/icons-material/BusinessTwoTone';
 import TagFilter from '../components/TagFilter';
-import projectsList from '../data/projectsList';
+import projectsList from '../data/projects';
 
 const Projects = () => {
   const [filter, setFilter] = React.useState<string | null>(null);
 
-  // Helper function to format funding with currency icons
+  // format funding with currency icons
   const formatFundingItem = (funding: string) => {
     const hasCurrency = /[£$€¥]/.test(funding);
     if (hasCurrency) {
@@ -26,7 +26,7 @@ const Projects = () => {
     return funding;
   };
 
-  // Categorize projects into grants and other projects
+  // categorize projects into grants and other projects
   const grants = projectsList.filter(
     (proj) => proj.funding && proj.funding.length > 1,
     // &&
@@ -36,17 +36,13 @@ const Projects = () => {
 
   const projects = projectsList.filter((proj) => !grants.includes(proj));
 
-  // Get all tags for TagFilter
   const allTags = projectsList.flatMap((p) => p.tags || []);
-
-  // Count each tag occurrence
   const tagCounts = allTags.reduce<Record<string, number>>((acc, tag) => {
     acc[tag] = (acc[tag] || 0) + 1;
     return acc;
   }, {});
 
   const filteredGrants = filter ? grants.filter((proj) => proj.tags && proj.tags.includes(filter)) : grants;
-
   const filteredProjects = filter ? projects.filter((proj) => proj.tags && proj.tags.includes(filter)) : projects;
 
   return (
