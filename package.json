@@ -6,7 +6,7 @@
     "format": "prettier --write .",
     "dev": "next dev",
     "build": "next build",
-    "export": "rimraf out && next build && mkdirp out && cpx \".next/static/**/*\" out/.next/static && echo. > out/.nojekyll",
+    "export": "rimraf out && next build && mkdirp out && cpx \".next/static/**/*\" out/.next/static && echo . > out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
     "deploy": "yarn export && gh-pages -d out -b gh-pages --dotfiles"
