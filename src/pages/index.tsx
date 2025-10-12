@@ -1,12 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
 import { Box, Typography, Avatar, Paper, Divider, IconButton, Link } from '@mui/material';
-import Grid from '@mui/material/Grid';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SchoolIcon from '@mui/icons-material/School';
 import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { eventsList } from '../data/eventsList';
 

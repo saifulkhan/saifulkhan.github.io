@@ -111,7 +111,11 @@ const Software = () => {
             borderRadius: { xs: 2, md: 4 },
           }}
         >
-          <Typography variant="h5" gutterBottom sx={{ fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif', mb: 3, fontWeight: 600 }}>
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{ fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif', mb: 3, fontWeight: 600 }}
+          >
             Software & Systems
           </Typography>
 

@@ -13,14 +13,17 @@ const Publications = () => {
   const filteredList = filter ? publicationsList.filter((pub) => pub.tags.includes(filter)) : publicationsList;
 
   // Group publications by year
-  const groupedByYear = filteredList.reduce((acc, pub) => {
-    const year = pub.year;
-    if (!acc[year]) {
-      acc[year] = [];
-    }
-    acc[year].push(pub);
-    return acc;
-  }, {} as Record<number, Publication[]>);
+  const groupedByYear = filteredList.reduce(
+    (acc, pub) => {
+      const year = pub.year;
+      if (!acc[year]) {
+        acc[year] = [];
+      }
+      acc[year].push(pub);
+      return acc;
+    },
+    {} as Record<number, Publication[]>,
+  );
 
   // Sort years in descending order
   const sortedYears = Object.keys(groupedByYear)
