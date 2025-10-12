@@ -1,11 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, Typography, Avatar, Paper, Divider, IconButton } from '@mui/material';
+import { Box, Typography, Avatar, Paper, Divider, IconButton, Link } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SchoolIcon from '@mui/icons-material/School';
 import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { eventsList } from '../data/eventsList';
 
 export default function About() {
   return (
@@ -41,68 +44,127 @@ export default function About() {
                 variant="h4"
                 gutterBottom
                 sx={{
-                  fontFamily: 'Roboto, Arial',
+                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                   fontWeight: 'bold',
                   color: 'text.primary',
+                  mb: 0.5,
                 }}
               >
                 Saiful Khan
               </Typography>
-              <Typography variant="subtitle1" gutterBottom>
-                {/* Your Title or Position */}
-              </Typography>
               <Typography
-                variant="body1"
+                variant="subtitle2"
                 sx={{
-                  mb: 1,
-                  textAlign: 'justify',
-                  fontFamily: 'Roboto Condensed, Arial Narrow',
-                  fontWeight: 'normal',
-                  lineHeight: 1.3,
-                  color: 'text.primary',
+                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                  color: 'text.secondary',
+                  mb: 0.5,
                 }}
               >
-                I specialise in developing data-driven software and systems involving machine learning and information
-                visualization.
+                B.E., M.S., D.Phil.
               </Typography>
               <Typography
-                variant="body2"
+                variant="subtitle2"
                 sx={{
-                  mb: 1,
-                  textAlign: 'justify',
-                  fontFamily: 'Roboto Condensed, Arial Narrow',
-                  fontWeight: 'normal',
-                  lineHeight: 1.3,
-                  color: 'text.primary',
+                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                  color: 'text.secondary',
+                  mb: 2,
                 }}
               >
-                I am a Senior Computer Scientist at Rutherford Appleton Laboratory, Science and Technology Facilities
-                Council (STFC), UK.
+                Senior Computer Scientist
               </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  mb: 1,
-                  textAlign: 'justify',
-                  fontFamily: 'Roboto Condensed, Arial Narrow',
-                  fontWeight: 'normal',
-                  lineHeight: 1.3,
-                  color: 'text.primary',
-                }}
-              >
-                Previously, I earned my DPhil (PhD) in Engineering Science from the University of Oxford where I also
-                conducted postdoctoral research under the supervision of{' '}
-                <a
-                  href="https://eng.ox.ac.uk/people/min-chen/"
+
+              <Box sx={{ mb: 2, display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <EmailIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                      color: 'text.primary',
+                    }}
+                  >
+                    saiful.etc (at) gmail.com
+                  </Typography>
+                </Box>
+                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
+                  <LocationOnIcon sx={{ fontSize: 18, color: 'text.secondary', mt: 0.2 }} />
+                  <Box>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                        color: 'text.primary',
+                      }}
+                    >
+                      Rutherford Appleton Laboratory
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                        color: 'text.primary',
+                      }}
+                    >
+                      Science and Technology Facilities Council (STFC), UK
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+
+              <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
+                <IconButton
+                  component="a"
+                  href="https://scholar.google.com/citations?hl=en&user=lZLfsJwAAAAJ&view_op=list_works&sortby=pubdate"
                   target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: 'none' }}
+                  rel="noopener"
+                  aria-label="Google Scholar"
+                  size="small"
+                  sx={{ padding: 0.5 }}
                 >
-                  Prof Min Chen
-                </a>
-                . My industrial experience includes working as a data scientist at Horus Security Consultancy and the
-                International Seismological Centre in the UK. Additionally, I have held software engineering positions
-                at Oracle and ABB in India.
+                  <SchoolIcon sx={{ fontSize: 18 }} />
+                </IconButton>
+                <IconButton
+                  component="a"
+                  href="https://github.com/saifulkhan"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="GitHub"
+                  size="small"
+                  sx={{ padding: 0.5 }}
+                >
+                  <GitHubIcon sx={{ fontSize: 18 }} />
+                </IconButton>
+                <IconButton
+                  component="a"
+                  href="https://www.linkedin.com/in/khansaiful/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                  size="small"
+                  sx={{ padding: 0.5 }}
+                >
+                  <LinkedInIcon sx={{ fontSize: 18 }} />
+                </IconButton>
+              </Box>
+
+              <Box sx={{ my: 2 }}>
+                <hr style={{ border: 0, borderTop: '1px solid #e0e0e0', margin: 0 }} />
+              </Box>
+
+              <Typography
+                variant="body2"
+                sx={{
+                  mb: 1,
+                  textAlign: 'justify',
+                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                  fontWeight: 'normal',
+                  lineHeight: 1.3,
+                  color: 'text.primary',
+                }}
+              >
+                <strong>Research Interests:</strong> Data-driven software systems and infrastructure development, with
+                particular interests in visualization for large-scale infrastructures, large language models and AI
+                agents, and service computing.
               </Typography>
             </Box>
             <Box
@@ -128,129 +190,75 @@ export default function About() {
             </Box>
           </Box>
 
-          <Grid container spacing={4}>
-            {/* <Grid size={{ xs: 12, md: 6 }}>
-              <Typography variant="h6" gutterBottom>
-                News
-              </Typography>
-              <ul style={{ paddingLeft: 20 }}>
-                <li>
-                  <b>Apr 2025:</b> Started a new position at XYZ University.
-                </li>
-                <li>
-                  <b>Jan 2024:</b> Published a paper in ABC Journal.
-                </li>
-              </ul> 
-            </Grid>
-            <Grid size={{ xs: 12, md: 6 }}>
-              <Typography variant="h6" gutterBottom>
-                Selected Publications
-              </Typography>
-              <Stack spacing={2}>
-                <Paper variant="outlined" sx={{ p: 2 }}>
-                  <Chip
-                    label="Landslides"
-                    color="secondary"
-                    size="small"
-                    sx={{ mr: 1 }}
-                  />
-                  <Typography variant="subtitle1" fontWeight="bold">
-                    Title of your publication
-                  </Typography>
-                  <Typography variant="body2">Author1, Author2, ...</Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Journal Name, 2024
-                  </Typography>
-                </Paper>
+          <Divider sx={{ my: 3 }} />
 
-              </Stack>
-            </Grid> */}
-          </Grid>
-
-          <Divider sx={{ my: 2 }} />
-
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              width: '100%',
-              mt: 2,
-            }}
-          >
-            <Box sx={{ display: 'flex', alignItems: 'center', ml: 1 }}>
-              <IconButton component="a" aria-label="Email" sx={{ mr: 1 }} disabled>
-                <EmailIcon fontSize="medium" />
-              </IconButton>
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ userSelect: 'auto', cursor: 'pointer', fontFamily: 'Roboto Condensed, Arial Narrow' }}
-                onClick={() => {
-                  const e = ['saiful', '.', 'etc', '@', 'gmail', '.', 'com'].join('');
-                  window.location.href = `mailto:${e}`;
-                }}
-              >
-                <span>s</span>
-                <span>aiful</span>
-                <span>.</span>
-                <span>etc</span>
-                <span>@</span>
-                <span>gmail</span>
-                <span>.</span>
-                <span>com</span>
-              </Typography>
-            </Box>
-            <Box
+          <Box sx={{ mt: 3 }}>
+            <Typography
+              variant="h6"
+              gutterBottom
               sx={{
-                display: 'flex',
-                gap: { xs: 0, sm: 0.5 },
-                mr: { xs: 0, sm: 1 },
-                flexWrap: 'wrap',
-                justifyContent: { xs: 'flex-start', sm: 'flex-end' },
-                width: { xs: '100%', sm: 'auto' },
+                fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                fontWeight: 'bold',
+                color: 'text.primary',
+                mb: 2,
               }}
             >
-              <IconButton
-                component="a"
-                href="https://www.linkedin.com/in/khansaiful/"
-                target="_blank"
-                rel="noopener"
-                aria-label="LinkedIn"
-              >
-                <LinkedInIcon fontSize="medium" />
-              </IconButton>
-              <IconButton
-                component="a"
-                href="https://github.com/saifulkhan"
-                target="_blank"
-                rel="noopener"
-                aria-label="GitHub"
-              >
-                <GitHubIcon fontSize="medium" />
-              </IconButton>
-              {/* <IconButton
-                component="a"
-                href="https://bsky.app/profile/your-bluesky"
-                target="_blank"
-                rel="noopener"
-                aria-label="Bluesky"
-              >
-                <PublicIcon fontSize="medium" />
-              </IconButton> */}
-              <IconButton
-                component="a"
-                href="https://scholar.google.com/citations?hl=en&user=lZLfsJwAAAAJ&view_op=list_works&sortby=pubdate"
-                target="_blank"
-                rel="noopener"
-                aria-label="Google Scholar"
-              >
-                <SchoolIcon fontSize="medium" />
-              </IconButton>
+              Events
+            </Typography>
+
+            <Box
+              component="ul"
+              sx={{
+                listStyle: 'none',
+                padding: 0,
+                margin: 0,
+                '& li': {
+                  display: 'flex',
+                  gap: 2,
+                  mb: 1.5,
+                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                },
+              }}
+            >
+              {eventsList.map((event, index) => (
+                <li key={index}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: 'text.secondary',
+                          width: 170,
+                          textAlign: 'left',
+                          mb: 0,
+                          fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        {event.date}
+                      </Typography>
+                      <Link
+                        href={event.url}
+                        underline="hover"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{
+                          fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                          width: 270,
+                          display: 'inline-block',
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                        }}
+                      >
+                        {event.title}
+                      </Link>
+                    </Box>
+                  </Box>
+                </li>
+              ))}
             </Box>
           </Box>
-
-          {/* <Divider sx={{ my: 2 }} /> */}
         </Paper>
       </Box>
     </>

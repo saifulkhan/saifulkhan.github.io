@@ -12,6 +12,21 @@ const Publications = () => {
   const allTags = publicationsList.flatMap((p) => p.tags || []);
   const filteredList = filter ? publicationsList.filter((pub) => pub.tags.includes(filter)) : publicationsList;
 
+  // Group publications by year
+  const groupedByYear = filteredList.reduce((acc, pub) => {
+    const year = pub.year;
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(pub);
+    return acc;
+  }, {} as Record<number, Publication[]>);
+
+  // Sort years in descending order
+  const sortedYears = Object.keys(groupedByYear)
+    .map(Number)
+    .sort((a, b) => b - a);
+
   // Helper function to safely get and sort links
   const getSortedLinks = (links: NonNullable<Publication['links']>) => {
     return [...links].sort((a, b) => a.type.localeCompare(b.type));
@@ -43,7 +58,7 @@ const Publications = () => {
             variant="h5"
             gutterBottom
             sx={{
-              fontFamily: 'Roboto, Arial',
+              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
               mb: 3,
               fontWeight: 600,
             }}
@@ -51,121 +66,127 @@ const Publications = () => {
             Selected Publications
           </Typography>
           <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
-          <Stack spacing={3}>
-            {filteredList.map((pub: Publication, idx: number) => (
-              <Box key={idx}>
-                <Box sx={{ mb: 0.5 }}>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: { xs: 'column-reverse', sm: 'row' },
-                      justifyContent: 'space-between',
-                      alignItems: { xs: 'flex-start', sm: 'center' },
-                      mb: 1.0,
-                      gap: { xs: 0.5, sm: 2 },
-                    }}
-                  >
-                    <Typography
-                      variant="subtitle1"
-                      sx={{
-                        fontFamily: 'Roboto Condensed, Arial Narrow',
-                        fontWeight: 'bold',
-                        fontSize: { xs: 14 },
-                        lineHeight: 1.3,
-                        color: 'text.primary',
-                      }}
-                    >
-                      {pub.title}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        fontFamily: 'Roboto Condensed, Arial Narrow',
-                        fontSize: { xs: 14 },
-                        minWidth: 40,
-                        textAlign: { xs: 'left', sm: 'right' },
-                        whiteSpace: 'nowrap',
-                        color: 'text.primary',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {pub.year}
-                    </Typography>
-                  </Box>
+          <Stack spacing={4}>
+            {sortedYears.map((year) => (
+              <Box key={year}>
+                {/* Year Header */}
+                <Typography
+                  variant="h6"
+                  sx={{
+                    fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                    fontWeight: 600,
+                    mb: 2,
+                    color: 'text.primary',
+                  }}
+                >
+                  {year}
+                </Typography>
 
-                  {/* Authors */}
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontFamily: 'Roboto Condensed, Arial Narrow',
-                      fontSize: { xs: 14 },
-                      mb: 0.0,
-                      color: 'text.secondary',
-                    }}
-                  >
-                    {pub.authors.split(/(,\s*)/).map((part, i) =>
-                      part.includes('S Khan') ? (
-                        <span
-                          key={i}
-                          style={{
-                            color: 'inherit',
-                            textDecoration: 'underline',
+                {/* Publications for this year */}
+                <Stack spacing={3}>
+                  {groupedByYear[year].map((pub: Publication, idx: number) => (
+                    <Box key={idx}>
+                      <Box sx={{ mb: 0.5 }}>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            flexDirection: { xs: 'column', sm: 'row' },
+                            justifyContent: 'space-between',
+                            alignItems: { xs: 'flex-start', sm: 'flex-start' },
+                            mb: 1.0,
+                            gap: { xs: 0.5, sm: 2 },
                           }}
                         >
-                          S Khan
-                        </span>
-                      ) : (
-                        <span key={i} style={{ color: 'inherit' }}>
-                          {part}
-                        </span>
-                      ),
-                    )}
-                  </Typography>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{
+                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontWeight: 'bold',
+                              fontSize: { xs: 14 },
+                              lineHeight: 1.3,
+                              color: 'text.primary',
+                            }}
+                          >
+                            {pub.title}
+                          </Typography>
+                        </Box>
 
-                  {/* Venue and Links */}
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: { xs: 'column', sm: 'row' },
-                      alignItems: { xs: 'flex-start', sm: 'center' },
-                      justifyContent: 'space-between',
-                      // gap: 1,
-                      // mt: 1,
-                    }}
-                  >
-                    {/* Venue */}
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        fontFamily: 'Roboto Condensed, Arial Narrow',
-                        fontSize: { xs: 14 },
-                        color: 'text.primary',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {pub.venue && pub.venue.name}
-                    </Typography>
+                        {/* Authors */}
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                            fontSize: { xs: 14 },
+                            mb: 0.0,
+                            color: 'text.secondary',
+                          }}
+                        >
+                          {pub.authors.split(/(,\s*)/).map((part, i) =>
+                            part.includes('S Khan') ? (
+                              <span
+                                key={i}
+                                style={{
+                                  color: 'inherit',
+                                  textDecoration: 'underline',
+                                }}
+                              >
+                                S Khan
+                              </span>
+                            ) : (
+                              <span key={i} style={{ color: 'inherit' }}>
+                                {part}
+                              </span>
+                            ),
+                          )}
+                        </Typography>
 
-                    {/* Links */}
-                    {pub.links && pub.links.length > 0 && (
-                      <Box>
-                        <LinkIcons
-                          links={getSortedLinks(pub.links as NonNullable<typeof pub.links>)}
-                          iconSize={14}
-                          spacing={0.8}
-                          inline
-                        />
+                        {/* Venue and Links */}
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            flexDirection: { xs: 'column', sm: 'row' },
+                            alignItems: { xs: 'flex-start', sm: 'center' },
+                            justifyContent: 'space-between',
+                            // gap: 1,
+                            // mt: 1,
+                          }}
+                        >
+                          {/* Venue */}
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontSize: { xs: 14 },
+                              color: 'text.primary',
+                              fontWeight: 500,
+                            }}
+                          >
+                            {pub.venue && pub.venue.name}
+                          </Typography>
+
+                          {/* Links */}
+                          {pub.links && pub.links.length > 0 && (
+                            <Box>
+                              <LinkIcons
+                                links={getSortedLinks(pub.links as NonNullable<typeof pub.links>)}
+                                iconSize={14}
+                                spacing={0.8}
+                                inline
+                              />
+                            </Box>
+                          )}
+                        </Box>
                       </Box>
-                    )}
-                  </Box>
-                </Box>
 
-                {/* Divider */}
-                {idx < filteredList.length - 1 && (
-                  <Box sx={{ mt: 1, mb: 0.0 }}>
-                    <Divider />
-                  </Box>
-                )}
+                      {/* Divider */}
+                      {idx < groupedByYear[year].length - 1 && (
+                        <Box sx={{ mt: 1, mb: 0.0 }}>
+                          <Divider />
+                        </Box>
+                      )}
+                    </Box>
+                  ))}
+                </Stack>
               </Box>
             ))}
           </Stack>

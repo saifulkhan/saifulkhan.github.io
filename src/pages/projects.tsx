@@ -76,7 +76,7 @@ const Projects = () => {
             variant="h5"
             gutterBottom
             sx={{
-              fontFamily: 'Roboto, Arial',
+              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
               mb: 3,
               fontWeight: 600,
             }}
@@ -108,7 +108,7 @@ const Projects = () => {
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          fontFamily: 'Roboto Condensed, Arial Narrow',
+                          fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                           fontWeight: 'bold',
                           fontSize: { xs: 14 },
                           lineHeight: 1.3,
@@ -133,7 +133,7 @@ const Projects = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontFamily: 'Roboto Condensed, Arial Narrow',
+                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                         fontWeight: 'normal',
                         fontSize: { xs: 14 },
                         lineHeight: 1.3,
@@ -160,7 +160,7 @@ const Projects = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                               fontWeight: 'normal',
                               fontSize: { xs: 13 },
                               lineHeight: 1.3,
@@ -179,7 +179,7 @@ const Projects = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                               fontWeight: 'normal',
                               fontSize: { xs: 13 },
                               lineHeight: 1.3,
@@ -199,7 +199,7 @@ const Projects = () => {
                             variant="body2"
                             component="div"
                             sx={{
-                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                               fontWeight: 'normal',
                               fontSize: { xs: 13 },
                               display: 'flex',
@@ -263,7 +263,7 @@ const Projects = () => {
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          fontFamily: 'Roboto Condensed, Arial Narrow',
+                          fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                           fontWeight: 'bold',
                           fontSize: { xs: 14 },
                           lineHeight: 1.3,
@@ -288,7 +288,7 @@ const Projects = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontFamily: 'Roboto Condensed, Arial Narrow',
+                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                         fontWeight: 'normal',
                         fontSize: { xs: 14 },
                         lineHeight: 1.3,
@@ -315,7 +315,7 @@ const Projects = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                               fontWeight: 'normal',
                               fontSize: { xs: 13 },
                               lineHeight: 1.3,
@@ -334,7 +334,7 @@ const Projects = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                               fontWeight: 'normal',
                               fontSize: { xs: 13 },
                               lineHeight: 1.3,
@@ -354,7 +354,7 @@ const Projects = () => {
                             variant="body2"
                             component="div"
                             sx={{
-                              fontFamily: 'Roboto Condensed, Arial Narrow',
+                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                               fontWeight: 'normal',
                               fontSize: { xs: 13 },
                               lineHeight: 1.3,

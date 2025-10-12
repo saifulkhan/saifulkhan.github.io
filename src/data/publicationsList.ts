@@ -19,30 +19,21 @@ export const publicationsList: Publication[] = [
   {
     title: 'Data Virtualization for Machine Learning',
     authors: 'S Khan, J Chakraborty, P Beaucamp, N Bhujel, M Chen',
-    venue: { name: 'International Conference on Services Computing (SCC 2025), Hong Kong', type: 'arxiv' },
+    venue: { name: 'Int. Conf. on Services Computing (SCC 2025), Hong Kong', type: 'arxiv' },
     year: 2025,
     tags: ['Machine Learning', 'Software Engineering'],
     links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2507.17293' }],
   },
   {
-    title:
-      'Learning Fluid-Structure Interaction Dynamics with Physics-Informed Neural Networks and Immersed Boundary Methods',
-    authors: 'A Farea, S Khan, R Daryani, EC Ersan, MS Celebi',
-    venue: { name: '(under review)', type: 'arxiv' },
-    year: 2025,
-    tags: ['Machine Learning'],
-    links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2505.18565' }],
-  },
-  {
-    title: 'QCPINN: Quantum-Classical Physics-Informed Neural Networks for Solving PDEs',
+    title: 'Multi-Objective Loss Balancing in Physics-Informed Neural Networks for Fluid Flow Applications',
     authors: 'A Farea, S Khan, MS Celebi',
-    venue: { name: '(under review)', type: 'arxiv' },
+    venue: {
+      name: '32nd IEEE Int. Conf. on High Performance Computing, Data, and Analytics (HiPC 2025), Hyderabad',
+      type: 'arxiv',
+    },
     year: 2025,
     tags: ['Machine Learning'],
-    links: [
-      { type: 'pdf', url: 'https://arxiv.org/abs/2503.16678' },
-      { type: 'github', url: 'https://github.com/afrah/QCPINN' },
-    ],
+    links: [{ type: 'pdf', url: 'https://arxiv.org/abs/2509.14437' }],
   },
   {
     title: 'An Open Data Service for Supporting Research in Machine Learning on Tokamak Data ',
@@ -54,6 +45,26 @@ export const publicationsList: Publication[] = [
       { type: 'pdf', url: 'https://doi.org/10.1109/TPS.2025.3583419' },
       { type: 'github', url: 'https://github.com/ukaea/fair-mast' },
     ],
+  },
+  {
+    title: 'QCPINN: Quantum-Classical Physics-Informed Neural Networks for Solving PDEs',
+    authors: 'A Farea, S Khan, MS Celebi',
+    venue: { name: '', type: 'arxiv' },
+    year: 2025,
+    tags: ['Machine Learning'],
+    links: [
+      { type: 'pdf', url: 'https://arxiv.org/abs/2503.16678' },
+      { type: 'github', url: 'https://github.com/afrah/QCPINN' },
+    ],
+  },
+  {
+    title:
+      'Learning Fluid-Structure Interaction Dynamics with Physics-Informed Neural Networks and Immersed Boundary Methods',
+    authors: 'A Farea, S Khan, R Daryani, EC Ersan, MS Celebi',
+    venue: { name: '', type: 'arxiv' },
+    year: 2025,
+    tags: ['Machine Learning'],
+    links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2505.18565' }],
   },
   {
     title: 'Feature-Action Design Patterns for Storytelling Visualizations with Time Series Data',
