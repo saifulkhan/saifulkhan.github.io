@@ -33,10 +33,31 @@ export default function About() {
             sx={{
               display: 'flex',
               flexDirection: { xs: 'column', md: 'row' },
-              gap: 4,
+              gap: 3,
             }}
           >
-            <Box sx={{ flex: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: { xs: 'flex-start', md: 'center' },
+                flexShrink: 0,
+                order: { xs: -1, md: 1 },
+                mb: { xs: 2, md: 0 },
+                width: { xs: '100%', md: 'auto' },
+              }}
+            >
+              <Avatar
+                src="/profile.jpeg"
+                alt="Profile"
+                sx={{
+                  width: { xs: 128, sm: 130, md: 148 },
+                  height: { xs: 128, sm: 130, md: 148 },
+                  boxShadow: 3,
+                  border: '3px solid #fff',
+                }}
+              />
+            </Box>
+            <Box sx={{ flex: 1, order: { xs: 0, md: 0 } }}>
               <Typography
                 variant="h4"
                 gutterBottom
@@ -80,7 +101,7 @@ export default function About() {
                         color: 'text.secondary',
                       }}
                     >
-                      Rutherford Appleton Laboratory, STFC, UK
+                      Scientific Computing, STFC
                     </Typography>
                   </Box>
                 </Box>
@@ -171,27 +192,6 @@ export default function About() {
                 <li>Service computing</li>
                 <li>Application of large language models (LLM) and agentic AI</li>
               </Box>
-            </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                flexShrink: 0,
-                mt: { xs: 2, md: 0 },
-                mb: { xs: 3, md: 0 },
-                width: { xs: '100%', md: 'auto' },
-              }}
-            >
-              <Avatar
-                src="/profile.jpeg"
-                alt="Profile"
-                sx={{
-                  width: { xs: 150, sm: 180, md: 200 },
-                  height: { xs: 150, sm: 180, md: 200 },
-                  boxShadow: 3,
-                  border: '3px solid #fff',
-                }}
-              />
             </Box>
           </Box>
 
