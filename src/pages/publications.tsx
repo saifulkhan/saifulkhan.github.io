@@ -30,6 +30,13 @@ const Publications = () => {
     .map(Number)
     .sort((a, b) => b - a);
 
+  // Helper function to format ordinal numbers with superscript
+  const formatOrdinal = (text: string) => {
+    return text.replace(/(\d+)(st|nd|rd|th)/gi, (match, number, suffix) => {
+      return `${number}<sup>${suffix}</sup>`;
+    });
+  };
+
   // Helper function to safely get and sort links
   const getSortedLinks = (links: NonNullable<Publication['links']>) => {
     return [...links].sort((a, b) => a.type.localeCompare(b.type));
@@ -161,11 +168,11 @@ const Publications = () => {
                               fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
                               fontSize: { xs: 14 },
                               color: 'text.primary',
-                              fontWeight: 500,
                             }}
-                          >
-                            {pub.venue && pub.venue.name}
-                          </Typography>
+                            dangerouslySetInnerHTML={{
+                              __html: pub.venue ? formatOrdinal(pub.venue.name) : '',
+                            }}
+                          />
 
                           {/* Links */}
                           {pub.links && pub.links.length > 0 && (
@@ -183,7 +190,7 @@ const Publications = () => {
 
                       {/* Divider */}
                       {idx < groupedByYear[year].length - 1 && (
-                        <Box sx={{ mt: 1, mb: 0.0 }}>
+                        <Box sx={{ mt: 0, mb: 0.0 }}>
                           <Divider />
                         </Box>
                       )}
