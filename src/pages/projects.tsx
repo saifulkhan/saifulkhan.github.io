@@ -72,7 +72,7 @@ const Projects = () => {
             variant="h5"
             gutterBottom
             sx={{
-              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+              fontFamily: 'Lato, sans-serif',
               mb: 3,
               fontWeight: 600,
             }}
@@ -86,9 +86,10 @@ const Projects = () => {
           {/* Grants Section */}
           {filteredGrants.length > 0 && (
             <Box sx={{ mb: 4 }}>
-              <Typography variant="h6" gutterBottom sx={{ mb: 2, fontWeight: 500, fontFamily: 'Arial' }}>
+              <Typography variant="h6" sx={{ mb: 1, fontWeight: 600, fontFamily: 'Lato, sans-serif' }}>
                 Grants
               </Typography>
+              <Divider sx={{ mb: 2 }} />
               <Stack spacing={3}>
                 {filteredGrants.map((proj, idx) => (
                   <Box key={`grant-${idx}`}>
@@ -104,9 +105,9 @@ const Projects = () => {
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                          fontFamily: 'Lato, sans-serif',
                           fontWeight: 'bold',
-                          fontSize: { xs: 14 },
+                          fontSize: 16,
                           lineHeight: 1.3,
                           color: 'text.primary',
                         }}
@@ -129,9 +130,9 @@ const Projects = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                        fontFamily: 'Lato, sans-serif',
                         fontWeight: 'normal',
-                        fontSize: { xs: 14 },
+                        fontSize: 14,
                         lineHeight: 1.3,
                         color: 'text.secondary',
                       }}
@@ -156,9 +157,9 @@ const Projects = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontFamily: 'Lato, sans-serif',
                               fontWeight: 'normal',
-                              fontSize: { xs: 13 },
+                              fontSize: 13,
                               lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
@@ -175,9 +176,9 @@ const Projects = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontFamily: 'Lato, sans-serif',
                               fontWeight: 'normal',
-                              fontSize: { xs: 13 },
+                              fontSize: 13,
                               lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
@@ -195,9 +196,9 @@ const Projects = () => {
                             variant="body2"
                             component="div"
                             sx={{
-                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontFamily: 'Lato, sans-serif',
                               fontWeight: 'normal',
-                              fontSize: { xs: 13 },
+                              fontSize: 13,
                               display: 'flex',
                               alignItems: 'center',
                               gap: 0.5,
@@ -212,13 +213,6 @@ const Projects = () => {
                         </Box>
                       )}
                     </Box>
-
-                    {/* Divider */}
-                    {idx < filteredGrants.length - 1 && (
-                      <Box sx={{ mt: 2, mb: 1 }}>
-                        <Divider />
-                      </Box>
-                    )}
                   </Box>
                 ))}
               </Stack>
@@ -241,9 +235,10 @@ const Projects = () => {
           {/* Projects Section */}
           {filteredProjects.length > 0 && (
             <Box>
-              <Typography variant="h6" gutterBottom sx={{ mb: 2, fontWeight: 500, fontFamily: 'Arial' }}>
+              <Typography variant="h6" sx={{ mb: 1, fontWeight: 600, fontFamily: 'Lato, sans-serif' }}>
                 Projects
               </Typography>
+              <Divider sx={{ mb: 2 }} />
               <Stack spacing={3}>
                 {filteredProjects.map((proj, idx) => (
                   <Box key={`project-${idx}`}>
@@ -259,9 +254,9 @@ const Projects = () => {
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                          fontFamily: 'Lato, sans-serif',
                           fontWeight: 'bold',
-                          fontSize: { xs: 14 },
+                          fontSize: 16,
                           lineHeight: 1.3,
                           color: 'text.primary',
                         }}
@@ -284,9 +279,9 @@ const Projects = () => {
                     <Typography
                       variant="body2"
                       sx={{
-                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                        fontFamily: 'Lato, sans-serif',
                         fontWeight: 'normal',
-                        fontSize: { xs: 14 },
+                        fontSize: 14,
                         lineHeight: 1.3,
                         color: 'text.secondary',
                       }}
@@ -311,9 +306,9 @@ const Projects = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontFamily: 'Lato, sans-serif',
                               fontWeight: 'normal',
-                              fontSize: { xs: 13 },
+                              fontSize: 13,
                               lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
@@ -330,9 +325,9 @@ const Projects = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontFamily: 'Lato, sans-serif',
                               fontWeight: 'normal',
-                              fontSize: { xs: 13 },
+                              fontSize: 13,
                               lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
@@ -350,9 +345,9 @@ const Projects = () => {
                             variant="body2"
                             component="div"
                             sx={{
-                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontFamily: 'Lato, sans-serif',
                               fontWeight: 'normal',
-                              fontSize: { xs: 13 },
+                              fontSize: 13,
                               lineHeight: 1.3,
                               color: 'text.secondary',
                             }}
@@ -364,13 +359,6 @@ const Projects = () => {
                         </Box>
                       )}
                     </Box>
-
-                    {/* Divider */}
-                    {idx < filteredProjects.length - 1 && (
-                      <Box sx={{ mt: 1, mb: 0.0 }}>
-                        <Divider />
-                      </Box>
-                    )}
                   </Box>
                 ))}
               </Stack>

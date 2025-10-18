@@ -68,7 +68,7 @@ const Publications = () => {
             variant="h5"
             gutterBottom
             sx={{
-              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+              fontFamily: 'Lato, sans-serif',
               mb: 3,
               fontWeight: 600,
             }}
@@ -83,38 +83,48 @@ const Publications = () => {
                 <Typography
                   variant="h6"
                   sx={{
-                    fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                    fontFamily: 'Lato, sans-serif',
                     fontWeight: 600,
-                    mb: 2,
+                    mb: 1,
                     color: 'text.primary',
                   }}
                 >
                   {year}
                 </Typography>
 
+                {/* Divider under year */}
+                <Divider sx={{ mb: 2 }} />
+
                 {/* Publications for this year */}
                 <Stack spacing={3}>
                   {groupedByYear[year].map((pub: Publication, idx: number) => (
                     <Box key={idx}>
-                      <Box sx={{ mb: 0.5 }}>
+                      <Box
+                        sx={
+                          {
+                            // mb: 0.5
+                          }
+                        }
+                      >
                         <Box
                           sx={{
                             display: 'flex',
                             flexDirection: { xs: 'column', sm: 'row' },
                             justifyContent: 'space-between',
                             alignItems: { xs: 'flex-start', sm: 'flex-start' },
-                            mb: 1.0,
+                            // mb: 1.0,
                             gap: { xs: 0.5, sm: 2 },
                           }}
                         >
                           <Typography
                             variant="subtitle1"
                             sx={{
-                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                              fontFamily: 'Lato, sans-serif',
+                              fontSize: 14,
+                              // lineHeight: 1.3,
                               fontWeight: 'bold',
-                              fontSize: { xs: 14 },
-                              lineHeight: 1.3,
                               color: 'text.primary',
+                              // mb: 0.3,
                             }}
                           >
                             {pub.title}
@@ -125,9 +135,9 @@ const Publications = () => {
                         <Typography
                           variant="body2"
                           sx={{
-                            fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
-                            fontSize: { xs: 14 },
-                            mb: 0.0,
+                            fontFamily: 'Lato, sans-serif',
+                            fontSize: 14,
+                            // mb: 0.3,
                             color: 'text.secondary',
                           }}
                         >
@@ -165,8 +175,8 @@ const Publications = () => {
                           <Typography
                             variant="body2"
                             sx={{
-                              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
-                              fontSize: { xs: 14 },
+                              fontFamily: 'Lato, sans-serif',
+                              fontSize: 14,
                               color: 'text.primary',
                             }}
                             dangerouslySetInnerHTML={{
@@ -187,13 +197,6 @@ const Publications = () => {
                           )}
                         </Box>
                       </Box>
-
-                      {/* Divider */}
-                      {idx < groupedByYear[year].length - 1 && (
-                        <Box sx={{ mt: 0, mb: 0.0 }}>
-                          <Divider />
-                        </Box>
-                      )}
                     </Box>
                   ))}
                 </Stack>

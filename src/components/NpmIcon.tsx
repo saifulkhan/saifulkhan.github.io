@@ -12,7 +12,7 @@ const NpmIcon: React.FC<SvgIconProps> = (props) => {
         x="24"
         y="30"
         textAnchor="middle"
-        fontFamily="Arial, Helvetica, sans-serif"
+        fontFamily="Lato, sans-serif"
         fontWeight="bold"
         fontSize="20"
         fill="#FFF"

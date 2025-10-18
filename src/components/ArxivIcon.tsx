@@ -11,7 +11,7 @@ const ArxivIcon = (props: SvgIconProps) => (
       fontSize="13"
       fontWeight="bold"
       fill="#fff"
-      fontFamily="Arial, Helvetica, sans-serif"
+      fontFamily="Lato, sans-serif"
     >
       arXiv
     </text>

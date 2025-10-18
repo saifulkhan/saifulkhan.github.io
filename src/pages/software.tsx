@@ -46,7 +46,7 @@ const Software = () => {
             key={idx}
             variant="body2"
             sx={{
-              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+              fontFamily: 'Lato, sans-serif',
               fontSize: { xs: 14 },
               lineHeight: 1.3,
               color: desc.color,
@@ -72,7 +72,7 @@ const Software = () => {
             sx={{
               backgroundColor: 'action.hover',
               color: 'text.secondary',
-              fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+              fontFamily: 'Lato, sans-serif',
               fontSize: 13,
               letterSpacing: 0.2,
               px: 0.5,
@@ -111,11 +111,7 @@ const Software = () => {
             borderRadius: { xs: 2, md: 4 },
           }}
         >
-          <Typography
-            variant="h5"
-            gutterBottom
-            sx={{ fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif', mb: 3, fontWeight: 600 }}
-          >
+          <Typography variant="h5" gutterBottom sx={{ fontFamily: 'Lato, sans-serif', mb: 3, fontWeight: 600 }}>
             Software & Systems
           </Typography>
 
@@ -165,7 +161,7 @@ const Software = () => {
                       fontWeight: 'bold',
                       mb: 1,
                       textAlign: { xs: 'center', sm: 'left' },
-                      fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                      fontFamily: 'Lato, sans-serif',
                     }}
                   >
                     {sw.name}

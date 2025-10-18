@@ -42,7 +42,7 @@ export default function About() {
                 variant="h4"
                 gutterBottom
                 sx={{
-                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                  fontFamily: 'Lato, sans-serif',
                   fontWeight: 'bold',
                   color: 'text.primary',
                   mb: 0.5,
@@ -53,96 +53,83 @@ export default function About() {
               <Typography
                 variant="subtitle2"
                 sx={{
-                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                  fontFamily: 'Lato, sans-serif',
                   color: 'text.secondary',
                   mb: 0.5,
                 }}
               >
-                B.E., M.S., D.Phil.
+                B.E., M.S., D.Phil. (Oxford)
               </Typography>
               <Typography
                 variant="subtitle2"
                 sx={{
-                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                  fontFamily: 'Lato, sans-serif',
                   color: 'text.secondary',
-                  mb: 2,
+                  // mb: 2,
                 }}
               >
                 Senior Computer Scientist
               </Typography>
 
               <Box sx={{ mb: 2, display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <EmailIcon sx={{ fontSize: 18, color: 'text.secondary' }} />
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
-                      color: 'text.primary',
-                    }}
-                  >
-                    saiful.etc (at) gmail.com
-                  </Typography>
-                </Box>
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-                  <LocationOnIcon sx={{ fontSize: 18, color: 'text.secondary', mt: 0.2 }} />
                   <Box>
                     <Typography
                       variant="body2"
                       sx={{
-                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
-                        color: 'text.primary',
+                        fontFamily: 'Lato, sans-serif',
+                        color: 'text.secondary',
                       }}
                     >
-                      Rutherford Appleton Laboratory
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
-                        color: 'text.primary',
-                      }}
-                    >
-                      Science and Technology Facilities Council (STFC), UK
+                      Rutherford Appleton Laboratory, STFC, UK
                     </Typography>
                   </Box>
                 </Box>
-              </Box>
-
-              <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
-                <IconButton
-                  component="a"
-                  href="https://scholar.google.com/citations?hl=en&user=lZLfsJwAAAAJ&view_op=list_works&sortby=pubdate"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="Google Scholar"
-                  size="small"
-                  sx={{ padding: 0.5 }}
-                >
-                  <SchoolIcon sx={{ fontSize: 18 }} />
-                </IconButton>
-                <IconButton
-                  component="a"
-                  href="https://github.com/saifulkhan"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="GitHub"
-                  size="small"
-                  sx={{ padding: 0.5 }}
-                >
-                  <GitHubIcon sx={{ fontSize: 18 }} />
-                </IconButton>
-                <IconButton
-                  component="a"
-                  href="https://www.linkedin.com/in/khansaiful/"
-                  target="_blank"
-                  rel="noopener"
-                  aria-label="LinkedIn"
-                  size="small"
-                  sx={{ padding: 0.5 }}
-                >
-                  <LinkedInIcon sx={{ fontSize: 18 }} />
-                </IconButton>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <IconButton
+                    component="a"
+                    href="mailto:saiful.etc@gmail.com"
+                    aria-label="Email"
+                    size="small"
+                    title="saiful.etc@gmail.com"
+                    sx={{ padding: 0.5 }}
+                  >
+                    <EmailIcon sx={{ fontSize: 18 }} />
+                  </IconButton>
+                  <IconButton
+                    component="a"
+                    href="https://scholar.google.com/citations?hl=en&user=lZLfsJwAAAAJ&view_op=list_works&sortby=pubdate"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Google Scholar"
+                    size="small"
+                    sx={{ padding: 0.5 }}
+                  >
+                    <SchoolIcon sx={{ fontSize: 18 }} />
+                  </IconButton>
+                  <IconButton
+                    component="a"
+                    href="https://github.com/saifulkhan"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="GitHub"
+                    size="small"
+                    sx={{ padding: 0.5 }}
+                  >
+                    <GitHubIcon sx={{ fontSize: 18 }} />
+                  </IconButton>
+                  <IconButton
+                    component="a"
+                    href="https://www.linkedin.com/in/khansaiful/"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="LinkedIn"
+                    size="small"
+                    sx={{ padding: 0.5 }}
+                  >
+                    <LinkedInIcon sx={{ fontSize: 18 }} />
+                  </IconButton>
+                </Box>
               </Box>
 
               <Box sx={{ my: 2 }}>
@@ -154,16 +141,37 @@ export default function About() {
                 sx={{
                   mb: 1,
                   textAlign: 'justify',
-                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                  fontFamily: 'Lato, sans-serif',
                   fontWeight: 'normal',
                   lineHeight: 1.3,
                   color: 'text.primary',
+                  fontSize: 14,
                 }}
               >
-                <strong>Research Interests:</strong> Data-driven software systems and infrastructure development, with
-                particular interests in visualization for large-scale infrastructures, large language models and AI
-                agents, and service computing.
+                I am a Senior Computer Scientist at Rutherford Appleton Laboratory, Science and Technology Facilities
+                Council, UK Research and Innovation. Previously, I earned my DPhil (PhD) in Engineering Science from the
+                University of Oxford where I also conducted postdoctoral research under the supervision of Prof. Min
+                Chen. My industrial experience includes working as a data scientist at Horus Security Consultancy and
+                the International Seismological Centre. Additionally, I have held software engineering positions at
+                Oracle and ABB. My research interests include:
               </Typography>
+              <Box
+                component="ul"
+                sx={{
+                  margin: 0,
+                  paddingLeft: 2.25,
+                  mt: 0.25,
+                  fontFamily: 'Lato, sans-serif',
+                  fontSize: 14,
+                  color: 'text.primary',
+                  lineHeight: 1.3,
+                }}
+              >
+                <li>Data-driven software infrastructure </li>
+                <li>Large-scale data visualization</li>
+                <li>Service computing</li>
+                <li>Application of large language models (LLM) and agentic AI</li>
+              </Box>
             </Box>
             <Box
               sx={{
@@ -195,7 +203,7 @@ export default function About() {
               variant="h6"
               gutterBottom
               sx={{
-                fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                fontFamily: 'Lato, sans-serif',
                 fontWeight: 'bold',
                 color: 'text.primary',
                 mb: 2,
@@ -213,15 +221,15 @@ export default function About() {
                 '& li': {
                   display: 'flex',
                   gap: 2,
-                  mb: 1.5,
-                  fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                  mb: 0.5,
+                  fontFamily: 'Lato, sans-serif',
                 },
               }}
             >
               {eventsList.map((event, index) => (
                 <li key={index}>
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, width: '100%' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, width: '100%' }}>
                       <Typography
                         variant="body2"
                         sx={{
@@ -229,8 +237,9 @@ export default function About() {
                           width: 170,
                           textAlign: 'left',
                           mb: 0,
-                          fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
-                          lineHeight: 1.5,
+                          fontFamily: 'Lato, sans-serif',
+                          // lineHeight: 1.5,
+                          fontSize: 14,
                         }}
                       >
                         {event.date}
@@ -241,12 +250,13 @@ export default function About() {
                         target="_blank"
                         rel="noopener noreferrer"
                         sx={{
-                          fontFamily: 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif',
+                          fontFamily: 'Lato, sans-serif',
                           width: 270,
                           display: 'inline-block',
                           whiteSpace: 'nowrap',
                           overflow: 'hidden',
                           textOverflow: 'ellipsis',
+                          fontSize: 14,
                         }}
                       >
                         {event.title}

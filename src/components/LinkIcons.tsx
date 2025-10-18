@@ -88,7 +88,7 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
                   x="10"
                   y="15"
                   textAnchor="middle"
-                  fontFamily="Arial, Helvetica, sans-serif"
+                  fontFamily="Lato, sans-serif"
                   fontWeight="bold"
                   fontSize="9"
                   fill="#fff"
