@@ -169,11 +169,29 @@ export default function About() {
                 }}
               >
                 I am a Senior Computer Scientist at Rutherford Appleton Laboratory, Science and Technology Facilities
-                Council, UK Research and Innovation. Previously, I earned my DPhil (PhD) in Engineering Science from the
-                University of Oxford where I also conducted postdoctoral research under the supervision of Prof. Min
-                Chen. My industrial experience includes working as a data scientist at Horus Security Consultancy and
-                the International Seismological Centre. Additionally, I have held software engineering positions at
-                Oracle and ABB. My research interests include:
+                Council, UK Research and Innovation. I lead large-scale research programs that bridge AI/ML research
+                with real-world systems.
+                <br />
+                Currently, I am Co-I on a £0.5M EPSRC-funded project on visualization for machine learning and £1.5M
+                UKRI-funded project on correlative imaging both involving cross-functional teams. I led the development
+                of the FAIR data management infrastructure for the UK Atomic Energy Authority's tokamak fusion
+                program—work that earned me a UKRI In Year Award. I also led development of streaming and visualization
+                infrastructure for the Square Kilometre Array (SKA), world's largest radio telescope.
+                <br />
+                My industrial experience includes building production-grade systems that solve complex, real-world
+                problems. At the International Seismological Centre, I developed the Visual Bulletin Analytics System
+                (VBAS), replacing their 30-year-old manual seismological analysis process with modern software
+                infrastructure. During the COVID-19 pandemic, I developed the Rapid Assistance in Modelling the Pandemic
+                Visualisation infrastructure for visualizing pandemic and epidemiological modeling data, receiving a
+                RAMP Early Career Investigator Award from the Royal Society, UK for this work. At Data & Analytics
+                Facility for National Infrastructure (DAFNI) project, I serve as user liaison, directly supporting
+                academic researchers to maximize it's impact.
+                <br />I earned my DPhil (PhD) in Engineering Science from the University of Oxford under Prof. Min Chen
+                and Prof. René Bañares-Alcántara. My career began with software engineering roles at Oracle and ABB,
+                where I developed enterprise database systems and industrial automation applications as part of large
+                engineering teams. My work focuses on data-driven software systems combining machine learning, data
+                engineering, and visualization—creating robust, team-built solutions that transform how organizations
+                analyze data and make decisions.
               </Typography>
               <Box
                 component="ul"
@@ -187,9 +205,18 @@ export default function About() {
                   lineHeight: 1.3,
                 }}
               >
-                <li>Data-driven software infrastructure </li>
-                <li>Large-scale data visualization</li>
-                <li>Service computing</li>
+                <li>
+                  Data-driven software systems -- Building scalable infrastructure that integrates machine learning,
+                  data engineering, and visualization for scientific and industrial applications
+                </li>
+                <li>
+                  Large-scale data visualization -- Developing visualization systems for high-volume and complex
+                  scientific datasets
+                </li>
+                <li>
+                  AI/ML for scientific computing -- Applying machine learning, physics-informed neural networks, and
+                  large language models to solve domain-specific challenges, and infrastructure{' '}
+                </li>
                 <li>Application of large language models (LLM) and agentic AI</li>
               </Box>
             </Box>
