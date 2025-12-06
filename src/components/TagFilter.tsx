@@ -23,9 +23,8 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, filter, setFilter, tagCount
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   // Unique sorted tag options
-  const preferredOrder = ['Software Engineering', 'Machine Learning', 'Visualization', 'LLM'];
-
   const tagOptions = useMemo(() => {
+    const preferredOrder = ['Software Engineering', 'Machine Learning', 'Visualization', 'LLM'];
     return Array.from(new Set(tags))
       .filter((tag) => tag !== 'DPhil Thesis')
       .sort((a, b) => {
@@ -36,7 +35,7 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, filter, setFilter, tagCount
         if (indexB === -1) return -1; // b is not preferred, a is
         return indexA - indexB;
       });
-  }, [tags, preferredOrder]);
+  }, [tags]);
 
   const handleFilter = (_: React.MouseEvent<HTMLElement>, newFilter: string | null) => {
     setFilter(newFilter);
