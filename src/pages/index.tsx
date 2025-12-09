@@ -27,7 +27,6 @@ export default function About() {
           sx={{
             p: { xs: 2, sm: 3, md: 4 },
             borderRadius: { xs: 2, md: 3 },
-            background: 'linear-gradient(to bottom, #ffffff 0%, #fafafa 100%)',
             border: '1px solid',
             borderColor: 'divider',
           }}
