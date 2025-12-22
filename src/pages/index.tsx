@@ -5,7 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SchoolIcon from '@mui/icons-material/School';
 import EmailIcon from '@mui/icons-material/Email';
-import { eventsList } from '../data/eventsList';
+// import { eventsList } from '../data/eventsList';
 
 export default function About() {
   return (
@@ -208,13 +208,14 @@ export default function About() {
                     fontSize: 14,
                   }}
                 >
-                  Dr. Saiful Khan is a Senior Computer Scientist at the Rutherford Appleton Laboratory, STFC, where he
-                  leads research and development of data-driven software infrastructure for large-scale scientific
-                  applications. He holds a DPhil (PhD) from the University of Oxford, where he conducted postdoctoral
-                  research under Prof. Min Chen. His work spans critical infrastructure including FAIR-MAST (nuclear
-                  fusion data), RAMPVIS (pandemic data visualization), SKA (radio astronomy), VBAS (seismological data
-                  visualization), DAFNI (national data & analytics infrastructure ), etc. With industry experience at
-                  Oracle, ABB, and other organizations, he bridges advanced research with real-world impact.
+                  Dr. Saiful Khan is a Senior Scientist at the Rutherford Appleton Laboratory, part of the Science and
+                  Technology Facilities Council (STFC) under UK Research and Innovation (UKRI). He leads research on
+                  developing data-driven software infrastructure for large-scale scientific applications. He earned a
+                  DPhil (PhD) from the University of Oxford, where he conducted postdoctoral research under Professor
+                  Min Chen. His work covers key infrastructure projects like FAIR-MAST (nuclear fusion data), RAMPVIS
+                  (pandemic data visualization), SKA (radio astronomy), VBAS (seismological data visualization), and
+                  DAFNI (national data and analytics infrastructure). With industry experience at Oracle, ABB, and other
+                  firms, he bridges advanced research with real-world impact.
                 </Typography>
 
                 <Typography
@@ -252,8 +253,8 @@ export default function About() {
                 >
                   <li>Data-driven software infrastructure</li>
                   <li>Data visualization infrastructure</li>
-                  <li>Applied Machine Learning</li>
-                  <li>Large language models (LLM) & Agents</li>
+                  <li>Applied AI & Machine Learning</li>
+                  <li>Large language models (LLM) & Agentic AI</li>
                 </Box>
 
                 <Typography
@@ -517,6 +518,7 @@ export default function About() {
             }}
           />
 
+          {/*  
           <Box sx={{ mt: 3 }}>
             <Typography
               variant="h6"
@@ -537,7 +539,7 @@ export default function About() {
               Events
             </Typography>
 
-            <Box
+             <Box
               component="ul"
               sx={{
                 listStyle: 'none',
@@ -596,6 +598,7 @@ export default function About() {
               ))}
             </Box>
           </Box>
+          */}
         </Paper>
       </Box>
     </>
