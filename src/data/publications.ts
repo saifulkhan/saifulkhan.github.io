@@ -17,6 +17,14 @@ export interface Publication {
 
 export const publicationsList: Publication[] = [
   {
+    title: 'A Multiplexing Design Space: Theory, Method, and Application',
+    authors: 'Y Xing, A Farea, S Khan, M Chen',
+    venue: { name: 'Under Review', type: 'conference' },
+    year: 2026,
+    tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
+    links: [],
+  },
+  {
     title: 'Data Virtualization for Machine Learning',
     authors: 'S Khan, J Chakraborty, P Beaucamp, N Bhujel, M Chen',
     venue: { name: 'Int. Conf. on Services Computing (SCC 2025), Hong Kong', type: 'conference' },
