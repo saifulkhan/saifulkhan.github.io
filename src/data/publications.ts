@@ -19,10 +19,19 @@ export const publicationsList: Publication[] = [
   {
     title: 'A Multiplexing Design Space: Theory, Method, and Application',
     authors: 'Y Xing, A Farea, S Khan, M Chen',
-    venue: { name: 'Under Review', type: 'conference' },
+    venue: { name: 'under review', type: 'conference' },
     year: 2026,
     tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
     links: [],
+  },
+  {
+    title:
+      'Learning Fluid-Structure Interaction with Physics-Informed Machine Learning and Immersed Boundary Methods',
+    authors: 'A Farea, S Khan, R Daryani, EC Ersan, MS Celebi',
+    venue: { name: 'arxiv', type: 'arxiv' },
+    year: 2026,
+    tags: ['Machine Learning'],
+    links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2505.18565' }],
   },
   {
     title: 'Data Virtualization for Machine Learning',
@@ -64,15 +73,6 @@ export const publicationsList: Publication[] = [
       { type: 'pdf', url: 'https://doi.org/10.1109/TPS.2025.3583419' },
       { type: 'github', url: 'https://github.com/ukaea/fair-mast' },
     ],
-  },
-  {
-    title:
-      'Learning Fluid-Structure Interaction Dynamics with Physics-Informed Neural Networks and Immersed Boundary Methods',
-    authors: 'A Farea, S Khan, R Daryani, EC Ersan, MS Celebi',
-    venue: { name: 'arxiv', type: 'arxiv' },
-    year: 2025,
-    tags: ['Machine Learning'],
-    links: [{ type: 'pdf', url: 'https://www.arxiv.org/abs/2505.18565' }],
   },
   {
     title: 'Feature-Action Design Patterns for Storytelling Visualizations with Time Series Data',
