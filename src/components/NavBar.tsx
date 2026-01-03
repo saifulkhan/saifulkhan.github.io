@@ -37,7 +37,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
     { name: 'About', path: '/' },
     { name: 'Software', path: '/software' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Research', path: '/research' },
+    { name: 'Publication', path: '/publication' },
   ];
 
   const handleDrawerToggle = () => {
