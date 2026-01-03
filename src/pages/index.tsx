@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, Typography, Avatar, Paper, Divider, IconButton, Link } from '@mui/material';
+import { Box, Typography, Avatar, Paper, Divider, IconButton } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import SchoolIcon from '@mui/icons-material/School';
@@ -256,7 +256,6 @@ export default function About() {
                   <li>Applied Machine Learning</li>
                   <li>Large language models (LLM) & Agent-based Systems</li>
                 </Box>
-
               </Box>
             </Box>
           </Box>
@@ -268,7 +267,6 @@ export default function About() {
               opacity: 0.3,
             }}
           />
-
         </Paper>
       </Box>
     </>

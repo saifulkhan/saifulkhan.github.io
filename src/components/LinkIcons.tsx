@@ -41,8 +41,7 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
               size="small"
               sx={{ fontSize: iconSize, ml: i > 0 ? spacing : 0 }}
             >
-              {/* set github icon color to dark gray */}
-              <GitHubIcon fontSize="inherit" htmlColor="#333" />
+              <GitHubIcon fontSize="inherit" />
             </IconButton>
           );
         }
