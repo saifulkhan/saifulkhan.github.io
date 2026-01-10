@@ -209,13 +209,17 @@ export default function About() {
                   }}
                 >
                   Dr. Saiful Khan is a Senior Scientist at the Rutherford Appleton Laboratory, part of the Science and
-                  Technology Facilities Council (STFC) under UK Research and Innovation (UKRI). He leads research on
-                  developing data-driven software infrastructure for large-scale scientific applications. He earned a
-                  DPhil (PhD) from the University of Oxford, where he conducted postdoctoral research under Professor
-                  Min Chen. His work covers key infrastructure projects like FAIR-MAST (nuclear fusion data), RAMPVIS
-                  (pandemic data visualization), SKA (radio astronomy), VBAS (seismological data visualization), and
-                  DAFNI (national data and analytics infrastructure). With industry experience at Oracle, ABB, and other
-                  firms, he bridges advanced research with real-world impact.
+                  Technology Facilities Council (STFC) under UK Research and Innovation (UKRI). He specializes in
+                  developing data-driven systems and intelligent software to accelerate scientific research, leading the
+                  design and development of full-stack systems that address complex, mission-critical challenges across
+                  diverse fields. He earned a DPhil (PhD) from the University of Oxford, where he conducted postdoctoral
+                  research under Professor Min Chen. His work spans key infrastructure projects including FAIR-MAST
+                  (nuclear fusion data), RAMPVIS (pandemic data visualization), SKA (radio astronomy), VBAS
+                  (seismological data visualization), and DAFNI (national data and analytics infrastructure). His
+                  expertise encompasses software architecture, machine learning, data visualization, data management,
+                  and research software engineering. With industry experience at Oracle, ABB, and other firms, Dr. Khan
+                  bridges advanced research with real-world impact, delivering solutions for science, pandemic response,
+                  security intelligence, seismology, and radio astronomy applications.
                 </Typography>
 
                 <Typography
