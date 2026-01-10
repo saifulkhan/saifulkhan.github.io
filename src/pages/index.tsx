@@ -71,12 +71,8 @@ export default function About() {
                 sx={{
                   fontFamily: 'Lato, sans-serif',
                   fontWeight: 700,
-                  color: 'primary.main',
+                  color: '#424242',
                   mb: 0.5,
-                  background: 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
                 }}
               >
                 Dr. Saiful Khan
@@ -230,12 +226,9 @@ export default function About() {
                     fontWeight: 700,
                     fontSize: 15,
                     borderLeft: '3px solid',
-                    borderColor: '#1565c0',
+                    borderColor: '#424242',
                     paddingLeft: 1.5,
-                    background: 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
+                    color: '#424242',
                   }}
                 >
                   Research Interests:
