@@ -2,7 +2,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 
 import { useMemo, useState, useEffect } from 'react';
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { ThemeProvider, createTheme, CssBaseline, Toolbar } from '@mui/material';
 import NavBar from '../components/NavBar';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -34,6 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NavBar darkMode={darkMode} onToggleTheme={handleToggleTheme} />
+      <Toolbar />
       <Component {...pageProps} />
     </ThemeProvider>
   );

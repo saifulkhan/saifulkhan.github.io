@@ -70,7 +70,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
   );
 
   return (
-    <AppBar position="static" color="default" elevation={0}>
+    <AppBar position="fixed" color="default" elevation={0}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {isMobile && (
           <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} sx={{ mr: 2 }}>
