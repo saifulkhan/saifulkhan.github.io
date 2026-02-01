@@ -86,7 +86,10 @@ const Projects = () => {
           {/* Grants Section */}
           {filteredGrants.length > 0 && (
             <Box sx={{ mb: 4 }}>
-              <Typography variant="h6" sx={{ mb: 1, fontWeight: 600, fontFamily: 'Lato, sans-serif' }}>
+              <Typography
+                variant="h6"
+                sx={{ mb: 1, fontWeight: 600, fontFamily: 'Lato, sans-serif', color: 'grey.500' }}
+              >
                 Grants
               </Typography>
               <Divider sx={{ mb: 2 }} />
@@ -235,7 +238,10 @@ const Projects = () => {
           {/* Projects Section */}
           {filteredProjects.length > 0 && (
             <Box>
-              <Typography variant="h6" sx={{ mb: 1, fontWeight: 600, fontFamily: 'Lato, sans-serif' }}>
+              <Typography
+                variant="h6"
+                sx={{ mb: 1, fontWeight: 600, fontFamily: 'Lato, sans-serif', color: 'grey.500' }}
+              >
                 Projects
               </Typography>
               <Divider sx={{ mb: 2 }} />

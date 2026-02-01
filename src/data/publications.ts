@@ -25,8 +25,7 @@ export const publicationsList: Publication[] = [
     links: [],
   },
   {
-    title:
-      'Learning Fluid-Structure Interaction with Physics-Informed Machine Learning and Immersed Boundary Methods',
+    title: 'Learning Fluid-Structure Interaction with Physics-Informed Machine Learning and Immersed Boundary Methods',
     authors: 'A Farea, S Khan, R Daryani, EC Ersan, MS Celebi',
     venue: { name: 'arxiv', type: 'arxiv' },
     year: 2026,

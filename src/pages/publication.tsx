@@ -86,7 +86,7 @@ const Publications = () => {
                     fontFamily: 'Lato, sans-serif',
                     fontWeight: 600,
                     mb: 1,
-                    color: 'text.primary',
+                    color: 'grey.500',
                   }}
                 >
                   {year}

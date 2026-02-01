@@ -71,7 +71,7 @@ export default function About() {
                 sx={{
                   fontFamily: 'Lato, sans-serif',
                   fontWeight: 700,
-                  color: '#424242',
+                  color: (theme) => (theme.palette.mode === 'dark' ? '#ffffff' : '#424242'),
                   mb: 0.5,
                 }}
               >
@@ -204,21 +204,105 @@ export default function About() {
                     fontSize: 14,
                   }}
                 >
-                  Dr. Saiful Khan is a Senior Scientist at the Rutherford Appleton Laboratory, part of the Science and
-                  Technology Facilities Council (STFC) under UK Research and Innovation (UKRI). He specializes in
-                  developing data-driven systems and intelligent software to accelerate scientific research, leading the
-                  design and development of full-stack systems that address complex, mission-critical challenges across
-                  diverse fields, e.g., science, pandemic response, security intelligence, seismology, and radio
-                  astronomy applications. He earned a DPhil (PhD) from the University of Oxford, where he conducted
-                  postdoctoral research under Professor Min Chen. His work spans key infrastructure projects including
-                  FAIR-MAST (nuclear fusion data), RAMPVIS (pandemic data visualization), SKA (radio astronomy), VBAS
-                  (seismological data visualization), and DAFNI (national data and analytics infrastructure). His
-                  expertise encompasses software architecture, machine learning, data visualization, data management,
-                  and research software engineering. With industry experience at Oracle, ABB, and other firms, Dr. Khan
-                  bridges advanced research with real-world impact.
+                  I am a Senior Scientist at the{' '}
+                  <a href="https://www.harwellcampus.com/" target="_blank" rel="noopener noreferrer">
+                    Rutherford Appleton Laboratory{' '}
+                  </a>
+                  part of the{' '}
+                  <a
+                    href="https://www.ukri.org/who-we-are/stfc/facilities/rutherford-appleton-laboratory/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Science and Technology Facilities Council (STFC) under UK Research and Innovation (UKRI)
+                  </a>
+                  . I earned a DPhil (PhD) from the University of Oxford, where I conducted postdoctoral research under{' '}
+                  <a href="https://sites.google.com/view/mchen" target="_blank" rel="noopener noreferrer">
+                    Professor Min Chen
+                  </a>
+                  .
+                  <br />I specialize in developing data-driven software systems and infrastructure. I led the design and
+                  development of large-scale systems that address complex challenges across diverse domains, e.g.,
+                  science, pandemic response, security intelligence, seismology, radio astronomy applications, etc. My
+                  work spans key infrastructure projects including{' '}
+                  <a href="https://mastapp.site/" target="_blank" rel="noopener noreferrer">
+                    FAIR-MAST (nuclear fusion data)
+                  </a>
+                  ,{' '}
+                  <a href="https://sites.google.com/view/rampvis/home" target="_blank" rel="noopener noreferrer">
+                    RAMPVIS (pandemic data visualization)
+                  </a>
+                  ,{' '}
+                  <a href="https://www.skatelescope.org/" target="_blank" rel="noopener noreferrer">
+                    SKA (radio astronomy)
+                  </a>
+                  ,{' '}
+                  <a href="https://isc.ac.uk/" target="_blank" rel="noopener noreferrer">
+                    VBAS (seismological data visualization)
+                  </a>
+                  , and{' '}
+                  <a href="" target="_blank" rel="noopener noreferrer">
+                    VIS4ML (visualization for machine learning)
+                  </a>
+                  , and{' '}
+                  <a href="https://www.dafni.ac.uk/" target="_blank" rel="noopener noreferrer">
+                    DAFNI (UK national data infrastructure)
+                  </a>
+                  .
+                  <br />
+                  With industry experience at{' '}
+                  <a href="https://www.oracle.com/" target="_blank" rel="noopener noreferrer">
+                    <strong>Oracle</strong>
+                  </a>
+                  ,{' '}
+                  <a href="https://global.abb/" target="_blank" rel="noopener noreferrer">
+                    <strong>ABB</strong>
+                  </a>
+                  , and other firms, I bridge advanced research with real-world impact. My research interest and
+                  expertise include <strong>Data-driven software infrastructure</strong>,{' '}
+                  <strong>Data visualization</strong>, <strong>Applied Machine Learning</strong> including{' '}
+                  <strong> Large Language Models (LLM)</strong> & <strong> Agent-based Systems</strong> with
+                  publications in{' '}
+                  <a
+                    href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4629386"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <strong>IEEE TSC</strong>
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=2945"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <strong>IEEE TVCG</strong>
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=27"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <strong>IEEE TPS</strong>
+                  </a>
+                  ,{' '}
+                  <a href="https://iopscience.iop.org/journal/2632-2153" target="_blank" rel="noopener noreferrer">
+                    <strong>MLST</strong>
+                  </a>
+                  ,{' '}
+                  <a href="https://royalsocietypublishing.org/journal/rsta" target="_blank" rel="noopener noreferrer">
+                    <strong>Phil. Trans. A</strong>
+                  </a>
+                  , and{' '}
+                  <a href="https://ieeevis.org/" target="_blank" rel="noopener noreferrer">
+                    <strong>IEEE VIS</strong>
+                  </a>
+                  .
+                  <br />
                 </Typography>
 
-                <Typography
+                {/* <Typography
                   variant="subtitle2"
                   sx={{
                     mb: 1.5,
@@ -226,15 +310,15 @@ export default function About() {
                     fontWeight: 700,
                     fontSize: 15,
                     borderLeft: '3px solid',
-                    borderColor: '#424242',
+                    borderColor: (theme) => (theme.palette.mode === 'dark' ? '#ffffff' : '#424242'),
                     paddingLeft: 1.5,
-                    color: '#424242',
+                    color: (theme) => (theme.palette.mode === 'dark' ? '#ffffff' : '#424242'),
                   }}
                 >
                   Research Interests:
-                </Typography>
+                </Typography> */}
 
-                <Box
+                {/* <Box
                   component="ul"
                   sx={{
                     mb: 2,
@@ -252,7 +336,7 @@ export default function About() {
                   <li>Data visualization</li>
                   <li>Applied Machine Learning</li>
                   <li>Large language models (LLM) & Agent-based Systems</li>
-                </Box>
+                </Box> */}
               </Box>
             </Box>
           </Box>
