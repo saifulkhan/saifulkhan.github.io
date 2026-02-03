@@ -195,7 +195,7 @@ export default function About() {
                 <Typography
                   variant="body2"
                   sx={{
-                    mb: 2,
+                    mb: 1,
                     textAlign: 'justify',
                     fontFamily: 'Lato, sans-serif',
                     fontWeight: 'normal',
@@ -204,7 +204,7 @@ export default function About() {
                     fontSize: 14,
                   }}
                 >
-                  I am a Senior Scientist at the{' '}
+                  I am a <strong>Senior Scientist</strong> at the{' '}
                   <a href="https://www.harwellcampus.com/" target="_blank" rel="noopener noreferrer">
                     Rutherford Appleton Laboratory{' '}
                   </a>
@@ -216,15 +216,29 @@ export default function About() {
                   >
                     Science and Technology Facilities Council (STFC) under UK Research and Innovation (UKRI)
                   </a>
-                  . I earned a DPhil (PhD) from the University of Oxford, where I conducted postdoctoral research under{' '}
+                  . Previously, I earned a DPhil (PhD) from the <strong>University of Oxford</strong>, where I conducted
+                  postdoctoral research under{' '}
                   <a href="https://sites.google.com/view/mchen" target="_blank" rel="noopener noreferrer">
                     Professor Min Chen
                   </a>
                   .
-                  <br />I specialize in developing data-driven software systems and infrastructure. I led the design and
-                  development of large-scale systems that address complex challenges across diverse domains, e.g.,
-                  science, pandemic response, security intelligence, seismology, radio astronomy applications, etc. My
-                  work spans key infrastructure projects including{' '}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    mb: 1,
+                    textAlign: 'justify',
+                    fontFamily: 'Lato, sans-serif',
+                    fontWeight: 'normal',
+                    lineHeight: 1.6,
+                    color: 'text.primary',
+                    fontSize: 14,
+                  }}
+                >
+                  I specialize in developing <strong>data-driven software systems</strong> and{' '}
+                  <strong>infrastructure</strong> to solve complex, large-scale challenges. My work spans diverse
+                  domains including nuclear fusion, pandemic response, security intelligence, and radio astronomy. I
+                  have led the design of several key infrastructures, such as:{' '}
                   <a href="https://mastapp.site/" target="_blank" rel="noopener noreferrer">
                     FAIR-MAST (nuclear fusion data)
                   </a>
@@ -248,9 +262,7 @@ export default function About() {
                   <a href="https://www.dafni.ac.uk/" target="_blank" rel="noopener noreferrer">
                     DAFNI (UK national data infrastructure)
                   </a>
-                  .
-                  <br />
-                  With industry experience at{' '}
+                  . With a professional background at{' '}
                   <a href="https://www.oracle.com/" target="_blank" rel="noopener noreferrer">
                     <strong>Oracle</strong>
                   </a>
@@ -258,9 +270,23 @@ export default function About() {
                   <a href="https://global.abb/" target="_blank" rel="noopener noreferrer">
                     <strong>ABB</strong>
                   </a>
-                  , and other firms, I bridge advanced research with real-world impact. My research interest and
-                  expertise include <strong>Data-driven software infrastructure</strong>,{' '}
-                  <strong>Data visualization</strong>, <strong>Applied Machine Learning</strong> including{' '}
+                  , I focus on bridging the gap between advanced academic research and scalable, real-world industrial
+                  impact.
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    mb: 2,
+                    textAlign: 'justify',
+                    fontFamily: 'Lato, sans-serif',
+                    fontWeight: 'normal',
+                    lineHeight: 1.6,
+                    color: 'text.primary',
+                    fontSize: 14,
+                  }}
+                >
+                  My research interests include <strong>Data-driven Software Infrastructure</strong>,{' '}
+                  <strong>Data Visualization</strong>, <strong>Applied Machine Learning</strong> including{' '}
                   <strong> Large Language Models (LLM)</strong> & <strong> Agent-based Systems</strong> with
                   publications in{' '}
                   <a
@@ -299,7 +325,6 @@ export default function About() {
                     <strong>IEEE VIS</strong>
                   </a>
                   .
-                  <br />
                 </Typography>
 
                 {/* <Typography
