@@ -95,7 +95,7 @@ export default function About() {
                   // mb: 2,
                 }}
               >
-                Senior Computer Scientist
+                Senior Data Scientist
               </Typography>
 
               <Box sx={{ mb: 2, display: 'flex', flexDirection: 'column', gap: 0.5 }}>
@@ -217,7 +217,7 @@ export default function About() {
                     fontSize: 14,
                   }}
                 >
-                  Dr Khan is a <strong>Senior Scientist</strong> at the{' '}
+                  Dr Khan is a <strong>Senior Data Scientist</strong> at the{' '}
                   <a
                     href="https://www.ukri.org/who-we-are/stfc/facilities/rutherford-appleton-laboratory/"
                     target="_blank"
@@ -225,12 +225,21 @@ export default function About() {
                   >
                     Science and Technology Facilities Council (STFC), UK Research and Innovation (UKRI)
                   </a>
-                  . He holds a DPhil from the <strong>University of Oxford</strong>, where he also conducted
-                  postdoctoral research with{' '}
+                  , where he leads projects transforming complex, end-to-end data workflows
+                  into production-grade software. He holds a DPhil from the <strong>University of Oxford</strong>, where
+                  he also conducted postdoctoral research with{' '}
                   <a href="https://sites.google.com/view/mchen" target="_blank" rel="noopener noreferrer">
                     Professor Min Chen
                   </a>
-                  .
+                  . With prior industry experience at{' '}
+                  <a href="https://www.oracle.com/" target="_blank" rel="noopener noreferrer">
+                    <strong>Oracle</strong>
+                  </a>{' '}
+                  and{' '}
+                  <a href="https://global.abb/" target="_blank" rel="noopener noreferrer">
+                    <strong>ABB</strong>
+                  </a>
+                  , he bridges research with scalable, real-world impact.
                 </Typography>
                 <Typography
                   variant="body2"
@@ -244,14 +253,39 @@ export default function About() {
                     fontSize: 14,
                   }}
                 >
-                  He specialises in <strong>data-driven software infrastructure</strong> across diverse domains—nuclear
-                  fusion, pandemic response, radio astronomy, seismology, and security intelligence.
+                  He specializes in <strong>data-driven software systems</strong> (integrating data, models, services, and visualization into scalable, interoperable infrastructure) across diverse domains: nuclear fusion,
+                  pandemic response, radio astronomy, seismology, building information search. His interests span{' '}
+                  <strong>Data &amp; Service Computing</strong>, <strong>Visual Analytics</strong>, and{' '}
+                  <strong>Applied Machine Learning</strong>.
                 </Typography>
 
                 <Typography
                   variant="body2"
                   sx={{
                     mb: 1,
+                    textAlign: 'justify',
+                    fontFamily: 'Lato, sans-serif',
+                    fontWeight: 'normal',
+                    lineHeight: 1.6,
+                    color: 'text.primary',
+                    fontSize: 14,
+                  }}
+                >
+                  He currently leads the development of the EU-funded <strong>UrbanAIR</strong> Digital Twin as a Service (DTaaS) delivering real-time, street-level air quality and heat-resilience forecasts across three European cities, alongside research on data virtualization services for large-scale ML workflows and LLM-based semantic search and automated metadata generation. He is also Co-PI on an
+                  EPSRC-funded (£575k) project with the University of Oxford on{' '}
+                  <a
+                    href="https://gtr.ukri.org/projects?ref=EP%2FX029557%2F1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    visualization for machine learning (VIS4ML)
+                  </a>
+                  .
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    mb: 2,
                     textAlign: 'justify',
                     fontFamily: 'Lato, sans-serif',
                     fontWeight: 'normal',
@@ -280,81 +314,16 @@ export default function About() {
                   <a href="https://mastapp.site/" target="_blank" rel="noopener noreferrer">
                     FAIR-MAST
                   </a>
-                  —a first-of-its-kind open data platform for UKAEA's nuclear fusion diagnostics that enables machine
+                  - a first-of-its-kind open data platform for UKAEA's nuclear fusion diagnostics that enables machine
                   learning and visual analytics on tokamak data. He also led development of{' '}
                   <a href="https://isc.ac.uk/" target="_blank" rel="noopener noreferrer">
                     VBAS
                   </a>{' '}
-                  for seismological data visualization and{' '}
-                  <a href="" target="_blank" rel="noopener noreferrer">
-                    VIS4ML
-                  </a>{' '}
-                  visualisation for machine learning. As a user liaison for{' '}
+                  for seismological data visualization, and a cross-platform data bridge connecting{' '}
                   <a href="https://www.dafni.ac.uk/" target="_blank" rel="noopener noreferrer">
                     DAFNI (UK National Data Infrastructure)
-                  </a>
-                  , he led data integration with CEDA (Centre for Environmental Data Analysis) to streamline researcher
-                  access to national environmental modeling resources.
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mb: 2,
-                    textAlign: 'justify',
-                    fontFamily: 'Lato, sans-serif',
-                    fontWeight: 'normal',
-                    lineHeight: 1.6,
-                    color: 'text.primary',
-                    fontSize: 14,
-                  }}
-                >
-                  With prior industry experience at{' '}
-                  <a href="https://www.oracle.com/" target="_blank" rel="noopener noreferrer">
-                    <strong>Oracle</strong>
                   </a>{' '}
-                  and{' '}
-                  <a href="https://global.abb/" target="_blank" rel="noopener noreferrer">
-                    <strong>ABB</strong>
-                  </a>
-                  , he bridges research with scalable, real-world impact. His interests span{' '}
-                  <strong>Software Infrastructure</strong>, <strong>Visual Analytics</strong>, and{' '}
-                  <strong>Applied Machine Learning</strong>, with publications in{' '}
-                  <a
-                    href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4629386"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    IEEE TSC
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=2945"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    IEEE TVCG
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=27"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    IEEE TPS
-                  </a>
-                  ,{' '}
-                  <a href="https://iopscience.iop.org/journal/2632-2153" target="_blank" rel="noopener noreferrer">
-                    MLST
-                  </a>
-                  ,{' '}
-                  <a href="https://royalsocietypublishing.org/journal/rsta" target="_blank" rel="noopener noreferrer">
-                    Phil. Trans. A
-                  </a>
-                  , and{' '}
-                  <a href="https://ieeevis.org/" target="_blank" rel="noopener noreferrer">
-                    IEEE VIS
-                  </a>
-                  .
+                  and CEDA (Centre for Environmental Data Analysis) services to accelerate environmental modelling.
                 </Typography>
 
                 {/* <Typography

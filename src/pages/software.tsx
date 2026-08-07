@@ -1,20 +1,24 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { Box, Card, Typography, Stack, Chip, Paper, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Card, Typography, Stack, Chip, Link, Paper, useTheme, useMediaQuery } from '@mui/material';
 import LinkIcons, { type LinkIcon } from '../components/LinkIcons';
 import softwareList from '../data/software';
 
 // Dynamically import the ZoomImage component with no SSR to prevent hydration issues with videos
-const ZoomImage = dynamic<{ src: string; alt: string; size: number }>(() => import('../components/ZoomImage'), {
-  ssr: false,
-  loading: () => <Box sx={{ width: 120, height: 120 }} />, // Show a placeholder while loading
-});
+const ZoomImage = dynamic<{ src: string; alt: string; width: number; height: number }>(
+  () => import('../components/ZoomImage'),
+  {
+    ssr: false,
+    loading: () => <Box sx={{ width: 240, height: 150 }} />, // Show a placeholder while loading
+  }
+);
 
 type DescriptionItem = {
   type: string;
   value: string;
   color?: string;
+  url?: string;
 };
 
 type SoftwareItem = {
@@ -30,10 +34,11 @@ const Software = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
+  // Landscape thumbnails (16:10) suit the screenshot-style images
   const getImageSize = () => {
-    if (isMobile) return 80;
-    if (isTablet) return 100;
-    return 120;
+    if (isMobile) return { width: 200, height: 125 };
+    if (isTablet) return { width: 220, height: 138 };
+    return { width: 240, height: 150 };
   };
 
   const renderDescription = (description: SoftwareItem['description']) => {
@@ -41,20 +46,40 @@ const Software = () => {
 
     return (
       <Stack spacing={0.5} mb={1}>
-        {description.map((desc, idx) => (
-          <Typography
-            key={idx}
-            variant="body2"
-            sx={{
-              fontFamily: 'Lato, sans-serif',
-              fontSize: { xs: 14 },
-              lineHeight: 1.3,
-              color: desc.color,
-            }}
-          >
-            {desc.value}
-          </Typography>
-        ))}
+        {description.map((desc, idx) =>
+          desc.type === 'credit' ? (
+            <Typography
+              key={idx}
+              variant="caption"
+              sx={{
+                fontFamily: 'Lato, sans-serif',
+                fontSize: 12,
+                color: 'text.secondary',
+              }}
+            >
+              {desc.url ? (
+                <Link href={desc.url} target="_blank" rel="noopener" color="inherit" underline="hover">
+                  {desc.value}
+                </Link>
+              ) : (
+                desc.value
+              )}
+            </Typography>
+          ) : (
+            <Typography
+              key={idx}
+              variant="body2"
+              sx={{
+                fontFamily: 'Lato, sans-serif',
+                fontSize: { xs: 14 },
+                lineHeight: 1.3,
+                color: desc.color,
+              }}
+            >
+              {desc.value}
+            </Typography>
+          )
+        )}
       </Stack>
     );
   };
@@ -138,8 +163,8 @@ const Software = () => {
                 {sw.image && (
                   <Box
                     sx={{
-                      width: getImageSize(),
-                      height: getImageSize(),
+                      width: getImageSize().width,
+                      height: getImageSize().height,
                       mr: { xs: 0, sm: 2 },
                       mb: { xs: 1.5, sm: 0 },
                       flexShrink: 0,
@@ -148,7 +173,12 @@ const Software = () => {
                       justifyContent: 'center',
                     }}
                   >
-                    <ZoomImage src={sw.image} alt={`${sw.name} logo`} size={getImageSize()} />
+                    <ZoomImage
+                      src={sw.image}
+                      alt={`${sw.name} logo`}
+                      width={getImageSize().width}
+                      height={getImageSize().height}
+                    />
                   </Box>
                 )}
 

@@ -13,6 +13,38 @@ export interface ProjectEntry {
 
 const projectsList: ProjectEntry[] = [
   {
+    title: 'UrbanAIR: Digital Twin as a Service (DTaaS) for Urban Air Quality',
+    description: (
+      <>
+        Cities need street-level, real-time environmental intelligence to protect public health and plan for climate
+        resilience. Leading the development of the EU-funded UrbanAIR Digital Twin as a Service (DTaaS) platform,
+        delivering real-time, street-level air quality and heat resilience forecasts across three European cities, in
+        collaboration with international partners including VITO (Belgium) and the Barcelona Supercomputing Center.
+      </>
+    ),
+    organisation: ['STFC'],
+    status: 'Ongoing',
+    role: ['Technical Lead'],
+    funding: ['EU'],
+    tags: ['Software Engineering', 'Machine Learning'],
+  },
+  {
+    title: 'Data Virtualization for Machine Learning',
+    description: (
+      <>
+        Large-scale ML workflows are often bottlenecked by fragmented, heterogeneous data sources. Leading research on
+        data virtualization services for large-scale ML workflows and service composition &amp; discovery—including
+        LLM-based automated metadata and keywords generation in high-volume data virtualization services, and
+        process-aware knowledge graphs for agent-driven service discovery and grounded execution.
+      </>
+    ),
+    organisation: ['STFC'],
+    status: 'Ongoing',
+    role: ['Technical Lead'],
+    funding: [],
+    tags: ['Machine Learning', 'Large Language Model', 'Software Engineering'],
+  },
+  {
     title: 'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
     description: (
       <>
@@ -37,7 +69,7 @@ const projectsList: ProjectEntry[] = [
     ),
     organisation: ['STFC', 'University of Oxford'],
     status: 'Ongoing',
-    role: ['Co-I', 'Researcher'],
+    role: ['Co-PI'],
     funding: ['EPSRC', '£575k'],
     tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
   },
@@ -80,13 +112,14 @@ const projectsList: ProjectEntry[] = [
           DAFNI
         </Link>{' '}
         is a national computing platform that enables researchers to run advanced simulations across transport, water,
-        energy, and city-scale systems, generating insights that help make infrastructure more efficient, reliable,
-        resilient, and affordable.
+        energy, and city-scale systems. Led the development of a cross-platform data bridge connecting DAFNI and CEDA
+        (Centre for Environmental Data Analysis) services to accelerate environmental modelling and streamline
+        researcher access to national data resources.
       </>
     ),
     organisation: ['STFC'],
     status: 'Ongoing',
-    role: ['User Liaison'],
+    role: ['Technical Lead', 'User Liaison'],
     funding: [],
     tags: ['Software Engineering'],
   },
@@ -111,26 +144,37 @@ const projectsList: ProjectEntry[] = [
     ),
     organisation: ['STFC'],
     status: 'Completed',
-    role: ['Co-I'],
+    role: ['PI'],
     funding: ['UKAEA', '£64k'],
     tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
   },
   {
     title: 'LLM for Semantic Search & Information Retrieval',
     description:
-      "Led projects demonstrating the use of large language models (LLMs) at STFC for (a) grant proposal search and (b) semantic search, clustering, and topic modeling of scientific data from STFC's DataGateway.",
+      "Led development of LLM-based semantic search, information retrieval, and automated metadata generation at STFC, including (a) grant proposal search and (b) semantic search, clustering, and topic modeling of scientific data from STFC's DataGateway.",
     organisation: ['STFC', 'UKRI'],
     status: 'Completed',
     role: ['Data Scientist'],
     funding: [],
     tags: ['Machine Learning', 'Large Language Model'],
   },
+    {
+    title: 'HyperCrop',
+    description:
+      'Applied machine learning to hyperspectral imaging for crop disease prediction, in collaboration with RAL Space.',
+    organisation: ['STFC'],
+    status: 'Completed',
+    role: ['Researcher'],
+    funding: [],
+    tags: ['Machine Learning'],
+  },
   {
     title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMP-VIS)',
     description: (
       <>
-        During COVID-19, epidemiologists and modelling scientists required rapid, intuitive access to pandemic data and
-        complex modelling outputs to make informed decisions. In response to the Royal Society&apos;s{' '}
+        During COVID-19, epidemiologists needed to make high-stakes decisions from tens of thousands of rapidly
+        evolving datasets, with no existing infrastructure to visualize or search them at that scale. Initially
+        volunteered as a software architect for the Royal Society&apos;s{' '}
         <Link
           href="https://royalsociety.org/news-resources/projects/ramp/"
           target="_blank"
@@ -139,8 +183,9 @@ const projectsList: ProjectEntry[] = [
         >
           RAMP
         </Link>{' '}
-        initiative, working with the University of Oxford and the Scottish Covid Response Consortium (SCRC), designed
-        and developed{' '}
+        initiative, where a working system was needed within three months. To meet this deadline, ran an agile process
+        built on continuous, direct stakeholder engagement instead of fixed sprints. Later, funded by EPSRC, led
+        development of{' '}
         <Link
           href="https://sites.google.com/view/rampvis/"
           target="_blank"
@@ -149,12 +194,15 @@ const projectsList: ProjectEntry[] = [
         >
           RAMP-VIS
         </Link>
-        , a visualization infrastructure that enabled SCRC scientists to efficiently analyse epidemiological data.
+        , a visual analytics infrastructure, in collaboration with the UK visualization research community and the
+        Scottish COVID Response Consortium (SCRC). Designed and implemented infrastructure for rapidly deploying
+        visualizations, dashboards, and search capabilities across tens of thousands of heterogeneous, continuously
+        evolving datasets, and developed novel methods for semi-automated visualization generation.
       </>
     ),
     organisation: ['University of Oxford'],
     status: 'Completed',
-    role: ['Postdoctoral Researcher'],
+    role: ['Software Architect (Volunteer)', 'Postdoctoral Researcher'],
     funding: ['EPSRC'],
     tags: ['Visualization', 'Software Engineering'],
   },
@@ -162,7 +210,7 @@ const projectsList: ProjectEntry[] = [
     title: 'Square Kilometre Array (SKA): Streaming and Visualization',
     description: (
       <>
-        The world&apos;s largest radio telescope,{' '}
+        The{' '}
         <Link
           href="https://www.skao.int/en"
           target="_blank"
@@ -170,10 +218,11 @@ const projectsList: ProjectEntry[] = [
           sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
         >
           SKA
-        </Link>
-        , generates hundreds of TB/second of raw data, requiring real-time visualization at unprecedented scale.
-        Designed and implemented a visual analytics system with low-latency data streaming architecture and web-based
-        rendering pipelines for high-volume real-time data streams.
+        </Link>{' '}
+        is the world&apos;s largest radio telescope, generating astronomical data at a volume and rate where real-time
+        streaming and visualization are essential to monitor and act on data as it arrives. Led the design and
+        development of a scalable, real-time streaming and visualization infrastructure to meet this need, with a
+        low-latency data streaming architecture and web-based rendering pipelines for high-volume data streams.
       </>
     ),
     organisation: ['University of Oxford', 'SKA'],
@@ -182,7 +231,26 @@ const projectsList: ProjectEntry[] = [
     funding: ['STFC'],
     tags: ['Visualization', 'Software Engineering'],
   },
+  // {
+  //   title: 'Climate Resilience Decision Optimiser (CReDO)',
+  //   description: 'Development of a digital elicitation tool for climate resilience decision optimiser.',
+  //   organisation: ['STFC'],
+  //   status: 'Completed',
+  //   role: ['Research Software Engineer'],
+  //   funding: [],
+  //   tags: ['Software Engineering'],
+  // },
   {
+    title: 'Data, Workflow, and Provenance Management',
+    description:
+      "Horus Security Consultancy's intelligence services depend on large-scale open-source data, but manual workflows could no longer keep pace with the growing volume of online sources. In this Innovate UK-funded university-industry collaboration, led development of a prototype system for scalable, automated open-source intelligence gathering: worked with analysts to capture operational workflows and translate domain requirements into system architecture, and designed and implemented an end-to-end platform for data ingestion, management, search, and provenance, providing analysts with efficient access to information. Later joined Horus as Lead Data Scientist to lead the transition of the prototype from proof-of-concept to commercial software, building and leading a team of software engineers to deliver multiple customer-facing products.",
+    organisation: ['University of Oxford', 'Horus'],
+    status: 'Completed',
+    role: ['Postdoctoral Researcher', 'Lead Data Scientist'],
+    funding: ['Innovate UK'],
+    tags: ['Software Engineering'],
+  },
+   {
     title: 'Visual Bulletin Analytics System (VBAS)',
     description: (
       <>
@@ -209,37 +277,9 @@ const projectsList: ProjectEntry[] = [
     tags: ['Visualization', 'Software Engineering'],
   },
   {
-    title: 'Climate Resilience Decision Optimiser (CReDO)',
-    description: 'Development of a digital elicitation tool for climate resilience decision optimiser.',
-    organisation: ['STFC'],
-    status: 'Completed',
-    role: ['Research Software Engineer'],
-    funding: [],
-    tags: ['Software Engineering'],
-  },
-  {
-    title: 'HyperCrop',
-    description:
-      'Short project demonstrating capabilities of machine learning for crop disease prediction from hyperspectral data.',
-    organisation: ['STFC'],
-    status: 'Completed',
-    role: ['Researcher'],
-    funding: [],
-    tags: ['Machine Learning'],
-  },
-  {
-    title: 'Data, Workflow, and Provenance Management',
-    description:
-      'Development of a comprehensive infrastructure for data, workflow, and provenance management and search for Horus Security Consultancy Ltd. UK',
-    organisation: ['University of Oxford', 'Horus'],
-    status: 'Completed',
-    role: ['Postdoctoral Researcher'],
-    funding: ['Innovate UK'],
-    tags: ['Software Engineering'],
-  },
-  {
     title: 'Visualisation Assisted Enterprise Search Engine',
-    description: 'Prototype enterprise search and visualization infrastructure developed as part of my DPhil research.',
+    description:
+      "Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably - beyond what standard enterprise search could provide. Developed a proof-of-concept visualisation-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",
     organisation: ['University of Oxford'],
     status: 'Completed',
     role: ['D.Phil. (Ph.D.) Research'],
@@ -248,7 +288,8 @@ const projectsList: ProjectEntry[] = [
   },
   {
     title: 'Oracle Database',
-    description: 'Software engineering for Oracle relational database management system.',
+    description:
+      "Oracle's database runs mission-critical operations for customers worldwide, where defects or missing features can disrupt business operations - making reliable engineering essential. Developed and debugged Oracle database service features, and independently identified the need for, designed, and built automation tools that improved efficiency and reduced cost across the patch build, test, and delivery pipeline.",
     organisation: ['Oracle'],
     status: 'Completed',
     role: ['Software Engineer'],
@@ -257,7 +298,8 @@ const projectsList: ProjectEntry[] = [
   },
   {
     title: 'AC800 Web',
-    description: "Development of software for ABB's industrial automation controller.",
+    description:
+      "Commercial real-time operating systems (RTOS) added significant licensing cost to industrial automation controllers, motivating ABB's investigation of Linux as a free, real-time-capable alternative for these time-critical embedded systems. Developed Linux system software for ABB's industrial automation controllers and conducted performance benchmarks across various Linux RTOS flavours to assess real-time suitability.",
     organisation: ['ABB'],
     status: 'Completed',
     role: ['Software Engineer'],

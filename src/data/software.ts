@@ -1,13 +1,18 @@
 const softwareList = [
   {
     name: 'Meta-StoryBoard (MSB)',
-    image: '/ml-story.png',
+    image: '/msb.mp4',
     description: [
       {
         type: 'main',
         value:
           'Meta-storyboard is a JavaScript and TypeScript library designed for creating storytelling visualisations using the feature-action design pattern. It is scalable, supports large-scale dynamic timeseries data, and can be applied across various domains.',
         color: 'default',
+      },
+      {
+        type: 'credit',
+        value: 'Video source: vis4pandemres.github.io',
+        url: 'https://vis4pandemres.github.io/',
       },
     ],
     links: [
@@ -16,36 +21,6 @@ const softwareList = [
     ],
     funding: ['EPSRC', 'University of Oxford', 'STFC'],
   },
-  // {
-  //   name: 'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
-  //   image: '/vis4ml4hd.png',
-  //   description: [
-  //     {
-  //       type: 'main',
-  //       value:
-  //         'VIS4ML4HD is a software infrastructure for supporting machine learning with human-centred decision-making.',
-  //       color: 'default',
-  //     },
-  //     {
-  //       type: 'main',
-  //       value: 'Under development.',
-  //       color: '#1976d2',
-  //     },
-  //   ],
-  //   links: [
-  //     {
-  //       type: 'github',
-  //       url: 'https://github.com/saifulkhan/synthetic-shape-data-generator',
-  //       label: 'API',
-  //     },
-  //     {
-  //       type: 'github',
-  //       url: 'https://github.com/saifulkhan/vis4ml4hd',
-  //       label: 'System',
-  //     },
-  //   ],
-  //   funding: ['EPSRC', 'University of Oxford', 'STFC'],
-  // },
   {
     name: 'Propagation',
     image: '/propagation.mp4',
@@ -105,7 +80,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'A software infrastructure for analysing and providing quality assurance of seismological data. This is an operational software infrastructure at the International Seismological Centre (www.isc.ac.uk) in the UK.',
+          'This project represents the fundamental evolution of data analysis at the International Seismological Centre (ISC) in the UK. The manual paper-based analysis workflow on the left illustrates the inefficient 30-year-old process, where analysts used barcode scanners, rulers, and pencils to manually review diverse seismic data across physical printouts and archived files. This has been replaced by the new VBAS (Visual Bulletin Analytics System), seen on the right. This interactive, unified software integrates all diverse seismological data types into a single interface. On a modern workstation, analysts can now digitally review hypocentres, magnitudes, phase arrivals, seismicity maps, and more. VBAS enables the team to detect patterns, identify anomalies, and perform operational quality assurance far more efficiently and accurately.',
         color: 'default',
       },
     ],
@@ -119,7 +94,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          "A prototype search infrastructure was developed for Laing O'Rourke, integrating information retrieval with visual analytics to enhance the search and reuse of extensive amount of building construction document and data.",
+          "A prototype visualization assisted search engine was developed for Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably - beyond what standard enterprise search could provide. Developed a proof-of-concept visualisation-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",
         color: 'default',
       },
       {

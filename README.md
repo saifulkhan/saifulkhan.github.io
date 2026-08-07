@@ -5,7 +5,8 @@ This is my personal website built with [Next.js](https://nextjs.org).
 Commands:
 
 ```bash
-git checkout main
+git checkout main#
+yarn install
 yarn dev
 ```
 

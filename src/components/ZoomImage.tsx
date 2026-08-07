@@ -1,12 +1,15 @@
 import React, { useCallback, useState, useRef } from 'react';
 import { Box, Dialog, DialogContent, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import Image from 'next/image';
 
 interface ZoomImageProps {
   src: string;
   alt: string;
   size?: number;
+  width?: number;
+  height?: number;
 }
 
 const isVideo = (src: string) => {
@@ -14,7 +17,9 @@ const isVideo = (src: string) => {
   return videoExtensions.some((ext) => src.toLowerCase().endsWith(ext));
 };
 
-const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, size = 120 }) => {
+const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, size = 120, width, height }) => {
+  const boxWidth = width ?? size;
+  const boxHeight = height ?? size;
   const [open, setOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVideoFile = isVideo(src);
@@ -54,10 +59,10 @@ const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, size = 120 }) => {
 
   const containerStyle = {
     display: 'inline-block',
-    width: size,
-    height: size,
-    minWidth: size,
-    minHeight: size,
+    width: boxWidth,
+    height: boxHeight,
+    minWidth: boxWidth,
+    minHeight: boxHeight,
     borderRadius: 2,
     overflow: 'hidden',
     cursor: 'pointer',
@@ -66,6 +71,9 @@ const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, size = 120 }) => {
     '&:hover': {
       '&::after': {
         opacity: 0.5,
+      },
+      '& .play-overlay': {
+        opacity: 0,
       },
     },
     '&::after': {
@@ -106,27 +114,47 @@ const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, size = 120 }) => {
         aria-label={`View larger ${isVideoFile ? 'video' : 'image'} of ${alt}`}
       >
         {isVideoFile ? (
-          <video
-            ref={videoRef}
-            src={src}
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            style={{
-              objectFit: 'contain',
-              width: '100%',
-              height: '100%',
-              borderRadius: 1,
-            }}
-            aria-label={alt}
-          />
+          <>
+            <video
+              ref={videoRef}
+              src={src}
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              style={{
+                objectFit: 'contain',
+                width: '100%',
+                height: '100%',
+                borderRadius: 1,
+              }}
+              aria-label={alt}
+            />
+            <Box
+              component="span"
+              className="play-overlay"
+              sx={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                display: 'flex',
+                color: 'rgba(255, 255, 255, 0.85)',
+                filter: 'drop-shadow(0 1px 4px rgba(0, 0, 0, 0.6))',
+                transition: 'opacity 0.2s ease-in-out',
+                pointerEvents: 'none',
+                zIndex: 2,
+              }}
+            >
+              <PlayCircleFilledIcon sx={{ fontSize: 48 }} />
+            </Box>
+          </>
         ) : (
           <Image
             src={src}
             alt={alt}
-            width={size}
-            height={size}
+            width={boxWidth}
+            height={boxHeight}
             style={{
               objectFit: 'contain',
               width: '100%',
