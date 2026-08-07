@@ -6,7 +6,7 @@ import { ThemeProvider, createTheme, CssBaseline, Toolbar } from '@mui/material'
 import NavBar from '../components/NavBar';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   useEffect(() => {
     const root = document.documentElement;
     if (darkMode) {

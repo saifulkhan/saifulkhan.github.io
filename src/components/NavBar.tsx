@@ -78,8 +78,20 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
           </IconButton>
         )}
 
-        <Typography variant="h6" component="div" sx={{ flexGrow: isMobile ? 1 : 0 }}>
-          {/* Optional: Add your name or logo here */}
+        <Typography
+          variant="h6"
+          component={Link}
+          href="/"
+          sx={{
+            flexGrow: isMobile ? 1 : 0,
+            fontFamily: 'Lato, sans-serif',
+            fontWeight: 700,
+            textDecoration: 'none',
+            color: 'inherit',
+            mr: isMobile ? 0 : 3,
+          }}
+        >
+          Saiful Khan
         </Typography>
 
         {!isMobile && (
