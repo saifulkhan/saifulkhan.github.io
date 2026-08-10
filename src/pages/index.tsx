@@ -217,29 +217,8 @@ export default function About() {
                     fontSize: 14,
                   }}
                 >
-                  Dr Khan is a <strong>Senior Data Scientist</strong> at the{' '}
-                  <a
-                    href="https://www.ukri.org/who-we-are/stfc/facilities/rutherford-appleton-laboratory/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Science and Technology Facilities Council (STFC), UK Research and Innovation (UKRI)
-                  </a>
-                  , where he leads projects transforming complex, end-to-end data workflows
-                  into production-grade software. He holds a DPhil from the <strong>University of Oxford</strong>, where
-                  he also conducted postdoctoral research with{' '}
-                  <a href="https://sites.google.com/view/mchen" target="_blank" rel="noopener noreferrer">
-                    Professor Min Chen
-                  </a>
-                  . With prior industry experience at{' '}
-                  <a href="https://www.oracle.com/" target="_blank" rel="noopener noreferrer">
-                    <strong>Oracle</strong>
-                  </a>{' '}
-                  and{' '}
-                  <a href="https://global.abb/" target="_blank" rel="noopener noreferrer">
-                    <strong>ABB</strong>
-                  </a>
-                  , he bridges research with scalable, real-world impact.
+                  I lead the design and development of data-driven software systems and infrastructures that turn
+                  complex data and scientific workflows into scalable, production-ready systems.
                 </Typography>
                 <Typography
                   variant="body2"
@@ -253,34 +232,10 @@ export default function About() {
                     fontSize: 14,
                   }}
                 >
-                  He specializes in <strong>data-driven software systems</strong> (integrating data, models, services, and visualization into scalable, interoperable infrastructure) across diverse domains: nuclear fusion,
-                  pandemic response, radio astronomy, seismology, building information search. His interests span{' '}
-                  <strong>Data &amp; Service Computing</strong>, <strong>Visual Analytics</strong>, and{' '}
-                  <strong>Applied Machine Learning</strong>.
-                </Typography>
-
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mb: 1,
-                    textAlign: 'justify',
-                    fontFamily: 'Lato, sans-serif',
-                    fontWeight: 'normal',
-                    lineHeight: 1.6,
-                    color: 'text.primary',
-                    fontSize: 14,
-                  }}
-                >
-                  He currently leads the development of the EU-funded <strong>UrbanAIR</strong> Digital Twin as a Service (DTaaS) delivering real-time, street-level air quality and heat-resilience forecasts across three European cities, alongside research on data virtualization services for large-scale ML workflows and LLM-based semantic search and automated metadata generation. He is also Co-PI on an
-                  EPSRC-funded (£575k) project with the University of Oxford on{' '}
-                  <a
-                    href="https://gtr.ukri.org/projects?ref=EP%2FX029557%2F1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    visualization for machine learning (VIS4ML)
-                  </a>
-                  .
+                  I work at the intersection of software engineering, data systems, artificial intelligence/ machine learning (AI/ML), and visual analytics, combining industry experience with applied research. My industry background includes
+                  engineering database software at Oracle and real-time industrial automation at ABB. My research
+                  and delivered software systems have supported applications ranging from radio astronomy and nuclear fusion to
+                  global health emergencies, seismology, environmental modelling, and enterprise information search.
                 </Typography>
                 <Typography
                   variant="body2"
@@ -294,73 +249,13 @@ export default function About() {
                     fontSize: 14,
                   }}
                 >
-                  During the UK's COVID-19 response, he designed{' '}
-                  <a href="https://sites.google.com/view/rampvis/home" target="_blank" rel="noopener noreferrer">
-                    RAMPVIS
-                  </a>
-                  , a pandemic visualization infrastructure that earned him the Royal Society's{' '}
-                  <a
-                    href="https://eng.ox.ac.uk/news/royal-society-award-recognises-researcher-s-pandemic-modelling-effort"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    RAMP Early Career Investigator Award
-                  </a>
-                  . He built a real-time data-streaming and signal-display system for the{' '}
-                  <a href="https://www.skatelescope.org/" target="_blank" rel="noopener noreferrer">
-                    Square Kilometre Array
-                  </a>
-                  , the world's largest radio telescope, and led the design of{' '}
-                  <a href="https://mastapp.site/" target="_blank" rel="noopener noreferrer">
-                    FAIR-MAST
-                  </a>
-                  - a first-of-its-kind open data platform for UKAEA's nuclear fusion diagnostics that enables machine
-                  learning and visual analytics on tokamak data. He also led development of{' '}
-                  <a href="https://isc.ac.uk/" target="_blank" rel="noopener noreferrer">
-                    VBAS
-                  </a>{' '}
-                  for seismological data visualization, and a cross-platform data bridge connecting{' '}
-                  <a href="https://www.dafni.ac.uk/" target="_blank" rel="noopener noreferrer">
-                    DAFNI (UK National Data Infrastructure)
-                  </a>{' '}
-                  and CEDA (Centre for Environmental Data Analysis) services to accelerate environmental modelling.
+                  I lead research and engineering projects, develop and publish in the area of data and service computing, and
+                  collaborate across academia, industry, and scientific organizations. My research focuses on Data
+                  &amp; Service Computing, Applied AI/ML, and Visual Analytics, with current work spanning data
+                  virtualization, semantic search, scientific machine learning, and human-centred AI. I also
+                  contribute to research funding as a Co-PI on externally funded projects.
                 </Typography>
 
-                {/* <Typography
-                  variant="subtitle2"
-                  sx={{
-                    mb: 1.5,
-                    fontFamily: 'Lato, sans-serif',
-                    fontWeight: 700,
-                    fontSize: 15,
-                    borderLeft: '3px solid',
-                    borderColor: (theme) => (theme.palette.mode === 'dark' ? '#ffffff' : '#424242'),
-                    paddingLeft: 1.5,
-                    color: (theme) => (theme.palette.mode === 'dark' ? '#ffffff' : '#424242'),
-                  }}
-                >
-                  Research Interests:
-                </Typography> */}
-
-                {/* <Box
-                  component="ul"
-                  sx={{
-                    mb: 2,
-                    pl: 2.5,
-                    fontFamily: 'Lato, sans-serif',
-                    '& li': {
-                      fontSize: 14,
-                      lineHeight: 1.6,
-                      color: 'text.primary',
-                      mb: 0.5,
-                    },
-                  }}
-                >
-                  <li>Data-driven software infrastructure</li>
-                  <li>Data visualization</li>
-                  <li>Applied Machine Learning</li>
-                  <li>Large language models (LLM) & Agent-based Systems</li>
-                </Box> */}
               </Box>
             </Box>
           </Box>
