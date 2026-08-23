@@ -123,7 +123,7 @@ const Software = () => {
       <Box
         sx={{
           mt: { xs: 2, sm: 3, md: 4 },
-          maxWidth: 900,
+          maxWidth: 1200,
           mx: 'auto',
           p: { xs: 1, sm: 2 },
           pb: 4,

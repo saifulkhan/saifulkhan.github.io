@@ -16,7 +16,7 @@ export default function About() {
       </Head>
       <Box
         sx={{
-          maxWidth: 900,
+          maxWidth: 1200,
           mx: 'auto',
           mt: { xs: 2, sm: 4, md: 6 },
           p: { xs: 1, sm: 2, md: 3 },

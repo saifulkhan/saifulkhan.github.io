@@ -88,13 +88,13 @@ const softwareList = [
     funding: ['Innovate UK', 'University of Oxford', 'International Seismological Centre'],
   },
   {
-    name: 'Visualisation Assisted Enterprose Search Engine',
+    name: 'Visualization Assisted Enterprise Search Engine',
     image: '/ese.png',
     description: [
       {
         type: 'main',
         value:
-          "A prototype visualization assisted search engine was developed for Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably - beyond what standard enterprise search could provide. Developed a proof-of-concept visualisation-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",
+          "A prototype visualization assisted search engine was developed for Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably - beyond what standard enterprise search could provide. Developed a proof-of-concept visualization-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",
         color: 'default',
       },
       {
