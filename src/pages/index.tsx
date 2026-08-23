@@ -75,7 +75,7 @@ export default function About() {
                   mb: 0.5,
                 }}
               >
-                Dr. Saiful Khan
+                Saiful Khan
               </Typography>
               <Typography
                 variant="subtitle2"
