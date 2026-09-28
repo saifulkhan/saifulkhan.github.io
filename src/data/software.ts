@@ -1,12 +1,29 @@
-const softwareList = [
+export type SoftwareDescriptionItem = {
+  type: string;
+  value: string;
+  color?: string;
+  url?: string;
+};
+
+export type SoftwareEntry = {
+  name: string;
+  image: string;
+  imageLink?: string; // when set, the thumbnail links out (e.g. to a live examples site)
+  description: SoftwareDescriptionItem[];
+  links: Array<{ type: string; url: string; label?: string }>;
+  funding?: string[];
+};
+
+const softwareList: SoftwareEntry[] = [
   {
     name: 'Meta-StoryBoard (MSB)',
-    image: '/msb.mp4',
+    image: '/msb.png',
+    imageLink: 'https://saifulkhan.github.io/meta-storyboard-examples/',
     description: [
       {
         type: 'main',
         value:
-          'Meta-storyboard is a JavaScript and TypeScript library designed for creating storytelling visualisations using the feature-action design pattern. It is scalable, supports large-scale dynamic timeseries data, and can be applied across various domains.',
+          'Meta-StoryBoard is a JavaScript and TypeScript library designed for creating storytelling visualizations using the feature-action design pattern. It is scalable, supports large-scale dynamic time-series data, and can be applied across various domains.',
         color: 'default',
       },
       {
@@ -18,6 +35,12 @@ const softwareList = [
     links: [
       { type: 'npm', url: 'https://www.npmjs.com/package/meta-storyboard' },
       { type: 'github', url: 'https://github.com/saifulkhan/meta-storyboard' },
+      {
+        type: 'external',
+        url: 'https://saifulkhan.github.io/meta-storyboard-examples/',
+        label: 'Live examples',
+      },
+      { type: 'video', url: '/msb.mp4', label: 'Demo video' },
     ],
     funding: ['EPSRC', 'University of Oxford', 'STFC'],
   },
@@ -28,7 +51,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'Propagation is a novel approach for efficiently propagating visual designs across multiple plots and dashboards, enabling the reuse of visual designs for new datasets. It was developed during the RAMPVIS project (below).',
+          'Propagation is a novel approach for efficiently propagating visual designs across multiple plots and dashboards, enabling their reuse for new datasets. It was developed during the RAMPVIS project (below).',
         color: 'default',
       },
     ],
@@ -42,13 +65,13 @@ const softwareList = [
     funding: ['EPSRC', 'University of Oxford'],
   },
   {
-    name: 'Rapid Assistance in Modelling the Pandemic Visualisation (RAMPVIS)',
+    name: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMPVIS)',
     image: '/rampvis.png',
     description: [
       {
         type: 'main',
         value:
-          'A visualisation and visual analytics infrastructure developed for supporting the modeling scientists and epedemiologists of the Scotish COVID Response Consortium (SCRC) during the COVID-19 pandemic.',
+          'A visualization and visual analytics infrastructure developed to support the modelling scientists and epidemiologists of the Scottish COVID Response Consortium (SCRC) during the COVID-19 pandemic.',
         color: 'default',
       },
       {
@@ -80,7 +103,7 @@ const softwareList = [
       {
         type: 'main',
         value:
-          'This project represents the fundamental evolution of data analysis at the International Seismological Centre (ISC) in the UK. The manual paper-based analysis workflow on the left illustrates the inefficient 30-year-old process, where analysts used barcode scanners, rulers, and pencils to manually review diverse seismic data across physical printouts and archived files. This has been replaced by the new VBAS (Visual Bulletin Analytics System), seen on the right. This interactive, unified software integrates all diverse seismological data types into a single interface. On a modern workstation, analysts can now digitally review hypocentres, magnitudes, phase arrivals, seismicity maps, and more. VBAS enables the team to detect patterns, identify anomalies, and perform operational quality assurance far more efficiently and accurately.',
+          'This project represents a fundamental evolution of data analysis at the International Seismological Centre (ISC) in the UK. The manual paper-based analysis workflow on the left illustrates the inefficient 30-year-old process, where analysts used barcode scanners, rulers, and pencils to manually review diverse seismic data across physical printouts and archived files. This has been replaced by the new VBAS (Visual Bulletin Analytics System), seen on the right. This interactive, unified software integrates all diverse seismological data types into a single interface. On a modern workstation, analysts can now digitally review hypocentres, magnitudes, phase arrivals, seismicity maps, and more. VBAS enables the team to detect patterns, identify anomalies, and perform operational quality assurance far more efficiently and accurately.',
         color: 'default',
       },
     ],
@@ -94,13 +117,13 @@ const softwareList = [
       {
         type: 'main',
         value:
-          "A prototype visualization assisted search engine was developed for Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably - beyond what standard enterprise search could provide. Developed a proof-of-concept visualization-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",
+          "Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably—beyond what standard enterprise search could provide. Developed a proof-of-concept visualization-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",
         color: 'default',
       },
       {
         type: 'main',
         value:
-          "I received funding for my DPhil (PhD) project at the University of Oxford from Laing O'Rourke (www.laingorourke.com).",
+          "My D.Phil. (Ph.D.) project at the University of Oxford was funded by Laing O'Rourke (www.laingorourke.com).",
         color: 'grey',
       },
     ],

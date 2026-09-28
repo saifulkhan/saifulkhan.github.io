@@ -1,12 +1,7 @@
 import React, { useMemo } from 'react';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
-import { useTheme, useMediaQuery, SxProps, Theme } from '@mui/material';
-import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import { SxProps, Theme } from '@mui/material';
 
 // props for tag filter component
 export interface TagFilterProps {
@@ -17,11 +12,8 @@ export interface TagFilterProps {
   sx?: SxProps<Theme>;
 }
 
-// tag filter component with tag count badges and improved design
+// chip-based tag filter, consistent across desktop and mobile
 const TagFilter: React.FC<TagFilterProps> = ({ tags, filter, setFilter, tagCounts = {}, sx }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   // Unique sorted tag options
   const tagOptions = useMemo(() => {
     const preferredOrder = ['Software Engineering', 'Machine Learning', 'Visualization', 'LLM'];
@@ -37,152 +29,35 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, filter, setFilter, tagCount
       });
   }, [tags]);
 
-  const handleFilter = (_: React.MouseEvent<HTMLElement>, newFilter: string | null) => {
-    setFilter(newFilter);
-  };
-  // Mobile view - show simple list of tags with horizontal scroll
-  if (isMobile) {
-    return (
-      <Box
-        sx={[
-          {
-            display: 'flex',
-            flexDirection: 'column',
-            mb: 2,
-            width: '100%',
-          },
-          ...(Array.isArray(sx) ? sx : [sx]),
-        ]}
-        role="group"
-        aria-label="Filter by tag"
-      >
-        <Box sx={{ overflowX: 'auto', pb: 1, whiteSpace: 'nowrap' }}>
-          {tagOptions.map((tag) => (
-            <Chip
-              key={tag}
-              label={`${tag}${tagCounts[tag] ? ` (${tagCounts[tag]})` : ''}`}
-              onClick={() => setFilter(tag === filter ? null : tag)}
-              color={tag === filter ? 'primary' : 'default'}
-              variant={tag === filter ? 'filled' : 'outlined'}
-              sx={{ mr: 1, mb: 1 }}
-              size="small"
-            />
-          ))}
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <Tooltip title="Reset filter">
-            <span>
-              <IconButton
-                onClick={() => setFilter(null)}
-                disabled={filter === null}
-                size="small"
-                sx={{
-                  border: '1px solid #ccc',
-                  background: '#fff',
-                  '&:hover': {
-                    backgroundColor: theme.palette.action.hover,
-                  },
-                }}
-              >
-                <RestartAltIcon fontSize="small" />
-              </IconButton>
-            </span>
-          </Tooltip>
-        </Box>
-      </Box>
-    );
-  }
-
-  // Desktop view - original toggle button group
   return (
     <Box
-      sx={[
-        {
-          display: 'flex',
-          alignItems: 'center',
-          mb: 2,
-          width: '100%',
-        },
-        ...(Array.isArray(sx) ? sx : [sx]),
-      ]}
+      sx={[{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: { xs: 3, md: 4 } }, ...(Array.isArray(sx) ? sx : [sx])]}
       role="group"
-      aria-label="Filter by tag"
+      aria-label="Filter by topic"
     >
-      <ToggleButtonGroup
-        value={filter}
-        exclusive
-        onChange={handleFilter}
+      <Chip
+        label="All"
         size="small"
-        sx={{
-          '& .MuiToggleButtonGroup-grouped': {
-            m: 0,
-            border: `1px solid ${theme.palette.divider}`,
-            '&:not(:last-of-type)': {
-              borderRight: 0,
-            },
-            '&:first-of-type': {
-              borderRadius: '4px 0 0 4px',
-            },
-            '&:last-of-type': {
-              borderRadius: '0 4px 4px 0',
-            },
-          },
-        }}
-      >
-        {tagOptions.map((tag) => (
-          <ToggleButton
+        clickable
+        color={filter === null ? 'primary' : 'default'}
+        variant={filter === null ? 'filled' : 'outlined'}
+        onClick={() => setFilter(null)}
+      />
+      {tagOptions.map((tag) => {
+        const selected = filter === tag;
+        const count = tagCounts[tag];
+        return (
+          <Chip
             key={tag}
-            value={tag}
-            sx={{
-              px: 2,
-              py: 0.5,
-              fontSize: 13,
-              fontFamily: 'Lato, sans-serif',
-              textTransform: 'none',
-              '&.Mui-selected': {
-                backgroundColor: theme.palette.action.selected,
-                '&:hover': {
-                  backgroundColor: theme.palette.action.hover,
-                },
-              },
-            }}
-          >
-            {tag}
-            {tagCounts[tag] > 0 && (
-              <Box
-                component="span"
-                sx={{
-                  ml: 0.5,
-                  px: 1,
-                  py: 0.25,
-                  backgroundColor: theme.palette.action.hover,
-                  color: theme.palette.text.secondary,
-                  borderRadius: 10,
-                  fontSize: '0.7rem',
-                  lineHeight: 1,
-                }}
-              >
-                {tagCounts[tag]}
-              </Box>
-            )}
-          </ToggleButton>
-        ))}
-      </ToggleButtonGroup>
-
-      <Box sx={{ ml: 2 }}>
-        <Tooltip title="Reset filter">
-          <span>
-            <IconButton
-              onClick={() => setFilter(null)}
-              disabled={filter === null}
-              size="small"
-              sx={{ border: '1px solid #ccc', background: '#fff' }}
-            >
-              <RestartAltIcon fontSize="small" />
-            </IconButton>
-          </span>
-        </Tooltip>
-      </Box>
+            label={count ? `${tag} · ${count}` : tag}
+            size="small"
+            clickable
+            color={selected ? 'primary' : 'default'}
+            variant={selected ? 'filled' : 'outlined'}
+            onClick={() => setFilter(selected ? null : tag)}
+          />
+        );
+      })}
     </Box>
   );
 };

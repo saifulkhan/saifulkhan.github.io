@@ -1,11 +1,13 @@
-import React from 'react';
-import { IconButton } from '@mui/material';
+import React, { useState } from 'react';
+import { IconButton, SxProps, Theme } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import NpmIcon from './NpmIcon';
+import VideoDialog from './VideoDialog';
 
-// linktype: defines supported link types, now includes pdf
-export type LinkType = 'github' | 'npm' | 'external' | 'arxiv' | 'pdf';
+// linktype: defines supported link types, now includes pdf and video
+export type LinkType = 'github' | 'npm' | 'external' | 'arxiv' | 'pdf' | 'video';
 
 export interface LinkIcon {
   type: LinkType;
@@ -21,6 +23,20 @@ interface LinkIconsProps {
   inline?: boolean;
 }
 
+// play-icon button that opens the video in a popup dialog instead of navigating away
+const VideoLinkButton: React.FC<{ url: string; label?: string; sx: SxProps<Theme> }> = ({ url, label, sx }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <IconButton onClick={() => setOpen(true)} aria-label={label || 'Play video'} size="small" sx={sx}>
+        <PlayCircleOutlineIcon fontSize="inherit" />
+      </IconButton>
+      <VideoDialog open={open} src={url} title={label} onClose={() => setOpen(false)} />
+    </>
+  );
+};
+
 /**
  * linkicons: renders a row of icon buttons for each link in the links array
  * supports github, npm, external, arxiv, and pdf link types
@@ -32,7 +48,7 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
         if (link.type === 'github') {
           return (
             <IconButton
-              key={link.url}
+              key={`${link.url}-${i}`}
               component="a"
               href={link.url}
               target="_blank"
@@ -48,7 +64,7 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
         if (link.type === 'npm') {
           return (
             <IconButton
-              key={link.url}
+              key={`${link.url}-${i}`}
               component="a"
               href={link.url}
               target="_blank"
@@ -61,11 +77,21 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
             </IconButton>
           );
         }
+        if (link.type === 'video') {
+          return (
+            <VideoLinkButton
+              key={`${link.url}-${i}`}
+              url={link.url}
+              label={link.label}
+              sx={{ fontSize: iconSize, ml: i > 0 ? spacing : 0 }}
+            />
+          );
+        }
         // if the link type is pdf, render a pdf icon
         if (link.type === 'pdf') {
           return (
             <IconButton
-              key={link.url}
+              key={`${link.url}-${i}`}
               component="a"
               href={link.url}
               target="_blank"
@@ -101,7 +127,7 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
         if (link.type === 'external' || link.type === 'arxiv') {
           return (
             <IconButton
-              key={link.url}
+              key={`${link.url}-${i}`}
               component="a"
               href={link.url}
               target="_blank"

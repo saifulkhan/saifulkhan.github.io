@@ -1,9 +1,11 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { Box, Card, Typography, Stack, Chip, Link, Paper, useTheme, useMediaQuery } from '@mui/material';
+import Image from 'next/image';
+import { Box, Card, Container, Typography, Stack, Chip, Link, useTheme, useMediaQuery } from '@mui/material';
 import LinkIcons, { type LinkIcon } from '../components/LinkIcons';
-import softwareList from '../data/software';
+import PageHeader from '../components/PageHeader';
+import softwareList, { type SoftwareEntry } from '../data/software';
 
 // Dynamically import the ZoomImage component with no SSR to prevent hydration issues with videos
 const ZoomImage = dynamic<{ src: string; alt: string; width: number; height: number }>(
@@ -11,23 +13,8 @@ const ZoomImage = dynamic<{ src: string; alt: string; width: number; height: num
   {
     ssr: false,
     loading: () => <Box sx={{ width: 240, height: 150 }} />, // Show a placeholder while loading
-  }
+  },
 );
-
-type DescriptionItem = {
-  type: string;
-  value: string;
-  color?: string;
-  url?: string;
-};
-
-type SoftwareItem = {
-  name: string;
-  image: string;
-  description: DescriptionItem[];
-  links: Array<{ type: string; url: string }>;
-  funding?: string[];
-};
 
 const Software = () => {
   const theme = useTheme();
@@ -41,22 +28,14 @@ const Software = () => {
     return { width: 240, height: 150 };
   };
 
-  const renderDescription = (description: SoftwareItem['description']) => {
+  const renderDescription = (description: SoftwareEntry['description']) => {
     if (!Array.isArray(description) || description.length === 0) return null;
 
     return (
       <Stack spacing={0.5} mb={1}>
         {description.map((desc, idx) =>
           desc.type === 'credit' ? (
-            <Typography
-              key={idx}
-              variant="caption"
-              sx={{
-                fontFamily: 'Lato, sans-serif',
-                fontSize: 12,
-                color: 'text.secondary',
-              }}
-            >
+            <Typography key={idx} variant="caption" sx={{ fontSize: 12, color: 'text.secondary' }}>
               {desc.url ? (
                 <Link href={desc.url} target="_blank" rel="noopener" color="inherit" underline="hover">
                   {desc.value}
@@ -69,16 +48,16 @@ const Software = () => {
             <Typography
               key={idx}
               variant="body2"
-              sx={{
-                fontFamily: 'Lato, sans-serif',
-                fontSize: { xs: 14 },
-                lineHeight: 1.3,
-                color: desc.color,
-              }}
+              sx={
+                // items marked with an accent color in the data are highlights (e.g. awards)
+                desc.color && desc.color !== 'default' && desc.color !== 'grey'
+                  ? { color: 'primary.main', fontWeight: 600 }
+                  : { color: 'text.secondary' }
+              }
             >
               {desc.value}
             </Typography>
-          )
+          ),
         )}
       </Stack>
     );
@@ -94,18 +73,12 @@ const Software = () => {
             key={`${fund}-${i}`}
             label={fund}
             size="small"
+            variant="outlined"
             sx={{
-              backgroundColor: 'action.hover',
               color: 'text.secondary',
-              fontFamily: 'Lato, sans-serif',
-              fontSize: 13,
-              letterSpacing: 0.2,
-              px: 0.5,
+              fontSize: 12,
               height: 20,
-              minHeight: 20,
-              '& .MuiChip-label': {
-                px: 0.75,
-              },
+              '& .MuiChip-label': { px: 0.75 },
             }}
             aria-label={`Funding: ${fund}`}
           />
@@ -120,116 +93,130 @@ const Software = () => {
         <title>Software | Saiful Khan</title>
         <meta name="description" content="List of software and systems developed by Saiful Khan" />
       </Head>
-      <Box
-        sx={{
-          mt: { xs: 2, sm: 3, md: 4 },
-          maxWidth: 1200,
-          mx: 'auto',
-          p: { xs: 1, sm: 2 },
-          pb: 4,
-        }}
-      >
-        <Paper
-          elevation={2}
-          sx={{
-            p: { xs: 2, sm: 3, md: 4 },
-            borderRadius: { xs: 2, md: 4 },
-          }}
-        >
-          <Typography variant="h5" gutterBottom sx={{ fontFamily: 'Lato, sans-serif', mb: 3, fontWeight: 600 }}>
-            Software & Systems
-          </Typography>
 
-          <Stack spacing={3}>
-            {softwareList.map((sw, idx) => (
-              <Card
-                key={`${sw.name}-${idx}`}
-                sx={{
-                  display: 'flex',
-                  flexDirection: { xs: 'column', sm: 'row' },
-                  alignItems: { xs: 'center', sm: 'flex-start' },
-                  p: { xs: 1.5, sm: 2 },
-                  borderRadius: 2,
-                  transition: theme.transitions.create(['box-shadow', 'transform'], {
-                    duration: theme.transitions.duration.shorter,
-                  }),
-                  '&:hover': {
-                    boxShadow: theme.shadows[8],
-                    transform: 'translateY(-2px)',
-                  },
-                }}
-                variant="outlined"
-              >
-                {sw.image && (
-                  <Box
-                    sx={{
-                      width: getImageSize().width,
-                      height: getImageSize().height,
-                      mr: { xs: 0, sm: 2 },
-                      mb: { xs: 1.5, sm: 0 },
-                      flexShrink: 0,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                  >
+      <Container maxWidth="md" sx={{ py: { xs: 4, md: 6 } }}>
+        <PageHeader
+          eyebrow="Portfolio"
+          title="Software & Systems"
+          subtitle="Production systems and open-source tools I have designed and built."
+        />
+
+        <Stack spacing={2.5}>
+          {softwareList.map((sw, idx) => (
+            <Card
+              key={`${sw.name}-${idx}`}
+              variant="outlined"
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', sm: 'row' },
+                alignItems: { xs: 'center', sm: 'flex-start' },
+                p: { xs: 2, sm: 2.5 },
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease',
+                '&:hover': {
+                  borderColor: 'primary.main',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
+                  transform: 'translateY(-2px)',
+                },
+              }}
+            >
+              {sw.image && (
+                <Box
+                  sx={{
+                    width: getImageSize().width,
+                    height: getImageSize().height,
+                    mr: { xs: 0, sm: 2.5 },
+                    mb: { xs: 1.5, sm: 0 },
+                    flexShrink: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderRadius: 1.5,
+                    overflow: 'hidden',
+                  }}
+                >
+                  {sw.imageLink ? (
+                    <Box
+                      component="a"
+                      href={sw.imageLink}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={`${sw.name} — live examples`}
+                      title="Open live examples"
+                      sx={{
+                        display: 'block',
+                        width: '100%',
+                        height: '100%',
+                        borderRadius: 1.5,
+                        overflow: 'hidden',
+                        transition: 'opacity 0.2s ease',
+                        '&:hover': { opacity: 0.85 },
+                      }}
+                    >
+                      <Image
+                        src={sw.image}
+                        alt={`${sw.name} screenshot`}
+                        width={getImageSize().width}
+                        height={getImageSize().height}
+                        style={{ objectFit: 'contain', width: '100%', height: '100%' }}
+                        loading="lazy"
+                      />
+                    </Box>
+                  ) : (
                     <ZoomImage
                       src={sw.image}
                       alt={`${sw.name} logo`}
                       width={getImageSize().width}
                       height={getImageSize().height}
                     />
-                  </Box>
-                )}
-
-                <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Typography
-                    variant="h6"
-                    component="h2"
-                    sx={{
-                      fontSize: { xs: 16 },
-                      fontWeight: 'bold',
-                      mb: 1,
-                      textAlign: { xs: 'center', sm: 'left' },
-                      fontFamily: 'Lato, sans-serif',
-                    }}
-                  >
-                    {sw.name}
-                  </Typography>
-
-                  {renderDescription(sw.description)}
-
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      flexDirection: { xs: 'column', sm: 'row' },
-                      alignItems: { xs: 'stretch', sm: 'center' },
-                      justifyContent: 'space-between',
-                      gap: 1,
-                      mt: 2,
-                      pt: 1,
-                    }}
-                  >
-                    <Box sx={{ flex: 1, minWidth: 0 }}>{renderFundingChips(sw.funding)}</Box>
-
-                    {sw.links && sw.links.length > 0 && (
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          justifyContent: { xs: 'center', sm: 'flex-end' },
-                          flexShrink: 0,
-                        }}
-                      >
-                        <LinkIcons links={sw.links as LinkIcon[]} iconSize={14} spacing={0.75} inline />
-                      </Box>
-                    )}
-                  </Box>
+                  )}
                 </Box>
-              </Card>
-            ))}
-          </Stack>
-        </Paper>
-      </Box>
+              )}
+
+              <Box sx={{ flex: 1, minWidth: 0 }}>
+                <Typography
+                  variant="subtitle1"
+                  component="h2"
+                  sx={{
+                    fontWeight: 700,
+                    lineHeight: 1.4,
+                    mb: 0.75,
+                    textAlign: { xs: 'center', sm: 'left' },
+                  }}
+                >
+                  {sw.name}
+                </Typography>
+
+                {renderDescription(sw.description)}
+
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    alignItems: { xs: 'stretch', sm: 'center' },
+                    justifyContent: 'space-between',
+                    gap: 1,
+                    mt: 1.5,
+                  }}
+                >
+                  <Box sx={{ flex: 1, minWidth: 0 }}>{renderFundingChips(sw.funding)}</Box>
+
+                  {sw.links && sw.links.length > 0 && (
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: { xs: 'center', sm: 'flex-end' },
+                        flexShrink: 0,
+                      }}
+                    >
+                      <LinkIcons links={sw.links as LinkIcon[]} iconSize={14} spacing={0.75} inline />
+                    </Box>
+                  )}
+                </Box>
+              </Box>
+            </Card>
+          ))}
+        </Stack>
+      </Container>
     </>
   );
 };

@@ -1,274 +1,175 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, Typography, Avatar, Paper, Divider, IconButton } from '@mui/material';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import SchoolIcon from '@mui/icons-material/School';
-import EmailIcon from '@mui/icons-material/Email';
-// import { eventsList } from '../data/eventsList';
+import Link from 'next/link';
+import { Box, Container, Typography, Avatar, Card, Chip } from '@mui/material';
+import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import SocialLinks from '../components/SocialLinks';
+
+const focusAreas = [
+  'Data & Service Computing',
+  'Applied AI/ML',
+  'Visual Analytics',
+  'Data Virtualization',
+  'Semantic Search',
+  'Scientific Machine Learning',
+  'Human-centred AI',
+];
+
+const exploreCards = [
+  {
+    title: 'Software & Systems',
+    description: 'Production systems and open-source tools I have designed and built.',
+    href: '/software',
+    icon: TerminalOutlinedIcon,
+  },
+  {
+    title: 'Grants & Projects',
+    description: 'Funded research programmes and engineering projects I lead and contribute to.',
+    href: '/projects',
+    icon: WorkOutlineIcon,
+  },
+  {
+    title: 'Publications',
+    description: 'Peer-reviewed research in visualization, machine learning, and data systems.',
+    href: '/publication',
+    icon: ArticleOutlinedIcon,
+  },
+];
 
 export default function About() {
   return (
     <>
       <Head>
-        <title>About | Saiful Khan</title>
+        <title>Saiful Khan | Senior Data Scientist</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <meta
+          name="description"
+          content="Saiful Khan — Senior Data Scientist at Scientific Computing, STFC. Data & service computing, applied AI/ML, and visual analytics."
+        />
       </Head>
-      <Box
-        sx={{
-          maxWidth: 1200,
-          mx: 'auto',
-          mt: { xs: 2, sm: 4, md: 6 },
-          p: { xs: 1, sm: 2, md: 3 },
-        }}
-      >
-        <Paper
-          elevation={3}
+
+      <Container maxWidth="md" sx={{ py: { xs: 5, md: 8 } }}>
+        {/* Hero */}
+        <Box
           sx={{
-            p: { xs: 2, sm: 3, md: 4 },
-            borderRadius: { xs: 2, md: 3 },
-            border: '1px solid',
-            borderColor: 'divider',
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: { xs: 'flex-start', md: 'center' },
+            gap: { xs: 3, md: 6 },
+            mb: { xs: 5, md: 7 },
           }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', md: 'row' },
-              gap: 3,
-            }}
-          >
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: { xs: 'flex-start', md: 'center' },
-                flexShrink: 0,
-                order: { xs: -1, md: 1 },
-                mb: { xs: 2, md: 0 },
-                width: { xs: '100%', md: 'auto' },
-              }}
-            >
-              <Avatar
-                src="/profile.jpeg"
-                alt="Profile"
-                sx={{
-                  width: { xs: 128, sm: 130, md: 148 },
-                  height: { xs: 128, sm: 130, md: 148 },
-                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
-                  border: '4px solid #fff',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  '&:hover': {
-                    transform: 'scale(1.05)',
-                    boxShadow: '0 12px 32px rgba(0, 0, 0, 0.16)',
-                  },
-                }}
-              />
-            </Box>
-            <Box sx={{ flex: 1, order: { xs: 0, md: 0 } }}>
-              <Typography
-                variant="h4"
-                gutterBottom
-                sx={{
-                  fontFamily: 'Lato, sans-serif',
-                  fontWeight: 700,
-                  color: (theme) => (theme.palette.mode === 'dark' ? '#ffffff' : '#424242'),
-                  mb: 0.5,
-                }}
-              >
-                Saiful Khan
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                sx={{
-                  fontFamily: 'Lato, sans-serif',
-                  color: 'text.secondary',
-                  mb: 0.5,
-                }}
-              >
-                B.E., M.S., D.Phil. (Oxford)
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                sx={{
-                  fontFamily: 'Lato, sans-serif',
-                  color: 'text.secondary',
-                  // mb: 2,
-                }}
-              >
-                Senior Data Scientist
-              </Typography>
-
-              <Box sx={{ mb: 2, display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-                <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
-                  <Box>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        fontFamily: 'Lato, sans-serif',
-                        color: 'text.secondary',
-                      }}
-                    >
-                      Scientific Computing, STFC
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <IconButton
-                    component="a"
-                    href="mailto:saiful.etc@gmail.com"
-                    aria-label="Email"
-                    size="small"
-                    title="saiful.etc@gmail.com"
-                    sx={{
-                      padding: 0.5,
-                      transition: 'all 0.2s ease',
-                      '&:hover': {
-                        color: '#1976d2',
-                        transform: 'translateY(-2px)',
-                      },
-                    }}
-                  >
-                    <EmailIcon sx={{ fontSize: 18 }} />
-                  </IconButton>
-                  <IconButton
-                    component="a"
-                    href="https://scholar.google.com/citations?hl=en&user=lZLfsJwAAAAJ&view_op=list_works&sortby=pubdate"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Google Scholar"
-                    size="small"
-                    sx={{
-                      padding: 0.5,
-                      transition: 'all 0.2s ease',
-                      '&:hover': {
-                        color: '#1976d2',
-                        transform: 'translateY(-2px)',
-                      },
-                    }}
-                  >
-                    <SchoolIcon sx={{ fontSize: 18 }} />
-                  </IconButton>
-                  <IconButton
-                    component="a"
-                    href="https://github.com/saifulkhan"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="GitHub"
-                    size="small"
-                    sx={{
-                      padding: 0.5,
-                      transition: 'all 0.2s ease',
-                      '&:hover': {
-                        color: '#1976d2',
-                        transform: 'translateY(-2px)',
-                      },
-                    }}
-                  >
-                    <GitHubIcon sx={{ fontSize: 18 }} />
-                  </IconButton>
-                  <IconButton
-                    component="a"
-                    href="https://www.linkedin.com/in/khansaiful/"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="LinkedIn"
-                    size="small"
-                    sx={{
-                      padding: 0.5,
-                      transition: 'all 0.2s ease',
-                      '&:hover': {
-                        color: '#1976d2',
-                        transform: 'translateY(-2px)',
-                      },
-                    }}
-                  >
-                    <LinkedInIcon sx={{ fontSize: 18 }} />
-                  </IconButton>
-                </Box>
-              </Box>
-
-              <Box sx={{ my: 2 }}>
-                <hr style={{ border: 0, borderTop: '1px solid #e0e0e0', margin: 0 }} />
-              </Box>
-
-              <Box
-                sx={{
-                  '& a': {
-                    color: 'inherit',
-                    textDecoration: 'none',
-                    borderBottom: '1px dotted rgba(0, 0, 0, 0.3)',
-                    transition: 'border-color 0.2s ease, color 0.2s ease',
-                    '&:hover': {
-                      color: '#1976d2',
-                      borderBottom: '1px solid #1976d2',
-                    },
-                  },
-                }}
-              >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mb: 1,
-                    textAlign: 'justify',
-                    fontFamily: 'Lato, sans-serif',
-                    fontWeight: 'normal',
-                    lineHeight: 1.6,
-                    color: 'text.primary',
-                    fontSize: 14,
-                  }}
-                >
-                  I lead the design and development of data-driven software systems and infrastructures that turn
-                  complex data and scientific workflows into scalable, production-ready systems.
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mb: 1,
-                    textAlign: 'justify',
-                    fontFamily: 'Lato, sans-serif',
-                    fontWeight: 'normal',
-                    lineHeight: 1.6,
-                    color: 'text.primary',
-                    fontSize: 14,
-                  }}
-                >
-                  I work at the intersection of software engineering, data systems, artificial intelligence/ machine learning (AI/ML), and visual analytics, combining industry experience with applied research. My industry background includes
-                  engineering database software at Oracle and real-time industrial automation at ABB. My research
-                  and delivered software systems have supported applications ranging from radio astronomy and nuclear fusion to
-                  global health emergencies, seismology, environmental modelling, and enterprise information search.
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    mb: 2,
-                    textAlign: 'justify',
-                    fontFamily: 'Lato, sans-serif',
-                    fontWeight: 'normal',
-                    lineHeight: 1.6,
-                    color: 'text.primary',
-                    fontSize: 14,
-                  }}
-                >
-                  I lead research and engineering projects, develop and publish in the area of data and service computing, and
-                  collaborate across academia, industry, and scientific organizations. My research focuses on Data
-                  &amp; Service Computing, Applied AI/ML, and Visual Analytics, with current work spanning data
-                  virtualization, semantic search, scientific machine learning, and human-centred AI. I also
-                  contribute to research funding as a Co-PI on externally funded projects.
-                </Typography>
-
-              </Box>
-            </Box>
+          <Box sx={{ flex: 1, order: { xs: 1, md: 0 } }}>
+            <Typography variant="overline" sx={{ color: 'primary.main', display: 'block', mb: 0.5 }}>
+              Senior Data Scientist · Scientific Computing, STFC
+            </Typography>
+            <Typography variant="h3" component="h1" sx={{ mb: 1 }}>
+              Saiful Khan
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2 }}>
+              B.E., M.S., D.Phil. (Oxford)
+            </Typography>
+            <SocialLinks />
           </Box>
-
-          <Divider
+          <Avatar
+            src="/profile.jpeg"
+            alt="Saiful Khan"
             sx={{
-              my: 3,
-              borderColor: 'primary.light',
-              opacity: 0.3,
+              width: { xs: 120, md: 168 },
+              height: { xs: 120, md: 168 },
+              order: { xs: 0, md: 1 },
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
+              border: '1px solid',
+              borderColor: 'divider',
             }}
           />
-        </Paper>
-      </Box>
+        </Box>
+
+        {/* Bio */}
+        <Box sx={{ mb: { xs: 5, md: 6 } }}>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            I lead the design and development of data-driven software systems and infrastructures that turn complex data
+            and scientific workflows into scalable, production-ready systems.
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            I work at the intersection of software engineering, data systems, artificial intelligence/machine learning
+            (AI/ML), and visual analytics, combining industry experience with applied research. My industry background
+            includes engineering database software at Oracle and real-time industrial automation at ABB. My research and
+            delivered software systems have supported applications ranging from radio astronomy and nuclear fusion to
+            global health emergencies, seismology, environmental modelling, and enterprise information search.
+          </Typography>
+          <Typography variant="body1">
+            I lead research and engineering projects, develop and publish in the area of data and service computing, and
+            collaborate across academia, industry, and scientific organizations. My current work spans data
+            virtualization, semantic search, scientific machine learning, and human-centred AI. I also contribute to
+            research funding as a Co-PI on externally funded projects.
+          </Typography>
+        </Box>
+
+        {/* Focus areas */}
+        <Box sx={{ mb: { xs: 5, md: 6 } }}>
+          <Typography variant="h6" sx={{ mb: 2 }}>
+            Focus Areas
+          </Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+            {focusAreas.map((area) => (
+              <Chip key={area} label={area} size="small" variant="outlined" sx={{ color: 'text.secondary' }} />
+            ))}
+          </Box>
+        </Box>
+
+        {/* Explore */}
+        <Box>
+          <Typography variant="h6" sx={{ mb: 2 }}>
+            Explore
+          </Typography>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, 1fr)' },
+              gap: 2,
+            }}
+          >
+            {exploreCards.map(({ title, description, href, icon: Icon }) => (
+              <Card
+                key={href}
+                component={Link}
+                href={href}
+                variant="outlined"
+                sx={{
+                  p: 2.5,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 1,
+                  textDecoration: 'none',
+                  transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease',
+                  '&:hover': {
+                    borderColor: 'primary.main',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
+                    '& .explore-arrow': { transform: 'translateX(4px)' },
+                  },
+                }}
+              >
+                <Icon sx={{ color: 'primary.main', fontSize: 26 }} />
+                <Typography variant="subtitle1" sx={{ fontWeight: 700, lineHeight: 1.3 }}>
+                  {title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary', flex: 1 }}>
+                  {description}
+                </Typography>
+                <ArrowForwardIcon
+                  className="explore-arrow"
+                  sx={{ fontSize: 18, color: 'text.secondary', transition: 'transform 0.2s ease' }}
+                />
+              </Card>
+            ))}
+          </Box>
+        </Box>
+      </Container>
     </>
   );
 }

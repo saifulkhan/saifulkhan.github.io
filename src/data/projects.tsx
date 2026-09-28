@@ -34,7 +34,7 @@ const projectsList: ProjectEntry[] = [
       <>
         Large-scale ML workflows are often bottlenecked by fragmented, heterogeneous data sources. Leading research on
         data virtualization services for large-scale ML workflows and service composition &amp; discovery—including
-        LLM-based automated metadata and keywords generation in high-volume data virtualization services, and
+        LLM-based automated metadata and keyword generation in high-volume data virtualization services, and
         process-aware knowledge graphs for agent-driven service discovery and grounded execution.
       </>
     ),
@@ -127,8 +127,8 @@ const projectsList: ProjectEntry[] = [
     title: 'Tokamak Fusion Data Management, Active Learning, and Visualization',
     description: (
       <>
-        Nuclear fusion experiments generate massive experimental datasets that remain inaccessible to modern data
-        science methods. In collaboration with UK Atomic Energy Authority, led the development of{' '}
+        Nuclear fusion experiments generate massive datasets that remain inaccessible to modern data science methods.
+        In collaboration with the UK Atomic Energy Authority, led the development of{' '}
         <Link
           href="https://mastapp.site/"
           target="_blank"
@@ -151,14 +151,14 @@ const projectsList: ProjectEntry[] = [
   {
     title: 'LLM for Semantic Search & Information Retrieval',
     description:
-      "Led development of LLM-based semantic search, information retrieval, and automated metadata generation at STFC, including (a) grant proposal search and (b) semantic search, clustering, and topic modeling of scientific data from STFC's DataGateway.",
+      "Led development of LLM-based semantic search, information retrieval, and automated metadata generation at STFC, including (a) grant proposal search and (b) semantic search, clustering, and topic modelling of scientific data from STFC's DataGateway.",
     organisation: ['STFC', 'UKRI'],
     status: 'Completed',
     role: ['Data Scientist'],
     funding: [],
     tags: ['Machine Learning', 'Large Language Model'],
   },
-    {
+  {
     title: 'HyperCrop',
     description:
       'Applied machine learning to hyperspectral imaging for crop disease prediction, in collaboration with RAL Space.',
@@ -169,7 +169,7 @@ const projectsList: ProjectEntry[] = [
     tags: ['Machine Learning'],
   },
   {
-    title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMP-VIS)',
+    title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMPVIS)',
     description: (
       <>
         During COVID-19, epidemiologists needed to make high-stakes decisions from tens of thousands of rapidly
@@ -192,7 +192,7 @@ const projectsList: ProjectEntry[] = [
           rel="noopener noreferrer"
           sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
         >
-          RAMP-VIS
+          RAMPVIS
         </Link>
         , a visual analytics infrastructure, in collaboration with the UK visualization research community and the
         Scottish COVID Response Consortium (SCRC). Designed and implemented infrastructure for rapidly deploying
@@ -250,7 +250,7 @@ const projectsList: ProjectEntry[] = [
     funding: ['Innovate UK'],
     tags: ['Software Engineering'],
   },
-   {
+  {
     title: 'Visual Bulletin Analytics System (VBAS)',
     description: (
       <>
@@ -277,9 +277,9 @@ const projectsList: ProjectEntry[] = [
     tags: ['Visualization', 'Software Engineering'],
   },
   {
-    title: 'Visualisation Assisted Enterprise Search Engine',
+    title: 'Visualization Assisted Enterprise Search Engine',
     description:
-      "Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably - beyond what standard enterprise search could provide. Developed a proof-of-concept visualisation-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",
+      "Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably—beyond what standard enterprise search could provide. Developed a proof-of-concept visualization-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",
     organisation: ['University of Oxford'],
     status: 'Completed',
     role: ['D.Phil. (Ph.D.) Research'],
@@ -289,7 +289,7 @@ const projectsList: ProjectEntry[] = [
   {
     title: 'Oracle Database',
     description:
-      "Oracle's database runs mission-critical operations for customers worldwide, where defects or missing features can disrupt business operations - making reliable engineering essential. Developed and debugged Oracle database service features, and independently identified the need for, designed, and built automation tools that improved efficiency and reduced cost across the patch build, test, and delivery pipeline.",
+      "Oracle's database runs mission-critical operations for customers worldwide, where defects or missing features can disrupt business operations—making reliable engineering essential. Developed and debugged Oracle database service features, and independently identified the need for, designed, and built automation tools that improved efficiency and reduced cost across the patch build, test, and delivery pipeline.",
     organisation: ['Oracle'],
     status: 'Completed',
     role: ['Software Engineer'],
