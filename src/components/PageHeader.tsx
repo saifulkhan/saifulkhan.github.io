@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 interface PageHeaderProps {
   eyebrow?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: React.ReactNode;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({ eyebrow, title, subtitle }) => (

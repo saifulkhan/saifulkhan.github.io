@@ -1,5 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
+import NextLink from 'next/link';
 import Seo from '../components/Seo';
 import Image from 'next/image';
 import { Box, Card, Container, Typography, Stack, Chip, Link, useTheme, useMediaQuery } from '@mui/material';
@@ -99,7 +100,7 @@ const Software = () => {
         <PageHeader
           eyebrow="Portfolio"
           title="Software & Systems"
-          subtitle="Production systems and open-source tools I have designed and built."
+          subtitle="A selection of projects with openly available code."
         />
 
         <Stack spacing={2.5}>
@@ -217,6 +218,18 @@ const Software = () => {
             </Card>
           ))}
         </Stack>
+
+        <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center', mt: 4 }}>
+          For all my work, see the{' '}
+          <Link component={NextLink} href="/projects">
+            Projects
+          </Link>{' '}
+          and{' '}
+          <Link component={NextLink} href="/publication">
+            Publications
+          </Link>{' '}
+          pages.
+        </Typography>
       </Container>
     </>
   );
