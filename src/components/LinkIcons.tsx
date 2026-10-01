@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { IconButton, SxProps, Theme } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import LanguageIcon from '@mui/icons-material/Language';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import NpmIcon from './NpmIcon';
 import VideoDialog from './VideoDialog';
 
 // linktype: defines supported link types, now includes pdf and video
-export type LinkType = 'github' | 'npm' | 'external' | 'arxiv' | 'pdf' | 'video';
+export type LinkType = 'github' | 'npm' | 'web' | 'arxiv' | 'pdf' | 'video';
 
 export interface LinkIcon {
   type: LinkType;
@@ -39,7 +40,7 @@ const VideoLinkButton: React.FC<{ url: string; label?: string; sx: SxProps<Theme
 
 /**
  * linkicons: renders a row of icon buttons for each link in the links array
- * supports github, npm, external, arxiv, and pdf link types
+ * supports github, npm, web, arxiv, and pdf link types
  */
 const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0.5, inline = true }) => {
   return (
@@ -124,7 +125,7 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
             </IconButton>
           );
         }
-        if (link.type === 'external' || link.type === 'arxiv') {
+        if (link.type === 'web') {
           return (
             <IconButton
               key={`${link.url}-${i}`}
@@ -132,7 +133,23 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
               href={link.url}
               target="_blank"
               rel="noopener"
-              aria-label={link.label || 'External'}
+              aria-label={link.label || 'Website'}
+              size="small"
+              sx={{ fontSize: iconSize, ml: i > 0 ? spacing : 0 }}
+            >
+              <LanguageIcon fontSize="inherit" />
+            </IconButton>
+          );
+        }
+        if (link.type === 'arxiv') {
+          return (
+            <IconButton
+              key={`${link.url}-${i}`}
+              component="a"
+              href={link.url}
+              target="_blank"
+              rel="noopener"
+              aria-label={link.label || 'arXiv'}
               size="small"
               sx={{ fontSize: iconSize, ml: i > 0 ? spacing : 0 }}
             >

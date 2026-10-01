@@ -36,7 +36,7 @@ const softwareList: SoftwareEntry[] = [
       { type: 'npm', url: 'https://www.npmjs.com/package/meta-storyboard' },
       { type: 'github', url: 'https://github.com/saifulkhan/meta-storyboard' },
       {
-        type: 'external',
+        type: 'web',
         url: 'https://saifulkhan.github.io/meta-storyboard-examples/',
         label: 'Live examples',
       },
@@ -92,7 +92,7 @@ const softwareList: SoftwareEntry[] = [
         url: 'https://github.com/ScottishCovidResponse/rampvis-api',
         label: 'Server',
       },
-      { type: 'external', url: 'https://sites.google.com/view/rampvis/' },
+      { type: 'web', url: 'https://sites.google.com/view/rampvis/' },
     ],
     funding: ['EPSRC', 'University of Oxford'],
   },

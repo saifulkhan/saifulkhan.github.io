@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Box, Container, Typography, Avatar, Card, Chip } from '@mui/material';
+import Seo, { SITE_URL } from '../components/Seo';
+import { Box, Container, Typography, Avatar, Card, Chip, Link as MuiLink } from '@mui/material';
 import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
@@ -11,11 +12,10 @@ import SocialLinks from '../components/SocialLinks';
 const focusAreas = [
   'Data & Service Computing',
   'Applied AI/ML',
-  'Visual Analytics',
-  'Data Virtualization',
-  'Semantic Search',
-  'Scientific Machine Learning',
   'Human-centred AI',
+  'Visual Analytics',
+  'Semantic Search',
+  'Data Virtualization'
 ];
 
 const exploreCards = [
@@ -42,12 +42,39 @@ const exploreCards = [
 export default function About() {
   return (
     <>
+      <Seo
+        title="Saiful Khan | Senior Scientist"
+        description="Saiful Khan — Senior Scientist at UK Research and Innovation (UKRI). Data & service computing, applied AI/ML, and visual analytics."
+        path="/"
+      />
       <Head>
-        <title>Saiful Khan | Senior Data Scientist</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <meta
-          name="description"
-          content="Saiful Khan — Senior Data Scientist at Scientific Computing, STFC. Data & service computing, applied AI/ML, and visual analytics."
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Saiful Khan',
+              url: `${SITE_URL}/`,
+              image: `${SITE_URL}/profile.jpeg`,
+              jobTitle: 'Senior Scientist',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'UK Research and Innovation (UKRI)',
+                url: 'https://www.ukri.org/',
+              },
+              alumniOf: {
+                '@type': 'CollegeOrUniversity',
+                name: 'University of Oxford',
+              },
+              knowsAbout: focusAreas,
+              sameAs: [
+                'https://scholar.google.com/citations?hl=en&user=lZLfsJwAAAAJ',
+                'https://github.com/saifulkhan',
+                'https://www.linkedin.com/in/khansaiful/',
+              ],
+            }),
+          }}
         />
       </Head>
 
@@ -64,7 +91,7 @@ export default function About() {
         >
           <Box sx={{ flex: 1, order: { xs: 1, md: 0 } }}>
             <Typography variant="overline" sx={{ color: 'primary.main', display: 'block', mb: 0.5 }}>
-              Senior Data Scientist · Scientific Computing, STFC
+              Senior Scientist · UK Research and Innovation (UKRI)
             </Typography>
             <Typography variant="h3" component="h1" sx={{ mb: 1 }}>
               Saiful Khan
@@ -91,22 +118,33 @@ export default function About() {
         {/* Bio */}
         <Box sx={{ mb: { xs: 5, md: 6 } }}>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            I lead the design and development of data-driven software systems and infrastructures that turn complex data
-            and scientific workflows into scalable, production-ready systems.
+            I design and develop data-driven software systems and infrastructures that transform complex
+            data and workflows into scalable, production-ready solutions. I focus on bridging the gap
+            between raw information and impactful, real-world applications.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            I work at the intersection of software engineering, data systems, artificial intelligence/machine learning
-            (AI/ML), and visual analytics, combining industry experience with applied research. My industry background
-            includes engineering database software at Oracle and real-time industrial automation at ABB. My research and
-            delivered software systems have supported applications ranging from radio astronomy and nuclear fusion to
-            global health emergencies, seismology, environmental modelling, and enterprise information search.
+            My expertise lies at the intersection of software engineering, data systems, artificial
+            intelligence/machine learning (AI/ML), and visual analytics. I have developed software
+            systems for diverse domains including radio astronomy, nuclear fusion, urban environmental
+            digital-twins, global health emergencies, seismology, and enterprise information search. In
+            industry, I have contributed to engineering database software at Oracle and real-time
+            industrial automation at ABB.
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            I earned my DPhil (PhD) and completed postdoctoral research at the University of Oxford, under
+            the supervision of Professor{' '}
+            <MuiLink
+              href="https://eng.ox.ac.uk/people/min-chen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Min Chen
+            </MuiLink>
+            .
           </Typography>
           <Typography variant="body1">
-            I lead research and engineering projects, develop and publish in the area of data and service computing, and
-            collaborate across academia, industry, and scientific organizations. My current work spans data
-            virtualization, semantic search, scientific machine learning, and human-centred AI. I also contribute to
-            research funding as a Co-PI on externally funded projects.
-          </Typography>
+            My current focus centers on advancing software infrastructure, with particular emphasis on data virtualization, semantic search, artificial intelligence and machine learning (AI/ML), and human-centered AI.          
+        </Typography>
         </Box>
 
         {/* Focus areas */}

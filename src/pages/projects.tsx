@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+import Seo from '../components/Seo';
 import { Box, Container, Typography, Stack, Divider, Chip } from '@mui/material';
 import EngineeringTwoToneIcon from '@mui/icons-material/EngineeringTwoTone';
 import AccountBalanceTwoToneIcon from '@mui/icons-material/AccountBalanceTwoTone';
@@ -92,10 +92,11 @@ const Projects = () => {
 
   return (
     <>
-      <Head>
-        <title>Projects | Saiful Khan</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
+      <Seo
+        title="Projects | Saiful Khan"
+        description="Funded research programmes and engineering projects Saiful Khan leads and contributes to."
+        path="/projects"
+      />
 
       <Container maxWidth="md" sx={{ py: { xs: 4, md: 6 } }}>
         <PageHeader

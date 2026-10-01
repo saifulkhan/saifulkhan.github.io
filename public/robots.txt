@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saifulkhan.github.io/sitemap.xml

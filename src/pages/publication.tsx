@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
+import Seo from '../components/Seo';
 import { Box, Container, Typography, Stack } from '@mui/material';
 import { publicationsList } from '../data/publications';
 import type { Publication } from '../data/publications';
@@ -45,10 +45,11 @@ const Publications = () => {
 
   return (
     <>
-      <Head>
-        <title>Publications | Saiful Khan</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
+      <Seo
+        title="Publications | Saiful Khan"
+        description="Peer-reviewed publications by Saiful Khan in visualization, machine learning, and data systems."
+        path="/publication"
+      />
 
       <Container maxWidth="md" sx={{ py: { xs: 4, md: 6 } }}>
         <PageHeader

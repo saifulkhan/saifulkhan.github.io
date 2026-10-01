@@ -10,7 +10,7 @@ export interface Publication {
   year: number;
   tags: string[];
   links?: {
-    type: 'github' | 'npm' | 'external' | 'arxiv' | 'pdf';
+    type: 'github' | 'npm' | 'web' | 'arxiv' | 'pdf';
     url: string;
   }[];
 }
@@ -19,13 +19,13 @@ export const publicationsList: Publication[] = [
   {
     title: 'Meta-Storyboard Using Feature-Action Patterns: Concept, Techniques, and Case Studies',
     authors: 'S Khan, S Jones, B Bach, J Cha, M Chen, J Meikle, JC Roberts, J Thiyagalingam, J Wood, PD Ritsos',
-    venue: { name: '', type: 'journal' },
+    venue: { name: 'Computer Graphics Forum', type: 'journal' },
     year: 2026,
     tags: ['Visualization', 'Software Engineering'],
     links: [
+      { type: 'web', url: 'https://saifulkhan.github.io/meta-storyboard-examples' },
       { type: 'pdf', url: 'https://arxiv.org/abs/2402.03116' },
       { type: 'npm', url: 'https://www.npmjs.com/package/meta-storyboard' },
-      { type: 'github', url: 'https://github.com/saifulkhan/meta-storyboard' },
     ],
   },
   {
@@ -186,7 +186,7 @@ export const publicationsList: Publication[] = [
     tags: ['Visualization'],
     links: [
       {
-        type: 'external',
+        type: 'web',
         url: 'https://dashboarddesignpatterns.github.io/',
       },
       {

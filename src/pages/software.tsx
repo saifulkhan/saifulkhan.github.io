@@ -1,6 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
+import Seo from '../components/Seo';
 import Image from 'next/image';
 import { Box, Card, Container, Typography, Stack, Chip, Link, useTheme, useMediaQuery } from '@mui/material';
 import LinkIcons, { type LinkIcon } from '../components/LinkIcons';
@@ -89,10 +89,11 @@ const Software = () => {
 
   return (
     <>
-      <Head>
-        <title>Software | Saiful Khan</title>
-        <meta name="description" content="List of software and systems developed by Saiful Khan" />
-      </Head>
+      <Seo
+        title="Software | Saiful Khan"
+        description="Production software systems and open-source tools designed and built by Saiful Khan."
+        path="/software"
+      />
 
       <Container maxWidth="md" sx={{ py: { xs: 4, md: 6 } }}>
         <PageHeader
