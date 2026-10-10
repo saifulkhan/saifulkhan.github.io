@@ -14,7 +14,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ eyebrow, title, subtitle }) => 
         {eyebrow}
       </Typography>
     )}
-    <Typography variant="h4" component="h1" sx={{ mb: subtitle ? 1 : 0 }}>
+    <Typography variant="h4" component="h2" sx={{ mb: subtitle ? 1 : 0 }}>
       {title}
     </Typography>
     {subtitle && (

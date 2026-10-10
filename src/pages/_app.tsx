@@ -33,6 +33,17 @@ function buildTheme(mode: 'light' | 'dark') {
       button: { textTransform: 'none', fontWeight: 600 },
     },
     components: {
+      // Content width scales with the window (like a vw-based layout), capped on very wide screens
+      MuiContainer: {
+        defaultProps: { maxWidth: false },
+        styleOverrides: {
+          root: ({ theme }) => ({
+            maxWidth: 1280,
+            [theme.breakpoints.up('md')]: { width: '80vw' },
+            [theme.breakpoints.up('lg')]: { width: '65vw' },
+          }),
+        },
+      },
       MuiPaper: {
         styleOverrides: { root: { backgroundImage: 'none' } },
       },
@@ -53,8 +64,6 @@ export default function App({ Component, pageProps }: AppProps) {
     const saved = window.localStorage.getItem('color-mode');
     if (saved === 'dark' || saved === 'light') {
       setMode(saved);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setMode('dark');
     }
   }, []);
 

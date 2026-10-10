@@ -5,7 +5,6 @@ import SocialLinks from './SocialLinks';
 const Footer: React.FC = () => (
   <Box component="footer" sx={{ borderTop: 1, borderColor: 'divider', mt: 8, py: 4 }}>
     <Container
-      maxWidth="md"
       sx={{
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row' },

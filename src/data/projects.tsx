@@ -17,9 +17,18 @@ const projectsList: ProjectEntry[] = [
     description: (
       <>
         Cities need street-level, real-time environmental intelligence to protect public health and plan for climate
-        resilience. Leading the development of the EU-funded UrbanAIR Digital Twin as a Service (DTaaS) platform,
-        delivering real-time, street-level air quality and heat resilience forecasts across three European cities, in
-        collaboration with international partners including VITO (Belgium) and the Barcelona Supercomputing Center.
+        resilience. Leading the development of the EU-funded{' '}
+        <Link
+          href="https://www.urbanair-project.eu/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
+        >
+          UrbanAIR
+        </Link>{' '}
+        Digital Twin as a Service (DTaaS) platform, delivering real-time, street-level air quality and heat resilience
+        forecasts across three European cities, in collaboration with international partners including VITO (Belgium)
+        and the Barcelona Supercomputing Center.
       </>
     ),
     organisation: ['STFC'],
@@ -27,22 +36,6 @@ const projectsList: ProjectEntry[] = [
     role: ['Technical Lead'],
     funding: ['EU'],
     tags: ['Software Engineering', 'Machine Learning'],
-  },
-  {
-    title: 'Data Virtualization for Machine Learning',
-    description: (
-      <>
-        Large-scale ML workflows are often bottlenecked by fragmented, heterogeneous data sources. Leading research on
-        data virtualization services for large-scale ML workflows and service composition &amp; discovery—including
-        LLM-based automated metadata and keyword generation in high-volume data virtualization services, and
-        process-aware knowledge graphs for agent-driven service discovery and grounded execution.
-      </>
-    ),
-    organisation: ['STFC'],
-    status: 'Ongoing',
-    role: ['Technical Lead'],
-    funding: [],
-    tags: ['Machine Learning', 'Large Language Model', 'Software Engineering'],
   },
   {
     title: 'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
@@ -64,14 +57,18 @@ const projectsList: ProjectEntry[] = [
         </Link>
         -funded project develops a visualization-enabled infrastructure and toolset that manages large pools of ML
         models and their performance profiles, supports the construction of effective model ensembles, and empowers
-        decision makers to interpret model anomalies and reconcile conflicting predictions.
+        decision makers to interpret model anomalies and reconcile conflicting predictions. Within the project, I lead
+        the data virtualization work: services that unify fragmented, heterogeneous data sources for large-scale ML
+        workflows, service composition &amp; discovery—including LLM-based automated metadata and keyword generation in
+        high-volume data virtualization services, and process-aware knowledge graphs for agent-driven service discovery
+        and grounded execution.
       </>
     ),
     organisation: ['STFC', 'University of Oxford'],
     status: 'Ongoing',
     role: ['Co-PI'],
     funding: ['EPSRC', '£575k'],
-    tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
+    tags: ['Visualization', 'Machine Learning', 'Large Language Model', 'Software Engineering'],
   },
   {
     title:
@@ -127,8 +124,8 @@ const projectsList: ProjectEntry[] = [
     title: 'Tokamak Fusion Data Management, Active Learning, and Visualization',
     description: (
       <>
-        Nuclear fusion experiments generate massive datasets that remain inaccessible to modern data science methods.
-        In collaboration with the UK Atomic Energy Authority, led the development of{' '}
+        Nuclear fusion experiments generate massive datasets that remain inaccessible to modern data science methods. In
+        collaboration with the UK Atomic Energy Authority, led the development of{' '}
         <Link
           href="https://mastapp.site/"
           target="_blank"
@@ -172,9 +169,9 @@ const projectsList: ProjectEntry[] = [
     title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMPVIS)',
     description: (
       <>
-        During COVID-19, epidemiologists needed to make high-stakes decisions from tens of thousands of rapidly
-        evolving datasets, with no existing infrastructure to visualize or search them at that scale. Initially
-        volunteered as a software architect for the Royal Society&apos;s{' '}
+        During COVID-19, epidemiologists needed to make high-stakes decisions from tens of thousands of rapidly evolving
+        datasets, with no existing infrastructure to visualize or search them at that scale. Initially volunteered as a
+        software architect for the Royal Society&apos;s{' '}
         <Link
           href="https://royalsociety.org/news-resources/projects/ramp/"
           target="_blank"

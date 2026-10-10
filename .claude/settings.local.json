@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:arxiv.org)",
+      "Bash(python3 -m venv /tmp/imgenv)",
+      "Bash(/tmp/imgenv/bin/pip install *)",
+      "Bash(/tmp/imgenv/bin/python -c ' *)",
+      "Read(//usr/share/fonts/truetype/dejavu/**)",
+      "Bash(python3 -m pip install --quiet --target /tmp/pylibs Pillow --break-system-packages)",
+      "Bash(PYTHONPATH=/tmp/pylibs python3 -c ' *)",
+      "Bash(PYTHONPATH=/tmp/pylibs python3 /home/vlq26735/PROJECTS/writing/saifulkhan.github.io/temp/make_vbas.py)",
+      "Bash(PYTHONPATH=/tmp/pylibs python3 temp/make_ese.py)"
+    ]
+  }
+}

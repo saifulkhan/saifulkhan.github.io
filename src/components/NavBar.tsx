@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import {
@@ -27,10 +27,10 @@ interface NavBarProps {
 }
 
 const navItems = [
-  { name: 'About', path: '/' },
-  { name: 'Software', path: '/software' },
-  { name: 'Projects', path: '/projects' },
-  { name: 'Publications', path: '/publication' },
+  { name: 'About', id: 'about' },
+  { name: 'Software', id: 'software' },
+  { name: 'Projects', id: 'projects' },
+  { name: 'Publications', id: 'publications' },
 ];
 
 const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
@@ -38,8 +38,43 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeId, setActiveId] = useState(navItems[0].id);
 
-  const isActive = (path: string) => router.pathname === path;
+  // Scroll-spy: highlight the last section whose top has passed below the sticky bar
+  useEffect(() => {
+    if (router.pathname !== '/') return;
+
+    const handleScroll = () => {
+      const offset = 96;
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      let current = navItems[0].id;
+      for (const item of navItems) {
+        const el = document.getElementById(item.id);
+        if (el && el.getBoundingClientRect().top <= offset) current = item.id;
+      }
+      setActiveId(atBottom ? navItems[navItems.length - 1].id : current);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [router.pathname]);
+
+  const isActive = (id: string) => router.pathname === '/' && activeId === id;
+
+  // On the home page scroll in place; elsewhere let the link navigate to /#id
+  const handleNavClick = (id: string) => (event: React.MouseEvent) => {
+    if (router.pathname !== '/') return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    event.preventDefault();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.history.replaceState(null, '', id === navItems[0].id ? '/' : `/#${id}`);
+  };
 
   const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
 
@@ -48,17 +83,18 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
       <List>
         {navItems.map((item) => (
           <ListItemButton
-            key={item.path}
+            key={item.id}
             component={Link}
-            href={item.path}
-            selected={isActive(item.path)}
+            href={`/#${item.id}`}
+            onClick={handleNavClick(item.id)}
+            selected={isActive(item.id)}
             sx={{ borderRadius: 2, mx: 1 }}
           >
             <ListItemText
               primary={item.name}
               primaryTypographyProps={{
-                fontWeight: isActive(item.path) ? 700 : 500,
-                color: isActive(item.path) ? 'primary' : 'text.primary',
+                fontWeight: isActive(item.id) ? 700 : 500,
+                color: isActive(item.id) ? 'primary' : 'text.primary',
               }}
             />
           </ListItemButton>
@@ -79,7 +115,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
         borderColor: 'divider',
       }}
     >
-      <Container maxWidth="md">
+      <Container>
         <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: { xs: 56, md: 64 } }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             {isMobile && (
@@ -91,6 +127,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
               variant="h6"
               component={Link}
               href="/"
+              onClick={handleNavClick(navItems[0].id)}
               sx={{
                 fontWeight: 800,
                 letterSpacing: '-0.01em',
@@ -105,12 +142,13 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
           <Stack direction="row" spacing={{ xs: 0.5, md: 1 }} alignItems="center">
             {!isMobile &&
               navItems.map((item) => {
-                const active = isActive(item.path);
+                const active = isActive(item.id);
                 return (
                   <Typography
-                    key={item.path}
+                    key={item.id}
                     component={Link}
-                    href={item.path}
+                    href={`/#${item.id}`}
+                    onClick={handleNavClick(item.id)}
                     sx={{
                       position: 'relative',
                       px: 1,
