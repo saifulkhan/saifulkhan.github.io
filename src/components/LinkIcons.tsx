@@ -5,6 +5,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import LanguageIcon from '@mui/icons-material/Language';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import NpmIcon from './NpmIcon';
+import PdfIcon from './PdfIcon';
 import VideoDialog from './VideoDialog';
 
 // linktype: defines supported link types, now includes pdf and video
@@ -101,27 +102,7 @@ const LinkIcons: React.FC<LinkIconsProps> = ({ links, iconSize = 16, spacing = 0
               size="small"
               sx={{ fontSize: iconSize, ml: i > 0 ? spacing : 0 }}
             >
-              {/* simple pdf svg icon */}
-              <svg
-                width={iconSize}
-                height={iconSize}
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="20" height="20" rx="3" fill="#E53935" />
-                <text
-                  x="10"
-                  y="15"
-                  textAnchor="middle"
-                  fontFamily="Lato, sans-serif"
-                  fontWeight="bold"
-                  fontSize="9"
-                  fill="#fff"
-                >
-                  PDF
-                </text>
-              </svg>
+              <PdfIcon fontSize="inherit" />
             </IconButton>
           );
         }

@@ -1,20 +1,43 @@
 import React from 'react';
 import Head from 'next/head';
 import Seo, { SITE_URL } from '../components/Seo';
-import { Box, Container, Typography, Avatar, Chip, Link as MuiLink } from '@mui/material';
+import { Box, Container, Typography, Avatar, Link as MuiLink } from '@mui/material';
 import SocialLinks from '../components/SocialLinks';
 import SoftwareSection from '../components/sections/SoftwareSection';
 import ProjectsSection from '../components/sections/ProjectsSection';
 import PublicationsSection from '../components/sections/PublicationsSection';
 
-const focusAreas = [
-  'Data & Service Computing',
+const researchInterests = [
+  'Service Computing',
   'Applied AI/ML',
-  'Human-centred AI',
-  'Visual Analytics',
   'Semantic Search',
   'Data Virtualization',
+  'Human-centred AI',
+  'Visual Analytics',
 ];
+
+const majorAwards: React.ReactNode[] = ['RAMP Early Career Investigator Award, Royal Society'];
+
+const professionalService: React.ReactNode[] = [
+  'Programme Committee, Services Computing Conference (SCC), 2026',
+  'Guest Editor, Reliable Scientific Machine Learning for PDE Solution and Discovery, Frontiers in Applied Mathematics and Statistics',
+];
+
+const AboutList = ({ title, items }: { title: string; items: React.ReactNode[] }) => (
+  <Box>
+    {/* underlined heading so both columns start on the same rule */}
+    <Typography variant="h6" component="h2" sx={{ pb: 0.75, mb: 1.5, borderBottom: 1, borderColor: 'divider' }}>
+      {title}
+    </Typography>
+    <Box component="ul" sx={{ m: 0, pl: 2.5 }}>
+      {items.map((item, i) => (
+        <Typography key={i} component="li" variant="body1" sx={{ mb: 0.5 }}>
+          {item}
+        </Typography>
+      ))}
+    </Box>
+  </Box>
+);
 
 export default function About() {
   return (
@@ -44,7 +67,7 @@ export default function About() {
                 '@type': 'CollegeOrUniversity',
                 name: 'University of Oxford',
               },
-              knowsAbout: focusAreas,
+              knowsAbout: researchInterests,
               sameAs: [
                 'https://scholar.google.com/citations?hl=en&user=lZLfsJwAAAAJ',
                 'https://github.com/saifulkhan',
@@ -96,42 +119,45 @@ export default function About() {
           {/* Bio */}
           <Box sx={{ mb: { xs: 5, md: 6 } }}>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              I design and develop data-driven software systems and infrastructures that transform complex data and
-              workflows into scalable, production-ready solutions. I focus on bridging the gap between raw information
-              and impactful, real-world applications.
+              I build data-driven software systems for complex, end-to-end workflows, from AI/ML and digital-twin
+              pipelines to interactive visualization. My work helps scientists and engineers make informed decisions. I
+              work at the Rutherford Appleton Laboratory (RAL) of the Science and Technology Facilities Council (STFC),
+              part of UK Research and Innovation (UKRI).
             </Typography>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              My expertise lies at the intersection of software engineering, data systems, artificial
-              intelligence/machine learning (AI/ML), and visual analytics. I have developed software systems for diverse
-              domains including radio astronomy, nuclear fusion, urban environmental digital-twins, global health
-              emergencies, seismology, and enterprise information search. In industry, I have contributed to engineering
-              database software at Oracle and real-time industrial automation at ABB.
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 2 }}>
-              I earned my DPhil (PhD) and completed postdoctoral research at the University of Oxford, under the
-              supervision of Professor{' '}
-              <MuiLink href="https://eng.ox.ac.uk/people/min-chen" target="_blank" rel="noopener noreferrer">
+              I began my career in industry, building engineering database software at Oracle and real-time industrial
+              automation at ABB. I then moved into research at the University of Oxford, completing my DPhil and
+              postdoctoral research with Professor{' '}
+              {/* body-text colour with a faint underline so it still reads as a link */}
+              <MuiLink
+                href="https://eng.ox.ac.uk/people/min-chen"
+                target="_blank"
+                rel="noopener noreferrer"
+                color="text.primary"
+                underline="always"
+              >
                 Min Chen
               </MuiLink>
-              .
-            </Typography>
-            <Typography variant="body1">
-              My current focus centers on advancing software infrastructure, with particular emphasis on data
-              virtualization, semantic search, artificial intelligence and machine learning (AI/ML), and human-centered
-              AI.
+              . My systems span enterprise search, seismology, radio astronomy, global health emergencies, nuclear
+              fusion, and urban environments, and many are in active real-world use.
             </Typography>
           </Box>
 
-          {/* Focus areas */}
-          <Box>
-            <Typography variant="h6" sx={{ mb: 2 }}>
-              Focus Areas
-            </Typography>
-            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-              {focusAreas.map((area) => (
-                <Chip key={area} label={area} size="small" variant="outlined" sx={{ color: 'text.secondary' }} />
-              ))}
+          {/* Two columns on desktop (interests + awards | service, roughly equal height); stacked on mobile */}
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+              columnGap: 6,
+              rowGap: 4,
+              alignItems: 'start',
+            }}
+          >
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <AboutList title="Research Interests" items={researchInterests} />
+              <AboutList title="Major Awards" items={majorAwards} />
             </Box>
+            <AboutList title="Professional Service" items={professionalService} />
           </Box>
         </Container>
       </Box>
