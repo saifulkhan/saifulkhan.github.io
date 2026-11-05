@@ -119,15 +119,16 @@ export default function About() {
           {/* Bio */}
           <Box sx={{ mb: { xs: 5, md: 6 } }}>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              I build data-driven software systems for complex, end-to-end workflows, from AI/ML and digital-twin
-              pipelines to interactive visualization. My work helps scientists and engineers make informed decisions. I
-              work at the Rutherford Appleton Laboratory (RAL) of the Science and Technology Facilities Council (STFC),
-              part of UK Research and Innovation (UKRI).
+              I build data-driven software systems that support complex, end-to-end workflows, spanning AI/ML and
+              digital-twin pipelines through to interactive visualisation. By integrating data, models and visualisation
+              into practical software platforms, I help scientists and engineers tackle complex problems and make
+              better-informed decisions. I work at the Rutherford Appleton Laboratory (RAL), part of the Science and
+              Technology Facilities Council (STFC), which is part of UK Research and Innovation (UKRI).
             </Typography>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              I began my career in industry, building engineering database software at Oracle and real-time industrial
-              automation at ABB. I then moved into research at the University of Oxford, completing my DPhil and
-              postdoctoral research with Professor{' '}
+              I began my career in industry, developing engineering database software at Oracle and real-time industrial
+              automation systems at ABB. I then moved into academic research at the University of Oxford, where I
+              completed my DPhil and subsequently undertook postdoctoral research with Professor{' '}
               {/* body-text colour with a faint underline so it still reads as a link */}
               <MuiLink
                 href="https://eng.ox.ac.uk/people/min-chen"
@@ -138,8 +139,9 @@ export default function About() {
               >
                 Min Chen
               </MuiLink>
-              . My systems span enterprise search, seismology, radio astronomy, global health emergencies, nuclear
-              fusion, and urban environments, and many are in active real-world use.
+              . Since then, I have contributed to the design and development of software systems across a diverse range
+              of domains, including enterprise search, seismology, radio astronomy, global health emergencies, nuclear
+              fusion and urban environments. Many of these systems are now in active real-world use.
             </Typography>
           </Box>
 
