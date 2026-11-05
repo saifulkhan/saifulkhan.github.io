@@ -129,7 +129,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, onToggleTheme }) => {
               href="/"
               onClick={handleNavClick(navItems[0].id)}
               sx={{
-                fontWeight: 800,
+                fontWeight: 700,
                 letterSpacing: '-0.01em',
                 textDecoration: 'none',
                 color: 'inherit',

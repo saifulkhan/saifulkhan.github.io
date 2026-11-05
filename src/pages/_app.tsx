@@ -6,7 +6,8 @@ import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
-const FONT_FAMILY = '"Lato", "Helvetica Neue", Arial, sans-serif';
+const FONT_FAMILY = '"Source Sans 3", "Helvetica Neue", Arial, sans-serif';
+const SERIF = '"Source Serif 4", Georgia, serif';
 
 function buildTheme(mode: 'light' | 'dark') {
   const isDark = mode === 'dark';
@@ -14,7 +15,7 @@ function buildTheme(mode: 'light' | 'dark') {
     palette: {
       mode,
       primary: { main: isDark ? '#8ab4f8' : '#1d4ed8' },
-      background: isDark ? { default: '#0e1116', paper: '#151a21' } : { default: '#ffffff', paper: '#ffffff' },
+      background: isDark ? { default: '#0e1116', paper: '#151a21' } : { default: '#FBFAF7', paper: '#ffffff' },
       text: isDark ? { primary: '#e6edf3', secondary: '#9aa4af' } : { primary: '#1f2328', secondary: '#57606a' },
       divider: isDark ? 'rgba(230, 237, 243, 0.12)' : 'rgba(31, 35, 40, 0.12)',
       success: { main: isDark ? '#57ab5a' : '#1a7f37' },
@@ -22,11 +23,14 @@ function buildTheme(mode: 'light' | 'dark') {
     shape: { borderRadius: 10 },
     typography: {
       fontFamily: FONT_FAMILY,
-      h3: { fontWeight: 800, letterSpacing: '-0.02em' },
-      h4: { fontWeight: 800, letterSpacing: '-0.01em' },
-      h5: { fontWeight: 700 },
-      h6: { fontWeight: 700 },
-      subtitle1: { fontWeight: 600 },
+      fontSize: 15,
+      h1: { fontFamily: SERIF, fontWeight: 600 },
+      h2: { fontFamily: SERIF, fontWeight: 600 },
+      h3: { fontFamily: SERIF, fontWeight: 600, letterSpacing: '-0.01em' },
+      h4: { fontFamily: SERIF, fontWeight: 600, letterSpacing: '-0.01em' },
+      h5: { fontFamily: SERIF, fontWeight: 600 },
+      h6: { fontFamily: SERIF, fontWeight: 600 },
+      subtitle1: { fontFamily: SERIF, fontWeight: 600 },
       body1: { lineHeight: 1.7 },
       body2: { lineHeight: 1.6 },
       overline: { fontWeight: 700, letterSpacing: '0.12em' },

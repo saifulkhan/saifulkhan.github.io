@@ -11,7 +11,7 @@ const DoiIcon = (props: SvgIconProps) => (
       fontSize="13"
       fontWeight="bold"
       fill="#1f2328"
-      fontFamily="Lato, sans-serif"
+      fontFamily="'Source Sans 3', sans-serif"
     >
       DOI
     </text>

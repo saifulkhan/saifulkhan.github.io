@@ -22,13 +22,13 @@ const projectsList: ProjectEntry[] = [
           href="https://www.urbanair-project.eu/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
+          sx={{ color: '#1565c0' }}
         >
           UrbanAIR
         </Link>{' '}
         Digital Twin as a Service (DTaaS) platform, delivering real-time, street-level air quality and heat resilience
         forecasts across three European cities, in collaboration with international partners including VITO (Belgium)
-        and the Barcelona Supercomputing Center.
+        and Antwerp City Council.
       </>
     ),
     organisation: ['STFC'],
@@ -47,7 +47,7 @@ const projectsList: ProjectEntry[] = [
           href="https://gtr.ukri.org/find-research-and-innovation/project/a2a9344d-1d0d-48f2-8307-43ffb2abada1"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
+          sx={{ color: '#1565c0' }}
         >
           EPSRC
         </Link>
@@ -76,7 +76,7 @@ const projectsList: ProjectEntry[] = [
   //         href="https://gtr.ukri.org/projects?ref=ST%2FY004183%2F1"
   //         target="_blank"
   //         rel="noopener noreferrer"
-  //         sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
+  //         sx={{ color: '#1565c0' }}
   //       >
   //         UKRI
   //       </Link>
@@ -91,17 +91,12 @@ const projectsList: ProjectEntry[] = [
   //   tags: ['Machine Learning'],
   // },
   {
-    title: 'Data & Analytics Facility for National Infrastructure (DAFNI)',
+    title: 'DAFNI Data Bridge',
     description: (
       <>
-        UK infrastructure research increasingly depends on modelling and analysis at unprecedented scale.{' '}
-        <Link
-          href="https://www.dafni.ac.uk"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
-        >
-          DAFNI
+        UK infrastructure research increasingly depends on modelling and analysis at unprecedented scale. The{' '}
+        <Link href="https://www.dafni.ac.uk" target="_blank" rel="noopener noreferrer" sx={{ color: '#1565c0' }}>
+          Data &amp; Analytics Facility for National Infrastructure (DAFNI)
         </Link>{' '}
         is a national computing platform that enables researchers to run advanced simulations across transport, water,
         energy, and city-scale systems. Led the development of a cross-platform data bridge connecting DAFNI and CEDA
@@ -120,18 +115,14 @@ const projectsList: ProjectEntry[] = [
     description: (
       <>
         Nuclear fusion experiments generate massive datasets that remain inaccessible to modern data science methods. In
-        collaboration with the UK Atomic Energy Authority, led the development of{' '}
-        <Link
-          href="https://mastapp.site/"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
-        >
+        collaboration with the UK Atomic Energy Authority (UKAEA), supervised the development of{' '}
+        <Link href="https://mastapp.site/" target="_blank" rel="noopener noreferrer" sx={{ color: '#1565c0' }}>
           FAIR-MAST
         </Link>{' '}
-        for the Mega Ampere Spherical Tokamak (MAST), designing infrastructure that makes fusion data adhere to FAIR
-        principles and open-sources it for visual analytics and AI/ML—the first comprehensive data management system of
-        its kind in fusion research.
+        for the Mega Ampere Spherical Tokamak (MAST). It makes fusion data FAIR (findable, accessible, interoperable and
+        reusable) and opens it up for visual analytics and AI/ML. It is the first comprehensive data management system
+        of its kind in fusion research. Following this success, built a prototype showing how active learning and
+        visualization can help experts annotate fusion diagnostic data.
       </>
     ),
     organisation: ['STFC'],
@@ -171,7 +162,7 @@ const projectsList: ProjectEntry[] = [
           href="https://royalsociety.org/news-resources/projects/ramp/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
+          sx={{ color: '#1565c0' }}
         >
           RAMP
         </Link>{' '}
@@ -182,7 +173,7 @@ const projectsList: ProjectEntry[] = [
           href="https://sites.google.com/view/rampvis/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
+          sx={{ color: '#1565c0' }}
         >
           RAMPVIS
         </Link>
@@ -203,12 +194,7 @@ const projectsList: ProjectEntry[] = [
     description: (
       <>
         The{' '}
-        <Link
-          href="https://www.skao.int/en"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
-        >
+        <Link href="https://www.skao.int/en" target="_blank" rel="noopener noreferrer" sx={{ color: '#1565c0' }}>
           SKA
         </Link>{' '}
         is the world&apos;s largest radio telescope, generating astronomical data at a volume and rate where real-time
@@ -252,7 +238,7 @@ const projectsList: ProjectEntry[] = [
           href="https://www.isc.ac.uk/iscbulletin/review/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
+          sx={{ color: '#1565c0' }}
         >
           VBAS
         </Link>
