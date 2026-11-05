@@ -38,63 +38,58 @@ const projectsList: ProjectEntry[] = [
     tags: ['Software Engineering', 'Machine Learning'],
   },
   {
-    title: 'Visualisation for Machine Learning for Human-centred Decision-making (VIS4ML4HD)',
+    title: 'A Long-term VIS-enabled Infrastructure for Supporting ML-assisted Human Decision-making',
     description: (
       <>
-        Current AI/ML practice often focuses on selecting a single &ldquo;best&rdquo; model while discarding non-optimal
-        alternatives. This leads to missed opportunities because we lack effective ways to understand models&apos; skill
-        profiles, use them productively, or combine them meaningfully. Visualization can help address this challenge by
-        leveraging the strengths of human visual perception to convey complex, high-volume information more efficiently
-        than statistics or algorithms alone. It reduces cognitive load while preserving rich data context, enabling
-        faster and more reliable reasoning. This{' '}
+        Machine learning (ML) developers often train many models for a task, keep the best one and discard the rest. Yet
+        imperfect models with different strengths can work well together, like people in a team. This{' '}
         <Link
-          href="https://gtr.ukri.org/projects?ref=EP%2FX029557%2F1"
+          href="https://gtr.ukri.org/find-research-and-innovation/project/a2a9344d-1d0d-48f2-8307-43ffb2abada1"
           target="_blank"
           rel="noopener noreferrer"
           sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
         >
           EPSRC
         </Link>
-        -funded project develops a visualization-enabled infrastructure and toolset that manages large pools of ML
-        models and their performance profiles, supports the construction of effective model ensembles, and empowers
-        decision makers to interpret model anomalies and reconcile conflicting predictions. Within the project, I lead
-        the data virtualization work: services that unify fragmented, heterogeneous data sources for large-scale ML
-        workflows, service composition &amp; discovery—including LLM-based automated metadata and keyword generation in
-        high-volume data virtualization services, and process-aware knowledge graphs for agent-driven service discovery
-        and grounded execution.
+        -funded project uses visualization, which lets people take in the profiles of these models at a glance. It
+        builds tools to catalogue and test large pools of ML models and combine them into effective teams (ensembles).
+        The tools also help decision-makers spot unusual or conflicting predictions. I lead the development of the
+        ensemble models, the overall system and the data virtualization services. These services bring scattered data
+        sources together for large-scale ML. My work also uses large language models (LLMs) to automatically generate
+        metadata for datasets and help AI agents find the right services.
       </>
     ),
     organisation: ['STFC', 'University of Oxford'],
     status: 'Ongoing',
     role: ['Co-PI'],
-    funding: ['EPSRC', '£575k'],
+    funding: ['EPSRC', '£584k'],
     tags: ['Visualization', 'Machine Learning', 'Large Language Model', 'Software Engineering'],
   },
-  {
-    title:
-      'Bridging the Gap: Correlative Imaging Across Length Scales from Molecules to Organisms – From Bench to Bedside and Back Again',
-    description: (
-      <>
-        Understanding protein mechanisms in cancer progression requires integrating data across imaging scales and
-        modalities. This{' '}
-        <Link
-          href="https://gtr.ukri.org/projects?ref=ST%2FY004183%2F1"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
-        >
-          UKRI
-        </Link>
-        -funded project combines AI/ML with advanced imaging to analyze patient biobank samples, developing automated
-        workflows to accelerate discovery of mechanisms behind cancer progression and treatment resistance.
-      </>
-    ),
-    organisation: ['STFC'],
-    status: 'Ongoing',
-    role: ['Co-I'],
-    funding: ['UKRI', '£1.3m'],
-    tags: ['Machine Learning'],
-  },
+  // {
+  //   title:
+  //     'Bridging the Gap: Correlative Imaging Across Length Scales from Molecules to Organisms – From Bench to Bedside and Back Again',
+  //   description: (
+  //     <>
+  //       Understanding protein mechanisms in cancer progression requires integrating data across imaging scales and
+  //       modalities. This{' '}
+  //       <Link
+  //         href="https://gtr.ukri.org/projects?ref=ST%2FY004183%2F1"
+  //         target="_blank"
+  //         rel="noopener noreferrer"
+  //         sx={{ fontFamily: 'Lato, sans-serif', color: '#1565c0' }}
+  //       >
+  //         UKRI
+  //       </Link>
+  //       -funded project combines AI/ML with advanced imaging to analyze patient biobank samples, developing automated
+  //       workflows to accelerate discovery of mechanisms behind cancer progression and treatment resistance.
+  //     </>
+  //   ),
+  //   organisation: ['STFC'],
+  //   status: 'Ongoing',
+  //   role: ['Co-I'],
+  //   funding: ['UKRI', '£1.3m'],
+  //   tags: ['Machine Learning'],
+  // },
   {
     title: 'Data & Analytics Facility for National Infrastructure (DAFNI)',
     description: (
