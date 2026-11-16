@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { ThemeProvider, createTheme, CssBaseline, Box } from '@mui/material';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import { useLinkClickTracking } from '@/lib/analytics';
 
 const FONT_FAMILY = '"Source Sans 3", "Helvetica Neue", Arial, sans-serif';
 const SERIF = '"Source Serif 4", Georgia, serif';
@@ -63,6 +64,7 @@ function buildTheme(mode: 'light' | 'dark') {
 
 export default function App({ Component, pageProps }: AppProps) {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
+  useLinkClickTracking();
 
   useEffect(() => {
     const saved = window.localStorage.getItem('color-mode');

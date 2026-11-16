@@ -6,6 +6,7 @@ import SocialLinks from '../components/SocialLinks';
 import SoftwareSection from '../components/sections/SoftwareSection';
 import ProjectsSection from '../components/sections/ProjectsSection';
 import PublicationsSection from '../components/sections/PublicationsSection';
+import { useSectionViewTracking } from '@/lib/analytics';
 
 const researchInterests = [
   'Service Computing',
@@ -40,6 +41,8 @@ const AboutList = ({ title, items }: { title: string; items: React.ReactNode[] }
 );
 
 export default function About() {
+  useSectionViewTracking();
+
   return (
     <>
       <Seo

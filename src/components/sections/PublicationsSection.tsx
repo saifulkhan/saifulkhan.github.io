@@ -49,7 +49,7 @@ const formatOrdinals = (text: string) =>
     );
   });
 
-// Small icon links in a fixed order; repeated types get numbered labels ("Code 1", "Code 2")
+// Small icon links in a fixed order; repeated types get numbered labels ("Code 1", "Code 2") unless given their own
 const LinkIconRow = ({ links }: { links: NonNullable<Publication['links']> }) => {
   const sorted = [...links].sort((a, b) => LINK_ORDER.indexOf(a.type) - LINK_ORDER.indexOf(b.type));
   return (
@@ -68,7 +68,7 @@ const LinkIconRow = ({ links }: { links: NonNullable<Publication['links']> }) =>
       {sorted.map((link, i) => {
         const { label: baseLabel, Icon } = LINK_META[link.type];
         const sameType = sorted.filter((l) => l.type === link.type);
-        const label = sameType.length > 1 ? `${baseLabel} ${sameType.indexOf(link) + 1}` : baseLabel;
+        const label = link.label ?? (sameType.length > 1 ? `${baseLabel} ${sameType.indexOf(link) + 1}` : baseLabel);
         return (
           <MuiLink
             key={`${link.url}-${i}`}
@@ -96,7 +96,7 @@ const LinkIconRow = ({ links }: { links: NonNullable<Publication['links']> }) =>
 };
 
 const Citation = ({ pub, number }: { pub: Publication; number: number }) => (
-  <Box component="li" sx={{ display: 'flex', gap: 1 }}>
+  <Box component="li" data-analytics-item={pub.title.trim()} sx={{ display: 'flex', gap: 1 }}>
     <Typography
       variant="body2"
       sx={{ minWidth: 28, textAlign: 'right', color: 'text.secondary', fontVariantNumeric: 'tabular-nums' }}

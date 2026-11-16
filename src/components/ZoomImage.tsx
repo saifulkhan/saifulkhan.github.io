@@ -3,6 +3,7 @@ import { Box, Dialog, DialogContent, IconButton, useTheme, useMediaQuery } from 
 import CloseIcon from '@mui/icons-material/Close';
 import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled';
 import Image from 'next/image';
+import { trackEvent } from '@/lib/analytics';
 
 interface ZoomImageProps {
   src: string;
@@ -32,7 +33,8 @@ const ZoomImage: React.FC<ZoomImageProps> = ({ src, alt, size = 120, width, heig
     setIsMounted(true);
   }, []);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (event: React.MouseEvent<HTMLElement>) => {
+    trackEvent('media_zoom', { media_url: src }, event.currentTarget);
     setOpen(true);
   };
 

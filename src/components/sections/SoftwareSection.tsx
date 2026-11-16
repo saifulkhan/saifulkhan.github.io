@@ -100,6 +100,7 @@ const SoftwareSection = () => {
           {softwareList.map((sw, idx) => (
             <Card
               key={`${sw.name}-${idx}`}
+              data-analytics-item={sw.name}
               variant="outlined"
               sx={{
                 display: 'flex',

@@ -33,7 +33,7 @@ const ProjectItem = ({ proj, number }: { proj: ProjectEntry; number: number }) =
   const [funder, ...amount] = proj.funding;
   return (
     // number hangs in its own column so the description and metadata line up under the title
-    <Box component="li" sx={{ display: 'flex', gap: 1.5 }}>
+    <Box component="li" data-analytics-item={proj.title} sx={{ display: 'flex', gap: 1.5 }}>
       <Typography
         variant="subtitle1"
         sx={{

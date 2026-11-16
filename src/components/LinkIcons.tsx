@@ -7,6 +7,7 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import NpmIcon from './NpmIcon';
 import PdfIcon from './PdfIcon';
 import VideoDialog from './VideoDialog';
+import { trackEvent } from '@/lib/analytics';
 
 // linktype: defines supported link types, now includes pdf and video
 export type LinkType = 'github' | 'npm' | 'web' | 'arxiv' | 'pdf' | 'video';
@@ -31,7 +32,15 @@ const VideoLinkButton: React.FC<{ url: string; label?: string; sx: SxProps<Theme
 
   return (
     <>
-      <IconButton onClick={() => setOpen(true)} aria-label={label || 'Play video'} size="small" sx={sx}>
+      <IconButton
+        onClick={(event) => {
+          trackEvent('video_play', { video_url: url }, event.currentTarget);
+          setOpen(true);
+        }}
+        aria-label={label || 'Play video'}
+        size="small"
+        sx={sx}
+      >
         <PlayCircleOutlineIcon fontSize="inherit" />
       </IconButton>
       <VideoDialog open={open} src={url} title={label} onClose={() => setOpen(false)} />

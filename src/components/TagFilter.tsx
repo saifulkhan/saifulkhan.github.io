@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import { SxProps, Theme } from '@mui/material';
+import { trackEvent } from '@/lib/analytics';
 
 // props for tag filter component
 export interface TagFilterProps {
@@ -54,7 +55,10 @@ const TagFilter: React.FC<TagFilterProps> = ({ tags, filter, setFilter, tagCount
             clickable
             color={selected ? 'primary' : 'default'}
             variant={selected ? 'filled' : 'outlined'}
-            onClick={() => setFilter(selected ? null : tag)}
+            onClick={(event) => {
+              if (!selected) trackEvent('filter_topic', { topic: tag }, event.currentTarget);
+              setFilter(selected ? null : tag);
+            }}
           />
         );
       })}

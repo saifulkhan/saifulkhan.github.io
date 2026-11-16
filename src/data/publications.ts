@@ -18,6 +18,8 @@ export interface Publication {
   links?: {
     type: PublicationLinkType;
     url: string;
+    // tooltip text, replacing the default per-type label (e.g. "Poster" instead of "PDF 2")
+    label?: string;
   }[];
 }
 
@@ -98,10 +100,23 @@ export const publicationsList: Publication[] = [
   {
     title: 'Visualization Support for Training PINNs as PDE Solvers',
     authors: 'A Farea, Y Xing, S Khan, M Chen',
-    venue: { name: 'Proc. 1st Engineering CCP Conference, Oxford', type: 'conference' },
+    venue: { name: 'Proc. 1st Engineering CCP Conference', type: 'conference' },
     year: 2026,
     tags: ['Visualization', 'Machine Learning'],
+    note: 'Presented at Oxford',
     links: [{ type: 'pdf', url: '/VIS_PINN_PDE_CCP_2026.pdf' }],
+  },
+  {
+    title: 'From Visual Multiplexing to Zebra Maps',
+    authors: 'Y Xing, A Farea, S Khan, M Chen',
+    venue: { name: 'IEEE VIS 2026', type: 'conference' },
+    year: 2026,
+    tags: ['Visualization', 'Machine Learning'],
+    note: 'Poster, presented in Paris',
+    links: [
+      { type: 'pdf', url: '/multiplex-poster-summary-vis-2026.pdf', label: 'Summary (PDF)' },
+      { type: 'pdf', url: '/multiplex-poster-vis-2026.pdf', label: 'Poster (PDF)' },
+    ],
   },
 
   // 2025
