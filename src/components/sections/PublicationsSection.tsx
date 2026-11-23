@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
-import { Box, Container, Typography, Stack, Link as MuiLink, SvgIconProps } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { Box, Container, Typography, Stack, Link as MuiLink, SvgIconProps, useTheme } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
-import { publicationsList } from '../../data/publications';
+import { publicationAnchor, publicationsList } from '../../data/publications';
 import type { Publication, PublicationLinkType } from '../../data/publications';
 import TagFilter from '../TagFilter';
 import PageHeader from '../PageHeader';
@@ -95,36 +97,73 @@ const LinkIconRow = ({ links }: { links: NonNullable<Publication['links']> }) =>
   );
 };
 
-const Citation = ({ pub, number }: { pub: Publication; number: number }) => (
-  <Box component="li" data-analytics-item={pub.title.trim()} sx={{ display: 'flex', gap: 1 }}>
-    <Typography
-      variant="body2"
-      sx={{ minWidth: 28, textAlign: 'right', color: 'text.secondary', fontVariantNumeric: 'tabular-nums' }}
+// The URL hash, e.g. "pub-data-virtualization-for-machine-learning" after following a paper link from elsewhere
+const useUrlHash = () => {
+  const router = useRouter();
+  const [hash, setHash] = useState('');
+  useEffect(() => {
+    const update = () => setHash(decodeURIComponent(window.location.hash.slice(1)));
+    update();
+    router.events.on('hashChangeComplete', update);
+    window.addEventListener('hashchange', update);
+    return () => {
+      router.events.off('hashChangeComplete', update);
+      window.removeEventListener('hashchange', update);
+    };
+  }, [router.events]);
+  return hash;
+};
+
+const Citation = ({ pub, number, linked }: { pub: Publication; number: number; linked: boolean }) => {
+  const theme = useTheme();
+  // a soft band that also covers a few pixels around the entry, without shifting the layout
+  const mark = alpha(theme.palette.primary.main, theme.palette.mode === 'dark' ? 0.18 : 0.09);
+  return (
+    <Box
+      component="li"
+      id={publicationAnchor(pub.title)}
+      data-analytics-item={pub.title.trim()}
+      sx={{
+        display: 'flex',
+        gap: 1,
+        // a linked paper lands a third of the way down the screen, clear of the sticky header
+        scrollMarginTop: '30vh',
+        borderRadius: 1,
+        bgcolor: linked ? mark : 'transparent',
+        boxShadow: linked ? `0 0 0 6px ${mark}` : 'none',
+        transition: 'background-color 0.3s, box-shadow 0.3s',
+      }}
     >
-      {number}.
-    </Typography>
-    <Box sx={{ flex: 1, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: { xs: 0.5, sm: 3 } }}>
-      <Typography variant="body2" sx={{ flex: 1, color: 'text.secondary' }}>
-        {formatAuthors(pub.authors)}.{' '}
-        <Box component="span" sx={{ color: 'text.primary', fontWeight: 600 }}>
-          {pub.title.trim()}
-        </Box>
-        .{' '}
-        {pub.venue?.name && (
-          <>
-            <i>{formatOrdinals(pub.venue.name)}</i>,{' '}
-          </>
-        )}
-        {pub.details && `${pub.details}, `}
-        {pub.year}.{pub.note && ` (${pub.note}.)`}
+      <Typography
+        variant="body2"
+        sx={{ minWidth: 28, textAlign: 'right', color: 'text.secondary', fontVariantNumeric: 'tabular-nums' }}
+      >
+        {number}.
       </Typography>
-      {pub.links && pub.links.length > 0 && <LinkIconRow links={pub.links} />}
+      <Box sx={{ flex: 1, display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: { xs: 0.5, sm: 3 } }}>
+        <Typography variant="body2" sx={{ flex: 1, color: 'text.secondary' }}>
+          {formatAuthors(pub.authors)}.{' '}
+          <Box component="span" sx={{ color: 'text.primary', fontWeight: 600 }}>
+            {pub.title.trim()}
+          </Box>
+          .{' '}
+          {pub.venue?.name && (
+            <>
+              <i>{formatOrdinals(pub.venue.name)}</i>,{' '}
+            </>
+          )}
+          {pub.details && `${pub.details}, `}
+          {pub.year}.{pub.note && ` (${pub.note}.)`}
+        </Typography>
+        {pub.links && pub.links.length > 0 && <LinkIconRow links={pub.links} />}
+      </Box>
     </Box>
-  </Box>
-);
+  );
+};
 
 const PublicationsSection = () => {
   const [filter, setFilter] = useState<string | null>(null);
+  const hash = useUrlHash();
   // Get all tags for TagFilter
   const allTags = publicationsList.flatMap((p) => p.tags || []);
   const filteredList = filter ? publicationsList.filter((pub) => pub.tags.includes(filter)) : publicationsList;
@@ -152,7 +191,7 @@ const PublicationsSection = () => {
       sx={{ scrollMarginTop: { xs: 56, md: 64 }, borderTop: 1, borderColor: 'divider' }}
     >
       <Container sx={{ py: { xs: 5, md: 7 } }}>
-        <PageHeader eyebrow="Research" title="Publications" subtitle={undefined} />
+        <PageHeader eyebrow="Research" title="Publications" />
 
         <TagFilter tags={allTags} filter={filter} setFilter={setFilter} />
 
@@ -177,7 +216,12 @@ const PublicationsSection = () => {
 
               <Stack component="ul" spacing={1.25} sx={{ listStyle: 'none', m: 0, p: 0 }}>
                 {group.items.map((pub) => (
-                  <Citation key={pub.title} pub={pub} number={numberOf.get(pub)!} />
+                  <Citation
+                    key={pub.title}
+                    pub={pub}
+                    number={numberOf.get(pub)!}
+                    linked={hash === publicationAnchor(pub.title)}
+                  />
                 ))}
               </Stack>
             </Box>

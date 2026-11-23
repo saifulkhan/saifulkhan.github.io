@@ -28,6 +28,7 @@ interface NavBarProps {
 
 const navItems = [
   { name: 'About', id: 'about' },
+  { name: 'Infrastructure', id: 'infrastructure' },
   { name: 'Software', id: 'software' },
   { name: 'Projects', id: 'projects' },
   { name: 'Publications', id: 'publications' },

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from '@mui/material';
 
 export interface ProjectEntry {
+  id?: string; // for the projects on the expertise map, which shows these entries in its details panel
   title: string;
   description: string | React.ReactNode;
   organisation: string[];
@@ -9,10 +10,19 @@ export interface ProjectEntry {
   role: string[];
   funding: string[];
   tags: string[];
+  news?: NewsItem[];
+}
+
+// news coverage, interviews and case studies, listed under the project's metadata
+export interface NewsItem {
+  title: string;
+  url: string; // remote PDF
+  fallback: string; // local copy under /public, used when the remote is broken
 }
 
 const projectsList: ProjectEntry[] = [
   {
+    id: 'urbanair',
     title: 'UrbanAIR: Digital Twin as a Service (DTaaS) for Urban Air Quality',
     description: (
       <>
@@ -22,22 +32,40 @@ const projectsList: ProjectEntry[] = [
           href="https://www.urbanair-project.eu/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: '#1565c0' }}
+          sx={{ color: 'primary.main' }}
         >
           UrbanAIR
         </Link>{' '}
-        Digital Twin as a Service (DTaaS) platform, delivering real-time, street-level air quality and heat resilience
-        forecasts across three European cities, in collaboration with international partners including VITO (Belgium)
-        and Antwerp City Council.
+        Digital Twin as a Service (DTaaS) platform, built on the EU&apos;s{' '}
+        <Link
+          href="https://destination-earth.eu/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'primary.main' }}
+        >
+          Destination Earth (DestinE)
+        </Link>
+        , in collaboration with international partners including VITO (Belgium). The platform connects large-scale
+        climate models with local urban models, orchestrates data and workflows from academic, government and industry
+        partners, and delivers real-time, street-level air quality and heat resilience forecasts across three European
+        cities, with dashboards for observing and analysing them.
       </>
     ),
     organisation: ['STFC'],
     status: 'Ongoing',
-    role: ['Technical Lead'],
+    role: ['Senior Scientist'],
     funding: ['EU'],
     tags: ['Software Engineering', 'Machine Learning'],
+    news: [
+      {
+        title: 'DAFNI case study: UrbanAIR',
+        url: 'https://www.dafni.ac.uk/wp-content/uploads/2026/11/DAFNI_Case_Studies_Saiful_Khan_UrbanAIR.pdf',
+        fallback: '/DAFNI_Case_Studies_Saiful_Khan_UrbanAIR.pdf',
+      },
+    ],
   },
   {
+    id: 'mlinfra',
     title: 'A Long-term VIS-enabled Infrastructure for Supporting ML-assisted Human Decision-making',
     description: (
       <>
@@ -47,16 +75,20 @@ const projectsList: ProjectEntry[] = [
           href="https://gtr.ukri.org/find-research-and-innovation/project/a2a9344d-1d0d-48f2-8307-43ffb2abada1"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: '#1565c0' }}
+          sx={{ color: 'primary.main' }}
         >
           EPSRC
         </Link>
         -funded project uses visualization, which lets people take in the profiles of these models at a glance. It
         builds tools to catalogue and test large pools of ML models and combine them into effective teams (ensembles).
         The tools also help decision-makers spot unusual or conflicting predictions. I lead the development of the
-        ensemble models, the overall system and the data virtualization services. These services bring scattered data
-        sources together for large-scale ML. My work also uses large language models (LLMs) to automatically generate
-        metadata for datasets and help AI agents find the right services.
+        ensemble models, the overall system and the data virtualization services, mainly to support physics-informed ML
+        for partial differential equations (PDEs) and the discovery of PDEs from data. The data virtualization services
+        bring scattered data sources together for large-scale ML: they build training data on demand, serve it through
+        an API and ML data loaders, and record each dataset&apos;s provenance. A client, similar to MLflow, captures
+        data from every model run for observability. Visual multiplexing shows how models train, and storyboards turn
+        the progress of ML workflows into stories. My work also uses large language models (LLMs) to automatically
+        generate metadata for datasets and help AI agents find the right services.
       </>
     ),
     organisation: ['STFC', 'University of Oxford'],
@@ -76,7 +108,7 @@ const projectsList: ProjectEntry[] = [
   //         href="https://gtr.ukri.org/projects?ref=ST%2FY004183%2F1"
   //         target="_blank"
   //         rel="noopener noreferrer"
-  //         sx={{ color: '#1565c0' }}
+  //         sx={{ color: 'primary.main' }}
   //       >
   //         UKRI
   //       </Link>
@@ -95,34 +127,47 @@ const projectsList: ProjectEntry[] = [
     description: (
       <>
         UK infrastructure research increasingly depends on modelling and analysis at unprecedented scale. The{' '}
-        <Link href="https://www.dafni.ac.uk" target="_blank" rel="noopener noreferrer" sx={{ color: '#1565c0' }}>
+        <Link href="https://www.dafni.ac.uk" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.main' }}>
           Data &amp; Analytics Facility for National Infrastructure (DAFNI)
         </Link>{' '}
         is a national computing platform that enables researchers to run advanced simulations across transport, water,
         energy, and city-scale systems. Led the development of a cross-platform data bridge connecting DAFNI and CEDA
         (Centre for Environmental Data Analysis) services to accelerate environmental modelling and streamline
-        researcher access to national data resources.
+        researcher access to national data resources.{' '}
       </>
     ),
     organisation: ['STFC'],
-    status: 'Ongoing',
+    status: 'Completed',
     role: ['Technical Lead', 'User Liaison'],
     funding: [],
     tags: ['Software Engineering'],
+    news: [
+      {
+        title: 'DAFNI case study: Data Bridge',
+        url: 'https://www.dafni.ac.uk/wp-content/uploads/2026/09/Data_Bridge_Case_Studies_Saiful_Khan.pdf',
+        fallback: '/Data_Bridge_Case_Studies_Saiful_Khan.pdf',
+      },
+    ],
   },
   {
+    id: 'fairmast',
     title: 'Tokamak Fusion Data Management, Active Learning, and Visualization',
     description: (
       <>
         Nuclear fusion experiments generate massive datasets that remain inaccessible to modern data science methods. In
         collaboration with the UK Atomic Energy Authority (UKAEA), supervised the development of{' '}
-        <Link href="https://mastapp.site/" target="_blank" rel="noopener noreferrer" sx={{ color: '#1565c0' }}>
+        <Link
+          href="https://ukaea.github.io/fair-mast/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'primary.main' }}
+        >
           FAIR-MAST
         </Link>{' '}
         for the Mega Ampere Spherical Tokamak (MAST). It makes fusion data FAIR (findable, accessible, interoperable and
-        reusable) and opens it up for visual analytics and AI/ML. It is the first comprehensive data management system
-        of its kind in fusion research. Following this success, built a prototype showing how active learning and
-        visualization can help experts annotate fusion diagnostic data.
+        reusable) and, through APIs and an open object store, opens it up for visual analytics and AI/ML. It is the
+        first comprehensive data management system of its kind in fusion research. Following this success, built a
+        prototype showing how active learning and visualization can help experts annotate fusion diagnostic data.
       </>
     ),
     organisation: ['STFC'],
@@ -132,6 +177,7 @@ const projectsList: ProjectEntry[] = [
     tags: ['Visualization', 'Machine Learning', 'Software Engineering'],
   },
   {
+    id: 'llmsearch',
     title: 'LLM for Semantic Search & Information Retrieval',
     description:
       "Led development of LLM-based semantic search, information retrieval, and automated metadata generation at STFC, including (a) grant proposal search and (b) semantic search, clustering, and topic modelling of scientific data from STFC's DataGateway.",
@@ -152,6 +198,7 @@ const projectsList: ProjectEntry[] = [
     tags: ['Machine Learning'],
   },
   {
+    id: 'rampvis',
     title: 'Rapid Assistance in Modelling the Pandemic Visualization (RAMPVIS)',
     description: (
       <>
@@ -162,7 +209,7 @@ const projectsList: ProjectEntry[] = [
           href="https://royalsociety.org/news-resources/projects/ramp/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: '#1565c0' }}
+          sx={{ color: 'primary.main' }}
         >
           RAMP
         </Link>{' '}
@@ -173,14 +220,16 @@ const projectsList: ProjectEntry[] = [
           href="https://sites.google.com/view/rampvis/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: '#1565c0' }}
+          sx={{ color: 'primary.main' }}
         >
           RAMPVIS
         </Link>
         , a visual analytics infrastructure, in collaboration with the UK visualization research community and the
-        Scottish COVID Response Consortium (SCRC). Designed and implemented infrastructure for rapidly deploying
-        visualizations, dashboards, and search capabilities across tens of thousands of heterogeneous, continuously
-        evolving datasets, and developed novel methods for semi-automated visualization generation.
+        Scottish COVID-19 Response Consortium (SCRC). Designed and implemented infrastructure on the STFC cloud for
+        rapidly deploying visualizations, dashboards, and ontology-driven search across tens of thousands of
+        heterogeneous, continuously evolving datasets, with agents that fetch and analyse new data. Developed novel
+        methods for semi-automated visualization generation (propagation) and storytelling (Meta-StoryBoard), supporting
+        all four levels of visualization, from monitoring input data to model development and public communication.
       </>
     ),
     organisation: ['University of Oxford'],
@@ -190,17 +239,19 @@ const projectsList: ProjectEntry[] = [
     tags: ['Visualization', 'Software Engineering'],
   },
   {
+    id: 'ska',
     title: 'Square Kilometre Array (SKA): Streaming and Visualization',
     description: (
       <>
         The{' '}
-        <Link href="https://www.skao.int/en" target="_blank" rel="noopener noreferrer" sx={{ color: '#1565c0' }}>
+        <Link href="https://www.skao.int/en" target="_blank" rel="noopener noreferrer" sx={{ color: 'primary.main' }}>
           SKA
         </Link>{' '}
         is the world&apos;s largest radio telescope, generating astronomical data at a volume and rate where real-time
         streaming and visualization are essential to monitor and act on data as it arrives. Led the design and
         development of a scalable, real-time streaming and visualization infrastructure to meet this need, with a
-        low-latency data streaming architecture and web-based rendering pipelines for high-volume data streams.
+        low-latency data streaming architecture and web-based rendering pipelines for observing and analysing
+        high-volume data streams.
       </>
     ),
     organisation: ['University of Oxford', 'SKA'],
@@ -229,23 +280,24 @@ const projectsList: ProjectEntry[] = [
     tags: ['Software Engineering'],
   },
   {
+    id: 'vbas',
     title: 'Visual Bulletin Analytics System (VBAS)',
     description: (
       <>
         Seismologists at the International Seismological Centre (ISC) previously relied on inefficient, paper-based
-        workflows to review complex seismic events across multiple data types. Developed{' '}
+        workflows to review complex seismic events across multiple data types. Developed the visualization part of{' '}
         <Link
           href="https://www.isc.ac.uk/iscbulletin/review/"
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: '#1565c0' }}
+          sx={{ color: 'primary.main' }}
         >
           VBAS
         </Link>
-        —an interactive visualization system that integrates diverse seismological data, including hypocentres,
-        magnitudes, phase arrivals, travel-time curves, seismicity maps, station geometry, and more. VBAS provides a
-        unified interface that helps ISC analysts detect patterns, identify anomalies, and perform data analysis far
-        more efficiently. The system replaced the ISC&apos;s 30-year-old paper-based process.
+        , an interactive system that integrates diverse seismological data, including hypocentres, magnitudes, phase
+        arrivals, travel-time curves, seismicity maps, station geometry, and more. VBAS provides a unified interface
+        that helps ISC analysts detect patterns, identify anomalies, and perform data analysis far more efficiently. The
+        system replaced the ISC&apos;s 30-year-old paper-based process.
       </>
     ),
     organisation: ['University of Oxford', 'ISC'],
@@ -255,6 +307,7 @@ const projectsList: ProjectEntry[] = [
     tags: ['Visualization', 'Software Engineering'],
   },
   {
+    id: 'ese',
     title: 'Visualization Assisted Enterprise Search Engine',
     description:
       "Laing O'Rourke, an international engineering and construction company, holds a vast archive of project knowledge whose reuse and monetization depend on searching it quickly and reliably—beyond what standard enterprise search could provide. Developed a proof-of-concept visualization-assisted search engine to address this challenge: a focus+context visualization for rapid observation of false positives and false negatives in search results, a Search Provenance Graph with visual representations of search collaboration, and a special-purpose enterprise search engine with machine learning of ontologies to improve search precision and recall.",

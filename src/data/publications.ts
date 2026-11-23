@@ -23,6 +23,17 @@ export interface Publication {
   }[];
 }
 
+// Anchor id of a paper's entry in the publication list, so other parts of the site can link to it, e.g.
+// "Data Virtualization for Machine Learning" -> "pub-data-virtualization-for-machine-learning" (first 8 words)
+export const publicationAnchor = (title: string) =>
+  `pub-${title
+    .trim()
+    .toLowerCase()
+    .split(/[^a-z0-9]+/)
+    .filter(Boolean)
+    .slice(0, 8)
+    .join('-')}`;
+
 export const publicationsList: Publication[] = [
   // Preprints
   {
@@ -109,7 +120,7 @@ export const publicationsList: Publication[] = [
   {
     title: 'From Visual Multiplexing to Zebra Maps',
     authors: 'Y Xing, A Farea, S Khan, M Chen',
-    venue: { name: 'IEEE VIS 2026', type: 'conference' },
+    venue: { name: 'IEEE VIS', type: 'conference' },
     year: 2026,
     tags: ['Visualization', 'Machine Learning'],
     note: 'Poster, presented in Paris',
@@ -238,7 +249,7 @@ export const publicationsList: Publication[] = [
     ],
   },
   // 2022
-    {
+  {
     title: 'Rapid Development of a Data Visualization Service in an Emergency Response',
     authors: 'S Khan, PH Nguyen, A Abdul-Rahman, E Freeman, C Turkay, M Chen',
     venue: { name: 'IEEE Transactions on Services Computing', type: 'journal' },
@@ -281,7 +292,6 @@ export const publicationsList: Publication[] = [
       { type: 'arxiv', url: 'https://arxiv.org/abs/2012.04757' },
     ],
   },
-
 
   // 2021
   {

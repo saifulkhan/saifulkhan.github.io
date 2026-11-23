@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Seo, { SITE_URL } from '../components/Seo';
 import { Box, Container, Typography, Avatar, Link as MuiLink } from '@mui/material';
 import SocialLinks from '../components/SocialLinks';
+import InfrastructureSection from '../components/sections/InfrastructureSection';
 import SoftwareSection from '../components/sections/SoftwareSection';
 import ProjectsSection from '../components/sections/ProjectsSection';
 import PublicationsSection from '../components/sections/PublicationsSection';
@@ -13,13 +14,13 @@ const researchInterests = [
   'Applied AI/ML',
   'Semantic Search',
   'Data Virtualization',
-  'Human-centred AI',
-  'Visual Analytics',
+  'Information Visualisation',
 ];
 
 const majorAwards: React.ReactNode[] = ['RAMP Early Career Investigator Award, Royal Society'];
 
 const professionalService: React.ReactNode[] = [
+  'International Programme Committee, Eurographics Conference on Visualization (EuroVis), 2027',
   'Programme Committee, Services Computing Conference (SCC), 2026',
   'Guest Editor, Reliable Scientific Machine Learning for PDE Solution and Discovery, Frontiers in Applied Mathematics and Statistics',
 ];
@@ -27,12 +28,16 @@ const professionalService: React.ReactNode[] = [
 const AboutList = ({ title, items }: { title: string; items: React.ReactNode[] }) => (
   <Box>
     {/* underlined heading so both columns start on the same rule */}
-    <Typography variant="h6" component="h2" sx={{ pb: 0.75, mb: 1.5, borderBottom: 1, borderColor: 'divider' }}>
+    <Typography
+      variant="subtitle1"
+      component="h2"
+      sx={{ fontWeight: 600, pb: 0.75, mb: 1.5, borderBottom: 1, borderColor: 'divider' }}
+    >
       {title}
     </Typography>
     <Box component="ul" sx={{ m: 0, pl: 2.5 }}>
       {items.map((item, i) => (
-        <Typography key={i} component="li" variant="body1" sx={{ mb: 0.5 }}>
+        <Typography key={i} component="li" variant="body2" sx={{ mb: 0.5 }}>
           {item}
         </Typography>
       ))}
@@ -47,7 +52,7 @@ export default function About() {
     <>
       <Seo
         title="Saiful Khan | Senior Scientist"
-        description="Saiful Khan — Senior Scientist at UK Research and Innovation (UKRI). Data & service computing, applied AI/ML, and visual analytics."
+        description="Saiful Khan — Senior Scientist at UK Research and Innovation (UKRI). Data & service computing, applied AI/ML, and information visualisation."
         path="/"
       />
       <Head>
@@ -94,7 +99,11 @@ export default function About() {
             }}
           >
             <Box sx={{ flex: 1, order: { xs: 1, md: 0 } }}>
-              <Typography variant="overline" sx={{ color: 'primary.main', display: 'block', mb: 0.5 }}>
+              {/* tighter line height on phones, where this wraps onto two lines */}
+              <Typography
+                variant="overline"
+                sx={{ color: 'primary.main', display: 'block', mb: 0.5, lineHeight: { xs: 1.8, sm: 2.66 } }}
+              >
                 Senior Scientist · UK Research and Innovation (UKRI)
               </Typography>
               <Typography variant="h3" component="h1" sx={{ mb: 1 }}>
@@ -122,11 +131,13 @@ export default function About() {
           {/* Bio */}
           <Box sx={{ mb: { xs: 5, md: 6 } }}>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              I build data-driven software systems that support complex, end-to-end workflows, spanning AI/ML and
-              digital-twin pipelines through to interactive visualisation. By integrating data, models and visualisation
-              into practical software platforms, I help scientists and engineers tackle complex problems and make
-              better-informed decisions. I work at the Rutherford Appleton Laboratory (RAL), part of the Science and
-              Technology Facilities Council (STFC), which is part of UK Research and Innovation (UKRI).
+              I design and build software infrastructure that supports numerical modelling and machine learning.
+              Scientists and engineers rely on national data and compute facilities, but they also need software
+              services on top of them: to find and combine data, analyse and visualise it, and develop their models. My
+              vision is a shared, unified infrastructure of such services that scales across projects and research
+              domains. The services I have built include data virtualisation, semantic search, model observability,
+              digital twins as a service and visualisation. I work at the Rutherford Appleton Laboratory (RAL), part of
+              the Science and Technology Facilities Council (STFC), which is part of UK Research and Innovation (UKRI).
             </Typography>
             <Typography variant="body1" sx={{ mb: 2 }}>
               I began my career in industry, developing engineering database software at Oracle and real-time industrial
@@ -144,7 +155,8 @@ export default function About() {
               </MuiLink>
               . Since then, I have contributed to the design and development of software systems across a diverse range
               of domains, including enterprise search, seismology, radio astronomy, global health emergencies, nuclear
-              fusion and urban environments. Many of these systems are now in active real-world use.
+              fusion, urban environments and machine learning for PDEs. Many of these systems are now in active
+              real-world use.
             </Typography>
           </Box>
 
@@ -162,11 +174,12 @@ export default function About() {
               <AboutList title="Research Interests" items={researchInterests} />
               <AboutList title="Major Awards" items={majorAwards} />
             </Box>
-            <AboutList title="Professional Service" items={professionalService} />
+            <AboutList title="Major Professional Service" items={professionalService} />
           </Box>
         </Container>
       </Box>
 
+      <InfrastructureSection />
       <SoftwareSection />
       <ProjectsSection />
       <PublicationsSection />

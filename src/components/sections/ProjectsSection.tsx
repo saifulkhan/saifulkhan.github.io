@@ -2,10 +2,11 @@ import React from 'react';
 import { Box, Container, Typography, Stack, Divider, Chip } from '@mui/material';
 import TagFilter from '../TagFilter';
 import PageHeader from '../PageHeader';
+import PdfLink from '../PdfLink';
 import projectsList, { type ProjectEntry } from '../../data/projects';
 
 // one labelled metadata field, e.g. "ROLE  Technical Lead"
-const MetaItem = ({ label, value }: { label: string; value: string }) => (
+const MetaItem = ({ label, value }: { label: string; value: React.ReactNode }) => (
   <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 0.75 }}>
     <Typography
       component="dt"
@@ -38,7 +39,8 @@ const ProjectItem = ({ proj, number }: { proj: ProjectEntry; number: number }) =
         variant="subtitle1"
         sx={{
           ...TITLE_SX,
-          minWidth: 20,
+          // wide enough for "10." so two-digit numbers don't push their entry right
+          minWidth: 24,
           textAlign: 'right',
           color: 'text.secondary',
           fontVariantNumeric: 'tabular-nums',
@@ -70,6 +72,19 @@ const ProjectItem = ({ proj, number }: { proj: ProjectEntry; number: number }) =
           {roles.length > 0 && <MetaItem label="Role" value={roles.join(', ')} />}
           {proj.organisation.length > 0 && <MetaItem label="Organisation" value={proj.organisation.join(', ')} />}
           {funder && <MetaItem label="Funding" value={amount.length ? `${funder} (${amount.join(', ')})` : funder} />}
+          {proj.news && proj.news.length > 0 && (
+            <MetaItem
+              label="News"
+              // icons only; the title is the hover text and accessible label
+              value={
+                <Box component="span" sx={{ display: 'inline-flex', gap: 0.75 }}>
+                  {proj.news.map((item) => (
+                    <PdfLink key={item.url} url={item.url} fallback={item.fallback} label={`${item.title} (PDF)`} />
+                  ))}
+                </Box>
+              }
+            />
+          )}
         </Box>
       </Box>
     </Box>
@@ -117,11 +132,7 @@ const ProjectsSection = () => {
       }}
     >
       <Container sx={{ py: { xs: 5, md: 7 } }}>
-        <PageHeader
-          eyebrow="Work"
-          title="Grants & Projects"
-          subtitle="Funded research programmes and engineering projects I lead and contribute to."
-        />
+        <PageHeader title="Grants & Projects" />
 
         <TagFilter tags={allTags} filter={filter} setFilter={setFilter} tagCounts={tagCounts} />
 

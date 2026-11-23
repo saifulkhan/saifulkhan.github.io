@@ -71,7 +71,7 @@ const softwareList: SoftwareEntry[] = [
       {
         type: 'main',
         value:
-          'A visualization and visual analytics infrastructure developed to support the modelling scientists and epidemiologists of the Scottish COVID Response Consortium (SCRC) during the COVID-19 pandemic.',
+          'A visualization and visual analytics infrastructure developed to support the modelling scientists and epidemiologists of the Scottish COVID-19 Response Consortium (SCRC) during the COVID-19 pandemic.',
         color: 'default',
       },
       {
@@ -106,6 +106,11 @@ const softwareList: SoftwareEntry[] = [
           'This project represents a fundamental evolution of data analysis at the International Seismological Centre (ISC) in the UK. The manual paper-based analysis workflow on the left illustrates the inefficient 30-year-old process, where analysts used barcode scanners, rulers, and pencils to manually review diverse seismic data across physical printouts and archived files. This has been replaced by the new VBAS (Visual Bulletin Analytics System), seen on the right. This interactive, unified software integrates all diverse seismological data types into a single interface. On a modern workstation, analysts can now digitally review hypocentres, magnitudes, phase arrivals, seismicity maps, and more. VBAS enables the team to detect patterns, identify anomalies, and perform operational quality assurance far more efficiently and accurately.',
         color: 'default',
       },
+      {
+        type: 'main',
+        value: 'I developed the visualization part of VBAS.',
+        color: 'grey',
+      },
     ],
     links: [{ type: 'github', url: 'https://github.com/saifulkhan/isc_vbas' }],
     funding: ['Innovate UK', 'University of Oxford', 'International Seismological Centre'],
@@ -130,8 +135,8 @@ const softwareList: SoftwareEntry[] = [
     links: [
       {
         type: 'github',
-        url: 'https://github.com/saifulkhan/dphil_project_search_interface',
-        label: 'API',
+        url: 'https://github.com/saifulkhan/dphil_project_search_index',
+        label: 'Search index',
       },
       {
         type: 'github',

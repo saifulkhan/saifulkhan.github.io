@@ -90,11 +90,7 @@ const SoftwareSection = () => {
       sx={{ scrollMarginTop: { xs: 56, md: 64 }, borderTop: 1, borderColor: 'divider' }}
     >
       <Container sx={{ py: { xs: 5, md: 7 } }}>
-        <PageHeader
-          eyebrow="Portfolio"
-          title="Software & Systems"
-          subtitle="A selection of projects with openly available code."
-        />
+        <PageHeader title="Open-source software" subtitle="A selection of projects with openly available code." />
 
         <Stack spacing={2.5}>
           {softwareList.map((sw, idx) => (
