@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import { Box, Button, ButtonBase, Chip, Link as MuiLink, Tooltip, Typography, useTheme } from '@mui/material';
 import { alpha, lighten } from '@mui/material/styles';
 import CodeIcon from '@mui/icons-material/Code';
+import TouchAppIcon from '@mui/icons-material/TouchAppRounded';
 import { publicationAnchor, publicationsList } from '../data/publications';
 import projectsList from '../data/projects';
 import PdfLink from './PdfLink';
@@ -344,7 +345,7 @@ const ExpertiseMap = () => {
   const selectItem = (item: MapItem) =>
     setSel((prev) => (prev.kind === 'item' && prev.item.id === item.id ? { kind: 'none' } : { kind: 'item', item }));
 
-  // the roadmap look, grey and dashed: items not delivered yet, and the "…" ending each service card
+  // the roadmap look, grey and dashed: items not delivered yet, and the "More to come" box ending each service card
   const roadmapSx = {
     px: 1,
     py: 0.6,
@@ -462,7 +463,8 @@ const ExpertiseMap = () => {
     const t = tone(group.color);
     const cardLit = [...group.items, ...(group.methods?.items ?? [])].some(isLit);
     // a list of items, with a heading when the card has two lists (the four levels, then methods for any level); the
-    // card's last list ends with a grey "…" box, styled as roadmap: more services to come, many not yet known
+    // card's last list ends with a grey "More to come" box, styled as roadmap: services to come, many not yet known
+    // (not "… more", which reads as items left off the map)
     const renderList = (items: MapItem[], heading?: string, last = false) => (
       <>
         {heading && (
@@ -475,7 +477,7 @@ const ExpertiseMap = () => {
           {last && (
             <Tooltip title="On the roadmap: more services to come" enterDelay={300}>
               <Box role="note" sx={roadmapSx}>
-                <span aria-hidden="true">…</span>
+                More to come
               </Box>
             </Tooltip>
           )}
@@ -702,33 +704,28 @@ const ExpertiseMap = () => {
       {/* details for the current selection */}
       <Box aria-live="polite" sx={{ mt: 3.5 }}>
         {sel.kind === 'none' && (
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          // a pointing hand in the accent colour, so the prompt stands out from the grey text around the map
+          <Typography variant="body2" sx={{ color: 'text.secondary', display: 'flex', alignItems: 'center', gap: 1 }}>
+            <TouchAppIcon sx={{ fontSize: 22, color: 'primary.main', flexShrink: 0 }} />
             Pick a theme or a project above, or tap any coloured item in the map, to see how the pieces connect.
           </Typography>
         )}
 
         {sel.kind === 'projects' && (
-          <>
-            {activeTheme && (
-              <Typography variant="body1" sx={{ mb: 2, maxWidth: 820 }}>
-                {activeTheme.caption}
-              </Typography>
-            )}
-            <Box
-              sx={{
-                display: 'grid',
-                gridTemplateColumns: {
-                  xs: 'minmax(0, 1fr)',
-                  md: sel.ids.length > 1 ? 'repeat(2, minmax(0, 1fr))' : '1fr',
-                },
-                gap: 2,
-              }}
-            >
-              {inOrder(sel.ids).map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </Box>
-          </>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                xs: 'minmax(0, 1fr)',
+                md: sel.ids.length > 1 ? 'repeat(2, minmax(0, 1fr))' : '1fr',
+              },
+              gap: 2,
+            }}
+          >
+            {inOrder(sel.ids).map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </Box>
         )}
 
         {sel.kind === 'item' && (

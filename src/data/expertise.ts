@@ -39,12 +39,12 @@ export interface ServiceGroup {
   methods?: { label: string; items: MapItem[] }; // second list under the items, e.g. methods that work at any level
 }
 
-// A research theme: projects that are selected together, with a caption (not a colour theme)
+// A research theme: projects that are selected together (not a colour theme). No caption: picking a theme shows its
+// projects' cards, so anything a theme should say goes in those projects' descriptions.
 export interface MapTheme {
   id: string;
   label: string;
   projects: string[];
-  caption: string;
 }
 
 // Papers cited in the map; each title must match publicationsList exactly
@@ -157,27 +157,9 @@ export const mapProjects: MapProject[] = [
 ];
 
 export const mapThemes: MapTheme[] = [
-  {
-    id: 'covid',
-    label: 'COVID-19 modelling',
-    projects: ['rampvis'],
-    caption:
-      'Numerical modelling: a visualization infrastructure for the six epidemiological models of the Scottish COVID-19 Response Consortium, supporting all four levels of visualization, from monitoring input data to model development and public communication.',
-  },
-  {
-    id: 'twins',
-    label: 'Digital twins',
-    projects: ['urbanair'],
-    caption:
-      "Modelling at city scale: a digital twin as a service that connects climate models with local urban models. Built on the EU's Destination Earth (DestinE), it gives real-time, street-level forecasts of air quality and heat stress for three European cities.",
-  },
-  {
-    id: 'ml',
-    label: 'Machine learning for PDEs',
-    projects: ['mlinfra'],
-    caption:
-      'Machine learning: a service layer for ML workflows, mainly physics-informed ML for PDEs, with data virtualization, model ensembles, visualization of model training and LLM-generated search keywords.',
-  },
+  { id: 'covid', label: 'COVID-19 modelling', projects: ['rampvis'] },
+  { id: 'twins', label: 'Digital twins', projects: ['urbanair'] },
+  { id: 'ml', label: 'Machine learning for PDEs', projects: ['mlinfra'] },
 ];
 
 // one project each, so a domain's details are its project cards, after an optional `about` line (e.g. who built the
@@ -217,7 +199,7 @@ export const interfaces: MapItem[] = [
     label: 'Web portals & dashboards',
     projects: ['rampvis', 'fairmast', 'urbanair', 'ska'],
     about:
-      "Web front ends: the RAMPVIS portal, where scientists searched and browsed thousands of plots and dashboards; the FAIR-MAST portal and dashboards for browsing the MAST tokamak's data catalogue; an UrbanAIR dashboard, created with VITO, that shows wind flow around Antwerp; and browser views of high-volume SKA data streams.",
+      "Web front ends: the RAMPVIS portal, where scientists searched and browsed thousands of plots and dashboards; the FAIR-MAST portal and dashboards for browsing the MAST tokamak's data catalogue; an UrbanAIR dashboard, created with VITO, that shows a green potential map around Antwerp; and browser views of high-volume SKA data streams.",
     papers: [PAPERS.rampvisService, PAPERS.dashboards, PAPERS.streamingVis],
   },
 ];
@@ -386,8 +368,9 @@ export const services: ServiceGroup[] = [
         id: 's-twin',
         label: 'Digital twin as a service',
         projects: ['urbanair'],
+        // the user doesn't connect climate and urban models (corrected on 2026-11-23); they deployed City4CFD
         about:
-          "A platform on the EU's Destination Earth (DestinE) that offers UrbanAIR's digital twin as a service. It connects large-scale climate models with local urban models, their data and workflows, and delivers the models' real-time, street-level forecasts of air quality and heat stress for three European cities.",
+          "A platform on the EU's Destination Earth (DestinE) that offers UrbanAIR's digital twin as a service. It runs TU Delft's City4CFD, which reconstructs 3D city models for urban flow simulations, as a service. UrbanAIR is working towards street-level forecasts of air quality and heat stress for five European cities.",
       },
       { id: 's-profiling', label: 'Model testing & profiling' },
     ],
@@ -412,15 +395,17 @@ export const services: ServiceGroup[] = [
         label: 'Observational',
         projects: ['rampvis', 'mlinfra', 'fairmast', 'urbanair', 'ska', 'vbas', 'ese'],
         about:
-          'Routinely viewing many data streams, one after another, so the effort grows with the number of streams. Examples: dashboards of daily COVID-19 data and modelling results with uncertainty, data from MAST fusion experiments in FAIR-MAST, modelled wind flow around Antwerp in UrbanAIR, live SKA telescope data, seismic events under review in VBAS, enterprise search results, and the data and outputs of ML models.',
+          'Routinely viewing many data streams, one after another, so the effort grows with the number of streams. Examples: dashboards of daily COVID-19 data and modelling results with uncertainty, data from MAST fusion experiments in FAIR-MAST, a green potential map around Antwerp in UrbanAIR, live SKA telescope data, seismic events under review in VBAS, enterprise search results, and the data and outputs of ML models.',
         papers: [PAPERS.rampvis, PAPERS.dashboards, PAPERS.streamingVis],
       },
       {
         id: 's-analyt',
         label: 'Analytical',
-        projects: ['rampvis', 'mlinfra', 'urbanair', 'ska', 'vbas', 'ese'],
+        // not UrbanAIR (no analytical visualization there yet) and not SKA (observational only); both per the user,
+        // 2026-11-23
+        projects: ['rampvis', 'mlinfra', 'vbas', 'ese'],
         about:
-          "Using algorithms to find similarities, clusters and correlations, where the number of comparisons grows quickly with the data. Examples: comparing COVID-19 case curves across Scotland's 14 regions, locating heat and pollution hotspots street by street in UrbanAIR, finding patterns and anomalies in seismic and telescope data, spotting files a search missed, and finding features and patterns in ML data.",
+          "Using algorithms to find similarities, clusters and correlations, where the number of comparisons grows quickly with the data. Examples: comparing COVID-19 case curves across Scotland's 14 regions, finding patterns and anomalies in seismic data, spotting files a search missed, and finding features and patterns in ML data.",
         papers: [PAPERS.rampvis, PAPERS.searchProvenance],
       },
       {
@@ -492,9 +477,9 @@ export const facilities: MapItem[] = [
     label: 'Destination Earth (DestinE)',
     note: 'OpenStack cloud',
     projects: ['urbanair'],
-    // only its OpenStack cloud is used, for deployment; not its ESA, ECMWF or EUMETSAT data and services
+    // only its OpenStack cloud (deploying services, hosting data); none of its ESA, ECMWF or EUMETSAT data or services
     about:
-      "OpenStack cloud on the EU's Destination Earth (DestinE) platform, used to deploy UrbanAIR's digital twin as a service.",
+      "OpenStack cloud on the EU's Destination Earth (DestinE) platform, used to deploy UrbanAIR's digital twin as a service and to host data.",
   },
   { id: 'f-hpc', label: 'HPC & AI supercomputers' },
 ];

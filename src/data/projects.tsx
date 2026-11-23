@@ -45,10 +45,27 @@ const projectsList: ProjectEntry[] = [
         >
           Destination Earth (DestinE)
         </Link>
-        , in collaboration with international partners including VITO (Belgium). The platform connects large-scale
-        climate models with local urban models, orchestrates data and workflows from academic, government and industry
-        partners, and delivers real-time, street-level air quality and heat resilience forecasts across three European
-        cities, with dashboards for observing and analysing them.
+        , in collaboration with international partners including VITO (Belgium). The platform integrates climate data
+        and model data, either through APIs or by hosting it on DestinE. Deployed TU Delft&apos;s{' '}
+        <Link
+          href="https://github.com/tudelft3d/City4CFD"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'primary.main' }}
+        >
+          City4CFD
+        </Link>
+        , which reconstructs 3D city models for urban flow simulations, as a digital twin as a service. UrbanAIR is
+        working towards street-level air quality and heat resilience forecasts for five European cities. A{' '}
+        <Link
+          href="https://green.urbanair.central.data.destination-earth.eu/"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'primary.main' }}
+        >
+          first dashboard
+        </Link>
+        , created with VITO, shows a green potential map around Antwerp.
       </>
     ),
     organisation: ['STFC'],
@@ -224,12 +241,13 @@ const projectsList: ProjectEntry[] = [
         >
           RAMPVIS
         </Link>
-        , a visual analytics infrastructure, in collaboration with the UK visualization research community and the
-        Scottish COVID-19 Response Consortium (SCRC). Designed and implemented infrastructure on the STFC cloud for
-        rapidly deploying visualizations, dashboards, and ontology-driven search across tens of thousands of
-        heterogeneous, continuously evolving datasets, with agents that fetch and analyse new data. Developed novel
-        methods for semi-automated visualization generation (propagation) and storytelling (Meta-StoryBoard), supporting
-        all four levels of visualization, from monitoring input data to model development and public communication.
+        , a visual analytics infrastructure for the six epidemiological models of the Scottish COVID-19 Response
+        Consortium (SCRC), in collaboration with the UK visualization research community and the SCRC. Designed and
+        implemented infrastructure on the STFC cloud for rapidly deploying visualizations, dashboards, and
+        ontology-driven search across tens of thousands of heterogeneous, continuously evolving datasets, with agents
+        that fetch and analyse new data. Developed novel methods for semi-automated visualization generation
+        (propagation) and storytelling (Meta-StoryBoard), supporting all four levels of visualization, from monitoring
+        input data to model development and public communication.
       </>
     ),
     organisation: ['University of Oxford'],
@@ -250,8 +268,8 @@ const projectsList: ProjectEntry[] = [
         is the world&apos;s largest radio telescope, generating astronomical data at a volume and rate where real-time
         streaming and visualization are essential to monitor and act on data as it arrives. Led the design and
         development of a scalable, real-time streaming and visualization infrastructure to meet this need, with a
-        low-latency data streaming architecture and web-based rendering pipelines for observing and analysing
-        high-volume data streams.
+        low-latency data streaming architecture and web-based rendering pipelines for observing high-volume data
+        streams.
       </>
     ),
     organisation: ['University of Oxford', 'SKA'],
