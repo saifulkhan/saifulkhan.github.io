@@ -10,10 +10,9 @@ import PublicationsSection from '../components/sections/PublicationsSection';
 import { useSectionViewTracking } from '@/lib/analytics';
 
 const researchInterests = [
-  'Service Computing',
+  'Data and Service Computing',
   'Applied AI/ML',
-  'Semantic Search',
-  'Data Virtualization',
+  'Data Virtualisation',
   'Information Visualisation',
 ];
 
@@ -21,7 +20,7 @@ const majorAwards: React.ReactNode[] = ['RAMP Early Career Investigator Award, R
 
 const professionalService: React.ReactNode[] = [
   'International Programme Committee, Eurographics Conference on Visualization (EuroVis), 2027',
-  'Programme Committee, Services Computing Conference (SCC), 2026',
+  'International Programme Committee, Services Computing Conference (SCC), 2026',
   'Guest Editor, Reliable Scientific Machine Learning for PDE Solution and Discovery, Frontiers in Applied Mathematics and Statistics',
 ];
 
@@ -131,18 +130,20 @@ export default function About() {
           {/* Bio */}
           <Box sx={{ mb: { xs: 5, md: 6 } }}>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              I design and build software infrastructure that supports numerical modelling and machine learning.
-              Scientists and engineers rely on national data and compute facilities, but they also need software
-              services on top of them: to find and combine data, analyse and visualise it, and develop their models. My
-              vision is a shared, unified infrastructure of such services that scales across projects and research
-              domains. The services I have built include data virtualisation, semantic search, model observability,
-              digital twins as a service and visualisation. I work at the Rutherford Appleton Laboratory (RAL), part of
-              the Science and Technology Facilities Council (STFC), which is part of UK Research and Innovation (UKRI).
+              I am a Senior Scientist at the Rutherford Appleton Laboratory (RAL), part of the Science and Technology
+              Facilities Council (STFC) within UK Research and Innovation (UKRI). I design and build software
+              infrastructure that supports numerical modelling, digital twins, and machine learning. While scientists
+              and engineers rely on national data and compute facilities, they also need software services on top of
+              them - to find and combine data, analyse and visualise it, and develop trustworthy models. My vision is a
+              shared, unified infrastructure of such services that scales across projects and research domains.
+              Alongside hands-on architecture, I lead and co-lead multi-institutional research projects and grant
+              proposals, building services spanning data virtualisation, semantic search, model observability, digital
+              twins as a service, and interactive visualisation.
             </Typography>
             <Typography variant="body1" sx={{ mb: 2 }}>
-              I began my career in industry, developing engineering database software at Oracle and real-time industrial
-              automation systems at ABB. I then moved into academic research at the University of Oxford, where I
-              completed my DPhil and subsequently undertook postdoctoral research with Professor{' '}
+              I began my career in industry, developing enterprise database services at Oracle and real-time industrial
+              automation systems at ABB, before moving into academic research at the University of Oxford, where I
+              completed my D.Phil. and postdoctoral research with Professor{' '}
               {/* body-text colour with a faint underline so it still reads as a link */}
               <MuiLink
                 href="https://eng.ox.ac.uk/people/min-chen"
@@ -153,10 +154,9 @@ export default function About() {
               >
                 Min Chen
               </MuiLink>
-              . Since then, I have contributed to the design and development of software systems across a diverse range
-              of domains, including enterprise search, seismology, radio astronomy, global health emergencies, nuclear
-              fusion, urban environments and machine learning for PDEs. Many of these systems are now in active
-              real-world use.
+              . Since then, I have contributed to the design and delivery of production software systems across
+              enterprise search, seismology, radio astronomy, global health emergencies, nuclear fusion, urban
+              environments, and scientific machine learning for PDEs - many of which remain in active real-world use.
             </Typography>
           </Box>
 
