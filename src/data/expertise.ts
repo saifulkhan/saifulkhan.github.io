@@ -157,9 +157,9 @@ export const mapProjects: MapProject[] = [
 ];
 
 export const mapThemes: MapTheme[] = [
-  { id: 'covid', label: 'COVID-19 modelling', projects: ['rampvis'] },
   { id: 'twins', label: 'Digital twins', projects: ['urbanair'] },
-  { id: 'ml', label: 'Machine learning for PDEs', projects: ['mlinfra'] },
+  { id: 'epi', label: 'Epidemiological modelling', projects: ['rampvis'] },
+  { id: 'ml', label: 'Machine learning', projects: ['mlinfra'] },
 ];
 
 // one project each, so a domain's details are its project cards, after an optional `about` line (e.g. who built the
